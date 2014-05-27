@@ -11,4 +11,5 @@ assets:
   compress:
     css:  sass
     js:   uglifier
+    debug: true
 paginate: 10

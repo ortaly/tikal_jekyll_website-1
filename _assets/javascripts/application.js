@@ -1,6 +1,9 @@
 //= require vendor/jquery-2.1.1
 //= require vendor/scrollup/jquery.scrollUp
 //= require vendor/drupal_legacy.js
+//= require vendor/angular.min.js
+//= require vendor/angular-sanitize.js
+//= require  meetup_events.js
 
 $('document').ready(function() {
   $("#core-values .double-field-first").click(function() {
