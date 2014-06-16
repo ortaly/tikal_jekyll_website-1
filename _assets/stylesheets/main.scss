@@ -1476,7 +1476,7 @@
 {
   background:#547a7d
 }
-.block-domains-home-page ul.menu li.menu-mlid-688 a
+.block-domains-home-page ul.menu li[class*="net"] a
 {
   background:#e05e46
 }
@@ -2391,7 +2391,7 @@
 {
   background-color:#547a7d
 }
-.our-expertese ul.menu li.menu-mlid-688 a,.our-technology-domains ul.menu li.menu-mlid-688 a
+.our-expertese ul.menu li[class*="net"] a,.our-technology-domains ul.menu li[class*="net"] a
 {
   background-color:#e05e46
 }

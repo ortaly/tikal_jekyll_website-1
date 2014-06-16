@@ -1,0 +1,26 @@
+<div class="region region-content-top">
+  <section id="block-views-clients-block" class="block block-views block-odd">
+    <h2 class="block-title">We Work With:</h2>
+
+    <div class="content">
+      <div class="view view-clients view-id-clients view-display-id-block">
+
+        <div class="view-content">
+          <div class="view-content-limit">
+            <div class="view-content-limit-content">
+              {% for client in page.our_clients %}
+                <div class="views-row">
+                  <div class="views-field views-field-field-logo">
+                    <div class="field-content">
+                      <a href={{ '/solutions/#testimonies' | to_baseurl }}><img typeof="foaf:Image" src="{{ client | client_image_path }}" width="180" height="30" alt=""></a>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+    </div>  </div><!-- /.content -->
+  </section><!-- /.block -->
+</div>
