@@ -5,97 +5,33 @@ title: Events | Tikal
 header_title: Events
 header_subtitle: Stay tuned with Tikal's latest development and upcoming events
 ---
-<div id="main" ng-app="main">
- <div class="region region-content" ng-controller="EventCtrl">
-	<section id="block-tikal-meetup-meetup-upcoming-events" class="block block-tikal-meetup block-even" >
-	 	<!-- <ul ng-cloak>
-	 	  				<li ng-repeat="event in events">{% raw %} {{ event.name }} {% endraw %}</li>
-	 			</ul> -->
-	  <h2 class="block-title">
-	  	UPCOMING EVENTS 
-	  </h2>
-	  <div class="content">
-		   <div class="event-field-item" ng-repeat="event in events">
-			     <div class="event-header">
-			   	 	<a class="event-title"  ng-href="{% raw %} {{ event.event_url }} {% endraw %}" target="_blank">{% raw %} {{ event.name }} {% endraw %}</a>
-			   	 </div>
-			   	 <div class="event-info">
-					<div class="event-when">
-						<div class="event-label">WHEN:</div>
-						<div class="event-date event-content">{% raw %} {{ event.time | date:'EEEE, MMMM d , H:mm' }} {% endraw %}</div>
-					</div>
-					<a class="event-rsvp-waitlist" ng-href="{% raw %} {{ event.event_url }} {% endraw %}" target="_blank">
-						<div class="event-waitlist">
-							<div class="event-label">Waiting List</div>
-						</div>
-					</a>
-					<div class="event-waiting">
-						<div class="event-label">WAITING:</div>
-						<div class="event-content">{% raw %} {{ event.waitlist_count }} {% endraw %}</div>
-					</div>
-					<div class="event-attending">
-						<div class="event-label">ATTENDING:</div>
-						<div class="event-content">{% raw %} {{ event.yes_rsvp_count }} {% endraw %}</div>
-					</div>
-					<div class="event-price">
-						<div class="event-label">PRICE:</div>
-						<div class="event-content"> free</div>
-						<div class="event-content event-price-description"></div>
-					</div>
-				</div>
-			   	<div class="event-where">
-					<div class="event-label">WHERE:</div>
-					<div class="event-content event-name">{% raw %} {{ event.venue.name }} {% endraw %}</div>
-					<div class="event-content event-adderss">{% raw %} {{ event.venue.address_1 }} {% endraw %}, </div>
-					<div class="event-content event-city">{% raw %} {{ event.venue.city }} {% endraw %}</div>
-					<div class="event-content event-map">(<a ng-href="http://maps.google.com/maps?q={% raw %} {{ event.venue.address_1 }},{{ event.venue.city }} {% endraw %}" target="_blank">map</a>)</div>	
-				</div>
-			   	<div class="event-photos">
-					<div class="photo"><img src="http://photos1.meetupstatic.com/photos/member/9/4/e/0/thumb_39818112.jpeg"></div>					
-				</div>
-			   	 <div class="event-description" ng-bind-html="event.description">
-				</div> 
-			   	 <a class="event-read-more" ng-href="{% raw %} {{ event.event_url }} {% endraw %}" target="_blank">Read More »</a>
-			</div>
-	   </div>
-	</section>
+<div id="main" ng-app="meetups-module">
+     <div class="region region-content" ng-controller="Sn.MainCtrl as mainCtrl" >
+        <!--   <h1>{% raw %}{{mainCtrl.appTitle}}{% endraw %}</h1> -->
+          <div id="meetups" ng-controller="Sn.MeetupsCtrl as meetupsCtrl">
 
-	<section class="block block-tikal-meetup block-odd" id="block-tikal-meetup-meetup-past-events" ng-cloack>
-        <h2 class="block-title">PAST EVENTS</h2>
-		  <div class="content">
-		    <div id="events-from-meetup">
-				<div class="event-field-item" ng-repeat="past_event in past_events track by past_event.id">
-						 <div class="event-header">
-			   	 			<a class="event-title"  ng-href="{% raw %} {{ past_event.event_url }} {% endraw %}" target="_blank">{% raw %} {{ past_event.name }} {% endraw %}</a>
-			   	 		</div>
-						<div class="event-when">
-							<div class="event-label">WHEN:</div>
-							<div class="event-date event-content">{% raw %} {{ past_event.time | date:'EEEE, MMMM d , H:mm' }} {% endraw %}</div>
-						</div>
-						<div class="event-where">
-							<div class="event-label">WHERE:</div>
-							<div class="event-content event-name">{% raw %} {{ past_event.venue.name }} {% endraw %}</div>
-							<div class="event-content event-adderss">{% raw %} {{ past_event.venue.address_1 }} {% endraw %}, </div>
-							<div class="event-content event-city">{% raw %} {{ past_event.venue.city }} {% endraw %}</div>
-							<div class="event-content event-map">(<a ng-href="http://maps.google.com/maps?q={% raw %} {{ event.venue.address_1 }},{{ past_event.venue.city }} {% endraw %}" target="_blank">map</a>)</div>	
-						</div>
-						<div class="event-photos">
-										<div class="photo">
-											<img src="http://photos1.meetupstatic.com/photos/member/9/4/e/0/thumb_39818112.jpeg">
-										</div>					
-							</div>
-						<div class="event-description" ng-bind-html="past_event.description">
-						</div> 
-					   	 <a class="event-read-more" ng-href="{% raw %} {{ past_event.event_url }} {% endraw %}" target="_blank">Read More »</a>
-				</div>	
-					
-			</div>
-				<div class="pager" id="load-more-events" style="cursor: pointer;" ng-click="loadMore()">Load More</div>  
-		</div><!-- /.content -->
-	</section>
-  </div>
-  	</div>
-  	<aside role="complementary" class="sidebar" id="sidebar-second">
+            <section id="block-tikal-meetup-meetup-upcoming-events" class="block block-tikal-meetup block-even">
+                  <meetup-event 
+                        title="Upcoming Events"
+                        meetups="meetupsCtrl.meetupsByStatus.upcoming" 
+                        ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
+                        is-upcoming-event="true"
+                  ></meetup-event>
+          	 </section>
+                
+          	 <section class="block block-tikal-meetup block-odd" id="block-tikal-meetup-meetup-past-events" ng-cloack>
+                  <meetup-event
+                      title="Past Events"
+                      meetups="meetupsCtrl.meetupsByStatus.past"
+                      ng-show="meetupsCtrl.meetupsByStatus.past.length"
+                  ></meetup-event>
+          				<div class="pager" id="load-more-events" style="cursor: pointer;" ng-click="meetupsCtrl.loadMore()">Load More</div>
+          	 </section>
+
+           </div>
+    </div>
+  </div> 
+      <aside role="complementary" class="sidebar" id="sidebar-second">
         <div class="region region-sidebar-second">
     <div class="block block-block block-odd" id="block-block-12">
       
@@ -104,105 +40,24 @@ header_subtitle: Stay tuned with Tikal's latest development and upcoming events
   </div><!-- /.content -->
 </div><!-- /.block -->
 <section class="block block-tikal-meetup block-even" id="block-tikal-meetup-meetup-events-calendar">
-        <h2 class="block-title">Event Calendar</h2>
-    
+  <h2 class="block-title">Event Calendar</h2>
   <div class="content">
     <div class="calendar-wrap">
-  <div id="calendar"><div><span id="currentmonth">May</span> <span id="currentyear">2014</span></div><div><span id="icalprev">&lt;</span><span id="icalnext">&gt;</span></div><table cellspacing="0" class="icaltable"><thead><tr><th>Su</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead><tfoot><tr><th>Su</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></tfoot><tbody><tr><td class="padding"></td><td class="padding"></td><td class="padding"></td><td class="padding"></td><td id="2014-05-01">1</td><td id="2014-05-02">2</td><td id="2014-05-03">3</td></tr><tr><td id="2014-05-04">4</td><td id="2014-05-05">5</td><td id="2014-05-06">6</td><td id="2014-05-07">7</td><td id="2014-05-08">8</td><td id="2014-05-09">9</td><td id="2014-05-10">10</td></tr><tr><td id="2014-05-11">11</td><td id="2014-05-12">12</td><td id="2014-05-13">13</td><td id="2014-05-14">14</td><td id="2014-05-15">15</td><td id="2014-05-16">16</td><td id="2014-05-17">17</td></tr><tr><td id="2014-05-18">18</td><td id="2014-05-19">19</td><td id="2014-05-20">20</td><td id="2014-05-21">21</td><td id="2014-05-22" class="today">22</td><td id="2014-05-23">23</td><td id="2014-05-24">24</td></tr><tr><td id="2014-05-25">25</td><td id="2014-05-26">26</td><td id="2014-05-27">27</td><td id="2014-05-28">28</td><td id="2014-05-29">29</td><td id="2014-05-30">30</td><td id="2014-05-31">31</td></tr></tbody></table></div>
-  <script>
-    var events = eval(Drupal.settings.tikalMeetup.events);
-    jQuery('#calendar').ical({startOnSunday: true,
-		daynames: ['Su', 'M', 'T', 'W', 'T', 'F', 'S'],
-		monthnames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
-		eventdates: events });
-  </script>
+        <div id="calendar"><div><span id="currentmonth">June</span> <span id="currentyear">2014</span></div><div><span id="icalprev">&lt;</span><span id="icalnext">&gt;</span></div><table cellspacing="0" class="icaltable"><thead><tr><th>Su</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead><tfoot><tr><th>Su</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></tfoot><tbody><tr><td class="padding"></td><td class="padding"></td><td class="padding"></td><td class="padding"></td><td id="2014-05-01">1</td><td id="2014-05-02">2</td><td id="2014-05-03">3</td></tr><tr><td id="2014-05-04">4</td><td id="2014-05-05">5</td><td id="2014-05-06">6</td><td id="2014-05-07">7</td><td id="2014-05-08">8</td><td id="2014-05-09">9</td><td id="2014-05-10">10</td></tr><tr><td id="2014-05-11">11</td><td id="2014-05-12">12</td><td id="2014-05-13">13</td><td id="2014-05-14">14</td><td id="2014-05-15">15</td><td id="2014-05-16">16</td><td id="2014-05-17">17</td></tr><tr><td id="2014-05-18">18</td><td id="2014-05-19">19</td><td id="2014-05-20">20</td><td id="2014-05-21">21</td><td id="2014-05-22" class="today">22</td><td id="2014-05-23">23</td><td id="2014-05-24">24</td></tr><tr><td id="2014-05-25">25</td><td id="2014-05-26">26</td><td id="2014-05-27">27</td><td id="2014-05-28">28</td><td id="2014-05-29">29</td><td id="2014-05-30">30</td><td id="2014-05-31">31</td></tr></tbody></table>
+    </div>
+    <script>
+      var events = eval(Drupal.settings.tikalMeetup.events);
+      jQuery('#calendar').ical({startOnSunday: true,
+      daynames: ['Su', 'M', 'T', 'W', 'T', 'F', 'S'],
+      monthnames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+      eventdates: events });
+    </script>
 </div>
   </div><!-- /.content -->
-</section><!-- /.block -->
-<div class="block block-tikal-fbgroup-feed block-odd" id="block-tikal-fbgroup-feed-fbgroup-feed">
-      
-  <div class="content">
-    
-<div class="fb-group-feed-wrapper">
-  <div class="fb-group-feed-header">
-    <a title="Fullstack Developers Israel" target="_blank" href="https://www.facebook.com/groups/225585444263260" class="fbgroup-feed-image"></a>Join the discussion    
-  </div>
-  <div class="fb-group-feed-title">
-    <img src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/y0/r/-HwODK0dBGZ.png">
-    <h2><a target="_blank" href="https://www.facebook.com/groups/225585444263260">Fullstack Developers Israel</a></h2>
-  </div>    
-  <div class="fb-group-feed-body">
-          <div class="fb-group-feed-post">
-        <a target="_blank" title="View Yan Shif Schiff's profile" href="http://facebook.com/profile.php?id=735374209">
-          <img border="0" src="https://graph.facebook.com/735374209/picture" alt="Yan Shif Schiff" title="Yan Shif Schiff">
-        </a>
-        <div class="fb-group-feed-post-author">
-           <span>
-             By             <a href="http://facebook.com/profile.php?id=735374209" target="_blank">
-             Yan Shif Schiff             </a>
-           </span>
-           <span>on May, 21st</span>
-        </div>
-        <div class="fb-group-feed-post-message">
-          <a href="https://www.facebook.com/225585444263260/posts/298410553647415" target="_blank">
-            הזדמנות חד פעמית לקבל אחוזים בחברה קיימת עם משרדים בתל אביב - מחפשים מפתח ios : שכר גבוהה ואחוזים!...          </a>
-        </div>          
-      </div>
-          <div class="fb-group-feed-post">
-        <a target="_blank" title="View Gilad Judes's profile" href="http://facebook.com/profile.php?id=500066823">
-          <img border="0" src="https://graph.facebook.com/500066823/picture" alt="Gilad Judes" title="Gilad Judes">
-        </a>
-        <div class="fb-group-feed-post-author">
-           <span>
-             By             <a href="http://facebook.com/profile.php?id=500066823" target="_blank">
-             Gilad Judes             </a>
-           </span>
-           <span>on May, 21st</span>
-        </div>
-        <div class="fb-group-feed-post-message">
-          <a href="https://www.facebook.com/225585444263260/posts/298266530328484" target="_blank">
-            Resolving failed Gradle dependencies when using the Jenkins Matrix Plugin - See more at: 
-http://...          </a>
-        </div>          
-      </div>
-          <div class="fb-group-feed-post">
-        <a target="_blank" title="View Oren Farhi's profile" href="http://facebook.com/profile.php?id=754318072">
-          <img border="0" src="https://graph.facebook.com/754318072/picture" alt="Oren Farhi" title="Oren Farhi">
-        </a>
-        <div class="fb-group-feed-post-author">
-           <span>
-             By             <a href="http://facebook.com/profile.php?id=754318072" target="_blank">
-             Oren Farhi             </a>
-           </span>
-           <span>on May, 20th</span>
-        </div>
-        <div class="fb-group-feed-post-message">
-          <a href="https://www.facebook.com/225585444263260/posts/298124337009370" target="_blank">
-            wrote a new post about lessons learned on how to modularize a web app with angular.js and grunt.js...          </a>
-        </div>          
-      </div>
-          <div class="fb-group-feed-post">
-        <a target="_blank" title="View Yifat Kanfi's profile" href="http://facebook.com/profile.php?id=100000379042702">
-          <img border="0" src="https://graph.facebook.com/100000379042702/picture" alt="Yifat Kanfi" title="Yifat Kanfi">
-        </a>
-        <div class="fb-group-feed-post-author">
-           <span>
-             By             <a href="http://facebook.com/profile.php?id=100000379042702" target="_blank">
-             Yifat Kanfi             </a>
-           </span>
-           <span>on May, 20th</span>
-        </div>
-        <div class="fb-group-feed-post-message">
-          <a href="https://www.facebook.com/225585444263260/posts/298018183686652" target="_blank">
-            אירוע Mind the stack יצא לדרך !!          </a>
-        </div>          
-      </div>
-      
-  </div>  
-</div>  </div><!-- /.content -->
-</div><!-- /.block -->
-  </div>
     </aside>
-</div>
+
+
+  	
+
   
 
