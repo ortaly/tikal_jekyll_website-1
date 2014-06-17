@@ -3,7 +3,27 @@
 // }
 angular.module("main", ['ngSanitize']).controller("EventCtrl", function($scope,$http) {
     $scope.test = 'Test Message';
-    
+
+    $scope.showUpcoming = true;
+    $scope.showPast = !$scope.showUpcoming;
+
+    $scope.changeState = function (showState) {
+        $('.button-upcoming').removeClass('active');
+        $('.button-past').removeClass('active');
+
+        if (showState === 'upcoming') {
+            $scope.showUpcoming = true;
+            $('.button-upcoming').addClass('active');
+        } else {
+            $scope.showUpcoming = false;
+            $('.button-past').addClass('active');
+        }
+
+        $scope.showPast = !$scope.showUpcoming;
+    };
+
+    $scope.changeState('upcoming');
+
     var base ='https://api.meetup.com/2/events?',
     	status= 'upcoming',
     	group_url = 'full-stack-developer-il',
@@ -14,7 +34,7 @@ angular.module("main", ['ngSanitize']).controller("EventCtrl", function($scope,$
     	jsonp='&callback=JSON_CALLBACK',
 
     	url = base+"status="+status+"&group_urlname="+group_url+"&text_format="+text_format+"&page="+page+"&offset="+offset+"&key="+key+jsonp;
-     	
+
      	$http({
 		  method: 'JSONP',
 		  url: url
@@ -27,12 +47,12 @@ angular.module("main", ['ngSanitize']).controller("EventCtrl", function($scope,$
 		}).error(function(data, status, headers, config) {
 			console.log("err",status,data);
 		});
-  	
+
 	 	status = 'past';
 	 	page = 3,
 	 	desc=true;
 	  	url = base+"status="+status+"&group_urlname="+group_url+"&desc="+desc+"&text_format="+text_format+"&page="+page+"&offset="+offset+"&key="+key+jsonp;
-     	
+
      	$http({
 		  method: 'JSONP',
 		  url: url
