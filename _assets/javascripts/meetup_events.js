@@ -14,7 +14,12 @@
 		sign: true
 	};
 
+	Sn.SiteParams = {
+		baseUrl: 'tikal_jekyll_website'
+	};
+
 	module.constant('MeetupsApiParams', Sn.MeetupsApiParams);
+	module.constant('SiteParams', Sn.SiteParams);
 
 	module.service('MeetupsService', ['$http', 'MeetupsApiParams', '$q', function($http, MeetupsApiParams, $q){
 
@@ -78,7 +83,7 @@
 
 
 				function onSuccess(data){
-					debugger;
+					//debugger;
 					defer.resolve(data.results);
 				}
 
@@ -103,29 +108,18 @@
 		
 		var _self = this;
 
-		$scope.showUpcoming = true;
-	    $scope.showPast = !$scope.showUpcoming;
+		this.displayUpComing = function displayUpComing(){
+			this.isUpComing = true;
+			this.isPast = false;
+		};
 
-	    $scope.changeState = function (showState) {
-	        $('.button-upcoming').removeClass('active');
-	        $('.button-past').removeClass('active');
-
-	        if (showState === 'upcoming') {
-	            $scope.showUpcoming = true;
-	            $('.button-upcoming').addClass('active');
-	        } else {
-	            $scope.showUpcoming = false;
-	            $('.button-past').addClass('active');
-	        }
-
-	        $scope.showPast = !$scope.showUpcoming;
-	    };
-
-   	    $scope.changeState('upcoming');
-
+		this.displayPast = function displayPast(){
+			this.isPast = true;
+			this.isUpComing = false;
+		};
 
 		(function init(){
-			_self.appTitle = 'Meetups Events';
+			_self.displayUpComing();
 		})();
 		
 	}]);
@@ -192,22 +186,17 @@
 	}]);
 
 
-	module.directive('meetupEvent', function(){
-		return {
-			restrict: 'E',
-			replace: true,
-			scope: {
-				meetups: '=',
-				title: '@',
-				isUpcomingEvent: '@'
-			},
-			templateUrl: 'meetup-event.html',
-			link: function(scope, element){
-			}
-		};
-	});
+	module.directive('meetupEvent', ['$location', function($location){
 
-	module.directive('meetupHomeEvent', function(){
+		var absUrl = $location.absUrl(),
+			absUrlArr = absUrl.substring(0, absUrl.length - 1).split('/'),
+			templateUrl = 'meetup-event.html';
+
+		if(absUrlArr[absUrlArr.length - 1] !== 'events'){
+			templateUrl = 'events/home-meetup-event.html';
+		}
+
+
 		return {
 			restrict: 'E',
 			replace: true,
@@ -216,9 +205,11 @@
 				title: '@',
 				isUpcomingEvent: '@'
 			},
-			templateUrl: 'meetup-home-event.html',
+			templateUrl: templateUrl,
 			link: function(scope, element){
 			}
 		};
-	});
+	}]);
+
+	
 })();

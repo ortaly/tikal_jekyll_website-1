@@ -1,53 +1,38 @@
-<section id="block-tikal-meetup-meetup-domain-pages-events" class="block block-tikal-meetup block-odd">
+<section id="block-tikal-meetup-meetup-domain-pages-events" class="block block-tikal-meetup block-odd" >
     <h2 class="block-title">Events</h2>
-
     <div class="content" ng-app="meetups-module">
-        <div ng-controller="Sn.MainCtrl as mainCtrl">
-            <div class="meetup-logo"></div>
-            <div>
-                <div class="switch-events button button-upcoming active" ng-click="changeState('upcoming')">Upcoming</div>
-                <div class="switch-events button button-past" ng-click="changeState('past')">Past</div>
-            </div>
-          <div id="meetups" ng-controller="Sn.MeetupsCtrl as meetupsCtrl">
+      <div ng-controller="Sn.MainCtrl as mainCtrl" >
+        <div class="meetup-logo"></div>
+        <div class="buttons-container" >
+            <div
+              ng-class="{'active': mainCtrl.isUpComing}"
+              class="switch-events button button-upcoming"
+              ng-click="mainCtrl.displayUpComing()"
+            >Upcoming</div>
+            <div
+              ng-class="{'active': mainCtrl.isPast}"
+              class="switch-events button button-past"
+              ng-click="mainCtrl.displayPast()"
+            >Past</div>
+        </div>
+        <div id="meetups" ng-controller="Sn.MeetupsCtrl as meetupsCtrl">
+          <div ng-show="mainCtrl.isUpComing" >
+             <meetup-event 
+                    title="Upcoming Events"
+                    meetups="meetupsCtrl.meetupsByStatus.upcoming" 
+                    ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
+                    is-upcoming-event="true"
+              ></meetup-event>
+          </div>
 
-               <div ng-show="showUpcoming">
-                   <meetup-home-event 
-                       title="Upcoming Events"
-                       meetups="meetupsCtrl.meetupsByStatus.upcoming" 
-                       ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
-                       is-upcoming-event="true"
-                   ></meetup-home-event>
-                 <!--  <div class="field-item events-upcoming" style="display: block;" data-ng-repeat="meetup in meetups">
-                     <a class="field-title" data-ng-href="{% raw %} {{ meetup.event_url }} {% endraw %}" target="_blank">{% raw %} {{ meetup.name }} {% endraw %}</a>
-                     <div class="field-date">
-                         <div class="date">
-                             {% raw %} {{ meetup.time | date:'EEEE, MMMM d , H:mm' }} {% endraw %} @
-                         </div>
-                         <div class="name">
-                             {% raw %} {{ meetup.venue.address_1 }} {% endraw %}, {% raw %} {{ meetup.venue.city }} {% endraw %}
-                         </div>
-                     </div>
-                     <div class="field-photos">
-                         <div class="photo">
-                             Photos come here
-                             <img src="http://photos2.meetupstatic.com/photos/member/9/8/c/8/thumb_188319112.jpeg" />
-                         </div>
-                     </div>
-                 </div> -->
-                </div>
-                
-                <div ng-show="showPast">
-                  <div>
-                       2 showPast showPast showPast showPast
-                   </div>
-                    <!-- <meetup-home-event
-                        title="Past Events"
-                        meetups="meetupsCtrl.meetupsByStatus.past"
-                        ng-show="meetupsCtrl.meetupsByStatus.past.length"
-                    ></meetup-home-event> -->
-                </div> -->
-          </div><!-- end MainCtrl-->
-        </div> <!-- end MainCtrl-->
-    </div> <!-- end content -->
-</div>
+           <div ng-show="mainCtrl.isPast">
+                <meetup-event
+                    title="Past Events"
+                    meetups="meetupsCtrl.meetupsByStatus.past"
+                    ng-show="meetupsCtrl.meetupsByStatus.past.length"
+                ></meetup-event>
+            </div>
+        </div>
+      </div>
+    </div>
 </section>
