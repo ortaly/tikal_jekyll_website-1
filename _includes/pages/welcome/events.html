@@ -11,32 +11,29 @@
           <div id="meetups" ng-controller="Sn.MeetupsCtrl as meetupsCtrl">
 
                <div ng-show="showUpcoming">
-                   <div>
-                       1 showUpcoming showUpcoming showUpcoming showUpcoming
-                   </div>
-                   <!--  <meetup-home-event 
+                   <meetup-home-event 
                        title="Upcoming Events"
                        meetups="meetupsCtrl.meetupsByStatus.upcoming" 
                        ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
                        is-upcoming-event="true"
-                   ></meetup-home-event> -->
-                  <div class="field-item events-upcoming" style="display: block;" data-ng-repeat="meetup in meetups">
-                      <a class="field-title" data-ng-href="{% raw %} {{ meetup.event_url }} {% endraw %}" target="_blank">{% raw %} {{ meetup.name }} {% endraw %}</a>
-                      <div class="field-date">
-                          <div class="date">
-                              {% raw %} {{ meetup.time | date:'EEEE, MMMM d , H:mm' }} {% endraw %} @
-                          </div>
-                          <div class="name">
-                              {% raw %} {{ meetup.venue.address_1 }} {% endraw %}, {% raw %} {{ meetup.venue.city }} {% endraw %}
-                          </div>
-                      </div>
-                      <div class="field-photos">
-                          <div class="photo">
-                              <!-- Photos come here  -->
-                              <!-- <img src="http://photos2.meetupstatic.com/photos/member/9/8/c/8/thumb_188319112.jpeg" /> -->
-                          </div>
-                      </div>
-                  </div>
+                   ></meetup-home-event>
+                 <!--  <div class="field-item events-upcoming" style="display: block;" data-ng-repeat="meetup in meetups">
+                     <a class="field-title" data-ng-href="{% raw %} {{ meetup.event_url }} {% endraw %}" target="_blank">{% raw %} {{ meetup.name }} {% endraw %}</a>
+                     <div class="field-date">
+                         <div class="date">
+                             {% raw %} {{ meetup.time | date:'EEEE, MMMM d , H:mm' }} {% endraw %} @
+                         </div>
+                         <div class="name">
+                             {% raw %} {{ meetup.venue.address_1 }} {% endraw %}, {% raw %} {{ meetup.venue.city }} {% endraw %}
+                         </div>
+                     </div>
+                     <div class="field-photos">
+                         <div class="photo">
+                             Photos come here
+                             <img src="http://photos2.meetupstatic.com/photos/member/9/8/c/8/thumb_188319112.jpeg" />
+                         </div>
+                     </div>
+                 </div> -->
                 </div>
                 
                 <div ng-show="showPast">
@@ -54,7 +51,3 @@
     </div> <!-- end content -->
 </div>
 </section>
-
-<script>
-var events = eval(Drupal.settings.tikalMeetup.events);
-</script>

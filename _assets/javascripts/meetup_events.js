@@ -78,6 +78,7 @@
 
 
 				function onSuccess(data){
+					debugger;
 					defer.resolve(data.results);
 				}
 
@@ -201,6 +202,21 @@
 				isUpcomingEvent: '@'
 			},
 			templateUrl: 'meetup-event.html',
+			link: function(scope, element){
+			}
+		};
+	});
+
+	module.directive('meetupHomeEvent', function(){
+		return {
+			restrict: 'E',
+			replace: true,
+			scope: {
+				meetups: '=',
+				title: '@',
+				isUpcomingEvent: '@'
+			},
+			templateUrl: 'meetup-home-event.html',
 			link: function(scope, element){
 			}
 		};
