@@ -22,7 +22,8 @@
 			var params = {
 				status: status,
 				offset: offset,
-				page: page						
+				page: page,
+				desc:desc						
 			};
 
 			if(angular.isDefined(desc)){
@@ -101,6 +102,27 @@
 		
 		var _self = this;
 
+		$scope.showUpcoming = true;
+	    $scope.showPast = !$scope.showUpcoming;
+
+	    $scope.changeState = function (showState) {
+	        $('.button-upcoming').removeClass('active');
+	        $('.button-past').removeClass('active');
+
+	        if (showState === 'upcoming') {
+	            $scope.showUpcoming = true;
+	            $('.button-upcoming').addClass('active');
+	        } else {
+	            $scope.showUpcoming = false;
+	            $('.button-past').addClass('active');
+	        }
+
+	        $scope.showPast = !$scope.showUpcoming;
+	    };
+
+   	    $scope.changeState('upcoming');
+
+
 		(function init(){
 			_self.appTitle = 'Meetups Events';
 		})();
@@ -138,7 +160,7 @@
 
 		function loadPastEvents(offset){
 			MeetupsService
-				.getMeetups('past', offset, 3)
+				.getMeetups('past', offset, 3, 'true')
 				.then(
 					onPastSuccess,
 					onError
