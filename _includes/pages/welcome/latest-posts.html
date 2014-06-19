@@ -1,0 +1,62 @@
+<section id="block-views-article-latest-articles" class="block block-views block-even">
+  <h2 class="block-title">Latest Articles</h2>
+
+  <div class="content">
+    <div class="view view-article view-id-article view-display-id-latest_articles view-dom-id-1e32192fe6e18566cf2b6808070300c2">
+
+      <div class="view-content">
+        <div class="view-content-limit">
+          <div class="view-content-limit-content">
+            {% for post in site.posts %}
+              <div class="views-row">
+
+                <div class="fields ">
+                  <div class="views-field views-field-term-node-tid">
+                    <span class="field-content">
+                      <a href="/js">
+                        <div class="JS">JS</div>
+                      </a>
+                    </span>
+                  </div>
+                  <div class="views-field views-field-title">
+                    <span class="field-content">
+                      <a href="{{ post.permalink | to_baseurl }}">
+                        {{ post.title }}
+                      </a>
+                    </span>
+                  </div>
+                  <div class="views-field views-field-view-user">
+                    <span class="views-label views-label-view-user">by</span>
+                    <span class="field-content">
+                      <a href="{{ post.user.permalink | to_baseurl }}" title="View user profile." class="username" xml:lang="" about="/js/shavit" typeof="sioc:UserAccount" property="foaf:name" datatype="">{{ post.user.login }}</a>
+                    </span>
+                  </div>
+                  <div class="views-field views-field-body">
+                    <div class="field-content">
+                      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+                      <span style="background-color: transparent;</body></html>">
+                      </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="views-field views-field-created">
+                    <span class="field-content">
+                      {{ post.date | post_date }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {% if forloop.index == 3 %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="view-footer">
+        <a href="/latest-articles" class="read-more">Read More »</a>
+      </div>
+
+    </div>
+  </div><!-- /.content -->
+</section>

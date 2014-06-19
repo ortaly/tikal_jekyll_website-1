@@ -4,7 +4,8 @@
       {% for group in site.data.groups %}
         {% for g in group %}
           {% assign name = g[1].name %}
-          <li class="leaf {{ name }}"><a href="{{ name | prepend: "/" | to_baseurl }}" title="">{{ g[1].title | replace: ' | Tikal', '' }}</a></li>
+          {% assign tag = g[1].tag %}
+          <li class="leaf {{ tag }}"><a href="{{ name | prepend: "/" | to_baseurl }}" title="">{{ g[1].title | replace: ' | Tikal', '' }}</a></li>
         {% endfor %}
       {% endfor %}
     </ul>
