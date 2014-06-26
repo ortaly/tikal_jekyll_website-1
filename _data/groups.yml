@@ -29,13 +29,12 @@
       - Asaf Gannon
 - group:
     name: net
-    tag: .net
+    tag: net
     title: .NET | Tikal
     header_title: .NET
     header_subtitle: What up .NET Geeks ? Welcome to Tikal's .NET Domain.
     highlighted_team_members:
       - Igor Zalmanovich
-      - Menny Rachmanny
 - group:
     name: ror
     tag: ror

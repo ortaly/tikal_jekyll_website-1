@@ -830,7 +830,7 @@
 }
   #block-search-form .form-text
 {
-  background:url('/sites/all/themes/sasson/tikal/images/search-icon.png') no-repeat 143px 2px #4b4b4b;
+  background:url(asset_path('icons/search-icon.png')) no-repeat 143px 2px #4b4b4b;
   border:0;
   color:#a4a4a4;
   padding:3px 30px 4px 9px;
@@ -1251,7 +1251,7 @@
 }
   #block-menu-menu-external-links ul.menu a
 {
-  background:url('/sites/all/themes/sasson/tikal/images/icons.png') no-repeat;
+  background:url(asset_path('icons/icons.png')) no-repeat;
   font-size:0px;
   padding:14px
 }
@@ -1654,7 +1654,7 @@
 }
   #block-tikal-meetup-meetup-article-pages-events .meetup-logo,#block-tikal-meetup-meetup-domain-pages-events .meetup-logo
 {
-  background:url('/sites/all/themes/sasson/tikal/images/meetup-logo.png') right top no-repeat;
+  background:url(asset_path('meetup-logo.png')) right top no-repeat;
   background-size:100%;
   width:53px;
   height:41px;
@@ -2685,7 +2685,7 @@
 }
 .linkedIn .content a
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/linkedin.jpg') no-repeat;
+  background:url(asset_path('banners/linkedin.jpg')) no-repeat;
   display:inline-block;
   width:100%;
   height:90px;
@@ -2693,7 +2693,7 @@
 }
   #block-general-tikal-vimeo-doc
 {
-  background:url('/sites/all/themes/sasson/tikal/images/icon-.jpg') 128px 22px no-repeat #ec8a29;
+  background:url(asset_path('pages/careers/icon-careers-presentation.jpg')) 128px 22px no-repeat #ec8a29;
   position:relative;
   margin:12px 0px 0px 0;
   width:223px;
@@ -4016,7 +4016,7 @@
 }
   #block-block-12 .content a
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/meetup.jpg') no-repeat;
+  background:url(asset_path('banners/meetup.jpg')) no-repeat;
   display:inline-block;
   width:316px;
   height:114px;

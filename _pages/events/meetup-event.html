@@ -1,12 +1,13 @@
-<div class="content" >
+
 	<div class="content">
 		<h2 class="block-title">{% raw %}{{title}}{% endraw %}</h2>
-		<div class="event-field-item" 
+
+		<div class="event-field-item"
 			 ng-repeat="meetup in meetups track by meetup.id">
 			<div class="event-header">
 		   	 	<a class="event-title" ng-href="{% raw %}{{ meetup.event_url }}{% endraw %}" target="_blank">{% raw %}{{ meetup.name }}{% endraw %}</a>
 	   	 	</div>
-	   	 	 
+
 	   	 	 <div class="event-info">
 	   	 	 	<div class="event-when">
 					<div class="event-label">WHEN:</div>
@@ -46,16 +47,15 @@
 						target="_blank">
 						map
 					</a>)
-				</div>	
+				</div>
 			</div>
 
 			<div class="event-photos">
 				<div class="photo">
 					<img src="http://photos1.meetupstatic.com/photos/member/9/4/e/0/thumb_39818112.jpeg" />
-				</div>					
+				</div>
 			</div>
-			<div class="event-description" >{% raw %}{{meetup.description}}{% endraw %}</div> 
+			<div class="event-description" >{% raw %}{{meetup.description}}{% endraw %}</div>
 			<a class="event-read-more" ng-href="{% raw %}{{ meetup.event_url }}{% endraw %}" target="_blank">Read More »</a>
 		</div>
 	</div>
-</div>
