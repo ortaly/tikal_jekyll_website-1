@@ -18,6 +18,7 @@
       - Yanai Franchi
       - Adi Baron
       - Andrew Skiba
+      - Itai Peleg
 - group:
     name: js
     tag: js
@@ -26,7 +27,8 @@
     header_subtitle: Welcome JS Ninjas! You have just entered Tikal's JS Domain.
     highlighted_team_members:
       - Oren Farhi
-      - Asaf Gannon
+      - Assaf Gannon
+      - Sefi Ninio
 - group:
     name: net
     tag: net

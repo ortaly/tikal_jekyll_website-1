@@ -1120,7 +1120,7 @@
 }
 .join-the-team #webform-component-click-to-add-your-cv label
 {
-  background:url('/sites/all/themes/sasson/tikal/images/bb.jpg') 43px 4px no-repeat #a0a0a0;
+  background:url(asset_path('bb.jpg')) 43px 4px no-repeat #a0a0a0;
   position:relative;
   padding:5px 0px 0px 70px;
   font-weight:300;
@@ -4343,7 +4343,7 @@
 }
 .section-alm .featured-background,.node-type-article.section-alm .featured-background
 {
-  background:url('/sites/all/themes/sasson/tikal/images/tiled-bg-red.jpg') repeat
+  background:url(asset_path('backgrounds/tiled-bg-red.jpg')) repeat
 }
 .section-alm .featured-background #featured,.node-type-article.section-alm .featured-background #featured
 {
@@ -4355,7 +4355,7 @@
 }
 .section-java .featured-background,.node-type-article.section-java .featured-background
 {
-  background:url('/sites/all/themes/sasson/tikal/images/tiled-bg-purple.jpg') repeat
+  background:url(asset_path('backgrounds/tiled-bg-purple.jpg')) repeat
 }
 .section-java .featured-background #featured,.node-type-article.section-java .featured-background #featured
 {
@@ -4367,7 +4367,7 @@
 }
 .section-js .featured-background,.node-type-article.section-js .featured-background
 {
-  background:url('/sites/all/themes/sasson/tikal/images/tiled-bg-blue.jpg') repeat
+  background:url(asset_path('backgrounds/tiled-bg-blue.jpg')) repeat
 }
 .section-js .featured-background #featured,.node-type-article.section-js .featured-background #featured
 {
@@ -4379,7 +4379,7 @@
 }
 .section-net .featured-background,.node-type-article.section-net .featured-background
 {
-  background:url('/sites/all/themes/sasson/tikal/images/tiled-bg-orange2.jpg') repeat
+  background:url(asset_path('backgrounds/tiled-bg-orange2.jpg')) repeat
 }
 .section-net .featured-background #featured,.node-type-article.section-net .featured-background #featured
 {
@@ -4391,7 +4391,7 @@
 }
 .section-ror .featured-background,.node-type-article.section-ror .featured-background
 {
-  background:url('/sites/all/themes/sasson/tikal/images/tiled-bg-gray.jpg') repeat
+  background:url(asset_path('backgrounds/tiled-bg-gray.jpg')) repeat
 }
 .section-ror .featured-background #featured,.node-type-article.section-ror .featured-background #featured
 {
@@ -4740,7 +4740,7 @@
 }
 .facebook-banner .content a
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/facebook-button.jpg') no-repeat;
+  background:url(asset_path('banners/facebook-button.jpg')) no-repeat;
   display:inline-block;
   width:316px;
   height:114px;
@@ -4862,23 +4862,23 @@
 }
   #block-general-tikal-banners a.alm
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/alm.jpg') no-repeat
+  background:url(asset_path('banners/alm.jpg')) no-repeat
 }
   #block-general-tikal-banners a.java
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/java.jpg') no-repeat
+  background:url(asset_path('banners/java.jpg')) no-repeat
 }
   #block-general-tikal-banners a.js
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/js.jpg') no-repeat
+  background:url(asset_path('banners/js.jpg')) no-repeat
 }
   #block-general-tikal-banners a.net
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/net.jpg') no-repeat
+  background:url(asset_path('banners/net.jpg')) no-repeat
 }
   #block-general-tikal-banners a.ror
 {
-  background:url('/sites/all/themes/sasson/tikal/images/banners/ror.jpg') no-repeat
+  background:url(asset_path('banners/ror.jpg')) no-repeat
 }
 .node-type-article #block-general-tikal-banners
 {
