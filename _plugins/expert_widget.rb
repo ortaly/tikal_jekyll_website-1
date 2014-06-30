@@ -6,7 +6,7 @@ module Jekyll
 
       if user = @context["site"]["data"]["users"].detect{|user| [ user["first_name"].strip, user["last_name"].strip ].join(" ") == expert_name }
         %Q{
-          <a href="..#{user["permalink"] || "/users/#{user.login}"}">
+          <a href="..#{ to_baseurl(user["permalink"] || "/users/#{user.login}") }">
             <div class="front">
               <div class="views-field views-field-picture">
                 <div class="field-content">
