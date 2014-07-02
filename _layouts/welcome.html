@@ -10,6 +10,8 @@
         {% include pages/welcome/header.html %}
         <div class="shadow-page"></div>
         <div id="page">
+          <div id="main">
+              <div class="tabs"></div>
           {% include pages/welcome/we-work-with.html %}
           {% include pages/welcome/who-are-we.html %}
           <div class="region region-content-bottom">
@@ -22,6 +24,7 @@
             {% include pages/welcome/contact-form.html %}
           </div>
           {{ content }}
+          </div>
         </div>
         {% include first_footer.html %}
         {% include second_footer.html %}
