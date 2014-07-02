@@ -2,19 +2,19 @@
   <h2 class="block-title">Latest Articles</h2>
 
   <div class="content">
-    <div class="view view-article view-id-article view-display-id-latest_articles view-dom-id-1e32192fe6e18566cf2b6808070300c2">
+    <div class="view view-article view-id-article view-display-id-latest_articles">
 
       <div class="view-content">
         <div class="view-content-limit">
           <div class="view-content-limit-content">
-            {% for post in site.posts %}
-              <div class="views-row">
-
+            {% for post in site.posts limit:3 %}
+            {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+              <div class="views-row views-row-{{ forloop.index }} views-row-{{ thecycle }} {%if forloop.first %}views-row-first{%endif%}{%if forloop.last %}views-row-last{%endif%}">
                 <div class="fields">
                   <div class="views-field views-field-term-node-tid">
                     <span class="field-content">
-                      <a href="/java">
-                        <div class="JAVA">JAVA</div>
+                      <a href="{{ post.tags.first | downcase }}">
+                        <div class="{{ post.tags.first | upcase }}">{{ post.tags.first }}</div>
                       </a>
                     </span>
                   </div>
@@ -33,9 +33,12 @@
                   </div>
                   <div class="views-field views-field-body">
                     <div class="field-content">
-                      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                      <span style="background-color: transparent;</body></html>">
-                      </span>
+                      <p>
+                        {% if post.content contains '</p>' %}
+                          {{ post.content | split:'</p>' | first }}
+                        {% else %}
+                          {{ post.content }}
+                        {% endif %}
                       </p>
                     </div>
                   </div>
@@ -44,11 +47,16 @@
                       {{ post.date | post_date }}
                     </span>
                   </div>
-                </div>
+                  <div class="views-field views-field-comment-count">
+                    <span class="field-content">
+                      <a class="comments" href="{{ post.permalink | to_baseurl }}#comments">
+                        <div url="{{ post.permalink | to_baseurl }}" class="count-comment">0</div>
+                        <div class="label-comment">comments</div>
+                      </a>
+                    </span>
+                  </div>
               </div>
-              {% if forloop.index == 3 %}
-                {% break %}
-              {% endif %}
+              </div>
             {% endfor %}
           </div>
         </div>
@@ -56,7 +64,6 @@
       <div class="view-footer">
         <a href="/latest-articles" class="read-more">Read More »</a>
       </div>
-
     </div>
   </div><!-- /.content -->
 </section>
