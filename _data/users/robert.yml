@@ -3,11 +3,11 @@ id: 20922
 login: robert
 first_name: Robert
 last_name: Ferentz
-description: 
+description:
 about: ''
 follow_me_urls: []
 image_path: pictures/picture-20922-1384345906.jpg
-permalink: /robert
+permalink: /js/robert
 skills:
   expert_skills:
     JavaScript: '6'
