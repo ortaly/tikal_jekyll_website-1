@@ -4097,12 +4097,12 @@ background-color:#c42a44
 }
 .contact-information div.adderss
 {
-  background:url('/sites/all/themes/sasson/tikal/images/marker-icon.png') no-repeat 6px 4px;
+  background:url(asset_path('icons/marker-icon.png')) no-repeat 6px 4px;
   height:44px
 }
 .contact-information .email
 {
-  background:url('/sites/all/themes/sasson/tikal/images/email-icon.png') no-repeat 2px 5px;
+  background:url(asset_path('icons/email-icon.png')) no-repeat 2px 5px;
   margin-top:6px;
   height:40px
 }
@@ -4112,14 +4112,14 @@ background-color:#c42a44
 }
 .contact-information .phone
 {
-  background:url('/sites/all/themes/sasson/tikal/images/phone-icon.png') no-repeat;
+  background:url(asset_path('icons/phone-icon.png')) no-repeat;
   height:41px;
   margin-top:10px;
   padding-top:5px
 }
 .external-links-contact-page
 {
-  width:275px;
+  width:324px;
   margin:29px 0 45px 2px
 }
 .external-links-contact-page ul.menu
@@ -4136,7 +4136,7 @@ background-color:#c42a44
 }
 .external-links-contact-page ul.menu a
 {
-  background:url('/sites/all/themes/sasson/tikal/images/social-icons-large.png') no-repeat;
+  background:url(asset_path('icons/social-icons-large.png')) no-repeat;
   font-size:0px;
   padding:27px
 }
@@ -4158,8 +4158,13 @@ background-color:#c42a44
 }
 .external-links-contact-page ul.menu li.youtube a
 {
-  background-position:-215px 1px
+  background-position: -269px 1px;
 }
+.external-links-contact-page ul.menu li.meetup a 
+{
+  background-position: -322px 1px;
+}
+
 .map-contact-page
 {
   border:1px solid #dedede;
@@ -4219,7 +4224,7 @@ background-color:#c42a44
   background:white;
   font-size:12px;
   padding-left:7px;
-  background:url('/sites/all/themes/sasson/tikal/images/select-arrow.jpg') no-repeat 430px 13px;
+  background:url(asset_path('icons/select-arrow.jpg')) no-repeat 430px 13px;
   padding:10px;
   display:inline-block;
   -webkit-appearance:initial
