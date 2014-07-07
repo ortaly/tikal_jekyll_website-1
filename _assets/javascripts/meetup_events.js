@@ -28,7 +28,7 @@
 				status: status,
 				offset: offset,
 				page: page,
-				desc:desc						
+				desc:desc
 			};
 
 			if(angular.isDefined(desc)){
@@ -37,7 +37,7 @@
 
 			params = angular.extend(params, MeetupsApiParams);
 			delete params.baseApiUrl;
-			
+
 			return params;
 		}
 
@@ -78,7 +78,7 @@
 					params = {
 						callback: MeetupsApiParams.callback,
 						key: MeetupsApiParams.key,
-						sign: MeetupsApiParams.sign   
+						sign: MeetupsApiParams.sign
 					};
 
 
@@ -105,7 +105,7 @@
 
 
 	module.controller('Sn.MainCtrl', ['$scope', function($scope){
-		
+
 		var _self = this;
 
 		this.displayUpComing = function displayUpComing(){
@@ -121,11 +121,11 @@
 		(function init(){
 			_self.displayUpComing();
 		})();
-		
+
 	}]);
 
 	module.controller('Sn.MeetupsCtrl', ['$scope', 'MeetupsService', function($scope, MeetupsService){
-		
+
 		var _self = this,
 			lastOffset = 0;
 
@@ -188,28 +188,34 @@
 
 	module.directive('meetupEvent', ['$location', function($location){
 
-		var absUrl = $location.absUrl(),
-			absUrlArr = absUrl.substring(0, absUrl.length - 1).split('/'),
-			templateUrl = 'meetup-event.html';
-
-		if(absUrlArr[absUrlArr.length - 1] !== 'events'){
-			templateUrl = 'events/home-meetup-event.html';
-		}
-
-
 		return {
 			restrict: 'E',
+			templateUrl:'/'+Sn.SiteParams.baseUrl+'/events/meetup-event.html',
 			replace: true,
 			scope: {
 				meetups: '=',
 				title: '@',
 				isUpcomingEvent: '@'
 			},
-			templateUrl: templateUrl,
 			link: function(scope, element){
 			}
 		};
 	}]);
 
-	
+module.directive('meetupListEvent', ['$location', function($location){
+
+	return {
+		restrict: 'E',
+		templateUrl:'/'+Sn.SiteParams.baseUrl+'/block-meetup-event.html',
+		replace: true,
+		scope: {
+			meetups: '=',
+			title: '@',
+			isUpcomingEvent: '@'
+		},
+		link: function(scope, element){
+		}
+	};
+}]);
+
 })();
