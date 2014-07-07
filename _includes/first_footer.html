@@ -11,7 +11,7 @@
             By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
         </div>
         <div class="contact-title">
-          Contact Inforamtion</div>
+          Contact Information</div>
         <div class="contact-number">
           (972) 3 6488618</div>
         <div class="contact-mail">
@@ -20,36 +20,40 @@
     </section><!-- /.block -->
     <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
       <h2 class="block-title">Join the Team</h2>
-
       <div class="content">
-        <form class="webform-client-form" enctype="multipart/form-data" action="/solutions" method="post" id="webform-client-form-22" accept-charset="UTF-8"><div><div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
-              <p>Let us contact you with more information</p>
-
+        <form class="webform-client-form" enctype="multipart/form-data" action="//forms.brace.io/jobs@tikalk.com" method="post" id="webform-client-form-22" accept-charset="UTF-8">
+          <div>
+            <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+                <p>Let us contact you with more information</p>
             </div>
             <div class="form-item webform-component webform-component-textfield" id="webform-component-full-name">
-              <input placeholder="Full Name" type="text" id="edit-submitted-full-name--2" name="submitted[full_name]" value="" size="60" maxlength="30" class="form-text required">
+              <input placeholder="Full Name" type="text" id="edit-submitted-full-name--2" name="full_name" value="" size="60" maxlength="30" class="form-text required">
             </div>
             <div class="form-item webform-component webform-component-email" id="webform-component-email-address">
-              <input class="email form-text form-email required" placeholder="Email Address" type="email" id="edit-submitted-email-address" name="submitted[email_address]" size="60">
+              <input class="email form-text form-email required" placeholder="Email Address" type="email" id="edit-submitted-email-address" name="email_address" size="60">
             </div>
             <div class="form-item webform-component webform-component-phone" id="webform-component-phone-number">
-              <input placeholder="Phone Number (optional)" type="text" id="edit-submitted-phone-number--2" name="submitted[phone_number]" value="" size="17" maxlength="15" class="form-text">
+              <input placeholder="Phone Number (optional)" type="text" id="edit-submitted-phone-number--2" name="phone_number" value="" size="17" maxlength="15" class="form-text">
             </div>
             <div class="form-item webform-component webform-component-textfield" id="webform-component-youre-a-ninja">
-              <input placeholder="You're a Ninja in... (ex: java, ruby)" type="text" id="edit-submitted-youre-a-ninja" name="submitted[youre_a_ninja]" value="" size="60" maxlength="35" class="form-text">
+              <input placeholder="You're a Ninja in... (ex: java, ruby)" type="text" id="edit-submitted-youre-a-ninja" name="youre_a_ninja_in" value="" size="60" maxlength="35" class="form-text">
             </div>
-            <div id="edit-submitted-click-to-add-your-cv-ajax-wrapper"><div class="form-item webform-component webform-component-managed_file" id="webform-component-click-to-add-your-cv">
+            <div id="edit-submitted-click-to-add-your-cv-ajax-wrapper">
+              <div class="form-item webform-component webform-component-managed_file" id="webform-component-click-to-add-your-cv">
                 <label for="edit-submitted-click-to-add-your-cv">Click to add your CV </label>
-                <div id="edit-submitted-click-to-add-your-cv" class="form-managed-file"><input type="file" id="edit-submitted-click-to-add-your-cv-upload" name="files[submitted_click_to_add_your_cv]" size="22" class="form-file"><input type="submit" id="edit-submitted-click-to-add-your-cv-upload-button" name="submitted_click_to_add_your_cv_upload_button" value="Upload" class="form-submit ajax-processed"><input type="hidden" name="submitted[click_to_add_your_cv][fid]" value="0">
+                <div id="edit-submitted-click-to-add-your-cv" class="form-managed-file">
+                  <input type="file" id="edit-submitted-click-to-add-your-cv-upload" name="cv" size="22" class="form-file">
+                  <input type="submit" id="edit-submitted-click-to-add-your-cv-upload-button" name="cv_upload_button" value="Upload" class="form-submit ajax-processed">
+                  <input type="hidden" name="submitted[click_to_add_your_cv][fid]" value="0">
                 </div>
               </div>
-            </div><input type="hidden" name="details[sid]" value="">
-            <input type="hidden" name="details[page_num]" value="1">
-            <input type="hidden" name="details[page_count]" value="1">
-            <input type="hidden" name="details[finished]" value="0">
-            <input type="hidden" name="form_build_id" value="form-JAmxAKz-sq2RAJmOFN-do0Cl8aTFfzPgKSYBY2LV7nk">
-            <input type="hidden" name="form_id" value="webform_client_form_22">
-            <div class="form-actions form-wrapper" id="edit-actions--3"><input type="submit" id="edit-submit--3" name="op" value="Send" class="form-submit"></div></div></form>  </div><!-- /.content -->
+            </div>
+            <div class="form-actions form-wrapper" id="edit-actions--3">
+              <input type="submit" id="edit-submit--3" name="op" value="Send" class="form-submit">
+            </div>
+          </div>
+        </form>  
+      </div><!-- /.content -->
     </section><!-- /.block -->
     <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
       <h2 class="block-title">Find us at:</h2>
@@ -65,7 +69,8 @@
                   mapTypeControl: false,
                   mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
                   navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-                  mapTypeId: google.maps.MapTypeId.ROADMAP};
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
             var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
             var companyImage = new google.maps.MarkerImage("sites/all/themes/sasson/tikal/images/logo-map.png",
                 new google.maps.Size(100,50),
@@ -87,12 +92,13 @@
       </script>  </div><!-- /.content -->
     </section><!-- /.block -->
     <div id="block-block-3" class="block block-block find-us-at block-odd">
-
       <div class="content">
         <div class="address">
           Habarzel 4 st, 1st Floor&nbsp;<br>
           Tel Aviv 69710<br>
-          Israel</div>  </div><!-- /.content -->
+          Israel
+        </div>  
+      </div><!-- /.content -->
     </div><!-- /.block -->
   </div>
 </footer>
