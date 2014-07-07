@@ -2401,7 +2401,7 @@ background-color:#c42a44
 .our-expertese,.our-technology-domains
 {
   clear:both;
-  margin-bottom:34px
+  margin-bottom:34px;
 }
 .our-expertese .block-title,.our-technology-domains .block-title
 {
@@ -2424,7 +2424,7 @@ background-color:#c42a44
 {
   position:relative;
   display:inline-block;
-  width:124px;
+  width:105px;
   height:82px;
   top:0;
   left:0;
@@ -2436,8 +2436,9 @@ background-color:#c42a44
   transition-duration:0.2s;
   -webkit-transition-duration:0.2s
 }
-.our-expertese ul.menu li.alm a,.our-technology-domains ul.menu li.alm a
+.our-expertese ul.menu li.devops a,.our-technology-domains ul.menu li.devops a
 {
+  width:138px;
   background-color:#c42a44;
   margin-left:0
 }
@@ -2449,8 +2450,9 @@ background-color:#c42a44
 {
   background-color:#547a7d
 }
-.our-expertese ul.menu li[class*="net"] a,.our-technology-domains ul.menu li[class*="net"] a
+.our-expertese ul.menu li.android a,.our-technology-domains ul.menu li.android a
 {
+  width:140px;
   background-color:#e05e46
 }
 .our-expertese ul.menu li.ror a,.our-technology-domains ul.menu li.ror a
@@ -2462,7 +2464,7 @@ background-color:#c42a44
   z-index:100;
   top:-10px;
   left:-4px;
-  width:132px;
+  width:145px;
   height:95px;
   padding-top:31px;
   font-size:40px;
@@ -3375,7 +3377,6 @@ background-color:#c42a44
 {
   display:inline-block;
   margin-top:17px;
-  margin-bottom:0
 }
   #support
 {
