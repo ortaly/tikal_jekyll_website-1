@@ -5,7 +5,7 @@ created: 1269407553
 author: ittayd
 permalink: /alm/undoing-merges-git
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>&nbsp;<span class="Apple-style-span" style="line-height: 19px; font-size: 12px; "><a href="http://progit.org/2010/03/02/undoing-merges.html">http://progit.org/2010/03/02/undoing-merges.html</a></span></p>

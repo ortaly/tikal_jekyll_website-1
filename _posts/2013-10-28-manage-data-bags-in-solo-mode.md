@@ -5,7 +5,6 @@ created: 1382945525
 author: hagzag
 permalink: manage-data-bags-in-solo-mode
 tags:
-- ALM
 - Chef
 - opscode chef
 - DevOps

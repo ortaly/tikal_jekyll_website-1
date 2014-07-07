@@ -5,7 +5,7 @@ created: 1268513065
 author: hagzag
 permalink: /alm/send-receive-smss-gmail-tikal-google-apps-account
 tags:
-- ALM
+- DevOps
 ---
 <p>Send &amp; Receive SMS's via Gmail / Tikal Google apps account, the &quot;catch&quot; is you are limited to 50 SMS's although on every incoming SMS you receive 5 more so really Google is trying to motivate us use their phone services too.</p>
 <p><img width="542" vspace="5" hspace="5" height="212" border="1" align="left" src="/files/upload/29/Gmail-SMS.PNG" alt="" /></p>

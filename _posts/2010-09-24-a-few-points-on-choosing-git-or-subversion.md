@@ -5,7 +5,7 @@ created: 1285337533
 author: ittayd
 permalink: /alm/few-points-choosing-git-or-subversion
 tags:
-- ALM
+- DevOps
 - git subversion
 - scm
 ---

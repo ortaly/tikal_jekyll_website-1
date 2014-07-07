@@ -5,7 +5,7 @@ created: 1234208851
 author: liya
 permalink: /alm/collabnet-merge-client
 tags:
-- ALM
+- DevOps
 - eclipse svn
 ---
 <p>The <span><span>CollabNet</span></span> Merge Client has been built on top of Eclipse and <span><span>Subclipse</span></span> and also on top of the merge tracking feature of Subversion 1.5 and requires Subversion 1.5 on the client.</p>

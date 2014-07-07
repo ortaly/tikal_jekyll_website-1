@@ -4,7 +4,7 @@ title: 'CeBIT 2009: Mozilla Shows Off Next Generation Web '
 created: 1245218167
 permalink: cebit-2009-mozilla-shows-off-next-generation-web
 tags:
-- ALM
+- DevOps
 - Firefox
 ---
 <p>The Mozilla Foundation features a booth in the Open Source Project lounge in Hall 6 at this year's CeBIT.</p>

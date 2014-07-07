@@ -5,7 +5,7 @@ created: 1373651893
 author: liya
 permalink: jenkins-promoted-builds-simple-ext-plugin-is-on-git-hub
 tags:
-- ALM
+- DevOps
 - jenkins
 ---
 <p>Promoted Builds Simple Ext plugin is on <a href="https://github.com/tikalk/promoted-builds-simple-ext-plugin">GitHub</a></p>

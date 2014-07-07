@@ -5,10 +5,9 @@ created: 1386060762
 author: yorammi
 permalink: /runtime-boxes-mobile-or-missing-box
 tags:
-- ALM
+- DevOps
 - Mobile
 - fullstack
-- DevOps
 ---
 <p>The slides of the 3rd presentation in &quot;Chef &amp; Vagrant: DEVOPS perfect couple&quot;&nbsp;<span style="font-family: 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 12.727272033691406px; line-height: 15.454545021057129px; text-align: right;"><a href="http://www.meetup.com/full-stack-developer-il/events/148415092/">meetup</a>:</span></p>
 

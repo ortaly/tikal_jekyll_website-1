@@ -5,7 +5,7 @@ created: 1329116704
 author: itai
 permalink: /continuous-integration-mobile-platforms
 tags:
-- ALM
+- DevOps
 - CI
 - Mobile
 ---

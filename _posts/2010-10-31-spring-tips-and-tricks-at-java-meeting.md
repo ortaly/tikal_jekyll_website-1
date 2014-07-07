@@ -5,7 +5,7 @@ created: 1288533102
 author: zvika
 permalink: /alm/spring-tips-and-tricks-java-meeting
 tags:
-- ALM
+- DevOps
 - Spring
 ---
 <p><span style="font-size: medium;">Hi,<br />

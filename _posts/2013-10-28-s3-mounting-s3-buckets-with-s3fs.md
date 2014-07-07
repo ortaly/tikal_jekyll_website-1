@@ -5,7 +5,7 @@ created: 1382944340
 author: hagzag
 permalink: /alm/s3-mounting-s3-buckets-s3fs
 tags:
-- ALM
+- DevOps
 - Amazon EC2
 - S3
 - s3fs

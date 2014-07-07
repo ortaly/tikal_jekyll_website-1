@@ -5,7 +5,7 @@ created: 1267862972
 author: hagzag
 permalink: /alm/learn-about-continuous-integration-hudson-directly-source
 tags:
-- ALM
+- DevOps
 - Hudson
 - Continuous Integration
 ---

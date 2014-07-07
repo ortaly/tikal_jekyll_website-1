@@ -5,7 +5,7 @@ created: 1269339803
 author: liya
 permalink: /alm/nexus-vs-artifactory
 tags:
-- ALM
+- DevOps
 - Nexus
 - Artifactory
 - Maven2

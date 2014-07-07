@@ -5,7 +5,7 @@ created: 1304453957
 author: liya
 permalink: /alm/how-not-download-internet
 tags:
-- ALM
+- DevOps
 - build maven
 ---
 <p>A nice post by Tim O'Brien on the well-known criticism about Maven - &ldquo;every time you run Maven, it downloads the Internet.&rdquo; -</p>

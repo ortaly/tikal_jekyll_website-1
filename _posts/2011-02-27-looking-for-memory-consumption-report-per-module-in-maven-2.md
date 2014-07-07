@@ -5,7 +5,7 @@ created: 1298818619
 author: hagzag
 permalink: /alm/looking-memory-consumption-report-module-maven-2
 tags:
-- ALM
+- DevOps
 ---
 <p>I am looking for a solution which will list Memory consumption per maven module during execution.</p>
 <p>Very similar to the one presented at the end of the build</p>

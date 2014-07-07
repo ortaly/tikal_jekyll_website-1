@@ -5,7 +5,7 @@ created: 1248582293
 author: yanai
 permalink: /alm/jpa-implementation-patterns
 tags:
-- ALM
+- DevOps
 - Patterns JPA
 - JPA
 ---

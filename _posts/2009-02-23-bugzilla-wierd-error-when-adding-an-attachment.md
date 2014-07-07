@@ -5,7 +5,7 @@ created: 1235407665
 author: liya
 permalink: /alm/bugzilla-wierd-error-when-adding-attachment
 tags:
-- ALM
+- DevOps
 - bugzilla
 ---
 

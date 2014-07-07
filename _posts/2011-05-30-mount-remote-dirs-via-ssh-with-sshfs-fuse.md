@@ -5,7 +5,7 @@ created: 1306703837
 author: hagzag
 permalink: /alm/mount-remote-dirs-ssh-sshfs-fuse
 tags:
-- ALM
+- DevOps
 - ssh
 ---
 <p>Well, there is nothing like a simple and easy innovative solutions to save the day -it's been around for quite a while and never really needed it until now ...</p>

@@ -5,7 +5,7 @@ created: 1291811853
 author: lior.kanfi
 permalink: /alm/introduction-easyant
 tags:
-- ALM
+- DevOps
 - ant ivy
 ---
 <p><a href="http://www.easyant.org/doc/">EasyAnt</a>, a new build system based on Apache Ant and Apache Ivy</p>

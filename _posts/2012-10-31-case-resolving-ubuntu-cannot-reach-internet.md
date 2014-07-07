@@ -5,7 +5,7 @@ created: 1351668196
 author: yorammi
 permalink: /alm/case-resolving-ubuntu-cannot-reach-internet
 tags:
-- ALM
+- DevOps
 - ubuntu network
 ---
 <p><u><strong>Case description</strong></u>:&nbsp;</p>

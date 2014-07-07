@@ -4,7 +4,7 @@ title: Small memory footprint web servers?
 created: 1265635332
 permalink: small-memory-footprint-web-servers
 tags:
-- ALM
+- DevOps
 - jvm
 - web server
 ---

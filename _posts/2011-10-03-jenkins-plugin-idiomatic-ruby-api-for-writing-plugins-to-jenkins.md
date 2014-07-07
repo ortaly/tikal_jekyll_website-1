@@ -5,7 +5,7 @@ created: 1317616749
 author: ittayd
 permalink: /jenkins-plugin-idiomatic-ruby-api-writing-plugins-jenkins
 tags:
-- ALM
+- DevOps
 - jenkins
 - jenkins ruby
 ---

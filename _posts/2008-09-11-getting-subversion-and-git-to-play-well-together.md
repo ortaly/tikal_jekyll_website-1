@@ -5,6 +5,6 @@ created: 1221131415
 author: keren
 permalink: /alm/getting-subversion-and-git-play-well-together
 tags:
-- ALM
+- DevOps
 ---
 <p>I want a git repository I can use locally, but that also permits me to push my changes up to the corporate Subversion repository when I'm ready.</p>

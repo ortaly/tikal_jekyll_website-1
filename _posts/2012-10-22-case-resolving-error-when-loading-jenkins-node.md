@@ -5,7 +5,7 @@ created: 1350905557
 author: yorammi
 permalink: /alm/case-resolving-error-when-loading-jenkins-node
 tags:
-- ALM
+- DevOps
 - Mac
 - jenkins
 ---

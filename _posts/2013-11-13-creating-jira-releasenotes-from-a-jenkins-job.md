@@ -5,7 +5,7 @@ created: 1384359902
 author: gil
 permalink: /alm/creating-jira-releasenotes-jenkins-job
 tags:
-- ALM
+- DevOps
 - jira jenkins shell scripting
 ---
 <p>I got an interesting task from my customer. He wanted me to generate a ReleaseNotes.html file automatically from a Jenkins job&#39;s build.</p>

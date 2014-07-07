@@ -5,8 +5,8 @@ created: 1330815238
 author: liya
 permalink: /setup-git-and-gitweb-under-apache-ubuntu
 tags:
-- ALM
-- alm git gitweb apache
+- DevOps
+- git gitweb apache
 ---
 <p><span style="font-size: medium;"><span style="color: rgb(0, 0, 0);">Once you have installed git (gitweb included) and apache, here is the simple setup you need to do:</span></span></p>
 <div style="margin-bottom: 0in"><span style="font-size: medium;"><span style="color: rgb(0, 0, 0);">&nbsp;</span></span></div>

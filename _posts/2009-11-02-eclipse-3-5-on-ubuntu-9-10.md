@@ -5,7 +5,7 @@ created: 1257151174
 author: itai
 permalink: /alm/eclipse-35-ubuntu-910
 tags:
-- ALM
+- DevOps
 - Eclipse 3.5 Ubuntu 9.10
 ---
 <p>If you upgrade to Ubuntu 9.10 and then eclipse buttons stop work.</p>

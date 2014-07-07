@@ -5,8 +5,7 @@ created: 1381154906
 author: gil
 permalink: /alm/flex-compilation-using-mxmlc-loop-windows-batch-script
 tags:
-- ALM
-- ALM
+- DevOps
 ---
 <p>Basically, what I have tried to do is using a Jenkins job to run on a windows machine, run over a few modules folders, get the mxml files under them and compile using mxmlc (flex compiler).</p>
 

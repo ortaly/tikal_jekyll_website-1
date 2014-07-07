@@ -5,7 +5,7 @@ created: 1270565051
 author: hagzag
 permalink: /alm/kohsuke-kawaguchi-saying-good-bye-sunoracle
 tags:
-- ALM
+- DevOps
 - Hudson
 - sun
 - oracle

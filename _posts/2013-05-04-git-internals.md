@@ -5,7 +5,7 @@ created: 1367676800
 author: hagzag
 permalink: /alm/git-internals
 tags:
-- ALM
+- DevOps
 - git
 - git internals
 - DAG

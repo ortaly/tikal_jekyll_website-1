@@ -5,7 +5,7 @@ created: 1268929658
 author: ittayd
 permalink: /alm/joel-spolsky-distributed-version-control-here-stay-baby
 tags:
-- ALM
+- DevOps
 - dvcs
 ---
 <p>&nbsp;Joel Spolsky, from Joel on Software fame blogs about why he thinks DVCS systems are great:&nbsp;<span class="Apple-style-span" style="line-height: 19px; font-size: 12px; "><a href="http://www.joelonsoftware.com/items/2010/03/17.html">http://www.joelonsoftware.com/items/2010/03/17.html</a></span></p>

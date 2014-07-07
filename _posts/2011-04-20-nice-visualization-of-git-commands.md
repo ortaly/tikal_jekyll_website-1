@@ -5,7 +5,7 @@ created: 1303273965
 author: ittayd
 permalink: /alm/nice-visualization-git-commands
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>http://www.ndpsoftware.com/git-cheatsheet.html</p>

@@ -5,7 +5,7 @@ created: 1296573009
 author: ittayd
 permalink: /alm/sonatype-will-support-oracles-hudson
 tags:
-- ALM
+- DevOps
 - Hudson
 - sonatype hudson oracle
 ---

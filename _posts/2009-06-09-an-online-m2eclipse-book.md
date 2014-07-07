@@ -5,7 +5,7 @@ created: 1244496645
 author: lior.kanfi
 permalink: /alm/online-m2eclipse-book
 tags:
-- ALM
+- DevOps
 - m2eclipse
 ---
 <p>The <a href="http://www.scribd.com/doc/16196659/Developing-with-Eclipse-and-Maven">m2eclipse book is now available on Scribd</a>.</p>

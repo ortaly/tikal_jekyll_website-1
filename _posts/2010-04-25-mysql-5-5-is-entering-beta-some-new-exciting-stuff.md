@@ -4,7 +4,7 @@ title: MySQL 5.5 is entering beta; some new exciting stuff.
 created: 1272181883
 permalink: mysql-5-5-is-entering-beta-some-new-exciting-stuff
 tags:
-- ALM
+- DevOps
 - MySQL
 ---
 <p>It&lsquo;s been a long time, from my point of view, since MySQL was out with something exciting.<br />

@@ -5,7 +5,7 @@ created: 1391156169
 author: hagzag
 permalink: /alm/docker-service-discovery-skydns-and-skydock
 tags:
-- ALM
+- DevOps
 - Docker
 - skydock
 - skydns

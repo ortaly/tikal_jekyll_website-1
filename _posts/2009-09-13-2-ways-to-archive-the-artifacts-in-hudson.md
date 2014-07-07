@@ -5,7 +5,7 @@ created: 1252828192
 author: liya
 permalink: /alm/2-ways-archive-artifacts-hudson
 tags:
-- ALM
+- DevOps
 - Hudson
 - Continuous Integration
 ---

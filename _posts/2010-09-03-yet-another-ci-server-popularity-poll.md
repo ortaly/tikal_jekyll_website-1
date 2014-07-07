@@ -5,7 +5,7 @@ created: 1283529207
 author: hagzag
 permalink: /alm/yet-another-ci-server-popularity-poll
 tags:
-- ALM
+- DevOps
 - Hudson
 - Continuous Integration
 ---

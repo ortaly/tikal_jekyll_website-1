@@ -5,7 +5,7 @@ created: 1314685416
 author: ittayd
 permalink: /nestor-jenkins-nodejs-cli
 tags:
-- ALM
+- DevOps
 - jenkins
 ---
 <p>Nestor is a Jenkins command-line interface written in Node.js .</p>

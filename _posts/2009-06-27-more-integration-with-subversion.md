@@ -5,7 +5,7 @@ created: 1246085122
 author: liya
 permalink: /alm/more-integration-subversion
 tags:
-- ALM
+- DevOps
 ---
 <p>More integration with Subversion:<br />
 Integration of the TortoiseSVN client into the PL/SQL Developer IDE (Beta-phase) - http://plsqldev-svn-plugin.tigris.org/</p>

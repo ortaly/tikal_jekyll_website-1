@@ -5,7 +5,7 @@ created: 1298545935
 author: admin
 permalink: /alm/fuse-day3-reactor-job-new-hudson-job-type-session-summary
 tags:
-- ALM
+- DevOps
 - hudson jenkins
 - Hudson
 ---

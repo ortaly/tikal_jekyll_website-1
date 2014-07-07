@@ -5,7 +5,7 @@ created: 1275855250
 author: liya
 permalink: /alm/eclipse-projectset-plugin-subversion
 tags:
-- ALM
+- DevOps
 - eclipse svn
 ---
 <p>For those of you that miss the eclipse projectset plugin we used to work with cvs, i finally found <a href="http://vpms.de.csc.com/projectset/">its latest version and the SVN adaptors</a> that works fine in the latest eclipse (Galileo).</p>

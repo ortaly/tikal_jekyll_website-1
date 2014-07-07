@@ -5,7 +5,7 @@ created: 1246272059
 author: yanai
 permalink: /alm/fail-maven-build-upon-wrong-dependencies
 tags:
-- ALM
+- DevOps
 - Maven JBoss tattletale
 ---
 <p>One of our customers wants to its fail the build process upon dupliactes jars, duplicates classes (a.k.a. Jar hell, class loading hell...).</p>

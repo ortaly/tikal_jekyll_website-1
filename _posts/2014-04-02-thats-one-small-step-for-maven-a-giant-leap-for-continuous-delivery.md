@@ -5,13 +5,12 @@ created: 1396469311
 author: yorammi
 permalink: /alm/thats-one-small-step-maven-giant-leap-continuous-delivery
 tags:
-- ALM
+- DevOps
 - maven
 - Continuous Delivery
 - scm
 - build
 - git
-- DevOps
 ---
 <p>More than a decade ago, when I was first been introduced with Maven, I had one big issue with its concept:&nbsp;along side with all its benefits (and there are many as such), I didn&#39;t like the idea that for each version of my product I need to set the version of it inside the pom.xml file and save the file (with the version text inside it) as part of my code.<br />
 This concept were against any understanding I have about versioning methodologies and it caused me to actually dislike Maven. Maven 3.2.1 introduced, for the first time, a&nbsp;small feature that turn all the written above upside-down.</p>

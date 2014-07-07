@@ -4,7 +4,7 @@ title: Hudson + Sonar = A Perfect Match!
 created: 1263195032
 permalink: hudson-sonar-a-perfect-match
 tags:
-- ALM
+- DevOps
 - CI
 - Hudson
 - Sonar

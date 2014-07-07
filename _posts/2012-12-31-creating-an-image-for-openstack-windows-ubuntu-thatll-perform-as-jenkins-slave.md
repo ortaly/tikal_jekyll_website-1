@@ -6,7 +6,7 @@ created: 1356973351
 author: gil
 permalink: /alm/creating-image-openstack-windows-ubuntu-thatll-perform-jenkins-slave
 tags:
-- ALM
+- DevOps
 - tikal
 ---
 <div>As part of Tikal's 6th fuse day, our (ALM team) goal was to integrate Jenkins, Chef and OpenStack.</div>

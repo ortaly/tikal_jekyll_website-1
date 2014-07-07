@@ -5,7 +5,7 @@ created: 1286092602
 author: hagzag
 permalink: /alm/discuss-30-second-rule-it-doable
 tags:
-- ALM
+- DevOps
 - optimization
 - Time management
 ---

@@ -4,7 +4,7 @@ title: 10 Sure Signs You Are Doing Maven Wrong
 created: 1270731516
 permalink: 10-sure-signs-you-are-doing-maven-wrong
 tags:
-- ALM
+- DevOps
 ---
 <h2>10 Sure Signs You Are Doing Maven Wrong</h2>
 <p>&nbsp;</p>

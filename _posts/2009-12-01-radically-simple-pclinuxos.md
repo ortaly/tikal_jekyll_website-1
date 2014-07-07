@@ -5,7 +5,7 @@ created: 1259621252
 author: shalom
 permalink: /alm/radically-simple-pclinuxos
 tags:
-- ALM
+- DevOps
 - PCLinuxOS apt-get upgrade linux
 ---
 <p>I know this post doesn't fit any of our groups ,but i had to share with you my very short experience with yet another linux distro, <a href="http://pclinuxos.com/">PCLinuxOS </a>, which i think is a nice one, a little window&rsquo;sh ,well.. maybe more then a little, it even has the &lsquo;My Computer&rsquo; icon on the Desktop.</p>

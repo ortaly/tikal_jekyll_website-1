@@ -5,7 +5,7 @@ created: 1293997735
 author: hagzag
 permalink: /alm/tce-automatic-people-presentation
 tags:
-- ALM
+- DevOps
 - Continuous Integration
 - Hudson
 - Automation

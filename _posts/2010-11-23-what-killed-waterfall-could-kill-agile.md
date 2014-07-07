@@ -5,7 +5,7 @@ created: 1290498749
 author: ittayd
 permalink: /alm/what-killed-waterfall-could-kill-agile
 tags:
-- ALM
+- DevOps
 - scrum
 ---
 <p>http://cleancoder.posterous.com/what-killed-waterfall-could-kill-agile</p>

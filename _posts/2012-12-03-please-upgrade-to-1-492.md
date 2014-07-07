@@ -5,7 +5,7 @@ created: 1354528343
 author: hagzag
 permalink: /alm/please-upgrade-1492
 tags:
-- ALM
+- DevOps
 - regression
 - jenkins
 ---

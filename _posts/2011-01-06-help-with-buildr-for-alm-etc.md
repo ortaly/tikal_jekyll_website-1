@@ -4,7 +4,7 @@ title: Help with buildr for ALM etc
 created: 1294309288
 permalink: help-with-buildr-for-alm-etc
 tags:
-- ALM
+- DevOps
 - buildr
 ---
 <p>Full details here:</p>

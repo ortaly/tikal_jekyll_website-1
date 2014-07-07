@@ -4,7 +4,7 @@ title: Automated Smoke Tests With Selenium, Cargo, TestNG and Maven
 created: 1266777808
 permalink: automated-smoke-tests-with-selenium-cargo-testng-and-maven
 tags:
-- ALM
+- DevOps
 - maven
 - Cargo
 ---

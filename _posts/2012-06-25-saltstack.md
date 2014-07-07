@@ -5,7 +5,6 @@ created: 1340622087
 author: lior.kanfi
 permalink: /saltstack
 tags:
-- ALM
 - DevOps
 - Python
 ---

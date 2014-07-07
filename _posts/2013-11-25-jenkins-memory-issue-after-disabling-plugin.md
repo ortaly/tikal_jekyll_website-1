@@ -5,8 +5,8 @@ created: 1385378611
 author: itai
 permalink: jenkins-memory-issue-after-disabling-plugin
 tags:
-- ALM
-- Jenkins ALM
+- DevOps
+- Jenkins
 ---
 <div style="color: rgb(34, 34, 34); font-family: arial; font-size: small; line-height: normal;">
 <div>Recently we upgrade few plugins in jenkins and we suffered from unexpected behaviour .</div>

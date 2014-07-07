@@ -5,7 +5,7 @@ created: 1252813935
 author: yanai
 permalink: /alm/open-source-companies-developer-dilemma
 tags:
-- ALM
+- DevOps
 - operations
 - Open Source
 ---

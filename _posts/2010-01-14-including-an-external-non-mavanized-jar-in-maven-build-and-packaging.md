@@ -5,7 +5,7 @@ created: 1263433896
 author: shalom
 permalink: /alm/including-external-non-mavanized-jar-maven-build-and-packaging
 tags:
-- ALM
+- DevOps
 - package
 - maven-install-plugin
 - maven

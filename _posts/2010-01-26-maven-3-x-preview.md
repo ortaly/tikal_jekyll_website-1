@@ -5,7 +5,7 @@ created: 1264458046
 author: liya
 permalink: /alm/maven-3x-preview
 tags:
-- ALM
+- DevOps
 - build
 - maven
 ---

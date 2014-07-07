@@ -150,7 +150,7 @@
 		}
 
 		function onError(data){
-			debugger;
+			//debugger;
 		}
 
 		function loadPastEvents(offset){

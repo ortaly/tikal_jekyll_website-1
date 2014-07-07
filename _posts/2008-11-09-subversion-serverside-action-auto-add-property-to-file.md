@@ -5,7 +5,7 @@ created: 1226228564
 author: hagzag
 permalink: /alm/subversion-serverside-action-auto-add-property-file
 tags:
-- ALM
+- DevOps
 - auto_set_svn_prop
 - CRLF
 ---

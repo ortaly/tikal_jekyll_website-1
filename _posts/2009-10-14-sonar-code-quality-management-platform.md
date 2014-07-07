@@ -5,7 +5,7 @@ created: 1255526445
 author: liya
 permalink: /alm/sonar-code-quality-management-platform
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p><span style="display: none;" id="1255525407234S">&nbsp;</span></p>

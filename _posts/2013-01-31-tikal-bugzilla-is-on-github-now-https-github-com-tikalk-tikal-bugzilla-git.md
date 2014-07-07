@@ -5,7 +5,6 @@ created: 1359637059
 author: liya
 permalink: /alm/tikal-bugzilla-github-now-httpsgithubcomtikalktikal-bugzillagit
 tags:
-- ALM
-- ALM bugzilla
+- DevOps bugzilla
 ---
 

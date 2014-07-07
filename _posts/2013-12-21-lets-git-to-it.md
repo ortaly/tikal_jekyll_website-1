@@ -5,7 +5,7 @@ created: 1387619917
 author: yorammi
 permalink: /lets-git-it
 tags:
-- ALM
+- DevOps
 - git
 - git introduction
 ---

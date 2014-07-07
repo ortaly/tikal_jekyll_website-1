@@ -5,7 +5,7 @@ created: 1313302657
 author: hagzag
 permalink: /care-write-jruby-plug-ins-jenkins
 tags:
-- ALM
+- DevOps
 - Hudson
 - Continuous Integration
 - jenkins

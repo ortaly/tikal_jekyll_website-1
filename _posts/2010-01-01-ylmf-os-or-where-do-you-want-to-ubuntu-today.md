@@ -5,7 +5,7 @@ created: 1262350707
 author: hagzag
 permalink: /alm/ylmf-os-or-where-do-you-want-ubuntu-today
 tags:
-- ALM
+- DevOps
 - ubuntu
 ---
 <p>Chinese developers/hackers have come up with a solution for those who want the look and feel of Windows XP, but can&rsquo;t or won&rsquo;t pay Microsoft the license fee.</p>

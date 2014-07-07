@@ -5,7 +5,7 @@ created: 1253774018
 author: ittayd
 permalink: /alm/automated-deployment-maven
 tags:
-- ALM
+- DevOps
 ---
 <p>http://www.slideshare.net/wakaleo/automated-deployment-with-maven-going-the-whole-nine-yards</p>
 <p>&nbsp;</p>

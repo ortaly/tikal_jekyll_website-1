@@ -5,7 +5,7 @@ created: 1285486383
 author: hagzag
 permalink: /alm/kohsuke-kawaguchi-otn-javaone
 tags:
-- ALM
+- DevOps
 - Hudson
 - Continuous Integration
 ---

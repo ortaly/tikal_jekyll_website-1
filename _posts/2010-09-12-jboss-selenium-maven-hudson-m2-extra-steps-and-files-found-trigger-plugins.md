@@ -5,7 +5,7 @@ created: 1284325839
 author: hagzag
 permalink: /alm/jboss-selenium-maven-hudson-m2-extra-steps-files-found-trigger-plugins
 tags:
-- ALM
+- DevOps
 - selenium
 - Hudson
 ---

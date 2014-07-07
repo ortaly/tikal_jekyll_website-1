@@ -5,7 +5,7 @@ created: 1214109600
 author: miron
 permalink: /alm/svn-15-released
 tags:
-- ALM
+- DevOps
 - scm
 - release
 - subversion

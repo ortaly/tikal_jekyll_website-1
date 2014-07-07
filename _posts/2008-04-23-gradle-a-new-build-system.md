@@ -5,7 +5,7 @@ created: 1208979600
 author: lior.kanfi
 permalink: /alm/gradle-new-build-system
 tags:
-- ALM
+- DevOps
 - maven
 - Groovy
 - Ivvy

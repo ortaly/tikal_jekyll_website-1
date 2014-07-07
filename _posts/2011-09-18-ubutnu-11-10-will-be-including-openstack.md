@@ -5,7 +5,7 @@ created: 1316370611
 author: hagzag
 permalink: ubutnu-11-10-will-be-including-openstack
 tags:
-- ALM
+- DevOps
 - OpenStack
 - Eucalyptus
 ---

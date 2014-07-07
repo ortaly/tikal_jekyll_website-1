@@ -5,7 +5,7 @@ created: 1267973642
 author: shalom
 permalink: /alm/secured-jmx-monitoring-local-machine
 tags:
-- ALM
+- DevOps
 - jmx
 - jconsole
 ---

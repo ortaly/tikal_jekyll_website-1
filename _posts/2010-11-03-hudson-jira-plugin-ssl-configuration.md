@@ -5,7 +5,7 @@ created: 1288795849
 author: shachar
 permalink: /alm/hudson-jira-plugin-ssl-configuration
 tags:
-- ALM
+- DevOps
 - Hudson Jira
 ---
 <p><span style="color: #ff0000">sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target&nbsp;</span></p>

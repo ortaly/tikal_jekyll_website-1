@@ -5,7 +5,7 @@ created: 1340636377
 author: ori.tzoran
 permalink: /alm/solution-mysql-error-1045-access-denied-userlocalhost-breaks-openstack
 tags:
-- ALM
+- DevOps
 - MySQL access denied localhost 1045
 ---
 <p>I was working on an OpenStack Essex installation on 2 desktops. Shortly after I&nbsp;finished setting up the controller in an all-in-one configuration, and while working on the nova-compute node, openstack crashed. The first thing i noticed was an AppArmor popup informing <span style="font-family: 'Courier New'; ">glance-registry</span> has crashed unexpectedly. Further inspection revealed that the '<span style="font-family: 'Courier New'; ">glance-registry</span>' daemon is starting and crashing in an andless loop. All other OpenStack services were inoperational and the nova log files in  <span style="font-family: 'Courier New'; ">/var/log/upstart/nova-*</span> were huge.&nbsp;&nbsp;</p>

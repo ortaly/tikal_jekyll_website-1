@@ -5,7 +5,7 @@ created: 1287315488
 author: ittayd
 permalink: /alm/generating-classpath-file-maven
 tags:
-- ALM
+- DevOps
 - maven dependency
 ---
 <div class="post-text">

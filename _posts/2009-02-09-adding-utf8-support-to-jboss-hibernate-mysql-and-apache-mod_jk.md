@@ -5,7 +5,7 @@ created: 1234174390
 author: admin
 permalink: /alm/adding-utf8-support-jboss-hibernate-mysql-and-apache-mod-jk
 tags:
-- ALM
+- DevOps
 - Hibernate
 - jboss
 - UTF8

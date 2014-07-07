@@ -5,7 +5,7 @@ created: 1392624115
 author: yorammi
 permalink: /alm/choosing-git-hosting-service-guidelines-choosing-right-one
 tags:
-- ALM
+- DevOps
 - git
 - git hosting service
 ---

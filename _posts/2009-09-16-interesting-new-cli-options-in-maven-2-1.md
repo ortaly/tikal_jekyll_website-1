@@ -5,7 +5,7 @@ created: 1253089769
 author: ittayd
 permalink: /alm/interesting-new-cli-options-maven-21
 tags:
-- ALM
+- DevOps
 ---
 <p>Maven 2.1 introduced new options to the command line that allow faster builds in some cases</p>
 <p>&nbsp;</p>

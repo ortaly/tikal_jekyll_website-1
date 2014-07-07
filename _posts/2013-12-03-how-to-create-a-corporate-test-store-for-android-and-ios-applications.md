@@ -5,7 +5,6 @@ created: 1386075016
 author: yorammi
 permalink: how-to-create-a-corporate-test-store-for-android-and-ios-applications
 tags:
-- ALM
 - DevOps
 - Mobile
 - test

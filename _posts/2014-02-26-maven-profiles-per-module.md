@@ -5,7 +5,7 @@ created: 1393417199
 author: chaim.turkel
 permalink: maven-profiles-per-module
 tags:
-- ALM
+- DevOps
 ---
 <h1>Maven Profiles<o:p></o:p></h1>
 

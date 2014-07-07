@@ -5,7 +5,7 @@ created: 1366131698
 author: hagzag
 permalink: /performing-backup-git
 tags:
-- ALM
+- DevOps
 - git
 - Drupal
 ---

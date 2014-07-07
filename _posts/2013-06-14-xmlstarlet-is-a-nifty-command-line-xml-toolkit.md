@@ -5,7 +5,7 @@ created: 1371190642
 author: hagzag
 permalink: /alm/xmlstarlet-nifty-command-line-xml-toolkit
 tags:
-- ALM
+- DevOps
 - XML
 - xpath
 - xmlstarlet

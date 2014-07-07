@@ -5,7 +5,7 @@ created: 1225958516
 author: hagzag
 permalink: /alm/yum-rpm-repository-begining
 tags:
-- ALM
+- DevOps
 - Centos
 - Yum
 - RPMs

@@ -5,7 +5,7 @@ created: 1265017381
 author: hagzag
 permalink: /alm/kohsuke-hudson-founder-maintainer-private-farewell-sun-engineers
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p><img border="0" align="left" vspace="5" hspace="5" style="width: 157px; height: 157px;" alt="RIP SUN" src="/files/upload/29/large_ripsun.jpg" /><span id="apture_prvw3" class="aptureLink "><a href="http://twitter.com/kohsukekawa" class="aptureLink snap_noshots"><strong>Kohsuke</strong></a> </span>Founder and maintainer of the <span class="aptureLink " id="apture_prvw6"><a class="aptureLink snap_noshots" href="http://twitter.com/hudsonci">Hudson project</a> added the following </span>commit message (<a href="http://github.com/kohsuke/hudson/commit/7e1602415ce86fb6ed3630a9e8d6b86a99f6477e">r26728</a>):</p>

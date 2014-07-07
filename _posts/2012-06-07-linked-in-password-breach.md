@@ -5,7 +5,7 @@ created: 1339056218
 author: hagzag
 permalink: /linked-password-breach
 tags:
-- ALM
+- DevOps
 ---
 <p>&nbsp;Linked in password were breached - change yours now, and for any reason you use the same passowrd to other online accounts [considering who ever has the password has your email address too] change their passwords too.</p>
 <p>&nbsp;</p>

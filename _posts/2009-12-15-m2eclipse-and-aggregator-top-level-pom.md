@@ -5,7 +5,7 @@ created: 1260877797
 author: shalom
 permalink: /alm/m2eclipse-and-aggregatortop-level-pom
 tags:
-- ALM
+- DevOps
 - m2eclipse aggregator maven top level pom
 ---
 <p>&nbsp;if you are used to create a directory for aggregator pom files just because eclipse couldn't handle it otherwise, then the last&nbsp;<a href="http://m2eclipse.sonatype.org/index.html">m2eclipse</a> version can handle it, you just import -&gt; maven-project and choose the top level directory where the aggregator pom is, it now works as IDEA 8 did(but not as nice..).</p>

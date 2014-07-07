@@ -5,7 +5,7 @@ created: 1245187543
 author: lior.kanfi
 permalink: /alm/getting-ready-eclipse-35-galileo-what’s-new
 tags:
-- ALM
+- DevOps
 - Galileo
 ---
 <p>With the announcement of&nbsp; <a href="http://download.eclipse.org/eclipse/downloads/drops/S-3.5RC3-200905282000/">Release     Candidate 3</a>,&nbsp; it&rsquo;s a couple of weeks until Eclipse 3.5 code named &ldquo;Galileo&rdquo; will reach GA status. This new release of the popular Java development environment includes several new features and improvements over its previous version.</p>

@@ -5,7 +5,7 @@ created: 1260105736
 author: ittayd
 permalink: /alm/drizzle-something-watch-about
 tags:
-- ALM
+- DevOps
 ---
 <p>http://drizzle.org/</p>
 <p>&nbsp;</p>

@@ -5,7 +5,7 @@ created: 1316586552
 author: hagzag
 permalink: /jenkins-ips-package-solaris
 tags:
-- ALM
+- DevOps
 - jenkins
 - Solaris
 ---

@@ -4,7 +4,7 @@ title: mysql replication replicate-do-db gotcha!
 created: 1287042323
 permalink: mysql-replication-replicate-do-db-gotcha
 tags:
-- ALM
+- DevOps
 - MySQL
 ---
 <p>Excellent explanation about the (infamous) issue:</p>

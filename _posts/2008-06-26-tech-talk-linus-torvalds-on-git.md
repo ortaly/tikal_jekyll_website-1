@@ -5,7 +5,7 @@ created: 1214455560
 author: miron
 permalink: /alm/tech-talk-linus-torvalds-git
 tags:
-- ALM
+- DevOps
 - git
 - scm
 ---

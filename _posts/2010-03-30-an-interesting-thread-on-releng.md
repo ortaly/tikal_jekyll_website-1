@@ -5,7 +5,7 @@ created: 1269974681
 author: hagzag
 permalink: /alm/interesting-thread-releng
 tags:
-- ALM
+- DevOps
 - RELENG
 ---
 <p><strong>See:</strong> <a href="http://www.reddit.com/r/programming/comments/bi58m/anyone_here_a_build_engineer_or_part_of_the_build/">http://www.reddit.com/r/programming/comments/bi58m/anyone_here_a_build_engineer_or_part_of_the_build/</a></p>

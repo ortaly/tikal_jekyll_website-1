@@ -5,7 +5,6 @@ created: 1345029984
 author: admin
 permalink: /chef-developers-avishai-ish-shalom-fewbytes-devops-tce
 tags:
-- ALM
 - DevOps
 - Chef
 ---

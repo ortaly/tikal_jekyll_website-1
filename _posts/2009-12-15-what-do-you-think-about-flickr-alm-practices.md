@@ -5,6 +5,6 @@ created: 1260892503
 author: ittayd
 permalink: /alm/what-do-you-think-about-flickr-alm-practices
 tags:
-- ALM
+- DevOps
 ---
 <p>http://code.flickr.com/blog/2009/12/02/flipping-out/</p>

@@ -5,7 +5,7 @@ created: 1297935107
 author: udib
 permalink: /alm/outbrains-implementation-continuous-deployment
 tags:
-- ALM
+- DevOps
 - Continuous_Deployment
 - Agile
 ---

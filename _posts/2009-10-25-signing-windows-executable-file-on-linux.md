@@ -4,7 +4,7 @@ title: Signing Windows executable file on Linux
 created: 1256475499
 permalink: signing-windows-executable-file-on-linux
 tags:
-- ALM
+- DevOps
 - signcode
 ---
 <p>Signing Windows executable file on Linux.<br />

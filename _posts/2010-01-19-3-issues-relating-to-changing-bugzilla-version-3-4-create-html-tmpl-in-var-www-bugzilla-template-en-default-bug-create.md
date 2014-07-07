@@ -4,7 +4,7 @@ title: 3 issues relating to changing bugzilla version 3.4 create.html.tmpl in /v
 created: 1263910556
 permalink: 3-issues-relating-to-changing-bugzilla-version-3-4-create-html-tmpl-in-var-www-bugzilla-template-en-default-bug-create
 tags:
-- ALM
+- DevOps
 - template
 - layout
 - cutsomization

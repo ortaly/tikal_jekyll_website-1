@@ -5,7 +5,7 @@ created: 1370184517
 author: timor
 permalink: /alm/android-eclipse-maven
 tags:
-- ALM
+- DevOps
 - maven android eclipse
 ---
 <p>&nbsp;</p>

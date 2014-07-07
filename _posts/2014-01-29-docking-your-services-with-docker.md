@@ -5,12 +5,11 @@ created: 1390982375
 author: hagzag
 permalink: /alm/docking-your-services-docker
 tags:
-- ALM
+- DevOps
 - Docker
 - LXC
 - FIG
 - Vagrant
-- DevOps
 ---
 <p>The &quot;Big Bang&quot; is an awesome title (don&#39;t mind if I say so ...), our apps are divided into micro-services - and so is our hosting OS, the following slides attempt to show how LXC and Docker simplify the complexity of our Micro Services deployment.</p>
 

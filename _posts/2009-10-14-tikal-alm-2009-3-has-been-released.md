@@ -5,7 +5,7 @@ created: 1255540676
 author: liya
 permalink: /alm/tikal-alm-20093-has-been-released
 tags:
-- ALM
+- DevOps
 ---
 <p><font size="2">The main issue of this release is <span style="text-decoration: underline;">Tikal Bugzilla based on latest Bugzilla 3.4</span> with some of the original Tikal Bugzilla enhancements and additional new features.<br />
 <br />

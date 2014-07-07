@@ -5,7 +5,7 @@ created: 1305125217
 author: ittayd
 permalink: /alm/mercurial-and-git-technical-comparison
 tags:
-- ALM
+- DevOps
 - git
 - git mercurial
 ---

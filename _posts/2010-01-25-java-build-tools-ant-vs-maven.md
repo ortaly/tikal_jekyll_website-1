@@ -5,7 +5,7 @@ created: 1264406884
 author: adi
 permalink: /alm/java-build-tools-ant-vs-maven
 tags:
-- ALM
+- DevOps
 - Ant
 ---
 <p>Maven is crap, Ant is better, Rake for the rescue...</p>

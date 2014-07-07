@@ -5,7 +5,7 @@ created: 1368020206
 author: yorammi
 permalink: now-i-git-it
 tags:
-- ALM
+- DevOps
 - git introduction
 ---
 <p><span style="font-size:16px;"><a href="http://www.slideshare.net/YoramMichaeli/now-i-git-it">An introduction</a> to git that I&#39;ve uploaded to <a href="http://www.slideshare.net/YoramMichaeli/now-i-git-it">SlideShare.com</a>.</span></p>

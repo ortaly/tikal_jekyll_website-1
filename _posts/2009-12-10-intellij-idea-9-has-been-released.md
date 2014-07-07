@@ -5,7 +5,7 @@ created: 1260476110
 author: ittayd
 permalink: /alm/intellij-idea-9-has-been-released
 tags:
-- ALM
+- DevOps
 - idea
 ---
 <p>read the what's new in http://www.jetbrains.com/idea/whatsnew/index.html?I90nl</p>

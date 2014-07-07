@@ -5,7 +5,7 @@ created: 1275557554
 author: zvika
 permalink: /alm/maven-war-plugin-picking-multiple-version-same-snapshot-jars
 tags:
-- ALM
+- DevOps
 - maven-war-plugin
 ---
 <p>some of my web project's dependencies are other modules from the same app, that are not a part of the build, yet (legacy, haven't had time to mavenize them yet). So we use our Nexus installation and deploy these dependencies to it. Everything seems to work fine, but when creating the WAR, duplicate versions of these jars are included in the WAR, with different names, for example:</p>

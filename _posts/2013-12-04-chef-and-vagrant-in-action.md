@@ -5,7 +5,6 @@ created: 1386161944
 author: miron
 permalink: /chef-and-vagrant-action
 tags:
-- ALM
 - DevOps
 - Chef
 - Vagrant

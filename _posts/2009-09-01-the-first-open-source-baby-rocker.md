@@ -5,7 +5,7 @@ created: 1251826432
 author: hagzag
 permalink: /alm/first-open-source-baby-rocker
 tags:
-- ALM
+- DevOps
 - Geeks-fun
 ---
 <p>There should be a special place for geeks like this, quite old but still does the trick!</p>

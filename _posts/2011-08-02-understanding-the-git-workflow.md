@@ -5,7 +5,7 @@ created: 1312263473
 author: ittayd
 permalink: /understanding-git-workflow
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p><a href="http://sandofsky.com/blog/git-workflow.html">http://sandofsky.com/blog/git-workflow.html</a></p>

@@ -5,7 +5,7 @@ created: 1256202879
 author: ittayd
 permalink: /alm/headless-builds-using-eclipse
 tags:
-- ALM
+- DevOps
 - headless eclipse build
 ---
 <p>if eclipse knows how to build your code, why do you need another tool to maintain the build?</p>

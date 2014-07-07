@@ -5,7 +5,7 @@ created: 1304523454
 author: ittayd
 permalink: /alm/oracle-submits-move-hudson-eclipse
 tags:
-- ALM
+- DevOps
 - Hudson
 - hudson eclipse
 ---

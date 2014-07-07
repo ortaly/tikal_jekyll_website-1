@@ -5,7 +5,7 @@ created: 1268747506
 author: ittayd
 permalink: /alm/caliper-microbenchmarking-framework-java
 tags:
-- ALM
+- DevOps
 - benchmarking
 ---
 <p>&nbsp;<span class="Apple-style-span" style="line-height: 19px; font-size: 12px; "><a href="http://code.google.com/p/caliper/">http://code.google.com/p/caliper/</a>&nbsp;</span></p>

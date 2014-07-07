@@ -4,7 +4,7 @@ title: Tracing methods in JEE application using aspect approach - HOW ?
 created: 1269172549
 permalink: tracing-methods-in-jee-application-using-aspect-approach-how
 tags:
-- ALM
+- DevOps
 - Logging
 ---
 <p>The client I work for needs add external tracing to java methods using aspect approach. Desired methods should be configured from external configuration file.</p>

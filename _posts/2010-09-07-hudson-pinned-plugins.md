@@ -5,7 +5,7 @@ created: 1283843606
 author: hagzag
 permalink: /alm/hudson-pinned-plugins
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p><img width="100" vspace="5" hspace="5" height="100" border="0" align="left" alt="hudson logo" src="/files/upload/29/banner-100.png" />If you wish to &quot;hang on&quot; to a certain plugin which shipps with hudson.war just unpin it in the Manage Hudson &gt;&gt; Manage Plugins page - this option is availabe sine <a href="http://www.hudson-ci.org/download/war/1.374/hudson.war">1.374 release</a> (and you can always grab the latest @: <a href="http://www.hudson-ci.org/latest/hudson.war">latest</a>)</p>

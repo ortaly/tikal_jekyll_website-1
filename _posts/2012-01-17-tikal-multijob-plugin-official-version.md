@@ -5,7 +5,7 @@ created: 1326799995
 author: roni
 permalink: /java/tikal-multijob-plugin-official-version
 tags:
-- ALM
+- DevOps
 - tikal
 - multijob
 - jenkins

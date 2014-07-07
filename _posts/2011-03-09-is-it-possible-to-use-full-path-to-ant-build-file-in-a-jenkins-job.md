@@ -5,7 +5,7 @@ created: 1299701751
 author: shalom
 permalink: /alm/it-possible-use-full-path-ant-build-file-jenkins-job
 tags:
-- ALM
+- DevOps
 - jenkins hudson ant
 ---
 <p>I'm trying to create a Jenkins job that:</p>

@@ -5,7 +5,7 @@ created: 1334331017
 author: ittayd
 permalink: /gitblit-java-based-repository-management-git
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>From the site:</p>

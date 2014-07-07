@@ -5,7 +5,7 @@ created: 1265520617
 author: itai
 permalink: /alm/building-flex-rsls-modules-using-flex-mojos
 tags:
-- ALM
+- DevOps
 - build maven Flex
 ---
 <p>To create flex application that uses RSLs &quot;cross domain modules&quot; with maven, the rsl module should have two artifacts:<br />

@@ -5,7 +5,7 @@ created: 1266759820
 author: liya
 permalink: /alm/alm-group-meeting-deployment-process-methodology-and-implementations
 tags:
-- ALM
+- DevOps
 ---
 <p>Agenda:<br />
 - Guy Arieli from Top-Q (formerly AquaSoft) will present QA aspects of deployment process(es) <br />

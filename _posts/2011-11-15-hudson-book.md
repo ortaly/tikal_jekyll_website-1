@@ -5,7 +5,7 @@ created: 1321386531
 author: chaim.turkel
 permalink: /alm/blog/hudson-book
 tags:
-- ALM
+- DevOps
 - Hudson
 - java hudson
 ---

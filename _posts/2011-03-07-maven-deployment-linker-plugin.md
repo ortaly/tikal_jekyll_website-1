@@ -5,7 +5,7 @@ created: 1299505177
 author: hagzag
 permalink: /alm/maven-deployment-linker-plugin
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>This plugin does somthing so simple yet very useful instead of archiving artifact it will list the deployments performed at build time to the Maven Proxy you are running regardless to the proxy vendor (Archiva, Artifactory or Nexus).</p>

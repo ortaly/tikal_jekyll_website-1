@@ -5,7 +5,7 @@ created: 1385380695
 author: yorammi
 permalink: techo-ant-echo-task-with-timestamp
 tags:
-- ALM
+- DevOps
 - Ant
 ---
 <p>I often find myself writing ANT script which I need to measure times in it.</p>

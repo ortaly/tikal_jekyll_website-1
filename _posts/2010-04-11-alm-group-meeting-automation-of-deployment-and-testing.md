@@ -5,7 +5,7 @@ created: 1270959491
 author: itai
 permalink: /alm/alm-group-meeting-automation-deployment-and-testing
 tags:
-- ALM
+- DevOps
 ---
 <p>In this meeting will have discussion how to expand the build automation (We are all familiar with ) to support deployment and tests.</p>
 <p>Agenda:</p>

@@ -5,7 +5,7 @@ created: 1293351953
 author: ittayd
 permalink: /alm/httpblogspringsourcecom20101221git-and-social-coding-how-merge-without-fear
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>&quot;Git is great for social coding and community contributions to open  source projects: contributors can try out the code easily, and there can  be hordes of people all forking and experimenting with it but without  endangering existing users.  This article presents some examples with  the Git command line that might help build your confidence with this  process: how to fetch, pull and merge, and how to back out of mistakes.&quot;</p>

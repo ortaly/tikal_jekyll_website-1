@@ -5,7 +5,7 @@ created: 1293622566
 author: shalom
 permalink: /alm/support-mariadb
 tags:
-- ALM
+- DevOps
 - mariadb mysql database
 ---
 <p>Still these days when we start a new project and we need a database the first thing that comes into our mind is MySql.</p>

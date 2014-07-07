@@ -5,7 +5,7 @@ created: 1303831751
 author: udid
 permalink: /alm/anouncing-release-saiku-20-next-generation-open-source-analytics
 tags:
-- ALM
+- DevOps
 - Pentaho
 - OSBI
 - OLAP

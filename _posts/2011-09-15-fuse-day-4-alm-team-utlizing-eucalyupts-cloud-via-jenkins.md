@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Fuse Day 4 - ALM Team utlizing eucalyupts cloud via Jenkins
+title: Fuse Day 4 - DevOps Team utlizing eucalyupts cloud via Jenkins
 created: 1316091918
 author: hagzag
 permalink: /fuse-day-4-alm-team-utlizing-eucalyupts-cloud-jenkins
 tags:
-- ALM
+- DevOps
 - jenkins
 - Hudson
 - Eucalyptus

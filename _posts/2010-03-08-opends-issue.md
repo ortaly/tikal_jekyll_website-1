@@ -4,7 +4,7 @@ title: OpenDS issue
 created: 1268030341
 permalink: opends-issue
 tags:
-- ALM
+- DevOps
 - security
 - OpenDS
 - ldap

@@ -5,7 +5,7 @@ created: 1260427892
 author: ittayd
 permalink: /alm/thunderbird-3-released
 tags:
-- ALM
+- DevOps
 - Thunderbird
 ---
 <p>http://www.mozillamessaging.com/en-US/thunderbird/</p>

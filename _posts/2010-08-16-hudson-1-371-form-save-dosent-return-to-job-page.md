@@ -5,7 +5,7 @@ created: 1281940613
 author: hagzag
 permalink: /alm/hudson-1371-form-save-dosent-return-job-page
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p><img width="60" vspace="5" hspace="5" height="60" border="0" align="left" alt="" src="/files/upload/29/small_banner-100.png" />Version 1.371 of Hudson was released Aug 9 and introduced a weird &quot;side affect&quot;. A Job configuration form will save the data to the filesystem, but will not return to the Job page - <strong>this doesen't braek anything but is just annoying</strong>.</p>

@@ -5,7 +5,7 @@ created: 1351669173
 author: yorammi
 permalink: /alm/disabling-firewall-ubuntu
 tags:
-- ALM
+- DevOps
 - ubuntu
 - firewall
 ---

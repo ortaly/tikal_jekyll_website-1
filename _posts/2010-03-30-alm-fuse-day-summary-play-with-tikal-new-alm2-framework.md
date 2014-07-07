@@ -5,7 +5,7 @@ created: 1269977853
 author: liya
 permalink: /alm/alm-fuse-day-summary-play-tikal-new-alm2-framework
 tags:
-- ALM
+- DevOps
 - Fuse day
 ---
 <p>Our goal for the first Fuse day was to start working with the new  framework and these were our achievements by the end of the day:<br />

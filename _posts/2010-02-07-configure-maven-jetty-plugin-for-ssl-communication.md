@@ -4,7 +4,7 @@ title: Configure Maven Jetty plugin for SSL communication
 created: 1265563313
 permalink: configure-maven-jetty-plugin-for-ssl-communication
 tags:
-- ALM
+- DevOps
 ---
 <p>Hi,</p>
 <p>&nbsp;</p>

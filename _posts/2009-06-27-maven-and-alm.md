@@ -4,7 +4,7 @@ title: Maven and ALM
 created: 1246120635
 permalink: maven-and-alm
 tags:
-- ALM
+- DevOps
 - application lifecycle management alm maven calm
 ---
 Hi everyone,

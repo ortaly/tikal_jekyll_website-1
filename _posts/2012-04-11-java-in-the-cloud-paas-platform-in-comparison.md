@@ -5,7 +5,7 @@ created: 1334120558
 author: hagzag
 permalink: /java-cloud-paas-platform-comparison
 tags:
-- ALM
+- DevOps
 - VMWare
 - PAAS
 - Languages

@@ -5,7 +5,7 @@ created: 1259661124
 author: shalom
 permalink: /alm/jboss-transaction-interceptor-how
 tags:
-- ALM
+- DevOps
 - JPA
 - JDBC
 - Hibernate

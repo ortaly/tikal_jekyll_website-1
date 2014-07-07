@@ -5,7 +5,7 @@ created: 1330962895
 author: hagzag
 permalink: /some-insights-netflix-continuous-delivery-deployment
 tags:
-- ALM
+- DevOps
 - jenkins
 - Continuous Integration
 ---

@@ -5,7 +5,7 @@ created: 1237997724
 author: lior.kanfi
 permalink: /alm/migrating-artifactory-nexus
 tags:
-- ALM
+- DevOps
 - Nexus
 - Artifactory
 - Maven2

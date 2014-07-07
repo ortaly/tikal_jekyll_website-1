@@ -5,7 +5,7 @@ created: 1284444299
 author: hagzag
 permalink: /alm/quotes-open-source-entrepreneur
 tags:
-- ALM
+- DevOps
 - RedHat
 ---
 <p>A real <a href="http://www.bbc.co.uk/blogs/thereporters/maggieshiels/2010/06/the_open_source_entrepreneur.html">interesting read</a> I ran into, See selected quotes which triggered my cuiriousity:</p>

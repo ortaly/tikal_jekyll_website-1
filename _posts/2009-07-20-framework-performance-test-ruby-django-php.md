@@ -4,7 +4,7 @@ title: Framework Performance Test (Ruby, DJango, PHP)
 created: 1248074225
 permalink: framework-performance-test-ruby-django-php
 tags:
-- ALM
+- DevOps
 - Python
 ---
 <p>This is a very interesting and spicy article which its comments even more interesting.</p>

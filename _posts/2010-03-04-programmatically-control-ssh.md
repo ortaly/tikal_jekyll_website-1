@@ -5,7 +5,7 @@ created: 1267693089
 author: ittayd
 permalink: /alm/programmatically-control-ssh
 tags:
-- ALM
+- DevOps
 - ssh
 ---
 <p>&nbsp;Sometimes, during nightly build, packaging or deployment there's a need to retrieve remote files or control a remote machine. Doing this through ssh is tricky. A common tool to use is 'expect', but it is unixy and requires knowing Tcl.</p>

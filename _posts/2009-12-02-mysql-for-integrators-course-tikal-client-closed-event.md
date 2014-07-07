@@ -5,7 +5,7 @@ created: 1259761317
 author: lior.kanfi
 permalink: /alm/mysql-integrators-course-–-tikal-client-closed-event
 tags:
-- ALM
+- DevOps
 - MySQL
 ---
 <p style="margin-bottom: 0in;">&nbsp;</p>

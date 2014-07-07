@@ -5,7 +5,7 @@ created: 1263467576
 author: liya
 permalink: /alm/alm-group-meeting-maven-3-features
 tags:
-- ALM
+- DevOps
 ---
 <p>Next ALM forum meeting will take place on Wednesday, 20th of January in Tikal new office (4 HaBarzel Tel Aviv, first floor)</p>
 <p>&nbsp;</p>

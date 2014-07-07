@@ -5,7 +5,7 @@ created: 1289340987
 author: lior.kanfi
 permalink: /alm/infradna-and-cloudbees-joining-forces
 tags:
-- ALM
+- DevOps
 - Hudson Cloud
 ---
 <p>&quot;Today we are announcing that <a href="http://infradna.com/">InfraDNA</a> and <a href="http://www.cloudbees.com/">CloudBees</a>  are joining forces. As part of this, InfraDNA founder and Hudson  creator Kohsuke Kawaguchi joins CloudBees. I am very proud to have  Kohsuke be part of <a href="http://www.cloudbees.com/company-team.cb">our team</a>, he is a truly impressive talent - yet a modest person.&quot;</p>

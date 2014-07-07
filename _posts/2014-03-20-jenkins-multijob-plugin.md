@@ -5,7 +5,7 @@ created: 1395322196
 author: chaim.turkel
 permalink: /jenkins-multijob-plugin
 tags:
-- ALM
+- DevOps
 ---
 <p>My assumption is that you are familiar with continuous integration concepts (<a href="http://en.wikipedia.org/wiki/Continuous_integration">http://en.wikipedia.org/wiki/Continuous_integration</a>), and we use Jenkins (<a href="http://jenkins-ci.org/">http://jenkins-ci.org/</a>) as our build machine.</p>
 

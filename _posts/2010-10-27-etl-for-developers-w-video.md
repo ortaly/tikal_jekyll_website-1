@@ -5,7 +5,7 @@ created: 1288130934
 author: udid
 permalink: /alm/etl-developers-w-video
 tags:
-- ALM
+- DevOps
 - OSBI
 - etl
 - pdi

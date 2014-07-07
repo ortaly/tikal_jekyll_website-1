@@ -5,7 +5,7 @@ created: 1272398164
 author: hagzag
 permalink: /alm/27th-april-site-downtime
 tags:
-- ALM
+- DevOps
 - Drupal
 - php
 ---

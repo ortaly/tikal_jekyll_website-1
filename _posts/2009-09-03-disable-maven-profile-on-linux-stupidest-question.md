@@ -4,7 +4,7 @@ title: Disable maven profile on linux - stupidest question
 created: 1251964217
 permalink: disable-maven-profile-on-linux-stupidest-question
 tags:
-- ALM
+- DevOps
 - maven linux
 ---
 <p>Bash doesn't like command I use for run maven with disabling some profile because of exclamation mark.</p>

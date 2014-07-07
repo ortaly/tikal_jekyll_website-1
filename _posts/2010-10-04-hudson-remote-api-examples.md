@@ -4,7 +4,7 @@ title: Hudson Remote API - Examples
 created: 1286204256
 permalink: hudson-remote-api-examples
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>&nbsp;There is a blog with excellent examples of using Hudson's Remote API.</p>

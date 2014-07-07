@@ -5,7 +5,7 @@ created: 1371333980
 author: hagzag
 permalink: /alm/using-jenkins-cli-job-gen
 tags:
-- ALM
+- DevOps
 - jenkins
 - jenkins-cli
 - configuration management (cm)

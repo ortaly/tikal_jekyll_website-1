@@ -5,7 +5,7 @@ created: 1390375608
 author: hagzag
 permalink: /alm/docker-friendly-lightweight-vagrant-box
 tags:
-- ALM
+- DevOps
 - Docker
 - Vagrant
 ---

@@ -4,7 +4,7 @@ title: Put Maven pom.xml outside of project tree - How to ?
 created: 1257767002
 permalink: put-maven-pom-xml-outside-of-project-tree-how-to
 tags:
-- ALM
+- DevOps
 ---
 <p>It there a way to put pom.xml outside of project tree ?</p>
 <p>&nbsp;</p>

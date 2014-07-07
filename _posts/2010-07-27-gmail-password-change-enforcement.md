@@ -5,7 +5,7 @@ created: 1280230432
 author: hagzag
 permalink: /alm/gmail-password-change-enforcement
 tags:
-- ALM
+- DevOps
 - google
 ---
 <p>This post is for Gmail / Google mail users in general.</p>

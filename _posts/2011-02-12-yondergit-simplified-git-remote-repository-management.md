@@ -5,8 +5,8 @@ created: 1297527857
 author: shalom
 permalink: /alm/yondergit-simplified-git-remote-repository-management
 tags:
-- ALM
-- alm git remote
+- DevOps
+- git remote
 ---
 <p><a href="http://jeetworks.org/yondergit">YonderGit</a> aims to simplify some of the common remote git management worflows.</p>
 <p>&nbsp;</p>

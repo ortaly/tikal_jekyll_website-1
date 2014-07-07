@@ -5,7 +5,7 @@ created: 1388938559
 author: hagzag
 permalink: /alm/fuse-day–jenkins-service-chef-route-summary
 tags:
-- ALM
+- DevOps
 ---
 <h1>Synopsis</h1>
 

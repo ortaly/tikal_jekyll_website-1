@@ -5,7 +5,7 @@ created: 1367943176
 author: liya
 permalink: /alm/tikal-alm-20131-released
 tags:
-- ALM
+- DevOps
 - bugzilla alm
 ---
 <p>Tikal ALM 2013.1 release includes new features and bug fixes in Tikal Bugzilla.</p>

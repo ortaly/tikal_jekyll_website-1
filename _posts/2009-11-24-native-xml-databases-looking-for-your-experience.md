@@ -5,7 +5,7 @@ created: 1259077085
 author: keren
 permalink: /alm/native-xml-databases-looking-your-experience
 tags:
-- ALM
+- DevOps
 - xml db
 - Databases
 ---

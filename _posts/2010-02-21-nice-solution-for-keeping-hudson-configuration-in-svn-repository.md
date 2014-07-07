@@ -5,7 +5,7 @@ created: 1266758336
 author: liya
 permalink: /alm/nice-solution-keeping-hudson-configuration-svn-repository
 tags:
-- ALM
+- DevOps
 - subversion
 - Hudson
 - CI

@@ -5,7 +5,7 @@ created: 1291027010
 author: shalom
 permalink: /alm/novell-and-suse-acquired-attachmate
 tags:
-- ALM
+- DevOps
 - linux opensuse
 ---
 <p>This is probablly not much interesting to most of our community as I think I'm the only one using opensuse :)&nbsp; But here is another giant acquiring an open source motivated company, Attachmate acquires Novell which puts the SUSE project in an unclear future alltough they promiss they will not kill the suse and opensuse projects.</p>

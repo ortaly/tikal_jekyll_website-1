@@ -5,7 +5,7 @@ created: 1260301126
 author: hagzag
 permalink: /alm/available-today-beta-google-chrome-linux
 tags:
-- ALM
+- DevOps
 - Google Chrome
 ---
 <p>To all you Google fans out there I am glad to announce Google Chrome has been officially &quot;BETA&quot; released &nbsp;for Linux so all you Debian (Ubuntu) users its only one click away.</p>

@@ -5,7 +5,7 @@ created: 1260074341
 author: hagzag
 permalink: /alm/itest-remote-invocation-parametrized-tokenized-builds-hudson-ci
 tags:
-- ALM
+- DevOps
 - Hudson
 - Groovy
 - Continuous Integration

@@ -5,7 +5,7 @@ created: 1277810591
 author: admin
 permalink: /alm/forums/dynamic-orm-entity-class-generation
 tags:
-- ALM
+- DevOps
 - CGLIB
 - Javaassist
 - ASM

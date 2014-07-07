@@ -5,7 +5,7 @@ created: 1320565437
 author: lior.kanfi
 permalink: /httpopinionated-programmercom201102the-limits-continuous-deployment
 tags:
-- ALM
+- DevOps
 - Continuous Deployment
 - Continuous Integration
 ---

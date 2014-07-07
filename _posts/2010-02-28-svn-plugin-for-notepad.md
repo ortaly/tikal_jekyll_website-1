@@ -5,7 +5,7 @@ created: 1267382219
 author: liya
 permalink: /alm/svn-plugin-notepad
 tags:
-- ALM
+- DevOps
 - svn
 ---
 <p>Good news for those of you who love working with Notepad++ and work with Subversion!</p>

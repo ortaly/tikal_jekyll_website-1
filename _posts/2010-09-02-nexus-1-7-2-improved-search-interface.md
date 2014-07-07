@@ -5,7 +5,7 @@ created: 1283376197
 author: hagzag
 permalink: /alm/nexus-172-improved-search-interface
 tags:
-- ALM
+- DevOps
 - Nexus Open Source
 ---
 <p>When I read <a href="http://www.sonatype.com/people/2010/08/nexus-1-7-2-now-available-with-improved-search-interface/">this article</a> a week ago or so I wasen't so excited from the improved search interface - Until I&nbsp;gave it a try.</p>

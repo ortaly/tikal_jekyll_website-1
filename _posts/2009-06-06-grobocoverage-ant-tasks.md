@@ -4,7 +4,7 @@ title: GroboCoverage Ant Tasks
 created: 1244293450
 permalink: grobocoverage-ant-tasks
 tags:
-- ALM
+- DevOps
 - Ant
 - ear
 ---

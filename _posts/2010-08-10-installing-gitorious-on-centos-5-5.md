@@ -5,7 +5,7 @@ created: 1281391653
 author: shalom
 permalink: /alm/installing-gitorious-centos-55
 tags:
-- ALM
+- DevOps
 - git gitorious centos 5.5
 ---
 <p>I recently installed <a href="http://gitorious.org/">Gitorious</a> on our centos 5.5 development machine and written down this recipe of the steps I took to acomplish it.</p>

@@ -4,7 +4,7 @@ title: Browsers Statistics and trends
 created: 1245219454
 permalink: browsers-statistics-and-trends
 tags:
-- ALM
+- DevOps
 - browser
 ---
 <p>In this <a href="http://www.w3schools.com/browsers/browsers_stats.asp" target="_blank">link</a> you can find some interesting statistics like, what are the most common browsers and if the common users make sure to turn-off JavaScript.</p>

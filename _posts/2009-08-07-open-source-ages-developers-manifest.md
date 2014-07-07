@@ -5,7 +5,7 @@ created: 1249607612
 author: zvika
 permalink: /alm/open-source-ages-developers-manifest
 tags:
-- ALM
+- DevOps
 - Design & Architecture
 ---
 <p>I was thinking over the past couple of weeks about my own personal take on open source development and where I fit in it:<br />

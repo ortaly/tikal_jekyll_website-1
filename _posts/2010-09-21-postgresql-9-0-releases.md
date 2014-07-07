@@ -5,7 +5,7 @@ created: 1285049273
 author: hagzag
 permalink: /alm/postgresql-90-releases
 tags:
-- ALM
+- DevOps
 - PostgreSQL
 - Databases
 ---

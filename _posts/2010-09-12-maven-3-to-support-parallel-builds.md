@@ -5,7 +5,7 @@ created: 1284318675
 author: ittayd
 permalink: /alm/maven-3-support-parallel-builds
 tags:
-- ALM
+- DevOps
 - maven build
 ---
 <p>http://java.dzone.com/articles/more-new-cool-features-maven-3</p>

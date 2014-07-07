@@ -6,7 +6,7 @@ created: 1268818428
 author: itai
 permalink: /alm/developing-and-deploying-java-middleware-and-cloud-rise-virtual-appliance
 tags:
-- ALM
+- DevOps
 - cloud computing
 ---
 <p>Interesting post</p>

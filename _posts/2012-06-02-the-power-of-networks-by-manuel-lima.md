@@ -5,7 +5,7 @@ created: 1338622560
 author: hagzag
 permalink: /power-networks-manuel-lima
 tags:
-- ALM
+- DevOps
 - Social Networking
 ---
 <p>One of the most interesting illustrations I have had the privilege of watching</p>

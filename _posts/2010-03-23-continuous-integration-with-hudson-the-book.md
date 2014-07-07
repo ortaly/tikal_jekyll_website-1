@@ -5,7 +5,7 @@ created: 1269338706
 author: liya
 permalink: /alm/continuous-integration-hudson-book
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p><a href="http://www.wakaleo.com">John Ferguson Smart</a> has started writting a new <a href="http://www.wakaleo.com/books/continuous-integration-with-hudson-the-book">open-source book &quot;Continuous Integration with Hudson&quot;</a>.</p>

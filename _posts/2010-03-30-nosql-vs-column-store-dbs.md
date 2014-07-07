@@ -5,7 +5,7 @@ created: 1269941306
 author: udid
 permalink: /alm/nosql-vs-column-store-dbs
 tags:
-- ALM
+- DevOps
 - OLAP
 - nosql
 - Database

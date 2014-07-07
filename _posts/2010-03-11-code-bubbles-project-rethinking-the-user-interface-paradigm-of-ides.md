@@ -5,7 +5,7 @@ created: 1268305007
 author: ittayd
 permalink: /alm/code-bubbles-project-rethinking-user-interface-paradigm-ides
 tags:
-- ALM
+- DevOps
 - ide java
 ---
 <p>&nbsp;<span class="Apple-style-span" style="line-height: 19px; font-size: 12px; "><a href="http://www.cs.brown.edu/people/acb/codebubbles_site.htm">http://www.cs.brown.edu/people/acb/codebubbles_site.htm</a></span></p>

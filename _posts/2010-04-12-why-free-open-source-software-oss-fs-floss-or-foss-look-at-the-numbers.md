@@ -5,7 +5,7 @@ created: 1271086062
 author: udid
 permalink: /alm/why-free-open-source-software-ossfs-floss-or-foss-look-numbers
 tags:
-- ALM
+- DevOps
 - foss
 - Open Source
 ---

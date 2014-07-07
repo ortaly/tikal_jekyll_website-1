@@ -5,7 +5,7 @@ created: 1356618950
 author: hagzag
 permalink: /alm/adding-war-classpath-anyone
 tags:
-- ALM
+- DevOps
 - maven-war-plugin
 - maven-warpath-plugin
 ---

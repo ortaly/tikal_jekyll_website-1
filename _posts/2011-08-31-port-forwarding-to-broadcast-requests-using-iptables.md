@@ -5,7 +5,7 @@ created: 1314790677
 author: roni
 permalink: port-forwarding-to-broadcast-requests-using-iptables
 tags:
-- ALM
+- DevOps
 - firewall
 ---
 <p>As a part of the last product I am working on, we developed an inherent DHCP server (initiated in a independent thread of tomcat server). The DHCP server is listening to port 9067 instead of port 67 (the original DHCP server port), because we didn&#39;t want the product required root privileges. The solution was to use high ports for the server open sockets and forward to them from the original ports using iptables, which is a part of the OS (Linux / Unix).</p>

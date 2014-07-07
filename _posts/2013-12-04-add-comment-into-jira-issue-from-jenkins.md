@@ -5,8 +5,7 @@ created: 1386174782
 author: gil
 permalink: add-comment-into-jira-issue-from-jenkins
 tags:
-- ALM
-- ALM build
+- DevOps build
 ---
 <p>With all the Jira plugins in Jenkins, I was sure that I could do it easily but my problem was that I couldn&#39;t find a way to get the Jira issue ID using a certain Jenkins environment.</p>
 

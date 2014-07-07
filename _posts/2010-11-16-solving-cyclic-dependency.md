@@ -5,7 +5,7 @@ created: 1289920402
 author: zvika
 permalink: /alm/solving-cyclic-dependency
 tags:
-- ALM
+- DevOps
 ---
 <p>hi,<br />
 <br />

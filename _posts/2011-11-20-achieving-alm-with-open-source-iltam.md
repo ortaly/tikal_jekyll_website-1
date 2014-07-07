@@ -5,7 +5,7 @@ created: 1321810611
 author: hagzag
 permalink: /achieving-alm-open-source-iltam
 tags:
-- ALM
+- DevOps
 ---
 <div class="prezi-player"><style type="text/css" media="screen">.prezi-player { width: 550px; } .prezi-player-links { text-align: center; }</style><object width="550" height="400" id="prezi_3j92xmamzwxi" name="prezi_3j92xmamzwxi" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
 <param name="movie" value="http://prezi.com/bin/preziloader.swf" />

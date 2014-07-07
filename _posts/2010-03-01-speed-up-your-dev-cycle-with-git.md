@@ -5,7 +5,7 @@ created: 1267441376
 author: ittayd
 permalink: /alm/speed-your-dev-cycle-git
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>&nbsp;<span class="Apple-style-span" style="line-height: 19px; font-size: 12px; "><a href="http://blog.xebia.com/2010/02/28/speed-up-your-dev-cycle-with-git/">http://blog.xebia.com/2010/02/28/speed-up-your-dev-cycle-with-git/</a></span></p>

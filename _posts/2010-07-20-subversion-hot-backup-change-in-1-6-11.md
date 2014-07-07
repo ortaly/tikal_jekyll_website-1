@@ -5,7 +5,7 @@ created: 1279593928
 author: hagzag
 permalink: /alm/subversion-hot-backup-change-1611
 tags:
-- ALM
+- DevOps
 - subversion
 ---
 <p>An important notice to users of the hot-backup.py utility which ships with subversion.</p>

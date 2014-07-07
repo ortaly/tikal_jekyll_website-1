@@ -5,7 +5,7 @@ created: 1357653164
 author: hagzag
 permalink: /alm/vmware-ext3-partition-re-sizing-without-loosing-data
 tags:
-- ALM
+- DevOps
 - VMWare
 - tune2fs
 - fdisk

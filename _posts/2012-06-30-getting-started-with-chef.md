@@ -5,10 +5,9 @@ created: 1341074273
 author: hagzag
 permalink: getting-started-with-chef
 tags:
-- ALM
+- DevOps
 - Opscode
 - Chef
-- DevOps
 - Chef-Solo
 - Knife
 ---

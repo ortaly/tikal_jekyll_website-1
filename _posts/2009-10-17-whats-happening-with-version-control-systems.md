@@ -4,7 +4,7 @@ title: What’s happening with Version Control Systems?
 created: 1255806926
 permalink: whats-happening-with-version-control-systems
 tags:
-- ALM
+- DevOps
 - Continuous Integration
 ---
 <p>An excellent blog post by jared robinson:</p>

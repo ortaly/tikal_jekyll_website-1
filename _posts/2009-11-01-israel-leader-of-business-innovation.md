@@ -5,7 +5,7 @@ created: 1257063284
 author: hagzag
 permalink: /alm/israel-leader-business-innovation
 tags:
-- ALM
+- DevOps
 ---
 <p>We can be proud!</p>
 <p>Dan Senor, co-author of 'Start-up Nation: The Story of Israel's Economic Miracle,' discusses with CNBC how Israel has managed to become a leader in business innovation. </p>

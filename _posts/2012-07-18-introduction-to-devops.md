@@ -5,7 +5,6 @@ created: 1342640198
 author: miron
 permalink: /introduction-devops
 tags:
-- ALM
 - DevOps
 ---
 <p>Overview on a number of concepts , which are the backbone of DevOpts, i.e. cloud computing, environment code, process automation and more.</p>

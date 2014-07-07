@@ -1,9 +1,9 @@
 - group:
     name: alm
-    tag: alm
-    title: ALM | Tikal
-    header_title: ALM
-    header_subtitle: Ahoy ALM Pirates! Welcome to Tikal's ALM Domain.
+    tag: devops
+    title: DevOps | Tikal
+    header_title: DevOps
+    header_subtitle: Ahoy DevOps Pirates! Welcome to Tikal's DevOps Domain.
     highlighted_team_members:
       - Haggai Zagury
       - Itai Or
@@ -31,17 +31,17 @@
       - Sefi Ninio
 - group:
     name: net
-    tag: net
-    title: .NET | Tikal
-    header_title: .NET
-    header_subtitle: What up .NET Geeks ? Welcome to Tikal's .NET Domain.
+    tag: android
+    title: Android | Tikal
+    header_title: Android
+    header_subtitle: What up Android Geeks ? Welcome to Tikal's .Android Domain.
     highlighted_team_members:
       - Igor Zalmanovich
 - group:
     name: ror
     tag: ror
-    title: RoR | Tikal
-    header_title: RoR
-    header_subtitle: Hello there RoR Gurus. This is Tikal's RoR Domain.
+    title: Ruby | Tikal
+    header_title: Ruby
+    header_subtitle: Hello there Ruby Gurus. This is Tikal's Ruby Domain.
     highlighted_team_members:
       - Avi Tzurel

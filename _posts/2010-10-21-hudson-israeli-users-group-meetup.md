@@ -5,7 +5,7 @@ created: 1287637428
 author: ittayd
 permalink: /alm/hudson-israeli-users-group-meetup
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>Yesterday we had a meetup of israeli Hudson users with Kohsuke Kawaguchi<span class="screen-name screen-name-kohsukekawa pill"><br />

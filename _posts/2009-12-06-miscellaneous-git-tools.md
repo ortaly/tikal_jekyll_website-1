@@ -5,7 +5,7 @@ created: 1260073700
 author: ittayd
 permalink: /alm/miscellaneous-git-tools
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>http://git-wt-commit.rubyforge.org/</p>

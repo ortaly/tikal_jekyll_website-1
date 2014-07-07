@@ -5,7 +5,7 @@ created: 1333002545
 author: hagzag
 permalink: java-packaging-and-rpm-a-binary-repositories
 tags:
-- ALM
+- DevOps
 - rpm
 - Yum
 - Artifactory

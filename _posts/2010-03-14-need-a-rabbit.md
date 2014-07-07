@@ -5,7 +5,7 @@ created: 1268581203
 author: liya
 permalink: /alm/need-rabbit
 tags:
-- ALM
+- DevOps
 - fun
 ---
 <p>And here is it - another gadget for you, people, that do not have any real social life (being connected to facebook and twitter doesn't count).. <img alt="" src="/sites/all/modules/fckeditor/fckeditor/editor/images/smiley/msn/regular_smile.gif" /></p>

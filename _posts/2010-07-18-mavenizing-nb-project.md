@@ -5,7 +5,7 @@ created: 1279453155
 author: zvika
 permalink: /alm/mavenizing-nb-project
 tags:
-- ALM
+- DevOps
 ---
 <p>hi,</p>
 <p>&nbsp;</p>

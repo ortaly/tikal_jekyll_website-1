@@ -4,7 +4,7 @@ title: Testopia for Jira?
 created: 1246959020
 permalink: testopia-for-jira
 tags:
-- ALM
+- DevOps
 - Continuous Integration
 - jira
 - bugzilla

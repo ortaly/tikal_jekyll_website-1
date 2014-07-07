@@ -5,7 +5,7 @@ created: 1282632742
 author: hagzag
 permalink: /alm/google-gives-wave-service
 tags:
-- ALM
+- DevOps
 - Google-Wave
 - google
 ---

@@ -5,7 +5,7 @@ created: 1284524415
 author: ittayd
 permalink: /alm/amazon-creates-linux-distribution-ec2
 tags:
-- ALM
+- DevOps
 - linux cloud
 ---
 <p>The Amazon Linux <span class="caps">AMI</span> is a supported and maintained Linux image provided by Amazon Web Services for use on Amazon Elastic Compute Cloud (Amazon <span class="caps">EC2</span>).  It is designed to provide a stable, secure, and high performance execution environment for applications running on Amazon <span class="caps">EC2</span></p>

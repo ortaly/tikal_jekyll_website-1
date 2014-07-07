@@ -4,7 +4,7 @@ title: Hooking into the Jenkins (Hudson) API
 created: 1301344732
 permalink: hooking-into-the-jenkins-hudson-api
 tags:
-- ALM
+- DevOps
 - Hudson Jenkins API
 ---
 <p><span style="border-collapse: separate; color: rgb(102, 102, 102); font-family: Candara; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: -webkit-auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; font-size: medium; " class="Apple-style-span"> </span></p>

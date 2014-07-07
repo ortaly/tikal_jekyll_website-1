@@ -5,7 +5,7 @@ created: 1291546373
 author: udid
 permalink: /alm/bi-subversion-and-bugzilla
 tags:
-- ALM
+- DevOps
 - subversion
 - OSBI
 ---

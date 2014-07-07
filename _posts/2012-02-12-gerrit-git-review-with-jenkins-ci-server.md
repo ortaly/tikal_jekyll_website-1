@@ -5,7 +5,7 @@ created: 1329034590
 author: ittayd
 permalink: /gerrit-git-review-jenkins-ci-server
 tags:
-- ALM
+- DevOps
 - git
 - gerrit git jenkins
 ---

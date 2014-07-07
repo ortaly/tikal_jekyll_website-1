@@ -5,7 +5,7 @@ created: 1341425848
 author: hagzag
 permalink: /devops-developers-jenkins-user-conference-herzelia-israel
 tags:
-- ALM
+- DevOps
 ---
 <p>&nbsp;</p>
 <div class="prezi-player"><style type="text/css" media="screen">.prezi-player { width: 550px; } .prezi-player-links { text-align: center; }</style><object id="prezi_u4zb3h6s5vql" name="prezi_u4zb3h6s5vql" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="550" height="400">

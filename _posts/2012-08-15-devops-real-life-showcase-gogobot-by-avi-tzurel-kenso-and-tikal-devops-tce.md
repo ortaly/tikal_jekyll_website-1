@@ -6,7 +6,7 @@ created: 1345030628
 author: avit
 permalink: "/devops-real-life-showcase-gogobot-avi-tzurel-kenso-tikal-devops-tce\uFEFF"
 tags:
-- ALM
+- DevOps
 - gogobot
 ---
 <p>How Gogobot does Devops? Process of development and the move into production. Lessons learned from the last 18 months in production and 30X in scale.&nbsp;</p>

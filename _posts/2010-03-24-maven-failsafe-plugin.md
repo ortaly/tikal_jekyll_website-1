@@ -5,7 +5,7 @@ created: 1269413056
 author: ittayd
 permalink: /alm/maven-failsafe-plugin
 tags:
-- ALM
+- DevOps
 ---
 <p><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-family: Verdana, Helvetica, Arial, sans-serif; line-height: normal; font-size: 13px; ">
 <p style="line-height: 1.3em; font-size: 12px; color: rgb(0, 0, 0); "><font class="Apple-style-span" color="#666666" face="Tahoma, Verdana, Arial, Helvetica, sans-serif" size="4"><span class="Apple-style-span" style="font-size: 14px; line-height: 21px;"><font class="Apple-style-span" color="#000000" face="Verdana, Helvetica, Arial, sans-serif" size="3"><span class="Apple-style-span" style="font-size: 12px; line-height: 15px;"><br />

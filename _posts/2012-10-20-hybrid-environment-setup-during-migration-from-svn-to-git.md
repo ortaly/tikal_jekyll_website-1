@@ -5,7 +5,7 @@ created: 1350767403
 author: miron
 permalink: /alm/hybrid-environment-setup-during-migration-svn-git
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Moving  a +-150 developers dev group from SVN to git is a challenging task.  Management wanted some POC and pilot. Team leaders wanted that the team  agenda and timeline will be taken under consideration. And no one wanted  to decrease productivity more than necessary.</span><br />

@@ -5,7 +5,7 @@ created: 1262555650
 author: hagzag
 permalink: /alm/starting-tomcat-part-build-process-hudson-ci
 tags:
-- ALM
+- DevOps
 - Continuous Integration
 - Hudson
 ---

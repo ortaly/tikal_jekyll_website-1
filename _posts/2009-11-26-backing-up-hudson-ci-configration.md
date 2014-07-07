@@ -5,7 +5,7 @@ created: 1259221737
 author: hagzag
 permalink: /alm/backing-hudson-ci-configration
 tags:
-- ALM
+- DevOps
 - Hudson
 - Continuous Integration
 ---

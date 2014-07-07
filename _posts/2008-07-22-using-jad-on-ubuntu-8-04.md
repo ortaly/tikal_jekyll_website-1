@@ -5,7 +5,7 @@ created: 1216714020
 author: itai
 permalink: /alm/using-jad-ubuntu-804
 tags:
-- ALM
+- DevOps
 - jad
 - eclipse
 ---

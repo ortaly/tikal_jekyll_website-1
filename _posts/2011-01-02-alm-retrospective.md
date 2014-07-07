@@ -5,7 +5,7 @@ created: 1293978953
 author: ittayd
 permalink: /alm/alm-retrospective
 tags:
-- ALM
+- DevOps
 ---
 <p>The '<span class="prezi-title">ALM Retrospective</span>' presentation we did in our last <a href="http://www.tikalk.com/tce-event-281210-revolution-application-lifecycle-management-krypton">TCE</a>.</p>
 <p>&nbsp;</p>

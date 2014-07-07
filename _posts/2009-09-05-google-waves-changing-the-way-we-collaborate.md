@@ -5,7 +5,7 @@ created: 1252128519
 author: hagzag
 permalink: /alm/google-waves-changing-way-we-collaborate
 tags:
-- ALM
+- DevOps
 - Google Wave
 ---
 <p>

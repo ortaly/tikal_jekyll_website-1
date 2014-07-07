@@ -5,7 +5,7 @@ created: 1389185073
 author: chaim.turkel
 permalink: maven-auto-complete
 tags:
-- ALM
+- DevOps
 - maven
 - autocomplete
 ---

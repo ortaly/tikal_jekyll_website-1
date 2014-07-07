@@ -5,7 +5,7 @@ created: 1366014822
 author: hagzag
 permalink: /alm/multijob-19-released
 tags:
-- ALM
+- DevOps
 - multijob
 - hudson jenkins
 ---

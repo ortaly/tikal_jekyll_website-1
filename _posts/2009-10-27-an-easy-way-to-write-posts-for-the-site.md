@@ -5,7 +5,7 @@ created: 1256676786
 author: ittayd
 permalink: /alm/easy-way-write-posts-site
 tags:
-- ALM
+- DevOps
 ---
 <p>
 <meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE">

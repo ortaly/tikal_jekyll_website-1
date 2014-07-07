@@ -5,7 +5,7 @@ created: 1245188097
 author: lior.kanfi
 permalink: /alm/eclipse-democamps-galileo-2009tel-aviv
 tags:
-- ALM
+- DevOps
 ---
 <p><a href="/users/natan">Natan</a> and <a href="/users/yanai">Yanai</a> are going to lecture at coming <a title="Eclipse DemoCamps Galileo 2009" href="http://wiki.eclipse.org/Eclipse_DemoCamps_Galileo_2009">Eclipse DemoCamp</a></p>
 <h3>&nbsp;</h3>

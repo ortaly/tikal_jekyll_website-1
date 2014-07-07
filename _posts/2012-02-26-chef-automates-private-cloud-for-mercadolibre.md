@@ -5,9 +5,8 @@ created: 1330242300
 author: hagzag
 permalink: /chef-automates-private-cloud-mercadolibre
 tags:
-- ALM
-- configuration managment (cm)
 - DevOps
+- configuration managment (cm)
 - Chef
 - Opscode
 ---

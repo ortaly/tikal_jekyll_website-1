@@ -5,7 +5,7 @@ created: 1272268247
 author: shalom
 permalink: /alm/seven-reasons-why-you-should-abandon-ubuntu
 tags:
-- ALM
+- DevOps
 - ubuntu fos
 ---
 <p><a href="http://www.ebb.org/bkuhn/blog/2010/01/14/ubuntu-debian.html">seven good reasons to abandon Ubuntu in favor of a really free OS&nbsp;like Debian</a> by Bradley M. kuhn.</p>

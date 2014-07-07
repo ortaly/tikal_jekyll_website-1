@@ -5,7 +5,7 @@ created: 1219741315
 author: lior.kanfi
 permalink: /alm/eclipse-34-crash-under-jdk-1606-linux
 tags:
-- ALM
+- DevOps
 - Ubuntu JDK Troubleshooting
 ---
 <pre wrap="" class="rteleft">

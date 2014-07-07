@@ -5,7 +5,7 @@ created: 1257350466
 author: keren
 permalink: /alm/how-can-i-update-my-projects-version-without-touching-pomxml
 tags:
-- ALM
+- DevOps
 ---
 <p>I have several project. Some are depending on other and some are standalone. All projects are at&nbsp; starteam.</p>
 <p><br />

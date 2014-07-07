@@ -5,7 +5,7 @@ created: 1255617346
 author: ittayd
 permalink: /alm/interesting-read-about-origin-ant-and-why-it-uses-xml
 tags:
-- ALM
+- DevOps
 - Ant
 ---
 <p>http://web.archive.org/web/20041217023752/x180.net/Journal/2004/03/31.html</p>

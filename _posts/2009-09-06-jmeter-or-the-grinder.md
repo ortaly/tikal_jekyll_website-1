@@ -4,7 +4,7 @@ title: JMeter or The Grinder?
 created: 1252217794
 permalink: jmeter-or-the-grinder
 tags:
-- ALM
+- DevOps
 - Performance Testing
 - Grinder
 - JMeter

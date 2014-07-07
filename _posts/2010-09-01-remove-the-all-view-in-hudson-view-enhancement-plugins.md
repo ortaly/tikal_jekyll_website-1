@@ -5,7 +5,7 @@ created: 1283328584
 author: hagzag
 permalink: /alm/remove-all-view-hudson-view-enhancement-plugins
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>I had tow motivations of getting rid of the All view</p>

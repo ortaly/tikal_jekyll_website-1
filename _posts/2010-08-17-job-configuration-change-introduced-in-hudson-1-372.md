@@ -5,7 +5,7 @@ created: 1282057660
 author: hagzag
 permalink: /alm/job-configuration-change-introduced-hudson-1372
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>Yesterday I upgraded hudson to the greatest an latest which was a seamless upgrade.</p>

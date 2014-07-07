@@ -5,7 +5,7 @@ created: 1256056410
 author: hagzag
 permalink: /alm/tikal-community-inserting-code-snippets-posts-v2
 tags:
-- ALM
+- DevOps
 - Syntaxhighlighter
 ---
 <p>Hi All, <br/>

@@ -5,7 +5,7 @@ created: 1286985236
 author: zvika
 permalink: /alm/skipping-code-duplication-errors-mavenhudson
 tags:
-- ALM
+- DevOps
 - PMD
 - maven-pmd-plugin
 - Hudson

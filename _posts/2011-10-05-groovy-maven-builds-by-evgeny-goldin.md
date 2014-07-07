@@ -5,7 +5,7 @@ created: 1317813788
 author: itai
 permalink: /groovy-maven-builds-evgeny-goldin
 tags:
-- ALM
+- DevOps
 - Groovy
 ---
 <p><font face="georgia,serif">This Session will covers the following topics:</font></p>

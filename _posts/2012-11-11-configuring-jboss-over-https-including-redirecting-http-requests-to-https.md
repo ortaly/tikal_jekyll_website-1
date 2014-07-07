@@ -5,7 +5,7 @@ created: 1352618212
 author: yorammi
 permalink: configuring-jboss-over-https-including-redirecting-http-requests-to-https
 tags:
-- ALM
+- DevOps
 - ssl
 - jboss
 - https

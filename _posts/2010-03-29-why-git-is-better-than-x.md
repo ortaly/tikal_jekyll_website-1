@@ -5,7 +5,7 @@ created: 1269850523
 author: ittayd
 permalink: /alm/why-git-better-x
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p><span class="Apple-style-span" style="line-height: 19px; font-size: 12px; "><a href="http://whygitisbetterthanx.com/#">http://whygitisbetterthanx.com/#</a>&nbsp;</span></p>

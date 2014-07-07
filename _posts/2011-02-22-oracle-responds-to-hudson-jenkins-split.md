@@ -5,7 +5,7 @@ created: 1298350334
 author: ittayd
 permalink: /alm/oracle-responds-hudsonjenkins-split
 tags:
-- ALM
+- DevOps
 - CI
 - hudson jenkins
 ---

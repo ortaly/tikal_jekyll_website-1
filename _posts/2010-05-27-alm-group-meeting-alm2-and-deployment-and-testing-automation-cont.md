@@ -5,7 +5,7 @@ created: 1274964137
 author: liya
 permalink: /alm/alm-group-meeting-alm2-and-deployment-and-testing-automation-cont
 tags:
-- ALM
+- DevOps
 ---
 <p>Next ALM group meeting will take place on the 15th of June @Tikal office.</p>
 <p>Agenda:</p>

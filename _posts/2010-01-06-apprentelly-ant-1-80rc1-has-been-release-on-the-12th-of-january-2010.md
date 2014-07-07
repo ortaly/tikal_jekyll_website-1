@@ -5,7 +5,7 @@ created: 1262785521
 author: hagzag
 permalink: /alm/apprentelly-ant-180rc1-has-been-release-12th-january-2010
 tags:
-- ALM
+- DevOps
 - Geeks-fun
 - Ant
 ---

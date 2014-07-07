@@ -5,7 +5,7 @@ created: 1284319807
 author: hagzag
 permalink: /alm/important-fix-matrix-build-multiple-nodes-hudson-ci-release-1376
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>Those of you using the greatest and latest might of noticed a  regression in matrix configuration running on multiple nodes in a  nutshell this job type has the ability to execute the same build with a  configuration matrix - and run the build in parallel (if you have slaves  attached).</p>

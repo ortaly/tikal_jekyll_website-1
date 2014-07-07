@@ -5,7 +5,7 @@ created: 1248239277
 author: ittayd
 permalink: /alm/buildr-vs-gradle
 tags:
-- ALM
+- DevOps
 - buildr build gradle
 ---
 <p>BuildR and Gradle are tools for multi-module builds where the build files are defined using a real language and task based (Ruby for BuildR, Groovy for Gradle). The benefits of a real language is that it is easy to create utility methods, control structures etc. Being task based (where 'task' is not the same as in ant, but rather as a Make target) means fine grained dependencies and lifecycle through invocation of dependencies.</p>

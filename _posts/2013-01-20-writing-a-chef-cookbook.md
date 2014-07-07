@@ -5,7 +5,7 @@ created: 1358679639
 author: hagzag
 permalink: /alm/writing-chef-cookbook
 tags:
-- ALM
+- DevOps
 - recipe
 - opscode chef
 - cookbook

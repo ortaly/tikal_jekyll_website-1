@@ -5,7 +5,7 @@ created: 1362926924
 author: gil
 permalink: simple-way-of-using-nuget
 tags:
-- ALM
+- DevOps
 - Dependency mechanism
 - NuGet
 - c#

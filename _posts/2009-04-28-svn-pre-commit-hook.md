@@ -5,7 +5,7 @@ created: 1240915337
 author: liya
 permalink: /alm/svn-pre-commit-hook
 tags:
-- ALM
+- DevOps
 - subversion
 ---
 <p>It was one of those tasks that you think &quot;i'll finish with it in a couple of hours&quot;, but i found myself dealing with it for more than 2 days...</p>

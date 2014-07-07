@@ -4,7 +4,7 @@ title: maven-assembly-plugin doesn't see dependencies
 created: 1244710917
 permalink: maven-assembly-plugin-doesnt-see-dependencies
 tags:
-- ALM
+- DevOps
 - maven assembly plugin
 ---
 <p>Starting from version 2.2-beta-3 maven assembly plugin doesn't see dependencies</p>

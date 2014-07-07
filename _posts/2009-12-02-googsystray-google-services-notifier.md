@@ -5,7 +5,7 @@ created: 1259745004
 author: ittayd
 permalink: /alm/googsystray-google-services-notifier
 tags:
-- ALM
+- DevOps
 - wave
 ---
 <p>https://sourceforge.net/projects/googsystray/</p>

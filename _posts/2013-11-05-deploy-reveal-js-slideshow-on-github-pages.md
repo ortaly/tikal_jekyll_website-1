@@ -5,7 +5,7 @@ created: 1383603607
 author: hagzag
 permalink: /alm/deploy-revealjs-slideshow-github-pages
 tags:
-- ALM
+- DevOps
 - reveal.js github github-pages git
 ---
 <p>Deploy <a href="https://github.com/hakimel/reveal.js/">reveal.js slideshow</a> on github-pages was ridiculously easy.</p>

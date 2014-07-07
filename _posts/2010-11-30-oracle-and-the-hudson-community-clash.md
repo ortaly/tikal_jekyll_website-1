@@ -5,7 +5,7 @@ created: 1291141564
 author: ittayd
 permalink: /alm/oracle-and-hudson-community-clash
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>This article recaps a string of events where Oracle tries to prevent the hudson developers community from migrating the code base from java.net to github. One thing they claim is that although hudson is open source, they own the trademark to the hudson name </p>

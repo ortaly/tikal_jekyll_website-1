@@ -5,7 +5,7 @@ created: 1282915829
 author: hagzag
 permalink: /alm/hudson-plugins-you-cant-live-without
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>As a big fan of hudson-ci I would like to take a note of the most commonly used hudson plug-ins (at least by me) needed in order to maintain a good build environment.</p>

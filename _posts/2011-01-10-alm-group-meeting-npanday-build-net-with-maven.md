@@ -5,7 +5,7 @@ created: 1294642008
 author: itai
 permalink: /alm/alm-group-meeting-npanday-build-net-maven
 tags:
-- ALM
+- DevOps
 ---
 <p>In this session will introduce by example build process of .net project using maven (Npanday)</p>
 <p>Will use visual studio and npanday add-on .</p>

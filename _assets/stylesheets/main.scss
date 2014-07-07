@@ -894,24 +894,46 @@
 {
   border-right:1px solid #868686
 }
-  #block-menu-menu-domains ul.menu a
-{
-  vertical-align:middle;
-  line-height:46px;
-  border:1px solid #a0a0a0;
-  border-right:1px solid #e7e7e7;
-  color:white;
-  text-shadow:1px 1px 1px rgba(0,0,0,0.15);
-  display:inline-block;
-  width:62px;
-  height:47px;
-  font-size:19px;
-  font-weight:600;
-  -webkit-transition:all 200ms;
-  -moz-transition:all 200ms;
-  -ms-transition:all 200ms;
-  -o-transition:all 200ms;
-  transition:all 200ms
+  #block-menu-menu-domains ul.menu { 
+    
+    a {
+      vertical-align:middle;
+      line-height:46px;
+      border:1px solid #a0a0a0;
+      border-right:1px solid #e7e7e7;
+      color:white;
+      text-shadow:1px 1px 1px rgba(0,0,0,0.15);
+      display:inline-block;
+      height:47px;
+      font-size:19px;
+      font-weight:600;
+      -webkit-transition:all 200ms;
+      -moz-transition:all 200ms;
+      -ms-transition:all 200ms;
+      -o-transition:all 200ms;
+      transition:all 200ms
+    }
+
+    li.alm a {
+      width:77px;
+    }
+
+    li.java a {
+      width:62px;
+    }
+
+    li.js a {
+      width:47px;
+    }
+
+    li[class*="net"] a {
+      width:79px;
+    }
+
+    li.ror a {
+      width:62px;
+    }
+
 }
 .section-alm #block-menu-menu-domains ul.menu li.alm a
 {
@@ -1457,14 +1479,15 @@
   left:0;
   width:173px;
   height:117px;
-  padding-top:37px;
+  padding: 37px 5px 0 0;
+
   text-shadow:1px 1px 1px rgba(0,0,0,0.15);
   margin-right:-6px;
   transition-property:all;
   transition-duration:0.2s;
   -webkit-transition-duration:0.2s
 }
-.block-domains-home-page ul.menu li.alm a
+.block-domains-home-page ul.menu li.devops a
 {
   background:#c42a44
 }
@@ -1476,7 +1499,7 @@
 {
   background:#547a7d
 }
-.block-domains-home-page ul.menu li[class*="net"] a
+.block-domains-home-page ul.menu li[class*="android"] a
 {
   background:#e05e46
 }

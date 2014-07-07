@@ -5,7 +5,7 @@ created: 1294330908
 author: hagzag
 permalink: /alm/hudson-1392-regression-maven-2-support
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>Well we can't be too optimistic these days.</p>

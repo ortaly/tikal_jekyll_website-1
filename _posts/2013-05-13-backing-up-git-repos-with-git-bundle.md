@@ -5,7 +5,7 @@ created: 1368469463
 author: hagzag
 permalink: /alm/backing-git-repos-git-bundle
 tags:
-- ALM
+- DevOps
 - git
 - git bundle
 - backup

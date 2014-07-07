@@ -5,7 +5,7 @@ created: 1247816061
 author: liya
 permalink: /alm/merging-xml-files-ant
 tags:
-- ALM
+- DevOps
 - XML
 - Ant
 ---

@@ -5,7 +5,7 @@ created: 1257967935
 author: liya
 permalink: /alm/creating-additional-attached-jar-artifact-project-maven-jar-plugin
 tags:
-- ALM
+- DevOps
 ---
 <p><!--{12579677261690}--><!--{12579677261691}--></p>
 <p style="font-family: tahoma,sans-serif;"><style type="text/css">

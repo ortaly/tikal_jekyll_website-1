@@ -5,7 +5,7 @@ created: 1278504771
 author: dror
 permalink: /alm/selenium-automated-web-testing-flow-control
 tags:
-- ALM
+- DevOps
 ---
 <!--break-->
 <p>First, here are some Selenium related links:<br />

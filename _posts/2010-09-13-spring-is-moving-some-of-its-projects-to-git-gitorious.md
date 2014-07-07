@@ -5,7 +5,7 @@ created: 1284410958
 author: ittayd
 permalink: /alm/spring-moving-some-its-projects-git-gitorious
 tags:
-- ALM
+- DevOps
 - git
 - git spring
 ---

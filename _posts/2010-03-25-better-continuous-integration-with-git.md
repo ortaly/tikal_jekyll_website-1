@@ -5,7 +5,7 @@ created: 1269516719
 author: ittayd
 permalink: /alm/better-continuous-integration-git
 tags:
-- ALM
+- DevOps
 - git
 - CI
 ---

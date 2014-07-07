@@ -4,7 +4,7 @@ title: Maven Anti Pattern
 created: 1277885715
 permalink: maven-anti-pattern
 tags:
-- ALM
+- DevOps
 - Maven Java
 ---
 <p>Recently i came across a strange application of Maven. In fact it seems so appalling and ridiculous, so i decided to share as anti pattern for Maven usage.</p>

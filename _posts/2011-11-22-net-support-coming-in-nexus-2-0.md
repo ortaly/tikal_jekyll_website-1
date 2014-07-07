@@ -5,7 +5,7 @@ created: 1321947641
 author: hagzag
 permalink: /net-support-coming-nexus-20
 tags:
-- ALM
+- DevOps
 - Nexus
 ---
 <p><img alt="" style="width: 190px; height: 47px;" src="/files/upload/29/nexus-small.png" />.Net support is coming in Nexus 2.0, this should be interesting.</p>

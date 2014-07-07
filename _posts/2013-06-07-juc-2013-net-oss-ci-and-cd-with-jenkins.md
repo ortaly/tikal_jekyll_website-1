@@ -5,7 +5,7 @@ created: 1370588444
 author: hagzag
 permalink: /alm/juc-2013-net-oss-ci-cd-jenkins
 tags:
-- ALM
+- DevOps
 - CI
 - Continuous Integration
 - CM

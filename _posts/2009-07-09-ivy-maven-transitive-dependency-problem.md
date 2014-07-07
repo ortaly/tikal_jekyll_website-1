@@ -5,7 +5,7 @@ created: 1247134992
 author: liya
 permalink: /alm/ivy-maven-transitive-dependency-problem
 tags:
-- ALM
+- DevOps
 - Ant
 ---
 <p>I have multiple modules project built partially with Maven (pure Java modules) and partially with ANT with IVY dependencies management (mixed Java and other technologies modules).<br />

@@ -5,7 +5,7 @@ created: 1367563862
 author: hagzag
 permalink: /alm/setup-git-gitweb-git-http-backend-smart-http-ubuntu-1204
 tags:
-- ALM
+- DevOps
 ---
 <p>Setting up git over http (Smart HTTP in perticular) has it&#39;s caveats I will try to emphesize them as I go along.</p>
 <p>Final Goal is to run git over http using git-http-backend (a.k.a smart http) in apposed to using webdav which is also called the dumb-method, webdav was never designed to work with git for the reason that it cannot compress object whilst transporting data between the client and the server hosting git [ there is no real git client - git server so i am not referring to it a such].</p>

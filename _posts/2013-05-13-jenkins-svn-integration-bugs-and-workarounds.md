@@ -5,7 +5,7 @@ created: 1368453166
 author: timor.raiman
 permalink: jenkins-svn-integration-bugs-and-workarounds
 tags:
-- ALM
+- DevOps
 ---
 <p><span style="font-size: 12px;">Recently I&#39;ve had to setup Jenkins to build from an https-exposed SVN repo on a Windows slave. I&#39;ll describe two gutcha&#39;s:</span></p>
 <div>

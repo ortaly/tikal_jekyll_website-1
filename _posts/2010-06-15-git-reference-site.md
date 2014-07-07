@@ -5,7 +5,7 @@ created: 1276586953
 author: ittayd
 permalink: /alm/git-reference-site
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>&nbsp;<a href="http://gitref.org/">http://gitref.org/</a></p>

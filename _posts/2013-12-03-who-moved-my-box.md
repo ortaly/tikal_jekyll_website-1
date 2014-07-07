@@ -5,7 +5,7 @@ created: 1386059527
 author: hagzag
 permalink: /alm/who-moved-my-box
 tags:
-- ALM
+- DevOps
 - Vagrant
 - virtualbox
 - veewee

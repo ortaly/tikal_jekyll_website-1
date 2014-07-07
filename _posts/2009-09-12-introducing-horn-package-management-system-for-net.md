@@ -6,7 +6,7 @@ author: andrew
 permalink: /net/introducing-horn-package-management-system-net
 tags:
 - .NET
-- ALM build
+- DevOps build
 - .Net Open Source
 ---
 <p>I was looking for a build system similar to maven for .Net. A standard tool for building project is MSBuild which is heavily influenced by Ant. While it is&nbsp; easy to create build scripts for small project, it does not manage the packages as effectively as maven.</p>

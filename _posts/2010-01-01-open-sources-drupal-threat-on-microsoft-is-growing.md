@@ -5,7 +5,7 @@ created: 1262373029
 author: hagzag
 permalink: /alm/open-sources-drupal-threat-microsoft-growing
 tags:
-- ALM
+- DevOps
 - Microsoft
 - Drupal
 ---

@@ -5,7 +5,7 @@ created: 1260280370
 author: ittayd
 permalink: /alm/computer-language-benchmarks-game
 tags:
-- ALM
+- DevOps
 - benchmark
 ---
 <p>http://shootout.alioth.debian.org</p>

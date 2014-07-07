@@ -5,7 +5,7 @@ created: 1290547359
 author: shalom
 permalink: /alm/linux-desktops-are-getting-faster
 tags:
-- ALM
+- DevOps
 - Linux
 ---
 <p>A recent kernel <a href="http://marc.info/?l=linux-kernel&amp;m=128978361700898&amp;w=2">patch</a> that may improve our day to day life, especially for us developers that use a lot of ant/maven and heavy IDEs.</p>

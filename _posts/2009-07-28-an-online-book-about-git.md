@@ -5,7 +5,7 @@ created: 1248759140
 author: ittayd
 permalink: /alm/online-book-about-git
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>This online book is for getting started with Git. It presents all information, but doesn't go too deep as to confuse.</p>

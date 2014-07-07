@@ -5,7 +5,7 @@ created: 1288790877
 author: yifat
 permalink: /alm/tce-event-revolution-application-lifecycle-management-krypton
 tags:
-- ALM
+- DevOps
 ---
 <div>
 <div>

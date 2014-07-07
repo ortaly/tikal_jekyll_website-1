@@ -5,7 +5,7 @@ created: 1303936587
 author: ittayd
 permalink: /alm/veracity-new-dvcs
 tags:
-- ALM
+- DevOps
 - veracity
 - dvcs
 ---

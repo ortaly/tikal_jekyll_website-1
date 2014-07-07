@@ -5,8 +5,8 @@ created: 1293981587
 author: liya
 permalink: /alm/alm-tce-parallel-development
 tags:
-- ALM
-- alm git hudson svn
+- DevOps
+- git hudson svn
 ---
 <p>The '<strong>Parallel Development</strong>'&nbsp; presentation we gave in our last <a href="http://www.tikalk.com/tce-event-281210-revolution-application-lifecycle-management-krypton">TCE</a> event.</p>
 <p>&nbsp;</p>

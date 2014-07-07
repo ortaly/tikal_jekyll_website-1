@@ -5,7 +5,7 @@ created: 1297094388
 author: shalom
 permalink: /alm/goodbye-apple-hello-honey
 tags:
-- ALM
+- DevOps
 - linux android
 ---
 <h1>Visual tour: Android 3.0 'Honeycomb' has landed</h1>

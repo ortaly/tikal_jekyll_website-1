@@ -5,7 +5,7 @@ created: 1293020893
 author: shalom
 permalink: /alm/cant-start-tomcat-centos-large-memory
 tags:
-- ALM
+- DevOps
 - jvm centos linux
 ---
 <p>We are trying to run tomcat 5 with 30G&nbsp;memeory: -Xms30G -Xmx30G, running on centos 5 64bit with 64G memory and 24 CPUs.</p>

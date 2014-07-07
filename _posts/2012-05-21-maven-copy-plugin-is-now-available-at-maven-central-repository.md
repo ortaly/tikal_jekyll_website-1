@@ -5,7 +5,7 @@ created: 1337548684
 author: liya
 permalink: /maven-copy-plugin-now-available-maven-central-repository
 tags:
-- ALM
+- DevOps
 - maven
 ---
 <p>While building with maven we often need to perform different kind of actions that were very simple with an old uncle Ant, but can become messy and complicated with Maven: copy files, directories, dependencies, filtering text, creating your &quot;runtime' environment, and new tasks like attaching additional artifacts and etc.</p>

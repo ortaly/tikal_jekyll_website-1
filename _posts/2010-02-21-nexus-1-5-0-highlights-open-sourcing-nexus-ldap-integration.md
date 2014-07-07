@@ -5,7 +5,7 @@ created: 1266742753
 author: liya
 permalink: /alm/nexus-150-highlights-open-sourcing-nexus-ldap-integration
 tags:
-- ALM
+- DevOps
 - Nexus
 ---
 <p>Good news - starting from Nexus 1.5.0 LDAP Features are part of Nexus Open Source.</p>

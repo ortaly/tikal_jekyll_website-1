@@ -5,7 +5,7 @@ created: 1248842957
 author: yanai
 permalink: /alm/you-move-mysql-innodb-myisam
 tags:
-- ALM
+- DevOps
 - Innodb MyISAM
 ---
 <p>Crying about Innodb being XX times slower than MyISAM ? This might help:</p>

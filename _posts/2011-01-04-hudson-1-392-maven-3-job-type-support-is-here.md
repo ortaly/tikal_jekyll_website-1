@@ -5,7 +5,7 @@ created: 1294125515
 author: hagzag
 permalink: /alm/hudson-1392-maven-3-job-type-support-here
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p><img hspace="5" height="100" border="0" align="left" width="100" vspace="5" alt="" src="/files/upload/29/banner-100.png" />What a great way to conclude 2010 - maven 3 Job support in Hudson.</p>

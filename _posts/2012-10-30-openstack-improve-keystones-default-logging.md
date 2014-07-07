@@ -5,7 +5,7 @@ created: 1351592418
 author: gil
 permalink: /alm/blog/some-info-about-keystone-openstack-logging
 tags:
-- ALM
+- DevOps
 - Cloud OpenStack Keystone  logfile
 ---
 <p>OpenStack consists of many services that their logging mechanism aren&#39;t described as good as it should on the net.<br />

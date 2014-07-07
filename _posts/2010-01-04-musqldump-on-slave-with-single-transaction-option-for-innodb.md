@@ -4,7 +4,7 @@ title: 'musqldump (on slave) with --single-transaction option (for InnoDB) '
 created: 1262590848
 permalink: musqldump-on-slave-with-single-transaction-option-for-innodb
 tags:
-- ALM
+- DevOps
 - MySQL
 ---
 <p>&nbsp;I got the following question from one of our customers.</p>

@@ -5,7 +5,7 @@ created: 1297075483
 author: shalom
 permalink: /alm/debian-60-squeeze-released
 tags:
-- ALM
+- DevOps
 - linux debian
 ---
 <p>The Debian project has released its new stable version 6.0 code name squeeze.<br />

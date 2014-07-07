@@ -5,7 +5,7 @@ created: 1283503059
 author: hagzag
 permalink: /alm/get-through-your-email-faster-priority-inbox-looks-promising
 tags:
-- ALM
+- DevOps
 - google
 ---
 <p>Google has taken over the web &amp; e-mail by far and truth is I don't blame them every &quot;day&quot; we hear of something new.</p>

@@ -5,7 +5,7 @@ created: 1310915905
 author: lior.kanfi
 permalink: /alm/dvcs-continuous-integration-and-feature-branches
 tags:
-- ALM
+- DevOps
 - Continuous Deployment
 - Continuous Integration
 - Feature Branch

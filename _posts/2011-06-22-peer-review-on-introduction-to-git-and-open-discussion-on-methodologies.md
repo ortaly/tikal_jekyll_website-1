@@ -5,7 +5,7 @@ created: 1308752221
 author: miron
 permalink: /alm/peer-review-introduction-git-and-open-discussion-methodologies
 tags:
-- ALM
+- DevOps
 ---
 <p>ALM forum.</p>
 <p>&nbsp;</p>

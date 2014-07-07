@@ -5,7 +5,7 @@ created: 1263549629
 author: hagzag
 permalink: /alm/drupal-jerusalem
 tags:
-- ALM
+- DevOps
 ---
 <p>For sign-up go to:&nbsp;<a href="http://www.meetup.com/Drupal-Israel/calendar/12136793/?rv=mr1p">http://www.meetup.com/Drupal-Israel/calendar/12136793/?rv=mr1p</a></p>
 <p>&nbsp;</p>

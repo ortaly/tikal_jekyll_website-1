@@ -5,7 +5,7 @@ created: 1362915859
 author: gil
 permalink: /alm/how-push-large-size-working-copy-git-repository
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>While working with GIT I have encountered something I haven&#39;t dealt with in SVN.</p>

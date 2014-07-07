@@ -5,7 +5,7 @@ created: 1356256251
 author: yanai
 permalink: /alm/secure-java-code-customer-springhibernate-web-application
 tags:
-- ALM
+- DevOps
 - Obfuscation Java code
 ---
 <p>&nbsp;<span style="font-size: 9pt; line-height: 0.47cm;">Hi,</span></p>

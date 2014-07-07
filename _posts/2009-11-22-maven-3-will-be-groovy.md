@@ -5,7 +5,7 @@ created: 1258905935
 author: ittayd
 permalink: /alm/maven-3-will-be-groovy
 tags:
-- ALM
+- DevOps
 - Groovy
 ---
 <p>Maven 3 will have extensive support for Groovy:</p>

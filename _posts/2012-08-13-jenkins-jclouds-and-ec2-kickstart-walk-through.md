@@ -5,7 +5,7 @@ created: 1344814035
 author: hagzag
 permalink: /jenkins-jclouds-ec2-kickstart-walk-through
 tags:
-- ALM
+- DevOps
 - jenkins-jcolouds-plugin
 - jclouds
 - AWS

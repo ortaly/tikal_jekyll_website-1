@@ -5,7 +5,7 @@ created: 1276623525
 author: liya
 permalink: /alm/svn-log-poor-performance-because-big-revisions
 tags:
-- ALM
+- DevOps
 - svn
 ---
 <p>We have experienced a very poor performance of the svn log command on the new repository that had only a few revisions.</p>

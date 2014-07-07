@@ -5,7 +5,7 @@ created: 1278392313
 author: hagzag
 permalink: /alm/using-xvfb-run-headless-cucumberselenium-tests-hudson
 tags:
-- ALM
+- DevOps
 - Hudson
 - selenium
 - cucumber

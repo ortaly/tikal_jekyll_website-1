@@ -5,7 +5,7 @@ created: 1280992524
 author: liorb
 permalink: /alm/import-bugs-tikal-alm-suite-bugzilla-csv-xsl-xml
 tags:
-- ALM
+- DevOps
 - bugzilla
 ---
 <p>I'm using Tikal's ALM Suite v 2009.3.63</p>

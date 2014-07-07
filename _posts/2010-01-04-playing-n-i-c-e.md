@@ -5,7 +5,7 @@ created: 1262606193
 author: hagzag
 permalink: /alm/playing-n-i-c-e
 tags:
-- ALM
+- DevOps
 ---
 <p>Mesudarim Aquire NICE</p>
 <!--break-->

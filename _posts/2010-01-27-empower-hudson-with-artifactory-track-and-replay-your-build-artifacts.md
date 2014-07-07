@@ -5,7 +5,7 @@ created: 1264605166
 author: liya
 permalink: /alm/empower-hudson-artifactory-track-and-replay-your-build-artifacts
 tags:
-- ALM
+- DevOps
 - build
 - maven
 - Hudson

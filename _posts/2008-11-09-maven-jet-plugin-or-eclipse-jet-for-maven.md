@@ -4,7 +4,7 @@ title: Maven JET plugin or Eclipse JET for Maven
 created: 1226213586
 permalink: maven-jet-plugin-or-eclipse-jet-for-maven
 tags:
-- ALM
+- DevOps
 - jet maven code generation
 ---
 <pre>

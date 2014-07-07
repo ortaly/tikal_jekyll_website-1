@@ -5,7 +5,7 @@ created: 1325147564
 author: liorb
 permalink: /nexus-adds-additional-beta-jar-name
 tags:
-- ALM
+- DevOps
 - Nexus
 - maven
 ---

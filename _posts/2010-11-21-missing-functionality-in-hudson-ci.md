@@ -4,7 +4,7 @@ title: missing functionality in Hudson CI
 created: 1290334183
 permalink: missing-functionality-in-hudson-ci
 tags:
-- ALM
+- DevOps
 - Hudson
 - CI
 ---

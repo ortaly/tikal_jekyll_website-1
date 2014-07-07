@@ -5,7 +5,7 @@ created: 1268740089
 author: ittayd
 permalink: /alm/vmware-hires-redis-developer
 tags:
-- ALM
+- DevOps
 - VMWare
 ---
 <p>&nbsp;VMWare continues its push to become a full cloud computing platform by hiring the lead developer of Redis, a key-value store.</p>

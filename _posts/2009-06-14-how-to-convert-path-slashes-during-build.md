@@ -5,7 +5,7 @@ created: 1244976386
 author: liya
 permalink: /alm/how-convert-path-slashes-during-build
 tags:
-- ALM
+- DevOps
 - Ant
 ---
 <p>It happens many times that you need to set a property using path defined in the build process and convert slashes according to the relevant OS, and do it while coping the property file to the target directory during build.<br />

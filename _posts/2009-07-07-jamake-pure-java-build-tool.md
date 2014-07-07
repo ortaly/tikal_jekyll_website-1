@@ -4,7 +4,7 @@ title: Jamake - Pure Java Build Tool
 created: 1246960460
 permalink: jamake-pure-java-build-tool
 tags:
-- ALM
+- DevOps
 - Jamake - my new born Open Source project
 ---
 Hello, guys.

@@ -5,7 +5,7 @@ created: 1287404403
 author: ittayd
 permalink: /alm/meetup-kohsuke-kawaguchi-creator-hudson
 tags:
-- ALM
+- DevOps
 - Hudson
 ---
 <p>Kohsuke Kawaguchi, creator of Hudson is in Israel and has agreed to meet people that are interested to know more about Hudson</p>

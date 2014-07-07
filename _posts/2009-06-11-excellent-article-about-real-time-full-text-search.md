@@ -4,7 +4,7 @@ title: Excellent article about real time full-text search
 created: 1244706781
 permalink: excellent-article-about-real-time-full-text-search
 tags:
-- ALM
+- DevOps
 - real time full-text search
 - reverse index
 - twitter

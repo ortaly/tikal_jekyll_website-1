@@ -5,7 +5,7 @@ created: 1247554385
 author: udid
 permalink: /alm/software-quality-–-os-bi-bugzilla-–-now-pentaho-30-part-2
 tags:
-- ALM
+- DevOps
 - SQR
 - Pentaho
 - OSBI

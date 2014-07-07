@@ -5,7 +5,7 @@ created: 1284275985
 author: ittayd
 permalink: /alm/five-advanced-git-merge-techniques
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>http://blog.ezyang.com/2010/01/advanced-git-merge/</p>

@@ -5,7 +5,7 @@ created: 1266742336
 author: liya
 permalink: /alm/how-backup-nexus-configuration-and-repository-artifacts
 tags:
-- ALM
+- DevOps
 - Nexus
 ---
 <p>Usefull article on how and what to backup in Nexus</p>

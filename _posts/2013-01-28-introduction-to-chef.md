@@ -5,7 +5,7 @@ created: 1359388383
 author: hagzag
 permalink: /alm/introduction-chef
 tags:
-- ALM
+- DevOps
 - role
 - recipe
 - opscode chef

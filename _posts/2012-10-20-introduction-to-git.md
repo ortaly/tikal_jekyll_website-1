@@ -5,7 +5,7 @@ created: 1350758857
 author: miron
 permalink: /alm/introduction-git
 tags:
-- ALM
+- DevOps
 ---
 <p><style type="text/css">
 	<!--

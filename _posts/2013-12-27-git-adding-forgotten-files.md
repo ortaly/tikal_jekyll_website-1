@@ -5,7 +5,7 @@ created: 1388130594
 author: hagzag
 permalink: git-adding-forgotten-files
 tags:
-- ALM
+- DevOps
 ---
 <p>How many time have you commited somthing to git and forgot to add a file (or two ...), if this was perfoece / subverison / other,&nbsp;your screwed :) with git all you need to do is:</p>
 

@@ -4,7 +4,7 @@ title: Best practices for running Java virtual machines on VMware ESX
 created: 1285580687
 permalink: best-practices-for-running-java-virtual-machines-on-vmware-esx
 tags:
-- ALM
+- DevOps
 - VM
 - jvm
 ---

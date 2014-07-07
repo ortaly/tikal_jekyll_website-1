@@ -8,7 +8,7 @@ tags:
 - JAVA
 - Java
 - maven
-- ALM
+- DevOps
 ---
 <h1>Create a Java CLI application with Maven<o:p></o:p></h1>
 

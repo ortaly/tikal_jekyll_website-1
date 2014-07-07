@@ -4,7 +4,7 @@ title: New Maven repository at JBoss.org
 created: 1272136369
 permalink: new-maven-repository-at-jboss-org
 tags:
-- ALM
+- DevOps
 ---
 <p>New JBoss repository was announced by JBoss.org.&nbsp;</p>
 <p>The old repository&nbsp;<a href="http://repository.jboss.org/maven2/">repository.jboss.org/maven2/</a>&nbsp;will stay readonly. New content will be available in the new repository only.&nbsp;</p>

@@ -5,7 +5,7 @@ created: 1252235291
 author: hagzag
 permalink: /alm/google-calendar-thunderbird-ubuntu-904
 tags:
-- ALM
+- DevOps
 - Thunderbird
 - lightning
 - Google-Provider

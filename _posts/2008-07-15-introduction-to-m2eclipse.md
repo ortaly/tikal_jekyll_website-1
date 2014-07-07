@@ -5,7 +5,7 @@ created: 1216100820
 author: itai
 permalink: /alm/introduction-m2eclipse
 tags:
-- ALM
+- DevOps
 - eclipse
 - maven
 - m2eclipse

@@ -5,7 +5,7 @@ created: 1284318190
 author: ittayd
 permalink: /alm/gitolite-access-control-management-git
 tags:
-- ALM
+- DevOps
 - git
 ---
 <p>http://github.com/sitaramc/gitolite</p>

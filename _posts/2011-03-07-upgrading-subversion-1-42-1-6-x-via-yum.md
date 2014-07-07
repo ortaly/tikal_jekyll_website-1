@@ -5,7 +5,7 @@ created: 1299477044
 author: hagzag
 permalink: /alm/upgrading-subversion-142-16x-yum
 tags:
-- ALM
+- DevOps
 - subversion
 - Centos
 ---

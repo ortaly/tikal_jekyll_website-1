@@ -5,7 +5,7 @@ created: 1255812485
 author: lior.kanfi
 permalink: /alm/jetbrains-intellij-idea-goes-open-source
 tags:
-- ALM
+- DevOps
 - Java IDE
 - IntelliJ
 ---

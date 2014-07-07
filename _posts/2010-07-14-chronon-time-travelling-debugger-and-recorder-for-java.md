@@ -5,7 +5,7 @@ created: 1279089744
 author: ittayd
 permalink: /alm/chronon-time-travelling-debugger-and-recorder-java
 tags:
-- ALM
+- DevOps
 - java debugger
 ---
 <p>http://www.chrononsystems.com/</p>

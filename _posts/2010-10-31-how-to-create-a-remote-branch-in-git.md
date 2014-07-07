@@ -5,7 +5,7 @@ created: 1288550597
 author: shalom
 permalink: /alm/how-create-remote-branch-git
 tags:
-- ALM
+- DevOps
 - git branch
 ---
 <p>Git branching model and capabilities is certainly one of git's powers, but like many things in git I often find my self in a situation where I know what I want to do and I kind of know which git commands I will probably want to use but exactly how to do it sometimes remains a mystery. And like most things in git you can do a task in many different ways.</p>

@@ -5,8 +5,8 @@ created: 1390382633
 author: gil
 permalink: cloning-checking-out-a-certain-folder-in-a-git-repository
 tags:
-- ALM
-- alm git gitweb apache
+- DevOps
+- git gitweb apache
 ---
 <p>Moving from SVN to GIT comes with&nbsp;many advantages. One of the disadvantages I, personaly, have encountered is the fact that you cannot clone a single file or folder in a repository.</p>
 

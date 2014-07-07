@@ -4,7 +4,7 @@ title: Remotly dumping the content of RDBMS (Oracle. mysql etc)
 created: 1237357052
 permalink: remotly-dumping-the-content-of-rdbms-oracle-mysql-etc
 tags:
-- ALM
+- DevOps
 - MySQL
 - oracle
 - dump

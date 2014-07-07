@@ -4,7 +4,7 @@ title: Tikal's MySQL for Integrators Course – Tikal client closed event
 created: 1255552169
 permalink: tikals-mysql-for-integrators-course-tikal-client-closed-event
 tags:
-- ALM
+- DevOps
 - MySQL
 ---
 <p style="margin-bottom: 0in;"><br>

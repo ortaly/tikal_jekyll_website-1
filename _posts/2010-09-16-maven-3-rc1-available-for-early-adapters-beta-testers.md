@@ -5,7 +5,7 @@ created: 1284638791
 author: hagzag
 permalink: /alm/maven-3-rc1-available-early-adapters-beta-testers
 tags:
-- ALM
+- DevOps
 ---
 <p>See:&nbsp; <a class="title" href="http://www.sonatype.com/people/2010/09/please-try-maven-3-0-rc1/" rel="bookmark">Please try Maven 3.0 RC1!</a> by Jason van Zyl.</p>
 <p>&nbsp;</p>

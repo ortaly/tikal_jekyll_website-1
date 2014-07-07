@@ -5,7 +5,7 @@ created: 1299765620
 author: zvika
 permalink: /alm/deploying-self-contained-spring-apps-jboss-51ga
 tags:
-- ALM
+- DevOps
 - Spring
 ---
 <p><font class="Apple-style-span" face="Arial" size="2">Recently, I was in need to deploy Spring's sample Travel web application on JBoss 5.1. The process of making the deployment pass mainly consisted of solving mismatches between JBoss JPA and the web-application-contained Hibernate. I hope the following description of the steps will help others (diminishing bunch?) &nbsp;deploy Spring apps on JBoss 5.1.</font></p>

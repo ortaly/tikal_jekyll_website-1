@@ -5,7 +5,6 @@ created: 1342640597
 author: hagzag
 permalink: /alm/devops-developers-journey-ops-2-dev-and-back
 tags:
-- ALM
 - OpenStack
 - jenkins
 - jclouds

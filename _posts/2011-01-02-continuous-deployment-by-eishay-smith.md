@@ -5,7 +5,7 @@ created: 1293980384
 author: admin
 permalink: /alm/continuous-deployment-eishay-smith
 tags:
-- ALM
+- DevOps
 ---
 <p>A presentation given by <span class="prezi-meta"><span class="prezi-author">Eishay Smith</span></span> in our last <a href="http://www.tikalk.com/tce-event-281210-revolution-application-lifecycle-management-krypton">TCE</a>.</p>
 <p>&nbsp;</p>

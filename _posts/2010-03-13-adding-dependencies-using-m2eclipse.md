@@ -5,7 +5,7 @@ created: 1268488083
 author: liya
 permalink: /alm/adding-dependencies-using-m2eclipse
 tags:
-- ALM
+- DevOps
 - maven
 - eclipse
 ---

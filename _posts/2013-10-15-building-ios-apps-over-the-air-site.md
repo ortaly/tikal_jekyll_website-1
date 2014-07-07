@@ -5,7 +5,7 @@ created: 1381815579
 author: yorammi
 permalink: building-ios-apps-over-the-air-site
 tags:
-- ALM
+- DevOps
 - iOS
 - over-the-air
 - TestFlight

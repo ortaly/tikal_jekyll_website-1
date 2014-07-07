@@ -5,7 +5,7 @@ created: 1281447976
 author: ittayd
 permalink: /alm/sonatype-releases-new-library-interact-artifact-repositories
 tags:
-- ALM
+- DevOps
 - java maven repository artifacts
 ---
 <p>https://docs.sonatype.org/display/AETHER/Home</p>

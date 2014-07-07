@@ -5,7 +5,7 @@ created: 1293201614
 author: udid
 permalink: /alm/10-key-trends-mdm
 tags:
-- ALM
+- DevOps
 - OSBI
 - MDM
 ---

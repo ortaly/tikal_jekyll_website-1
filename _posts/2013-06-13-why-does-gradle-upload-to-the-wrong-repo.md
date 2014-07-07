@@ -5,7 +5,7 @@ created: 1371136428
 author: timor
 permalink: why-does-gradle-upload-to-the-wrong-repo
 tags:
-- ALM
+- DevOps
 - gradle maven repo artifact
 ---
 <h1 class="title" style="font-size: x-large; margin-bottom: 1ex; text-align: center; color: rgb(0, 0, 0); font-family: 'Times New Roman';">

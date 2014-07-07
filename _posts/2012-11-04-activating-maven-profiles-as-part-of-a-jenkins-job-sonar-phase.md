@@ -5,7 +5,7 @@ created: 1352014796
 author: yorammi
 permalink: /alm/activating-maven-profiles-part-jenkins-job-sonar-phase
 tags:
-- ALM
+- DevOps
 - Sonar
 - maven
 - jenkins

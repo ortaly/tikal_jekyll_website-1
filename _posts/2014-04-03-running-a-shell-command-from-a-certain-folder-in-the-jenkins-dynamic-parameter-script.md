@@ -7,7 +7,7 @@ author: gil
 permalink: running-a-shell-command-from-a-certain-folder-in-the-jenkins-dynamic-parameter-script
 tags:
 - Incubator
-- ALM
+- DevOps
 ---
 <p>I used the Jenkins&#39; Dynamic parameter in order to generate date for a job but that is very easy to do.</p>
 

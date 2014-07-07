@@ -5,7 +5,7 @@ created: 1244249270
 author: adi
 permalink: /alm/building-scala-maven
 tags:
-- ALM
+- DevOps
 - Scala
 - Scala Maven
 ---

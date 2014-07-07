@@ -5,7 +5,7 @@ created: 1310915685
 author: lior.kanfi
 permalink: /alm/make-large-scale-changes-incrementally-branch-abstraction
 tags:
-- ALM
+- DevOps
 - git
 - mercurial
 ---

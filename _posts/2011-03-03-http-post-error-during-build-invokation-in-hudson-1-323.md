@@ -5,7 +5,7 @@ created: 1299131178
 author: hagzag
 permalink: /alm/http-post-error-during-build-invokation-hudson-1323
 tags:
-- ALM
+- DevOps
 - hudson jenkins
 - Hudson
 - Continuous Integration
