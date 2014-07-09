@@ -34,11 +34,7 @@
                   <div class="views-field views-field-body">
                     <div class="field-content">
                       <p>
-                        {% if post.content contains '</p>' %}
-                          {{ post.content | split:'</p>' | first }}
-                        {% else %}
-                          {{ post.content }}
-                        {% endif %}
+                        {{ post.content | strip_html | truncatewords:50 }}
                       </p>
                     </div>
                   </div>
@@ -62,7 +58,7 @@
         </div>
       </div>
       <div class="view-footer">
-        <a href="/latest-articles" class="read-more">Read More »</a>
+        <a href="latest-articles" class="read-more">Read More »</a>
       </div>
     </div>
   </div><!-- /.content -->
