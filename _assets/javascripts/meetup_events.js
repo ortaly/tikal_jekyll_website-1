@@ -15,7 +15,7 @@
 	};
 
 	Sn.SiteParams = {
-		baseUrl: 'tikal_jekyll_website'
+		baseUrl: ''
 	};
 
 	module.constant('MeetupsApiParams', Sn.MeetupsApiParams);
@@ -65,7 +65,39 @@
 
 				return defer.promise;
 			},
+      getMeetupRsvps: function(meetupId){
+          var defer = $q.defer(),
+              apiUrl = [
+                  MeetupsApiParams.baseApiUrl,
+                  '2',
+                  'rsvps',
 
+              ].join('/'),
+              params = {
+                  callback: MeetupsApiParams.callback,
+                  key: MeetupsApiParams.key,
+                  event_id: meetupId
+              };
+
+
+          function onSuccess(data){
+              //debugger;
+              defer.resolve(data.results);
+          }
+
+          function onError(data, status){
+              defer.reject('Faild to load meetups'+status.data);
+          }
+
+          $http.jsonp(
+              apiUrl,
+              {params: params}
+          ).
+              success(onSuccess).
+              error(onError);
+
+          return defer.promise;
+      },
 			getMeetupAttendance: function(meetupId){
 				var defer = $q.defer(),
 					apiUrl = [
@@ -135,7 +167,11 @@
 				len = meetups.length;
 
 			for(; i < len; ++i){
-				MeetupsService.getMeetupAttendance(meetups[i].id);
+				MeetupsService.getMeetupRsvps(meetups[i].id).then(function(data){
+            if(data.length>0){
+                _self.meetupsRsvps[data[0].event.id] = data;
+            }
+        });
 			}
 		}
 
@@ -143,8 +179,14 @@
 			var i =0,
 				len = meetups.length;
 
+
 			for(; i < len; ++i){
 				_self.meetupsByStatus.past.push(meetups[i]);
+				MeetupsService.getMeetupRsvps(meetups[i].id).then(function(data){
+            if(data.length>0){
+                _self.meetupsRsvps[data[0].event.id] = data;
+            }
+        });
 			}
 
 		}
@@ -172,6 +214,7 @@
 				upcoming: [],
 				past: []
 			};
+			_self.meetupsRsvps = {};
 
 			MeetupsService
 				.getMeetups('upcoming', 0, 20)
@@ -182,6 +225,7 @@
 
 			loadPastEvents(lastOffset);
 
+
 		})();
 	}]);
 
@@ -190,12 +234,13 @@
 
 		return {
 			restrict: 'E',
-			templateUrl:'/'+Sn.SiteParams.baseUrl+'/events/meetup-event.html',
+			templateUrl:'/events/meetup-event.html',
 			replace: true,
 			scope: {
 				meetups: '=',
 				title: '@',
-				isUpcomingEvent: '@'
+				isUpcomingEvent: '@',
+        rsvps: '='
 			},
 			link: function(scope, element){
 			}
@@ -206,12 +251,13 @@ module.directive('meetupListEvent', ['$location', function($location){
 
 	return {
 		restrict: 'E',
-		templateUrl:'/'+Sn.SiteParams.baseUrl+'/block-meetup-event.html',
+		templateUrl:'/block-meetup-event.html',
 		replace: true,
 		scope: {
 			meetups: '=',
 			title: '@',
-			isUpcomingEvent: '@'
+			isUpcomingEvent: '@',
+      rsvps: '='
 		},
 		link: function(scope, element){
 		}
