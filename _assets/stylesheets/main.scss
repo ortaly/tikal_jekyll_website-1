@@ -894,8 +894,8 @@
 {
   border-right:1px solid #868686
 }
-  #block-menu-menu-domains ul.menu { 
-    
+  #block-menu-menu-domains ul.menu {
+
     a {
       vertical-align:middle;
       line-height:46px;
@@ -1579,6 +1579,14 @@
 {
 background-color:#c42a44
 }
+#block-views-article-latest-articles .view-article .views-field-name .field-content .DEVOPS
+{
+  background-color:#c42a44
+}
+#block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .DEVOPS
+{
+  background-color:#c42a44
+}
   #block-views-article-latest-articles .view-article .views-field-name .field-content .JAVA
 {
   background-color:#552439
@@ -1594,6 +1602,15 @@ background-color:#c42a44
   #block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .JS
 {
   background-color:#547a7d
+}
+
+#block-views-article-latest-articles .view-article .views-field-name .field-content .INCUBATOR
+{
+  background-color:green
+}
+#block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .INCUBATOR
+{
+  background-color:green
 }
 
   #block-views-article-latest-articles .view-article .views-field-name .field-content div[class*=NET]
@@ -4184,7 +4201,7 @@ background-color:#c42a44
 {
   background-position: -269px 1px;
 }
-.external-links-contact-page ul.menu li.meetup a 
+.external-links-contact-page ul.menu li.meetup a
 {
   background-position: -322px 1px;
 }
