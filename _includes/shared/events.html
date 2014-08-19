@@ -22,6 +22,7 @@
                     meetups="meetupsCtrl.meetupsByStatus.upcoming"
                     ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
                     is-upcoming-event="true"
+                    rsvps="meetupsCtrl.meetupsRsvps"
               ></meetup-list-event>
           </div>
 
@@ -30,6 +31,7 @@
                     title="Past Events"
                     meetups="meetupsCtrl.meetupsByStatus.past"
                     ng-show="meetupsCtrl.meetupsByStatus.past.length"
+                    rsvps="meetupsCtrl.meetupsRsvps"
                 ></meetup-list-event>
             </div>
         </div>

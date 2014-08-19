@@ -10,8 +10,11 @@
     </div>
     <div style="display:block !important" class="field-photos">
         <div style="display:block !important" class="photo">
-            Photos come here
-            <img style="display:block !important" src="http://photos2.meetupstatic.com/photos/member/9/8/c/8/thumb_188319112.jpeg" />
+            <div style="display:block !important" class="photo">
+              <div ng-repeat="rsvp in rsvps[meetup.id] | limitTo:5">
+                  <img style="display:block !important" src="{% raw %}{{rsvp.member_photo.photo_link}}{% endraw %}" />
+              </div>
+          </div>
         </div>
     </div>
 </div>

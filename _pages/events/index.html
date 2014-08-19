@@ -16,6 +16,7 @@ header_subtitle: Stay tuned with Tikal's Fullstack community upcoming Meetup eve
                         meetups="meetupsCtrl.meetupsByStatus.upcoming"
                         ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
                         is-upcoming-event="true"
+                        rsvps="meetupsCtrl.meetupsRsvps"
                   ></meetup-event>
           	</section>
 
@@ -24,6 +25,7 @@ header_subtitle: Stay tuned with Tikal's Fullstack community upcoming Meetup eve
                     title="PAST EVENTS"
                     meetups="meetupsCtrl.meetupsByStatus.past"
                     ng-show="meetupsCtrl.meetupsByStatus.past.length"
+                    rsvps="meetupsCtrl.meetupsRsvps"
                 ></meetup-event>
           			<div class="pager" id="load-more-events" style="cursor: pointer;" ng-click="meetupsCtrl.loadMore()">Load More</div>
             </section>

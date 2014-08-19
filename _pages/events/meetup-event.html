@@ -51,9 +51,11 @@
 			</div>
 
 			<div class="event-photos">
-				<div class="photo">
-					<img src="http://photos1.meetupstatic.com/photos/member/9/4/e/0/thumb_39818112.jpeg" />
-				</div>
+				<div ng-repeat="rsvp in rsvps[meetup.id] | limitTo:5">
+        	<div class="photo">
+          	<img style="display:block !important" src="{% raw %}{{rsvp.member_photo.photo_link}}{% endraw %}" />
+          </div>
+        </div>
 			</div>
 			<div class="event-description" >{% raw %}{{meetup.description}}{% endraw %}</div>
 			<a class="event-read-more" ng-href="{% raw %}{{ meetup.event_url }}{% endraw %}" target="_blank">Read More »</a>

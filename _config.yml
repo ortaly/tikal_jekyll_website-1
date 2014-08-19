@@ -3,11 +3,11 @@ markdown: redcarpet
 highlighter: true
 exclude:
   - jekyll-import-0.2.0
-baseurl: /tikal_jekyll_website
+baseurl: /
 nav_links: [ "/about", "/solutions", "/careers", "/events", "/contact" ]
 assets:
   debug: true
-  baseurl: /tikal_jekyll_website/assets
+  baseurl: /assets
   compress:
     css:  sass
     js:   uglifier
