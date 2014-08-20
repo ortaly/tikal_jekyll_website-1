@@ -5073,11 +5073,6 @@ background-color:#c42a44
   border-bottom:1px solid #e4e4e4
 }
 
-.node-article header .st_facebook_hcount 
-{
-  padding-left: 50px;
-}
-
 .node-article header .by-and-tags
 {
   color:white;
@@ -7203,4 +7198,9 @@ background-color:#c42a44
   :-ms-input-placeholder
 {
   color:#999
+}
+
+.share-buttons 
+{
+  float:right;  
 }
