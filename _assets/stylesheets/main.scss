@@ -2067,6 +2067,31 @@ background-color:#c42a44
   padding-top:12px;
   padding-bottom:16px
 }
+
+.section-hebrew .featured-background
+{
+  background:url('/sites/all/themes/sasson/tikal/images/tiled-bg-gray.jpg') repeat
+}
+.section-hebrew .featured-background #featured
+{
+  background:url('/sites/all/themes/sasson/tikal/images/featured/about.jpg') no-repeat center 0
+}
+.section-hebrew .featured-background #featured #page-title
+{
+  display:none
+}
+.section-hebrew .featured-background #featured .section_title
+{
+  background:#cb8120
+}
+.section-hebrew .featured-background #featured .section_subtitle
+{
+  background:black;
+  line-height:29px;
+  padding-top:12px;
+  padding-bottom:16px
+}
+
 .region-sidebar-first .block-menu
 {
   width:205px;
@@ -7214,4 +7239,19 @@ background-color:#c42a44
   :-ms-input-placeholder
 {
   color:#999
+}
+
+.about-tikal-hebrew{
+  margin:30px 40px 0 40px;
+}
+
+.hebrew{
+  text-align: right;
+  direction: rtl;
+  #block-views-clients-our-cients .views-row, .our-expertese ul.menu li, .our-technology-domains ul.menu li{
+    float: right;
+  }
+  .view-id-page_by_view{
+    border-bottom: none;
+  }
 }
