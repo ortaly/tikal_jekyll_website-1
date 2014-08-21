@@ -22,4 +22,7 @@
     </div>
   </div>
   {% post_date %}
+  {% assign link = page["permalink"] %}
+  {% assign title = page["title"] %}
+  {% include shared/sharethis_buttons.html link = link title = title %}
 </header>

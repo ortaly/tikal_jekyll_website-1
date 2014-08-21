@@ -23,6 +23,7 @@
   <div class="views-field views-field-created">        
     <span class="field-content">
       {% post_date %}
+      {% include shared/sharethis_buttons.html link = post.permalink title = post.title %}
     </span>
   </div>
   <div class="views-field views-field-body">
