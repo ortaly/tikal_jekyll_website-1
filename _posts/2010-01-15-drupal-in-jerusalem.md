@@ -3,7 +3,7 @@ layout: post
 title: Drupal in Jerusalem
 created: 1263549629
 author: hagzag
-permalink: /alm/drupal-jerusalem
+permalink: /devops/drupal-jerusalem
 tags:
 - DevOps
 ---

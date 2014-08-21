@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /empty-dialogs-flex-builder-3-flash-builder-4
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>This week I needed to work with My PC on a<a href='http://www.kensodev.com/tag/flex/' title='Flex'> flex</a> project. I usually stay away of the PC with flex projects, I’m used to working on the mac with these project, but I needed to work on the PC.</p>
 

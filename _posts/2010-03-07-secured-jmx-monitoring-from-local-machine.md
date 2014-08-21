@@ -3,7 +3,7 @@ layout: post
 title: secured JMX monitoring from local machine
 created: 1267973642
 author: shalom
-permalink: /alm/secured-jmx-monitoring-local-machine
+permalink: /devops/secured-jmx-monitoring-local-machine
 tags:
 - DevOps
 - jmx

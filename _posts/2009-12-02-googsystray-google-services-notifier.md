@@ -3,7 +3,7 @@ layout: post
 title: googsystray - google services notifier
 created: 1259745004
 author: ittayd
-permalink: /alm/googsystray-google-services-notifier
+permalink: /devops/googsystray-google-services-notifier
 tags:
 - DevOps
 - wave

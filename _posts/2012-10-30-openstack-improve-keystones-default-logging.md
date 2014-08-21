@@ -3,7 +3,7 @@ layout: post
 title: 'OpenStack: Improve Keystone''s Default Logging'
 created: 1351592418
 author: gil
-permalink: /alm/blog/some-info-about-keystone-openstack-logging
+permalink: /devops/blog/some-info-about-keystone-openstack-logging
 tags:
 - DevOps
 - Cloud OpenStack Keystone  logfile

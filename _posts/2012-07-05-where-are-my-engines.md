@@ -5,9 +5,8 @@ created: 1341505431
 author: avit
 permalink: /where-are-my-engines
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Right now, I am working on an engine for the Gogobot application.</p>
 <p>As part of my work on the engine, I am working with the Mongoid gem and the Fabrication gem, both great gems b.t.w.</p>

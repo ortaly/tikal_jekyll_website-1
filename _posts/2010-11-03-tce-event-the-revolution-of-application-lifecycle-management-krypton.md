@@ -3,7 +3,7 @@ layout: post
 title: TCE Event - The Revolution of Application Lifecycle Management @Krypton
 created: 1288790877
 author: yifat
-permalink: /alm/tce-event-revolution-application-lifecycle-management-krypton
+permalink: /devops/tce-event-revolution-application-lifecycle-management-krypton
 tags:
 - DevOps
 ---

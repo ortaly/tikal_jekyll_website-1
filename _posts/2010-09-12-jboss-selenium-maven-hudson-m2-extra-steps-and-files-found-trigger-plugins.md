@@ -3,7 +3,7 @@ layout: post
 title: JBoss, Selenium, Maven, Hudson, M2 Extra Steps & Files Found Trigger plugins
 created: 1284325839
 author: hagzag
-permalink: /alm/jboss-selenium-maven-hudson-m2-extra-steps-files-found-trigger-plugins
+permalink: /devops/jboss-selenium-maven-hudson-m2-extra-steps-files-found-trigger-plugins
 tags:
 - DevOps
 - selenium

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /meet-client
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Kenso specilizes in <a href='http://www.kensodev.com' target='_blank' title='Web Development'>Web Development</a> and works with local and international clients. Recently Kenso started to work with <a href='http://www.gogobot.com/' target='_blank' title='Gogobot'>Gogobot</a>, which is an app that connects you with friends all over the world and makes your travel planning easier and exciting.</p>
 

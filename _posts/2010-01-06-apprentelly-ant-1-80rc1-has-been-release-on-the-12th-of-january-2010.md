@@ -3,7 +3,7 @@ layout: post
 title: Apprentelly Ant-1.80RC1 has been release on the 12th of January 2010
 created: 1262785521
 author: hagzag
-permalink: /alm/apprentelly-ant-180rc1-has-been-release-12th-january-2010
+permalink: /devops/apprentelly-ant-180rc1-has-been-release-12th-january-2010
 tags:
 - DevOps
 - Geeks-fun

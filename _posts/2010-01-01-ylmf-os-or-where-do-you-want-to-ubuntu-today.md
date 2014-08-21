@@ -3,7 +3,7 @@ layout: post
 title: Ylmf OS - or where do you want to Ubuntu today?
 created: 1262350707
 author: hagzag
-permalink: /alm/ylmf-os-or-where-do-you-want-ubuntu-today
+permalink: /devops/ylmf-os-or-where-do-you-want-ubuntu-today
 tags:
 - DevOps
 - ubuntu

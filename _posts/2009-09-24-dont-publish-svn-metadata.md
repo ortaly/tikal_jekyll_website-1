@@ -3,7 +3,7 @@ layout: post
 title: Dont publish .svn metadata
 created: 1253783132
 author: udid
-permalink: /alm/dont-publish-svn-metadata
+permalink: /devops/dont-publish-svn-metadata
 tags:
 - DevOps
 ---

@@ -3,10 +3,9 @@ layout: post
 title: Creating self starting worker machines for fun and profit – Avi Tzurel
 created: 1344448361
 author: avit
-permalink: /ror/creating-self-starting-worker-machines-fun-and-profit-–-avi-tzurel
+permalink: /ruby/creating-self-starting-worker-machines-fun-and-profit-–-avi-tzurel
 tags:
-- RoR
-- ruby
+- Ruby
 - web
 ---
 <p>I wrote a blog post in my other personal blog about how to create a machine that will manage it’s own lifecycle.</p>

@@ -3,7 +3,7 @@ layout: post
 title: Empower Hudson with Artifactory - Track and Replay Your Build Artifacts
 created: 1264605166
 author: liya
-permalink: /alm/empower-hudson-artifactory-track-and-replay-your-build-artifacts
+permalink: /devops/empower-hudson-artifactory-track-and-replay-your-build-artifacts
 tags:
 - DevOps
 - build

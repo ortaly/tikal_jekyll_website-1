@@ -3,7 +3,7 @@ layout: post
 title: Gradle - A new Build System
 created: 1208979600
 author: lior.kanfi
-permalink: /alm/gradle-new-build-system
+permalink: /devops/gradle-new-build-system
 tags:
 - DevOps
 - maven

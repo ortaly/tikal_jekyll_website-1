@@ -3,7 +3,7 @@ layout: post
 title: 'seven reasons why you should abandon Ubuntu '
 created: 1272268247
 author: shalom
-permalink: /alm/seven-reasons-why-you-should-abandon-ubuntu
+permalink: /devops/seven-reasons-why-you-should-abandon-ubuntu
 tags:
 - DevOps
 - ubuntu fos

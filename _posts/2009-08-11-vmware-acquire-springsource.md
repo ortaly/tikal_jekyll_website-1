@@ -3,7 +3,7 @@ layout: post
 title: VMware Acquire SpringSource
 created: 1249987509
 author: yanai
-permalink: /alm/vmware-acquire-springsource
+permalink: /devops/vmware-acquire-springsource
 tags:
 - DevOps
 - VMWare SpringSource aquire

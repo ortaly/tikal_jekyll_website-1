@@ -3,7 +3,7 @@ layout: post
 title: Sonatype will support Oracle's Hudson
 created: 1296573009
 author: ittayd
-permalink: /alm/sonatype-will-support-oracles-hudson
+permalink: /devops/sonatype-will-support-oracles-hudson
 tags:
 - DevOps
 - Hudson

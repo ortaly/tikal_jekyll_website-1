@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /get-shit-done-i-mean-it
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Like any other <a href='http://kensodev.com'>web developer</a> that respects what he does, I am constantly trying to better myself as to how productive I am, how much I am really getting done and what is the quality of what I do.</p>
 

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /flash-builder-4-sharing-project-your-team-using-svn-screencast
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/05/24/flash-builder-4-sharing-a-project-with-your-team-using-svn-screencast/flash-builder-4/' rel='attachment wp-att-450'><img alt='' class='alignleft size-thumbnail wp-image-450' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/05/Flash-Builder-4-150x150.png' title='Flash Builder 4' width='150' /></a>
 <p>But before watching my screencast, I wish to tell you something a bit personal. This is my first screencast in English, after quite a few in my native tongue language. so please excuse me if I stutter or swallow some of my words. I promise to keep getting better with time.</p>

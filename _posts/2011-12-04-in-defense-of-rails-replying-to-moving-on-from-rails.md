@@ -5,8 +5,7 @@ created: 1322991038
 author: dor
 permalink: /defense-rails-replying-moving-rails
 tags:
-- RoR
-- ruby
+- Ruby
 - performance
 ---
 <p>replying to...&nbsp;<a style="color: rgb(17, 85, 204); " target="_blank" href="http://broadcastingadam.com/2011/11/moving_on_from_rails">broadcastingadam.com/<wbr></wbr>2011/11/moving_on_from_rails</a></p>

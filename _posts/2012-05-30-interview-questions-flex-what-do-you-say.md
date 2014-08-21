@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /interview-questions-flex-what-do-you-say
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Hi all,</p>
 

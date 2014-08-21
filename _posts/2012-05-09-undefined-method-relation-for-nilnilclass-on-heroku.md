@@ -5,9 +5,8 @@ created: 1336576986
 author: avit
 permalink: /undefined-method-relation’-nilnilclass-heroku
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I host almost 100% of my open source projects on Heroku, it’s amazing how easy it is to setup and how “out-of-your-way” they are.</p>
 <p>Today, while working on one of my open source project I encountered this error:</p>

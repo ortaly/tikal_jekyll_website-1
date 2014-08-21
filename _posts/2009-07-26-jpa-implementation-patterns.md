@@ -3,7 +3,7 @@ layout: post
 title: JPA implementation patterns
 created: 1248582293
 author: yanai
-permalink: /alm/jpa-implementation-patterns
+permalink: /devops/jpa-implementation-patterns
 tags:
 - DevOps
 - Patterns JPA

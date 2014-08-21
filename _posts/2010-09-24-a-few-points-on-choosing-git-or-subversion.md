@@ -3,7 +3,7 @@ layout: post
 title: A few points on choosing Git or Subversion
 created: 1285337533
 author: ittayd
-permalink: /alm/few-points-choosing-git-or-subversion
+permalink: /devops/few-points-choosing-git-or-subversion
 tags:
 - DevOps
 - git subversion

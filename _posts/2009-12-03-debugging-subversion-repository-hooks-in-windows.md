@@ -3,7 +3,7 @@ layout: post
 title: Debugging Subversion Repository Hooks in Windows
 created: 1259833160
 author: liya
-permalink: /alm/debugging-subversion-repository-hooks-windows
+permalink: /devops/debugging-subversion-repository-hooks-windows
 tags:
 - DevOps
 ---

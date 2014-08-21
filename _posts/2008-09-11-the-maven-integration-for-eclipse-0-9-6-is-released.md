@@ -3,7 +3,7 @@ layout: post
 title: The Maven Integration for Eclipse 0.9.6 is released
 created: 1221112289
 author: lior.kanfi
-permalink: /alm/maven-integration-eclipse-096-released
+permalink: /devops/maven-integration-eclipse-096-released
 tags:
 - DevOps
 - Eclipse Maven2 m2eclipse

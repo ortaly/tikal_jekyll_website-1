@@ -3,7 +3,7 @@ layout: post
 title: Maven 3 will be groovy
 created: 1258905935
 author: ittayd
-permalink: /alm/maven-3-will-be-groovy
+permalink: /devops/maven-3-will-be-groovy
 tags:
 - DevOps
 - Groovy

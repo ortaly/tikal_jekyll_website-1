@@ -3,7 +3,7 @@ layout: post
 title: Nexus vs Artifactory
 created: 1269339803
 author: liya
-permalink: /alm/nexus-vs-artifactory
+permalink: /devops/nexus-vs-artifactory
 tags:
 - DevOps
 - Nexus

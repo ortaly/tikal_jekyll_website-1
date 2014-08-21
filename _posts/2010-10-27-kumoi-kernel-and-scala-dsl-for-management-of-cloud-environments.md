@@ -3,7 +3,7 @@ layout: post
 title: 'Kumoi: kernel and scala dsl for management of cloud environments'
 created: 1288167741
 author: ittayd
-permalink: /alm/kumoi-kernel-and-scala-dsl-management-cloud-environments
+permalink: /devops/kumoi-kernel-and-scala-dsl-management-cloud-environments
 tags:
 - DevOps
 - cloud

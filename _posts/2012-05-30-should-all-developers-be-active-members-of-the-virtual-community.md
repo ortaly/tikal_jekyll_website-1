@@ -5,7 +5,7 @@ created: 1338394544
 author: avit
 permalink: /should-all-developers-be-active-members-virtual-community
 tags:
-- RoR
+- Ruby
 - web
 - flex
 ---

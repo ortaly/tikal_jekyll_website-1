@@ -3,7 +3,7 @@ layout: post
 title: 'Outbrain''s implementation of Continuous Deployment '
 created: 1297935107
 author: udib
-permalink: /alm/outbrains-implementation-continuous-deployment
+permalink: /devops/outbrains-implementation-continuous-deployment
 tags:
 - DevOps
 - Continuous_Deployment

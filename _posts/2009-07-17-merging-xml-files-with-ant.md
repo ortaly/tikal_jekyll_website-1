@@ -3,7 +3,7 @@ layout: post
 title: Merging XML files with ANT
 created: 1247816061
 author: liya
-permalink: /alm/merging-xml-files-ant
+permalink: /devops/merging-xml-files-ant
 tags:
 - DevOps
 - XML

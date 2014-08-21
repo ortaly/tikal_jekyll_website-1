@@ -3,7 +3,7 @@ layout: post
 title: Who moved my BOX ?
 created: 1386059527
 author: hagzag
-permalink: /alm/who-moved-my-box
+permalink: /devops/who-moved-my-box
 tags:
 - DevOps
 - Vagrant

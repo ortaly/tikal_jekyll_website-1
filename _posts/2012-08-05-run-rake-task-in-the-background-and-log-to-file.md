@@ -3,9 +3,9 @@ layout: post
 title: run rake task in the background and log to file
 created: 1344161388
 author: avit
-permalink: /ror/run-rake-task-background-and-log-file
+permalink: /ruby/run-rake-task-background-and-log-file
 tags:
-- RoR
+- Ruby
 ---
 <p>I am working with rake tasks a lot, I love the simplicity of creating one and just running one on the server.</p>
 

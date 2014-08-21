@@ -3,7 +3,7 @@ layout: post
 title: thunderbird 3 released
 created: 1260427892
 author: ittayd
-permalink: /alm/thunderbird-3-released
+permalink: /devops/thunderbird-3-released
 tags:
 - DevOps
 - Thunderbird

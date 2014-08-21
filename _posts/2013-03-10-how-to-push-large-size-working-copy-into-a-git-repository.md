@@ -3,7 +3,7 @@ layout: post
 title: How to push large size working copy into a git repository
 created: 1362915859
 author: gil
-permalink: /alm/how-push-large-size-working-copy-git-repository
+permalink: /devops/how-push-large-size-working-copy-git-repository
 tags:
 - DevOps
 - git

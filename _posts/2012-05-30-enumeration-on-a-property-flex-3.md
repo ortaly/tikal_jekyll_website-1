@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /enumeration-property-flex-3
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/wp-content/uploads/2010/04/fx-icon.png' rel='attachment wp-att-409'><img alt='' class='alignleft size-thumbnail wp-image-409' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/04/fx-icon-150x150.png' title='Flex 3' width='150' /></a><!--more-->
 <p>lack of documentation often lead to situation when the developer consuming your component doesn’t know what are the values you expect of him to set.</p>

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /uninitialized-constant-sycksyck-nameerror
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>It’s old news for you devoted reader, but as you know I love coding with Ruby on Rails and that’s what my story for today is all about.</p>
 

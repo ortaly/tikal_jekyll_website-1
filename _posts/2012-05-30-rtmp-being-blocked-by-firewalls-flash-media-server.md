@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /rtmp-being-blocked-firewalls-flash-media-server
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/02/19/rtmp-being-blocked-by-firewalls-flash-media-server/fms-logo/' rel='attachment wp-att-360'><img alt='' class='alignleft size-thumbnail wp-image-360' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/02/FMS.logo_-150x150.jpg' title='Flash media server logo' width='150' /></a>
 <p>Now, if you have users working behind a firewall, they probably can’t get passed it’s restrictions and they will (in most cases) be blocked and unable to see your application / video.</p>

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /find-truncated-string-paths-sql-server
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I recently encountered a strange bug on a database of a client, which I designed. The “bug” was that the paths he entered into the database got truncated, because it was too long of a string. I made the field length at 250 chars and he needed more.</p>
 

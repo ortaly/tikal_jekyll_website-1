@@ -3,12 +3,12 @@ id: 46
 login: miron
 first_name: Miron
 last_name: Gofer
-description: ALM Engineer
-about: Joined Tikal 8 years ago. ALM and Dev-Ops expert. Focuse on Source control,
+description: DevOps Engineer
+about: Joined Tikal 8 years ago. DevOps expert. Focus on Source control,
   CI, CD and ALM methodology.
 follow_me_urls: []
 image_path: pictures/picture-46-1362341962.jpg
-permalink: /alm/miron
+permalink: /devops/miron
 skills:
   expert_skills:
     Git: '3'

@@ -3,7 +3,7 @@ layout: post
 title: MultiJob 1.9 released
 created: 1366014822
 author: hagzag
-permalink: /alm/multijob-19-released
+permalink: /devops/multijob-19-released
 tags:
 - DevOps
 - multijob

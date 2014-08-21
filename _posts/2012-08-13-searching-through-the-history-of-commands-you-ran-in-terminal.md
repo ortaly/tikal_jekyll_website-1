@@ -3,9 +3,9 @@ layout: post
 title: searching through the history of commands you ran in terminal
 created: 1344862401
 author: avit
-permalink: /ror/blog/searching-through-history-commands-you-ran-terminal
+permalink: /ruby/blog/searching-through-history-commands-you-ran-terminal
 tags:
-- RoR
+- Ruby
 ---
 <p>Whenever I am logged in to a server or even when I am working on my own machine, I keep searching through the command history through up and down arrows.</p>
 <p>While this can be efficient if you have 2-3 commands, it can be quite frustrating to find specific commands.</p>

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /setup-your-laptop-ruby-and-rails-development
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Setting up a new machine has never been an easy task, I remember back in the days where I was a windows user, setting up a new machine was a real pain in the ass.</p>
 

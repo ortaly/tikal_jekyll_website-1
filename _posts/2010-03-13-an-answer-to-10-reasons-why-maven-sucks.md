@@ -3,7 +3,7 @@ layout: post
 title: An answer to 10 reasons why Maven sucks
 created: 1268487580
 author: liya
-permalink: /alm/answer-10-reasons-why-maven-sucks
+permalink: /devops/answer-10-reasons-why-maven-sucks
 tags:
 - DevOps
 - maven

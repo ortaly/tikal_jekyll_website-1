@@ -5,9 +5,8 @@ created: 1336493377
 author: avit
 permalink: /simplest-enum-you-will-ever-find-your-activerecord-models
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been using a really useful snippet for a while now.</p>
 <p>While dropping it today into a project I realized just how powerful it is:</p>

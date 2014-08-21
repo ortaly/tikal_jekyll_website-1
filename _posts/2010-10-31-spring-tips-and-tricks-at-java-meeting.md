@@ -3,7 +3,7 @@ layout: post
 title: Spring Tips and Tricks at Java Meeting
 created: 1288533102
 author: zvika
-permalink: /alm/spring-tips-and-tricks-java-meeting
+permalink: /devops/spring-tips-and-tricks-java-meeting
 tags:
 - DevOps
 - Spring

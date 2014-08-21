@@ -3,7 +3,7 @@ layout: post
 title: git visual guide
 created: 1266570542
 author: ittayd
-permalink: /alm/git-visual-guide
+permalink: /devops/git-visual-guide
 tags:
 - DevOps
 - git

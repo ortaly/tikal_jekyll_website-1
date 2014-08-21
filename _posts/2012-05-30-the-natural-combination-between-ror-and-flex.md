@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /natural-combination-between-ror-and-flex
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2009/11/06/the-natural-combination-between-ror-and-flex/istock_000009617085xsmall/' rel='attachment wp-att-275'><img alt='Rails' class='alignleft size-thumbnail wp-image-275' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/11/iStock_000009617085XSmall-150x150.jpg' title='Rails' width='150' /></a>
 <p>I started thinking how does these 2 technologies combine together, Ruby on rails on the server side and flex on the client side, I found the combination to be very natural and easy, you can actually get quite a bit of satisfaction from combining these 2 together.</p>

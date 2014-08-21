@@ -3,7 +3,7 @@ layout: post
 title: Backing-Up Hudson-CI configration
 created: 1259221737
 author: hagzag
-permalink: /alm/backing-hudson-ci-configration
+permalink: /devops/backing-hudson-ci-configration
 tags:
 - DevOps
 - Hudson

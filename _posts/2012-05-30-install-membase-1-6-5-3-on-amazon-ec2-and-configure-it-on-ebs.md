@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /install-membase-1653-amazon-ec2-and-configure-it-ebs
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>As your application grows (like ours did) you will need more space to store your cache.</p>
 

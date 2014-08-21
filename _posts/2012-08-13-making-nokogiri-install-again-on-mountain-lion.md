@@ -3,9 +3,9 @@ layout: post
 title: Making Nokogiri install again on Mountain Lion
 created: 1344862401
 author: avit
-permalink: /ror/making-nokogiri-install-again-mountain-lion
+permalink: /ruby/making-nokogiri-install-again-mountain-lion
 tags:
-- RoR
+- Ruby
 ---
 <p>As probably any geek out there, I upgraded my OS to Apple Mountain Lion.</p>
 

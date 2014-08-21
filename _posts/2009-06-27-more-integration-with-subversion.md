@@ -3,7 +3,7 @@ layout: post
 title: More integration with Subversion
 created: 1246085122
 author: liya
-permalink: /alm/more-integration-subversion
+permalink: /devops/more-integration-subversion
 tags:
 - DevOps
 ---

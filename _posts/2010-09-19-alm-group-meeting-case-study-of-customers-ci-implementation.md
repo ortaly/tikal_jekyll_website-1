@@ -3,7 +3,7 @@ layout: post
 title: 'ALM group meeting: Case study of customer''s CI implementation'
 created: 1284888785
 author: liya
-permalink: /alm/alm-group-meeting-case-study-customers-ci-implementation
+permalink: /devops/alm-group-meeting-case-study-customers-ci-implementation
 tags:
 - DevOps
 ---

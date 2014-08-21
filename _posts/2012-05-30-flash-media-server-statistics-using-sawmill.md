@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /flash-media-server-statistics-using-sawmill
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/03/14/flash-media-server-statistics-using-sawmill/_graphics-statistics-graph-preview3-by-dragonart/' rel='attachment wp-att-371'><img alt='' class='alignleft size-thumbnail wp-image-371' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/03/graphics-statistics-graph-preview3-by-dragonart-150x150.png' title='Stats' width='150' /></a>
 <p>Flash media server has some disadvantages, one of those is definitely the lack of normal statistics. The terminal will give you the real time data but if you want to drill down into last month and 3 month ago or more, you won’t be able to get any data in a comfortable and nice view. <!--more--> I found a product called <a href='http://www.sawmill.net/' target='_blank'>SawMill</a>, this product is unobtrusive on your flash media server, you don’t even have to install it on your server.</p>

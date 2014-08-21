@@ -3,7 +3,7 @@ layout: post
 title: Caliper - microbenchmarking framework for java
 created: 1268747506
 author: ittayd
-permalink: /alm/caliper-microbenchmarking-framework-java
+permalink: /devops/caliper-microbenchmarking-framework-java
 tags:
 - DevOps
 - benchmarking

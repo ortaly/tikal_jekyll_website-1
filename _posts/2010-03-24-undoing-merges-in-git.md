@@ -3,7 +3,7 @@ layout: post
 title: undoing merges in git
 created: 1269407553
 author: ittayd
-permalink: /alm/undoing-merges-git
+permalink: /devops/undoing-merges-git
 tags:
 - DevOps
 - git

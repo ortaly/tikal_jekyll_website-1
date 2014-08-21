@@ -3,7 +3,7 @@ layout: post
 title: Job Configuration change introduced in hudson 1.372
 created: 1282057660
 author: hagzag
-permalink: /alm/job-configuration-change-introduced-hudson-1372
+permalink: /devops/job-configuration-change-introduced-hudson-1372
 tags:
 - DevOps
 - Hudson

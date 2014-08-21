@@ -3,7 +3,7 @@ layout: post
 title: 'Tikal Community: inserting code snippets in posts v2'
 created: 1256056410
 author: hagzag
-permalink: /alm/tikal-community-inserting-code-snippets-posts-v2
+permalink: /devops/tikal-community-inserting-code-snippets-posts-v2
 tags:
 - DevOps
 - Syntaxhighlighter

@@ -3,7 +3,7 @@ layout: post
 title: Need a rabbit?..
 created: 1268581203
 author: liya
-permalink: /alm/need-rabbit
+permalink: /devops/need-rabbit
 tags:
 - DevOps
 - fun

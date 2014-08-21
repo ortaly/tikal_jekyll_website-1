@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /pluralization-flex-applications
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img alt='SingularPluralSort.pdf.00' class='alignleft' height='240' src='http://farm5.static.flickr.com/4071/5123639196_e8dff2d0c2_m.jpg' width='185' />
 <p>As you may know (or not) I am a Flex developer, I am also a Ruby On Rails developer.</p>

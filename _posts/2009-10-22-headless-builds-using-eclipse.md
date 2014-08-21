@@ -3,7 +3,7 @@ layout: post
 title: headless builds using eclipse
 created: 1256202879
 author: ittayd
-permalink: /alm/headless-builds-using-eclipse
+permalink: /devops/headless-builds-using-eclipse
 tags:
 - DevOps
 - headless eclipse build

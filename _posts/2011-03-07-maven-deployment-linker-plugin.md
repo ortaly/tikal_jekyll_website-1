@@ -3,7 +3,7 @@ layout: post
 title: Maven Deployment Linker - plugin
 created: 1299505177
 author: hagzag
-permalink: /alm/maven-deployment-linker-plugin
+permalink: /devops/maven-deployment-linker-plugin
 tags:
 - DevOps
 - Hudson

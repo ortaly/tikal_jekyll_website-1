@@ -3,7 +3,7 @@ layout: post
 title: Get through your email faster with Priority Inbox - looks promising
 created: 1283503059
 author: hagzag
-permalink: /alm/get-through-your-email-faster-priority-inbox-looks-promising
+permalink: /devops/get-through-your-email-faster-priority-inbox-looks-promising
 tags:
 - DevOps
 - google

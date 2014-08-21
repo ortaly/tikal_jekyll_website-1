@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /isdbnull-generic-shortcut-function
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img alt='question-mark' class='alignleft size-thumbnail wp-image-216' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/08/question-mark-150x150.jpg' title='question-mark' width='150' />
 <p>If you’re working with data from an SQL database or from any other database for that matter you probably know the exception cause by calling the reader<span>“columnName”</span></p>

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /replace-hash-syntax-19-syntax-all-files-regular-expression
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>This morning I got this email from my buddy <a href='http://twitter.com/elado'>@elado</a>.</p>
 

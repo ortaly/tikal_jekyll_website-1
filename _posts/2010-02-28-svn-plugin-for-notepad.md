@@ -3,7 +3,7 @@ layout: post
 title: SVN plugin for Notepad++
 created: 1267382219
 author: liya
-permalink: /alm/svn-plugin-notepad
+permalink: /devops/svn-plugin-notepad
 tags:
 - DevOps
 - svn

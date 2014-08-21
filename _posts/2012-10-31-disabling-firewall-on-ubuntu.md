@@ -3,7 +3,7 @@ layout: post
 title: Disabling firewall on ubuntu
 created: 1351669173
 author: yorammi
-permalink: /alm/disabling-firewall-ubuntu
+permalink: /devops/disabling-firewall-ubuntu
 tags:
 - DevOps
 - ubuntu

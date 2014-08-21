@@ -3,7 +3,7 @@ layout: post
 title: Anouncing the release of Saiku 2.0 - Next Generation Open Source Analytics
 created: 1303831751
 author: udid
-permalink: /alm/anouncing-release-saiku-20-next-generation-open-source-analytics
+permalink: /devops/anouncing-release-saiku-20-next-generation-open-source-analytics
 tags:
 - DevOps
 - Pentaho

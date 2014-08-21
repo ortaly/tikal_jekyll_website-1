@@ -3,7 +3,7 @@ layout: post
 title: How can I update my projects version without touching the pom.xml
 created: 1257350466
 author: keren
-permalink: /alm/how-can-i-update-my-projects-version-without-touching-pomxml
+permalink: /devops/how-can-i-update-my-projects-version-without-touching-pomxml
 tags:
 - DevOps
 ---

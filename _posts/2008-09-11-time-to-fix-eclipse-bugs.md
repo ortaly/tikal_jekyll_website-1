@@ -3,7 +3,7 @@ layout: post
 title: Time to fix Eclipse bugs
 created: 1221111703
 author: lior.kanfi
-permalink: /alm/time-fix-eclipse-bugs
+permalink: /devops/time-fix-eclipse-bugs
 tags:
 - DevOps
 - Findbugs Eclipse

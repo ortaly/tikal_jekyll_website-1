@@ -3,7 +3,7 @@ layout: post
 title: Hudson - pinned plugins
 created: 1283843606
 author: hagzag
-permalink: /alm/hudson-pinned-plugins
+permalink: /devops/hudson-pinned-plugins
 tags:
 - DevOps
 - Hudson

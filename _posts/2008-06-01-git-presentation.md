@@ -3,7 +3,7 @@ layout: post
 title: Git presentation
 created: 1212306360
 author: ittayd
-permalink: /alm/git-presentation
+permalink: /devops/git-presentation
 tags:
 - DevOps
 - git

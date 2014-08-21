@@ -3,7 +3,7 @@ layout: post
 title: Quotes from "The open-source entrepreneur"
 created: 1284444299
 author: hagzag
-permalink: /alm/quotes-open-source-entrepreneur
+permalink: /devops/quotes-open-source-entrepreneur
 tags:
 - DevOps
 - RedHat

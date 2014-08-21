@@ -3,7 +3,7 @@ layout: post
 title: 'interesting new cli options in maven 2.1 '
 created: 1253089769
 author: ittayd
-permalink: /alm/interesting-new-cli-options-maven-21
+permalink: /devops/interesting-new-cli-options-maven-21
 tags:
 - DevOps
 ---

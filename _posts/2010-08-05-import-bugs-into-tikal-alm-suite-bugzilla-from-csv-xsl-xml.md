@@ -3,7 +3,7 @@ layout: post
 title: Import bugs into Tikal ALM Suite Bugzilla from CSV, XSL, XML?
 created: 1280992524
 author: liorb
-permalink: /alm/import-bugs-tikal-alm-suite-bugzilla-csv-xsl-xml
+permalink: /devops/import-bugs-tikal-alm-suite-bugzilla-csv-xsl-xml
 tags:
 - DevOps
 - bugzilla

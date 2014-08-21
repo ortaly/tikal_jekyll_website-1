@@ -3,7 +3,7 @@ layout: post
 title: Peer review on "Introduction to GIT" and open discussion on methodologies
 created: 1308752221
 author: miron
-permalink: /alm/peer-review-introduction-git-and-open-discussion-methodologies
+permalink: /devops/peer-review-introduction-git-and-open-discussion-methodologies
 tags:
 - DevOps
 ---

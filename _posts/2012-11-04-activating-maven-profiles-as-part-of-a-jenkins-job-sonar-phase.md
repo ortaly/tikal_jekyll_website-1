@@ -3,7 +3,7 @@ layout: post
 title: 'Activating Maven profiles as part of a Jenkins-job Sonar phase '
 created: 1352014796
 author: yorammi
-permalink: /alm/activating-maven-profiles-part-jenkins-job-sonar-phase
+permalink: /devops/activating-maven-profiles-part-jenkins-job-sonar-phase
 tags:
 - DevOps
 - Sonar

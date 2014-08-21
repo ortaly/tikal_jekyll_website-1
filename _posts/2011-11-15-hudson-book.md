@@ -3,7 +3,7 @@ layout: post
 title: Hudson book
 created: 1321386531
 author: chaim.turkel
-permalink: /alm/blog/hudson-book
+permalink: /devops/blog/hudson-book
 tags:
 - DevOps
 - Hudson

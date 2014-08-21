@@ -3,7 +3,7 @@ layout: post
 title: ALM Retrospective
 created: 1293978953
 author: ittayd
-permalink: /alm/alm-retrospective
+permalink: /devops/alm-retrospective
 tags:
 - DevOps
 ---

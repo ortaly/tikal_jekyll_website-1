@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /how-can-you-give-quality-service-your-clients
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/02/19/how-can-you-give-quality-service-to-your-clients/client-support-crossword/' rel='attachment wp-att-350'><img alt='' class='alignleft size-thumbnail wp-image-350' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/02/iStock_000009671781XSmall-150x150.jpg' title='Client support crossword' width='150' /></a>
 <p>As a freelancer, all of the client’s communication and service is up to you, you need to provide them with the best platform to work on, with you, along side with the existing team inside the company (in-case you are working with them).</p>

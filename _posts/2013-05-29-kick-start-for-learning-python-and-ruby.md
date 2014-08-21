@@ -5,8 +5,8 @@ created: 1369817697
 author: yorammi
 permalink: kick-start-for-learning-python-and-ruby
 tags:
-- RoR
-- Ruby python tutorial
+- Ruby
+- python tutorial
 ---
 <p>For a long time - since I&#39;m using many ALM tools - I have &#39;<strong>Learn Python</strong>&#39; and &#39;<strong>Learn Ruby</strong>&#39; in my TODO list, but I never found the right time or kick-in-the-bottom to actually do it.</p>
 <p>Yesterday I found a short time-window - and since I&#39;ve been feeling lucky (...) I&#39;ve asked the &#39;big-brother&#39; Google for a quick way to jump into both Ruby and Python so I found those 2 entry-points:</p>

@@ -3,7 +3,7 @@ layout: post
 title: JBoss transaction interceptor, how?
 created: 1259661124
 author: shalom
-permalink: /alm/jboss-transaction-interceptor-how
+permalink: /devops/jboss-transaction-interceptor-how
 tags:
 - DevOps
 - JPA

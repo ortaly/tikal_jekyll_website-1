@@ -3,7 +3,7 @@ layout: post
 title: Maven Dependency resolution
 created: 1261561069
 author: itai
-permalink: /alm/maven-dependency-resolution
+permalink: /devops/maven-dependency-resolution
 tags:
 - DevOps
 - maven

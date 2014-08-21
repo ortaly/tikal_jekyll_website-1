@@ -3,7 +3,7 @@ layout: post
 title: 'DevOps for developers a Journey from Ops 2 Dev and Back '
 created: 1342640597
 author: hagzag
-permalink: /alm/devops-developers-journey-ops-2-dev-and-back
+permalink: /devops/devops-developers-journey-ops-2-dev-and-back
 tags:
 - OpenStack
 - jenkins

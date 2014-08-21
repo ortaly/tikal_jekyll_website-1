@@ -1,17 +1,17 @@
 ---
 layout: offering
-title: ALM enrichment lectures
+title: DevOps enrichment lectures
 created: 1361436635
-permalink: /solutions/offerings/workshop/alm-enrichment-lectures
+permalink: /solutions/offerings/workshop/devops-enrichment-lectures
 name: offerings
 ---
-<p style="margin-bottom: 0in">Tikal&#39;s ALM&nbsp;group enrichment lectures are&nbsp;Free.&nbsp;You can either join our local public lectures at&nbsp;<a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a>&nbsp;meetup group, or host a lecture at your offices to enrich your colleagues and team members.&nbsp;<br />
+<p style="margin-bottom: 0in">Tikal&#39;s DevOps&nbsp;group enrichment lectures are&nbsp;Free.&nbsp;You can either join our local public lectures at&nbsp;<a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a>&nbsp;meetup group, or host a lecture at your offices to enrich your colleagues and team members.&nbsp;<br />
 ​This offering os available for Israeli local business only.</p>
 <h2>Docking your services with Docker </h2><div class='offering-description'><p>How MSA (Micro Service Architecture) encourages immutable servers and how containers help deliver such an architecture. The talk will discuss LXC, Docker and technologies / techniques which are making there way in to the &quot;best practices&quot; handbook for containers in a MSA based systems.&nbsp;</p>
 
 <div><strong>Time Frame : 30&nbsp;min.&nbsp;</strong></div>
 
-<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/alm/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/devops/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 
@@ -35,7 +35,7 @@ name: offerings
 
 <div><strong>Time Frame : 30 min.&nbsp;</strong></div>
 
-<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/alm/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/devops/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 </div><h2>Let's start moving our boxes</h2><div class='offering-description'><p><a id="chef-vagrant" name="chef-vagrant"></a>This talk will walk through the process of taking the runtime box of a fullstack javascript music player application with mobile and server using Chef and Vagrant to create an Identical Production,Staging and Development Environment.</p>
@@ -50,7 +50,7 @@ name: offerings
 
 <div><strong>Time Frame : 60 min.&nbsp;</strong></div>
 
-<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/alm/hagzag">M</a><a href="http://www.tikalk.com/alm/miron">iron Gofer</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/devops/hagzag">M</a><a href="http://www.tikalk.com/devops/miron">Miron Gofer</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 </div><h2>DevOps for developers - a Journey from Ops 2 Dev and Back</h2><div class='offering-description'><p>A true story with a practical approach, emphasizing the milestones needed in order to shift from Continuous Integration to Continuous delivery &amp; deployment. The presentation will cover a walk-through of methodologies &amp; tools such as CI,CD combined with Jenkins, Jenkins MultiJob plugin and others.<br />
@@ -58,14 +58,14 @@ Available both in Hebrew &amp; English&nbsp;</p>
 
 <div><strong>Time Frame : 50 min.&nbsp;</strong></div>
 
-<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/alm/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/devops/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 </div><h2>DevOps real life showcase - Gogobot</h2><div class='offering-description'><p>How Gogobot does Devops? Process of development and the move into production. Lessons learned from the last 18 months in production and 30X in scale.&nbsp;</p>
 
 <div><strong>Time Frame : 50 min.&nbsp;</strong></div>
 
-<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/alm/hagzag">A</a><a href="http://www.tikalk.com/ror/avit">vi Tzurel</a>&nbsp;-&nbsp;Tikal&#39;s ROR group leader.</strong></div>
+<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/devops/hagzag">A</a><a href="http://www.tikalk.com/ruby/avit">Avi Tzurel</a>&nbsp;-&nbsp;Tikal&#39;s Ruby group leader.</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 
@@ -79,7 +79,7 @@ Available both in Hebrew &amp; English&nbsp;</p>
 <div>
 <div><strong>Time Frame : 50 min.&nbsp;</strong></div>
 
-<div><strong>Lecturer : <a href="http://www.tikalk.com/alm/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer : <a href="http://www.tikalk.com/devops/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 </div>
@@ -90,7 +90,7 @@ Available both in Hebrew &amp; English&nbsp;</p>
 <div>
 <div><strong>Time Frame : 50 min.&nbsp;</strong></div>
 
-<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/alm/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/devops/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 </div>
@@ -100,7 +100,7 @@ A&nbsp;breakthrough&nbsp;of the&nbsp;methodologies&nbsp;you need to familiarize 
 
 <div><strong>Time Frame : 50 min.&nbsp;</strong></div>
 
-<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/alm/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer :&nbsp;<a href="http://www.tikalk.com/devops/hagzag">Haggai&nbsp;Zagury</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : F.O.C.</strong></div>
 </div>

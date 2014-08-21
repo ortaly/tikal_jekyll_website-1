@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /yui-calendar-page-selected-date-multi-calendar
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been working with YUI calendar for a couple of weeks now on a project. I found that it is highly customizable although the documentation are not always clear and you have to dig around the internet to find your answers.</p>
 

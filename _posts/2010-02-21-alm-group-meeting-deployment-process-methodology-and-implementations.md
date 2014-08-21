@@ -3,7 +3,7 @@ layout: post
 title: 'ALM group meeting: deployment process methodology and implementations'
 created: 1266759820
 author: liya
-permalink: /alm/alm-group-meeting-deployment-process-methodology-and-implementations
+permalink: /devops/alm-group-meeting-deployment-process-methodology-and-implementations
 tags:
 - DevOps
 ---

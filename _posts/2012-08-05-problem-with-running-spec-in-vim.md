@@ -3,9 +3,9 @@ layout: post
 title: problem with running spec in vim
 created: 1344198190
 author: avit
-permalink: /ror/problem-running-spec-vim
+permalink: /ruby/problem-running-spec-vim
 tags:
-- RoR
+- Ruby
 ---
 <p>I have been using Vim for almost a week now.</p>
 

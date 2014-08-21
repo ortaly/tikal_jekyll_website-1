@@ -3,7 +3,7 @@ layout: post
 title: Eclipse 3.5 on Ubuntu 9.10
 created: 1257151174
 author: itai
-permalink: /alm/eclipse-35-ubuntu-910
+permalink: /devops/eclipse-35-ubuntu-910
 tags:
 - DevOps
 - Eclipse 3.5 Ubuntu 9.10

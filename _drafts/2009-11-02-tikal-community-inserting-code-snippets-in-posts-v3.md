@@ -3,7 +3,7 @@ layout: post
 title: 'Tikal Community: inserting code snippets in posts v3'
 created: 1257178150
 author: hagzag
-permalink: /alm/tikal-community-inserting-code-snippets-posts-v3
+permalink: /devops/tikal-community-inserting-code-snippets-posts-v3
 ---
 <p>Hi All, <br/>
 following my <a href="http://www.tikalk.com/alm/tikal-community-inserting-code-snippets-posts">previous article</a> on the subject I was asked to make code submittal more user friendly.

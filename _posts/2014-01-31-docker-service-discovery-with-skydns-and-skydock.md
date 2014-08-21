@@ -3,7 +3,7 @@ layout: post
 title: Docker service discovery with skydns and skydock
 created: 1391156169
 author: hagzag
-permalink: /alm/docker-service-discovery-skydns-and-skydock
+permalink: /devops/docker-service-discovery-skydns-and-skydock
 tags:
 - DevOps
 - Docker

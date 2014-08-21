@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /solving-ssl-issue-rapleaf-api
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>While working with the <a href='https://www.rapleaf.com/'>Rapleaf</a> API, I encountered some major issues with SSL on production and staging servers.</p>
 

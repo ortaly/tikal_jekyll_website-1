@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /removing-model-your-rails-project
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>During the work on a project I created a model. Right after clicking the Enter key I realized that I didn’t need it and wanted to roll back. Because I am using GIT, I could of course have done this using it, but I wanted to do it using a Rails command. Turns out, there’s a command to do this (if you haven’t migrated the db yet). The command is as follows:</p>
 <div class='highlight'><pre><code class='bash'>script/destroy model contact

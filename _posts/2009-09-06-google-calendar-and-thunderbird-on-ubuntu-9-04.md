@@ -3,7 +3,7 @@ layout: post
 title: Google Calendar & Thunderbird on Ubuntu 9.04
 created: 1252235291
 author: hagzag
-permalink: /alm/google-calendar-thunderbird-ubuntu-904
+permalink: /devops/google-calendar-thunderbird-ubuntu-904
 tags:
 - DevOps
 - Thunderbird

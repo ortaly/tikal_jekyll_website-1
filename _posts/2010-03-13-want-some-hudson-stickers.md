@@ -3,7 +3,7 @@ layout: post
 title: Want some Hudson stickers?
 created: 1268489990
 author: liya
-permalink: /alm/want-some-hudson-stickers
+permalink: /devops/want-some-hudson-stickers
 tags:
 - DevOps
 - Hudson

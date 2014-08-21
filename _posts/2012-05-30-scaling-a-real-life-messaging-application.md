@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /scaling-real-life-messaging-application
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2009/11/03/scaling-a-real-life-messaging-application/istock_000009154776xsmall/' rel='attachment wp-att-259'><img alt='server farm' class='alignleft size-thumbnail wp-image-259' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/11/iStock_000009154776XSmall-150x150.jpg' title='server farm' width='150' /></a>
 <p>Well, this was exactly the case with a client of mine, the client is a forex company, they had 2K concurrent users and they are currently in the process of redesigning the client application and plan to grow up to 20K concurrent users.</p>

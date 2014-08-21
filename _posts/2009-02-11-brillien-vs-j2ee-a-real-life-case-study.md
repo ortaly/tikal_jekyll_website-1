@@ -3,7 +3,7 @@ layout: post
 title: 'Brillien vs. J2EE A real-life case study... '
 created: 1234363028
 author: lior.kanfi
-permalink: /alm/brillien-vs-j2ee-real-life-case-study
+permalink: /devops/brillien-vs-j2ee-real-life-case-study
 tags:
 - DevOps
 - Design & Architecture

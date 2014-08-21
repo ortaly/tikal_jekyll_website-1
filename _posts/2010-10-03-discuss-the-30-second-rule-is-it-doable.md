@@ -3,7 +3,7 @@ layout: post
 title: Discuss the "30 Second Rule", Is it doable ?
 created: 1286092602
 author: hagzag
-permalink: /alm/discuss-30-second-rule-it-doable
+permalink: /devops/discuss-30-second-rule-it-doable
 tags:
 - DevOps
 - optimization

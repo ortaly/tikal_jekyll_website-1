@@ -3,7 +3,7 @@ layout: post
 title: Adding Dependencies Using m2eclipse
 created: 1268488083
 author: liya
-permalink: /alm/adding-dependencies-using-m2eclipse
+permalink: /devops/adding-dependencies-using-m2eclipse
 tags:
 - DevOps
 - maven

@@ -3,7 +3,7 @@ layout: post
 title: Israel - Leader of Business Innovation
 created: 1257063284
 author: hagzag
-permalink: /alm/israel-leader-business-innovation
+permalink: /devops/israel-leader-business-innovation
 tags:
 - DevOps
 ---

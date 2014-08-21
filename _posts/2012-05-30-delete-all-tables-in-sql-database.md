@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /delete-all-tables-sql-database
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Hi all,</p>
 

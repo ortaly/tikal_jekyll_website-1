@@ -5,8 +5,7 @@ created: 1334482473
 author: avit
 permalink: /decorating-devise’s-currentuser-draper-–-ariejannet
 tags:
-- RoR
-- ruby
+- Ruby
 - web
 ---
 <p>A great trick to decorate the current_user method from devise using Draper.</p>

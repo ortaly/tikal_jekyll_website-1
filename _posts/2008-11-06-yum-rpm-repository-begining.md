@@ -3,7 +3,7 @@ layout: post
 title: Yum-RPM repository - Begining
 created: 1225958516
 author: hagzag
-permalink: /alm/yum-rpm-repository-begining
+permalink: /devops/yum-rpm-repository-begining
 tags:
 - DevOps
 - Centos

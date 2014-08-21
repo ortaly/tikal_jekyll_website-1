@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /install-wamp-windows-machine
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Quite a while ago I shot a screen cast about how to configure and install WAMP on a windows machine without it clashing with IIS 7 or anything else for that matter.</p>
 

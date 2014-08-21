@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /synchronize-client-application-using-flexweborbnet
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img alt='iStock_000001422752XSmall' border='0' height='120' src='http://www.kensodev.com/wp-content/uploads/2009/11/iStock_000001422752XSmall.jpg' style='margin: 2px; float: left; border-width: 0px;' width='154' />
 <p>Let’s say you have a client that’s requesting an application for his sales team. He wants a special screen displaying the calls from clients and the client’s request taken by the secretary.</p>

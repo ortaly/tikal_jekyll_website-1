@@ -3,7 +3,7 @@ layout: post
 title: 'Subversion: set property to multipule & existant files'
 created: 1228079105
 author: hagzag
-permalink: /alm/subversion-set-property-multipule-existant-files
+permalink: /devops/subversion-set-property-multipule-existant-files
 tags:
 - DevOps
 - bash

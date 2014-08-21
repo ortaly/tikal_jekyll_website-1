@@ -3,7 +3,7 @@ layout: post
 title: Oracle submits to move Hudson to Eclipse
 created: 1304523454
 author: ittayd
-permalink: /alm/oracle-submits-move-hudson-eclipse
+permalink: /devops/oracle-submits-move-hudson-eclipse
 tags:
 - DevOps
 - Hudson

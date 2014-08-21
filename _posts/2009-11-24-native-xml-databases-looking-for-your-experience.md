@@ -3,7 +3,7 @@ layout: post
 title: Native XML Databases - Looking for your experience...
 created: 1259077085
 author: keren
-permalink: /alm/native-xml-databases-looking-your-experience
+permalink: /devops/native-xml-databases-looking-your-experience
 tags:
 - DevOps
 - xml db

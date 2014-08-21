@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /beanstalk-blog-mentioned-my-post
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/02/03/beanstalk-blog-mentioned-my-post/2297346285_fc2599bcaa/' rel='attachment wp-att-342'><img alt='' class='alignleft size-thumbnail wp-image-342' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/02/2297346285_fc2599bcaa-150x150.jpg' title='Beanstalkapp' width='150' /></a>
 <p>It hit waves around Twitter and Facebook and got very popular over the weekend I wrote it.</p>

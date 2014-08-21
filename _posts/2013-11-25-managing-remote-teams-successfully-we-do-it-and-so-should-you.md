@@ -5,7 +5,7 @@ created: 1385414022
 author: avit
 permalink: /managing-remote-teams-successfully-we-do-it-and-so-should-you
 tags:
-- RoR
+- Ruby
 ---
 <p>Remote work has never been more in-the-news, wherever I go on the internet, I see people talking about doing Remote work and how beneficial it is for people.</p>
 

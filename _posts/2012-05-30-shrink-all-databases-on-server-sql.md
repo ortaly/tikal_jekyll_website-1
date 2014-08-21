@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /shrink-all-databases-server-sql
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/01/16/shrink-all-databases-on-server-sql/istock_000010274670xsmall/' rel='attachment wp-att-302'><img alt='Database server' class='alignleft size-thumbnail wp-image-302' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/01/iStock_000010274670XSmall-150x150.jpg' title='Database server' width='150' /></a>
 <p>About a month ago, I got a call from a client of mine saying he has 2 database servers, each holding about 150 databases.</p>

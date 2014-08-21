@@ -3,7 +3,7 @@ layout: post
 title: ALM Group meeting. The Ivy dependency manager for ant builds.
 created: 1299765929
 author: miron
-permalink: /alm/alm-group-meeting-ivy-dependency-manager-ant-builds
+permalink: /devops/alm-group-meeting-ivy-dependency-manager-ant-builds
 tags:
 - DevOps
 ---

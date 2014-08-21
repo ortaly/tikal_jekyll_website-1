@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /make-your-life-easier-flash-builder-4-plugin-sourcemate
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.flickr.com/photos/51960246@N07/5047608197/' title='Screen shot 2010-10-03 at 8.02.59 PM by KensoDev, on Flickr'><img alt='Screen shot 2010-10-03 at 8.02.59 PM' class='alignleft' height='142' src='http://farm5.static.flickr.com/4139/5047608197_836751ec0d.jpg' width='256' /></a>
 <p>I have been working with flex for about 4 years now and moved to Flash Builder 4 about six months ago. The one thing I have really missed in programming flex is the proper IDE that makes your life easier, making simple tasks simple for the programmer.</p>

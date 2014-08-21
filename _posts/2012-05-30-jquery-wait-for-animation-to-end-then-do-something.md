@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /jquery-wait-animation-end-then-do-something
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been using <a href='http://www.kensodev.com/category/jquery/' title='jQuery'>jQuery</a> for quite some time now. Following a question on one of the many forums and discussions group I visit daily, I found that not many know that <a href='http://www.kensodev.com/tag/jquery/' title='jQuery'>jQuery</a> has a built in way to “listen” for an animation to end and then continue work. For instance, if I am using the slideDown effect, I can create a function that will only execute when the slide is finished.</p>
 

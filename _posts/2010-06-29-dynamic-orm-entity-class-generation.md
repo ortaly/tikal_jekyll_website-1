@@ -3,7 +3,7 @@ layout: post
 title: Dynamic ORM entity class generation
 created: 1277810591
 author: admin
-permalink: /alm/forums/dynamic-orm-entity-class-generation
+permalink: /devops/forums/dynamic-orm-entity-class-generation
 tags:
 - DevOps
 - CGLIB

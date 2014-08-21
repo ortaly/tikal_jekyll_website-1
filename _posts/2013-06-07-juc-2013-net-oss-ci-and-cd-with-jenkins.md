@@ -3,7 +3,7 @@ layout: post
 title: JUC 2013 - .Net OSS Ci & CD with Jenkins
 created: 1370588444
 author: hagzag
-permalink: /alm/juc-2013-net-oss-ci-cd-jenkins
+permalink: /devops/juc-2013-net-oss-ci-cd-jenkins
 tags:
 - DevOps
 - CI

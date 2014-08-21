@@ -3,7 +3,7 @@ layout: post
 title: '2 ways to archive the artifacts in Hudson '
 created: 1252828192
 author: liya
-permalink: /alm/2-ways-archive-artifacts-hudson
+permalink: /devops/2-ways-archive-artifacts-hudson
 tags:
 - DevOps
 - Hudson

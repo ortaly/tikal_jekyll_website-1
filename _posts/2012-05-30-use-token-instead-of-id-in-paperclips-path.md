@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /use-token-instead-id-paperclips-path
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been using paperclip in more then a couple of applications that I’m developing now, I really like it and it gives me the flexibility that I require.</p>
 

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /solo-standalone-mp3-player-embed-page
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Client’s request: <blockquote><span style='color: #000000;'> </span>
 I want an mp3 player on my website (html), a kind of player which the user can’t pause or stop the song, also I want it to work in all browsers with no problem.</blockquote> After explaining to him this is not very common and urged him to think it over, he insisted and I had to do what he asked me to.</p>

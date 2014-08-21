@@ -3,7 +3,7 @@ layout: post
 title: 'How to convert path slashes during build '
 created: 1244976386
 author: liya
-permalink: /alm/how-convert-path-slashes-during-build
+permalink: /devops/how-convert-path-slashes-during-build
 tags:
 - DevOps
 - Ant

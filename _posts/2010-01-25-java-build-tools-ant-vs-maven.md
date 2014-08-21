@@ -3,7 +3,7 @@ layout: post
 title: 'Java Build Tools: Ant vs. Maven'
 created: 1264406884
 author: adi
-permalink: /alm/java-build-tools-ant-vs-maven
+permalink: /devops/java-build-tools-ant-vs-maven
 tags:
 - DevOps
 - Ant

@@ -3,7 +3,7 @@ layout: post
 title: Nice visualization of git commands
 created: 1303273965
 author: ittayd
-permalink: /alm/nice-visualization-git-commands
+permalink: /devops/nice-visualization-git-commands
 tags:
 - DevOps
 - git

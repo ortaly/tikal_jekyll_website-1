@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /gitignore-template-ruby-rail-project
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Been working with <a href='http://www.kensodev.com/category/ruby-on-rails/' title='Ruby on Rails'>Ruby On Rails</a> for about 10 months now, about the same amount of time with GIT, I enjoy them both very much.</p>
 

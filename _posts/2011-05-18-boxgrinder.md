@@ -3,7 +3,7 @@ layout: post
 title: BoxGrinder
 created: 1305730939
 author: shalom
-permalink: /alm/boxgrinder
+permalink: /devops/boxgrinder
 tags:
 - DevOps
 - boxgrinder virtualization

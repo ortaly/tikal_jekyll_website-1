@@ -3,7 +3,7 @@ layout: post
 title: Remove the "All view" in Hudson + view enhancement plugins
 created: 1283328584
 author: hagzag
-permalink: /alm/remove-all-view-hudson-view-enhancement-plugins
+permalink: /devops/remove-all-view-hudson-view-enhancement-plugins
 tags:
 - DevOps
 - Hudson

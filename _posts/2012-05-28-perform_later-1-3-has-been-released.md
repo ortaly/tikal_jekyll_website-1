@@ -5,9 +5,8 @@ created: 1338209215
 author: avit
 permalink: /performlater-13-has-been-released
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Earlier today, I release version 1.3 of <a href="http://github.com/kensodev/perform_later" target="_blank">perform_later</a>.</p>
 <p>The release includes:</p>

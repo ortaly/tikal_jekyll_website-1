@@ -3,7 +3,7 @@ layout: post
 title: why not subversion
 created: 1284708271
 author: ittayd
-permalink: /alm/why-not-subversion
+permalink: /devops/why-not-subversion
 tags:
 - DevOps
 - subversion

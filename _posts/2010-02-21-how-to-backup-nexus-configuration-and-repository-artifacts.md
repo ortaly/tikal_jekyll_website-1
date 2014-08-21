@@ -3,7 +3,7 @@ layout: post
 title: How to Backup Nexus Configuration and Repository Artifacts
 created: 1266742336
 author: liya
-permalink: /alm/how-backup-nexus-configuration-and-repository-artifacts
+permalink: /devops/how-backup-nexus-configuration-and-repository-artifacts
 tags:
 - DevOps
 - Nexus

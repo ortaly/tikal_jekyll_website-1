@@ -3,7 +3,7 @@ layout: post
 title: Hudson Israeli Users Group meetup
 created: 1287637428
 author: ittayd
-permalink: /alm/hudson-israeli-users-group-meetup
+permalink: /devops/hudson-israeli-users-group-meetup
 tags:
 - DevOps
 - Hudson

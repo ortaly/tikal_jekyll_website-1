@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /use-beforedestroy-model-paperclip
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have an application that I’m working on, this application has a demand that I will show the total files and the file total size inside a project. Here is my model:</p>
 <a href='http://www.flickr.com/photos/51960246@N07/5323289774/' title='Screen shot 2011-01-04 at 10.15.18 AM by KensoDev, on Flickr'><img alt='Screen shot 2011-01-04 at 10.15.18 AM' height='400' src='http://farm6.static.flickr.com/5201/5323289774_a6c335fc1b.jpg' width='375' /></a>

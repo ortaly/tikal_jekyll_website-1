@@ -3,7 +3,7 @@ layout: post
 title: Playing N-I-C-E
 created: 1262606193
 author: hagzag
-permalink: /alm/playing-n-i-c-e
+permalink: /devops/playing-n-i-c-e
 tags:
 - DevOps
 ---

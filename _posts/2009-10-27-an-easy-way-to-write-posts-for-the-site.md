@@ -3,7 +3,7 @@ layout: post
 title: An easy way to write posts for the site
 created: 1256676786
 author: ittayd
-permalink: /alm/easy-way-write-posts-site
+permalink: /devops/easy-way-write-posts-site
 tags:
 - DevOps
 ---

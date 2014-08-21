@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /jquery-and-updatepanels-aspnet
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/02/01/jquery-and-updatepanels-asp-net/jquery-logo-9/' rel='attachment wp-att-336'><img alt='' class='alignleft size-thumbnail wp-image-336' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/02/jquery-logo-9-150x150.jpg' title='jQuery' width='150' /></a>
 <p>I think this open-source js library is simply the best when you want to create a richer user experience in your websites and applications.</p>

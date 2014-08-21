@@ -3,7 +3,7 @@ layout: post
 title: Introduction to Chef
 created: 1359388383
 author: hagzag
-permalink: /alm/introduction-chef
+permalink: /devops/introduction-chef
 tags:
 - DevOps
 - role

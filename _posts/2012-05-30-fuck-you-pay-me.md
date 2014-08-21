@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /fuck-you-pay-me
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>As every developer, I am a member of numerous groups, email groups, chats, forums, facebook groups, Quora etc…</p>
 

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /share-your-local-drives-over-rdp-windows-7
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Hi All,</p>
 

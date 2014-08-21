@@ -3,7 +3,7 @@ layout: post
 title: Upgrading subversion 1.42 => 1.6.x via yum
 created: 1299477044
 author: hagzag
-permalink: /alm/upgrading-subversion-142-16x-yum
+permalink: /devops/upgrading-subversion-142-16x-yum
 tags:
 - DevOps
 - subversion

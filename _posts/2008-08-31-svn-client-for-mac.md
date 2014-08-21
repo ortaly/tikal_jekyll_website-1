@@ -3,7 +3,7 @@ layout: post
 title: SVN client for Mac
 created: 1220185803
 author: andrew
-permalink: /alm/svn-client-mac
+permalink: /devops/svn-client-mac
 tags:
 - DevOps
 - Mac

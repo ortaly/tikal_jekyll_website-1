@@ -3,7 +3,7 @@ layout: post
 title: Is using the compiler –O option is a good idea
 created: 1227382703
 author: hagzag
-permalink: /alm/using-compiler-–o-option-good-idea
+permalink: /devops/using-compiler-–o-option-good-idea
 tags:
 - DevOps
 - Compiler

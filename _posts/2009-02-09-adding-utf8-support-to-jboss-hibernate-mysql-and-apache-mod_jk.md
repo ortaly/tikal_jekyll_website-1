@@ -3,7 +3,7 @@ layout: post
 title: Adding UTF8 support to JBoss, Hibernate, mysql and Apache  mod_jk
 created: 1234174390
 author: admin
-permalink: /alm/adding-utf8-support-jboss-hibernate-mysql-and-apache-mod-jk
+permalink: /devops/adding-utf8-support-jboss-hibernate-mysql-and-apache-mod-jk
 tags:
 - DevOps
 - Hibernate

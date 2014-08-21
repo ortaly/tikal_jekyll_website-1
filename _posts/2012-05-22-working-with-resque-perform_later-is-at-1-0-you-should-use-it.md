@@ -5,9 +5,8 @@ created: 1337693333
 author: avit
 permalink: /working-resque-performlater-10-you-should-use-it
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Last night, I released the 1.0 version of <a href="http://github.com/kensodev/perform_later" target="_blank">perform_later</a>.</p>
 <div id="attachment_1139" class="wp-caption aligncenter" style="width: 310px"><a href="http://www.kensodev.com/wp-content/uploads/2012/05/iStock_000018537479Small.jpg"><img class="size-medium wp-image-1139" title="Now or later?" src="http://www.kensodev.com/wp-content/uploads/2012/05/iStock_000018537479Small-300x218.jpg" alt="" width="300" height="218" /></a><p class="wp-caption-text">Now or later?</p></div>

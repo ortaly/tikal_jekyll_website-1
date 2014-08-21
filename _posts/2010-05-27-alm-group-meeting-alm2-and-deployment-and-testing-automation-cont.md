@@ -3,7 +3,7 @@ layout: post
 title: 'ALM group meeting: ALM2 and Deployment and testing automation - cont.'
 created: 1274964137
 author: liya
-permalink: /alm/alm-group-meeting-alm2-and-deployment-and-testing-automation-cont
+permalink: /devops/alm-group-meeting-alm2-and-deployment-and-testing-automation-cont
 tags:
 - DevOps
 ---

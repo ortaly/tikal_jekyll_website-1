@@ -3,7 +3,7 @@ layout: post
 title: Maven2 Dashboard Plugin
 created: 1207490700
 author: itai
-permalink: /alm/maven2-dashboard-plugin
+permalink: /devops/maven2-dashboard-plugin
 tags:
 - DevOps
 ---

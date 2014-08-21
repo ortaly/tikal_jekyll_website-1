@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /bypassing-ie-onchange-bug-jquery
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2009/10/20/bypassing-the-ie-onchange-bug-with-jquery/internetexplorer_1/' rel='attachment wp-att-206'><img alt='IE' class='size-thumbnail wp-image-206 alignleft' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/10/InternetExplorer_1-150x150.jpg' title='IE' width='150' /></a>
 <p>I absolutely love <a href='http://www.jquery.com'>jQuery</a>! I use it daily with my client side work, putting the jQuery file into my JS library has become an automated thing I do.</p>

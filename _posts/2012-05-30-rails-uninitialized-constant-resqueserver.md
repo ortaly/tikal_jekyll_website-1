@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /rails-uninitialized-constant-resqueserver
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>One of the most significant changes in my migration of a rails app from Rails 2.3.10 to rails 3.0.9 was the move from <a href='https://github.com/collectiveidea/delayed_job'>delayed_jobs</a> to <a href='https://github.com/defunkt/resque'>Resque</a>.</p>
 

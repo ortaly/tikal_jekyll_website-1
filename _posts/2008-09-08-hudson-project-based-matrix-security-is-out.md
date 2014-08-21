@@ -3,7 +3,7 @@ layout: post
 title: Hudson project-based matrix security is out!
 created: 1220845961
 author: zvika
-permalink: /alm/hudson-project-based-matrix-security-out
+permalink: /devops/hudson-project-based-matrix-security-out
 tags:
 - DevOps
 - Continuous Integration

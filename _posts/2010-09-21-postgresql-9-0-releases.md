@@ -3,7 +3,7 @@ layout: post
 title: PostgreSQL 9.0 releases
 created: 1285049273
 author: hagzag
-permalink: /alm/postgresql-90-releases
+permalink: /devops/postgresql-90-releases
 tags:
 - DevOps
 - PostgreSQL

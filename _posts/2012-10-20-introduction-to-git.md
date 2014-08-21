@@ -3,7 +3,7 @@ layout: post
 title: Introduction to GIT
 created: 1350758857
 author: miron
-permalink: /alm/introduction-git
+permalink: /devops/introduction-git
 tags:
 - DevOps
 ---

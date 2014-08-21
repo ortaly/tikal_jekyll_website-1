@@ -3,7 +3,7 @@ layout: post
 title: Open Source's (Drupal) threat on Microsoft is growing
 created: 1262373029
 author: hagzag
-permalink: /alm/open-sources-drupal-threat-microsoft-growing
+permalink: /devops/open-sources-drupal-threat-microsoft-growing
 tags:
 - DevOps
 - Microsoft

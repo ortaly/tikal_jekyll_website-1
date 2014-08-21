@@ -3,7 +3,7 @@ layout: post
 title: BI for Subversion and Bugzilla
 created: 1291546373
 author: udid
-permalink: /alm/bi-subversion-and-bugzilla
+permalink: /devops/bi-subversion-and-bugzilla
 tags:
 - DevOps
 - subversion

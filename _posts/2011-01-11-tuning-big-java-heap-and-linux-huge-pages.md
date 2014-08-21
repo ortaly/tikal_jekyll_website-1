@@ -3,7 +3,7 @@ layout: post
 title: Tuning big java heap and linux huge pages
 created: 1294742938
 author: shalom
-permalink: /alm/tuning-big-java-heap-and-linux-huge-pages
+permalink: /devops/tuning-big-java-heap-and-linux-huge-pages
 tags:
 - JAVA
 - Java jvm heap hugepage

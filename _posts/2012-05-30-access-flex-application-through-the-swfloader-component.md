@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /access-flex-application-through-swfloader-component
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>As you know, I’m a <a href='http://www.kensodev.com/about-avi-tzurel/' target='_blank'>web developer</a> and I love learning new stuff and blogging about it here. My blog post for today is about access flex application through the SWFLoader component.</p>
 

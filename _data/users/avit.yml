@@ -10,7 +10,7 @@ follow_me_urls:
 - http://il.linkedin.com/in/kensodev
 - https://twitter.com/kensodev
 image_path: pictures/picture-121-1361228696.jpg
-permalink: /ror/avit
+permalink: /ruby/avit
 skills:
   expert_skills:
     RoR: '3'

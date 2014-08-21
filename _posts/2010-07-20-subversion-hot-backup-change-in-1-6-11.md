@@ -3,7 +3,7 @@ layout: post
 title: subversion hot-backup change in 1.6.11
 created: 1279593928
 author: hagzag
-permalink: /alm/subversion-hot-backup-change-1611
+permalink: /devops/subversion-hot-backup-change-1611
 tags:
 - DevOps
 - subversion

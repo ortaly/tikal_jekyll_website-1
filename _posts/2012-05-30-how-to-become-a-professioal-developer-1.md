@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /how-become-professioal-developer-1
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img alt='' class='alignleft size-thumbnail wp-image-247' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/11/iStock_000008873087XSmall.jpg' style='padding: 3px;' width='150' />
 <p>I was very impressed and took great notes from <a href='http://www.objectmentor.com/omTeam/martin_r.html' target='_blank'>Uncle Bob</a> before writing this post, but this post also comes from the heart after seeing more than a couple of teams struggling, freelancers loosing clients and more…</p>

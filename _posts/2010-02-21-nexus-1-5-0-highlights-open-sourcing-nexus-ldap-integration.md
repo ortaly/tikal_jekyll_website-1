@@ -3,7 +3,7 @@ layout: post
 title: 'Nexus 1.5.0 Highlights: Open Sourcing Nexus LDAP Integration'
 created: 1266742753
 author: liya
-permalink: /alm/nexus-150-highlights-open-sourcing-nexus-ldap-integration
+permalink: /devops/nexus-150-highlights-open-sourcing-nexus-ldap-integration
 tags:
 - DevOps
 - Nexus

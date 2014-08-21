@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /re-queue-failed-jobs-resque
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been working with resque for about 1-2 months now, while migrating an application from rails 2 to rails 3, I have switched from Delayed Jobs almost completely.</p>
 

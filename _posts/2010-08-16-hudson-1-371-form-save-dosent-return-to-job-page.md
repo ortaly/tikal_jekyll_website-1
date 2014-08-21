@@ -3,7 +3,7 @@ layout: post
 title: Hudson 1.371 form save dosen't return to Job page
 created: 1281940613
 author: hagzag
-permalink: /alm/hudson-1371-form-save-dosent-return-job-page
+permalink: /devops/hudson-1371-form-save-dosent-return-job-page
 tags:
 - DevOps
 - Hudson

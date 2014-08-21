@@ -3,7 +3,7 @@ layout: post
 title: luntbuild and shared working copies
 created: 1228045933
 author: hagzag
-permalink: /alm/luntbuild-and-shared-working-copies
+permalink: /devops/luntbuild-and-shared-working-copies
 tags:
 - DevOps
 - luntbuild

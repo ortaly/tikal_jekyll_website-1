@@ -5,9 +5,8 @@ created: 1335469143
 author: avit
 permalink: /10-things-you-didn’t-know-rails-could-do
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>James Eduard Grey published a presentation of a talk he did in RailsConf.</p>
 <p>It is pure gold, so many tips and tricks, I promise you, some of these will be new even to the most experienced of Rails developers.</p>

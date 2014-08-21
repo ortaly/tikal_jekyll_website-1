@@ -3,7 +3,7 @@ layout: post
 title: Maven 3 to support parallel builds
 created: 1284318675
 author: ittayd
-permalink: /alm/maven-3-support-parallel-builds
+permalink: /devops/maven-3-support-parallel-builds
 tags:
 - DevOps
 - maven build

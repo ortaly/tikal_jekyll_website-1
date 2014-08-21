@@ -3,7 +3,7 @@ layout: post
 title: 'Code Bubbles Project: Rethinking the User Interface Paradigm of IDEs'
 created: 1268305007
 author: ittayd
-permalink: /alm/code-bubbles-project-rethinking-user-interface-paradigm-ides
+permalink: /devops/code-bubbles-project-rethinking-user-interface-paradigm-ides
 tags:
 - DevOps
 - ide java
