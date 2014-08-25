@@ -4,7 +4,7 @@ title: Eclipse plugin+hack to visually collapse (fold) anonymous inner classes t
   concise lambda expressions (closures) in Java Editor.
 created: 1233589591
 author: keren
-permalink: /alm/eclipse-pluginhack-visually-collapse-fold-anonymous-inner-classes-concise-lambda-expressions
+permalink: /devops/eclipse-pluginhack-visually-collapse-fold-anonymous-inner-classes-concise-lambda-expressions
 tags:
 - DevOps
 - plugin folding

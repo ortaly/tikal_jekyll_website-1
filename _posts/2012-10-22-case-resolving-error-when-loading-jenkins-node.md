@@ -3,7 +3,7 @@ layout: post
 title: 'Case resolving: error when loading jenkins node'
 created: 1350905557
 author: yorammi
-permalink: /alm/case-resolving-error-when-loading-jenkins-node
+permalink: /devops/case-resolving-error-when-loading-jenkins-node
 tags:
 - DevOps
 - Mac

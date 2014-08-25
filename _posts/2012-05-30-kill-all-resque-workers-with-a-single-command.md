@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /kill-all-resque-workers-single-command
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>At <a href='http://www.gogobot.com'>Gogobot</a> we are running background processes with <a href='http://www.github.com/defunkt/resque'>Resque</a>.</p>
 

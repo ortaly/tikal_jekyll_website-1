@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /dynamic-streaming-adaptive-bitrate-using-flash-media-server
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/04/15/dynamic-streamin-adaptive-bitrate-using-flash-media-server/fms/' rel='attachment wp-att-418'><img alt='' class='alignleft size-thumbnail wp-image-418' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/04/fms-150x150.png' title='Flash Media Server' width='150' /></a>
 <p>Video can be downloaded (progressive download) to the client like YouTube or can be streamed to him.</p>

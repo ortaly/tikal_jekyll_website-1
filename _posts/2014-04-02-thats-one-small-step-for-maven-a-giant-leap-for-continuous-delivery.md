@@ -3,7 +3,7 @@ layout: post
 title: That's one small step for Maven, a giant leap for Continuous Delivery
 created: 1396469311
 author: yorammi
-permalink: /alm/thats-one-small-step-maven-giant-leap-continuous-delivery
+permalink: /devops/thats-one-small-step-maven-giant-leap-continuous-delivery
 tags:
 - DevOps
 - maven

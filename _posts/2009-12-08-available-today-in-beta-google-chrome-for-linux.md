@@ -3,7 +3,7 @@ layout: post
 title: 'Available today in beta: Google Chrome for Linux!'
 created: 1260301126
 author: hagzag
-permalink: /alm/available-today-beta-google-chrome-linux
+permalink: /devops/available-today-beta-google-chrome-linux
 tags:
 - DevOps
 - Google Chrome

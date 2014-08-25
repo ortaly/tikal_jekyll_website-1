@@ -3,7 +3,7 @@ layout: post
 title: Druapl 7 released
 created: 1294393645
 author: hagzag
-permalink: /alm/druapl-7-released
+permalink: /devops/druapl-7-released
 tags:
 - DevOps
 - Drupal

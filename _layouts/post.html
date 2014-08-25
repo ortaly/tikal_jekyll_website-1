@@ -4,7 +4,7 @@
       {% include head.html %}
     </head>
 
-    <body class="one-sidebar sidebar-second page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+    <body class="one-sidebar sidebar-second section-{{ page.url | find_section }} page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
         {% include facebook_comments_script.html %}
         {% include header.html %}
         {% include navigation.html %}

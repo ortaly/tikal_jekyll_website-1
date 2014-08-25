@@ -3,7 +3,7 @@ layout: post
 title: Http post error during build invokation in Hudson 1.323
 created: 1299131178
 author: hagzag
-permalink: /alm/http-post-error-during-build-invokation-hudson-1323
+permalink: /devops/http-post-error-during-build-invokation-hudson-1323
 tags:
 - DevOps
 - hudson jenkins

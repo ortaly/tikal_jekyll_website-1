@@ -3,7 +3,7 @@ layout: post
 title: Bye bye Hudson, Hello Jenkins
 created: 1294764802
 author: ittayd
-permalink: /alm/bye-bye-hudson-hello-jenkins
+permalink: /devops/bye-bye-hudson-hello-jenkins
 tags:
 - DevOps
 - Hudson

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /strange-flex-bug-caching-screens
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Hello All,</p>
 

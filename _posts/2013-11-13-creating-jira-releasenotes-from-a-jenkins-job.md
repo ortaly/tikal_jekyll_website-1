@@ -3,7 +3,7 @@ layout: post
 title: 'Creating Jira ReleaseNotes from a Jenkins job '
 created: 1384359902
 author: gil
-permalink: /alm/creating-jira-releasenotes-jenkins-job
+permalink: /devops/creating-jira-releasenotes-jenkins-job
 tags:
 - DevOps
 - jira jenkins shell scripting

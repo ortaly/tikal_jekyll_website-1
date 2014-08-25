@@ -3,7 +3,7 @@ layout: post
 title: 'programmatically control ssh '
 created: 1267693089
 author: ittayd
-permalink: /alm/programmatically-control-ssh
+permalink: /devops/programmatically-control-ssh
 tags:
 - DevOps
 - ssh

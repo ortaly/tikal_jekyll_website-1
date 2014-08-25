@@ -3,7 +3,7 @@ layout: post
 title: Five advanced Git merge techniques
 created: 1284275985
 author: ittayd
-permalink: /alm/five-advanced-git-merge-techniques
+permalink: /devops/five-advanced-git-merge-techniques
 tags:
 - DevOps
 - git

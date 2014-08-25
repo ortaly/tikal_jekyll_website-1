@@ -3,7 +3,7 @@ layout: post
 title: Looking for "Memory consumption report" - per module in Maven 2
 created: 1298818619
 author: hagzag
-permalink: /alm/looking-memory-consumption-report-module-maven-2
+permalink: /devops/looking-memory-consumption-report-module-maven-2
 tags:
 - DevOps
 ---

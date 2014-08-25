@@ -3,7 +3,7 @@ layout: post
 title: m2eclipse and aggregator/top-level pom
 created: 1260877797
 author: shalom
-permalink: /alm/m2eclipse-and-aggregatortop-level-pom
+permalink: /devops/m2eclipse-and-aggregatortop-level-pom
 tags:
 - DevOps
 - m2eclipse aggregator maven top level pom

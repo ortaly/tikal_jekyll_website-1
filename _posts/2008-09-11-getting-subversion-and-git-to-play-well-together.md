@@ -3,7 +3,7 @@ layout: post
 title: Getting Subversion and git to play well together
 created: 1221131415
 author: keren
-permalink: /alm/getting-subversion-and-git-play-well-together
+permalink: /devops/getting-subversion-and-git-play-well-together
 tags:
 - DevOps
 ---

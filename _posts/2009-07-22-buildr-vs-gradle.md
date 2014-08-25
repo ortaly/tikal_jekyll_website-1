@@ -3,7 +3,7 @@ layout: post
 title: BuildR vs Gradle
 created: 1248239277
 author: ittayd
-permalink: /alm/buildr-vs-gradle
+permalink: /devops/buildr-vs-gradle
 tags:
 - DevOps
 - buildr build gradle

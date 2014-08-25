@@ -3,11 +3,11 @@ id: 125
 login: tom
 first_name: Tom
 last_name: Caspy
-description: Sr. RoR Developer
+description: Sr. Ruby on Rails Developer
 about: ''
 follow_me_urls: []
 image_path: pictures/picture-125-1383560559.jpg
-permalink: /ror/tom
+permalink: /ruby/tom
 skills:
   expert_skills:
     RoR: '3'

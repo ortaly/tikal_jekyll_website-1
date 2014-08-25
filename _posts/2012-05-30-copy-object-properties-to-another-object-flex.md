@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /copy-object-properties-another-object-flex
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>In a project I am working on with <a href='http://www.kensodev.com/tag/flex/' title='Flex'>Flex</a> and <a href='http://www.kensodev.com/tag/as3/' title='AS3'>AS3</a> I needed to copy all of the object’s properties and accessors to another object. Because I didn’t want to hard code the properties for various reasons, I needed to write a function that will “crawl” the object properties and accessors and copy then to the new object.</p>
 

@@ -3,7 +3,7 @@ layout: post
 title: Hybrid environment setup during migration from SVN to GIT
 created: 1350767403
 author: miron
-permalink: /alm/hybrid-environment-setup-during-migration-svn-git
+permalink: /devops/hybrid-environment-setup-during-migration-svn-git
 tags:
 - DevOps
 - git

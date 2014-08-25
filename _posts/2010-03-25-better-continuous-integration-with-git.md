@@ -3,7 +3,7 @@ layout: post
 title: Better Continuous Integration with Git
 created: 1269516719
 author: ittayd
-permalink: /alm/better-continuous-integration-git
+permalink: /devops/better-continuous-integration-git
 tags:
 - DevOps
 - git

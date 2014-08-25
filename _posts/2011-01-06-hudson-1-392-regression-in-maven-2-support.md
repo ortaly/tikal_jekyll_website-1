@@ -3,7 +3,7 @@ layout: post
 title: Hudson 1.392 - Regression in Maven 2  support
 created: 1294330908
 author: hagzag
-permalink: /alm/hudson-1392-regression-maven-2-support
+permalink: /devops/hudson-1392-regression-maven-2-support
 tags:
 - DevOps
 - Hudson

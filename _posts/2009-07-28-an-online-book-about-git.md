@@ -3,7 +3,7 @@ layout: post
 title: An online book about Git
 created: 1248759140
 author: ittayd
-permalink: /alm/online-book-about-git
+permalink: /devops/online-book-about-git
 tags:
 - DevOps
 - git

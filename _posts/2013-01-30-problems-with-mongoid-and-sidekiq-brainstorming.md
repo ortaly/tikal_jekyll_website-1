@@ -3,9 +3,9 @@ layout: post
 title: Problems with Mongoid and Sidekiq- Brainstorming
 created: 1359574586
 author: avit
-permalink: /ror/blog/problems-mongoid-and-sidekiq-brainstorming
+permalink: /ruby/blog/problems-mongoid-and-sidekiq-brainstorming
 tags:
-- RoR
+- Ruby
 ---
 <p>A few weeks back, we started slowly upgrading all of our queues at <a href="http://www.gogobot.com">Gogobot</a> to work with <a href="https://github.com/mperham/sidekiq">Sidekiq</a>.</p>
 <p>Posts on how awesome the experience was and how much better Sidekiq is from <a href="http://github.com/defunkt/sidekiq">Resque</a> coming soon, though with all the good came some bad.</p>

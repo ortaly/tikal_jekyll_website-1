@@ -3,9 +3,9 @@ layout: post
 title: organizing your specs into groups and running them separately
 created: 1345380824
 author: avit
-permalink: /ror/blog/organizing-your-specs-groups-and-running-them-separately
+permalink: /ruby/blog/organizing-your-specs-groups-and-running-them-separately
 tags:
-- RoR
+- Ruby
 ---
 <p dir="ltr">A while back I answered <a href="http://stackoverflow.com/questions/10029250/organizing-rspec-2-tests-into-unit-and-integration-categories-in-rails/10029504#10029504">this StackOverflow question</a>.</p>
 

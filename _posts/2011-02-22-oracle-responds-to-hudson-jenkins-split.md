@@ -3,7 +3,7 @@ layout: post
 title: Oracle responds to Hudson/Jenkins split
 created: 1298350334
 author: ittayd
-permalink: /alm/oracle-responds-hudsonjenkins-split
+permalink: /devops/oracle-responds-hudsonjenkins-split
 tags:
 - DevOps
 - CI

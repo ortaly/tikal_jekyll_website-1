@@ -3,7 +3,7 @@ layout: post
 title: Skipping Code Duplication Errors on Maven/Hudson?
 created: 1286985236
 author: zvika
-permalink: /alm/skipping-code-duplication-errors-mavenhudson
+permalink: /devops/skipping-code-duplication-errors-mavenhudson
 tags:
 - DevOps
 - PMD

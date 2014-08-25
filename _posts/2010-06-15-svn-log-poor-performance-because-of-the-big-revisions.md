@@ -3,7 +3,7 @@ layout: post
 title: 'SVN log poor performance because of the "big" revisions '
 created: 1276623525
 author: liya
-permalink: /alm/svn-log-poor-performance-because-big-revisions
+permalink: /devops/svn-log-poor-performance-because-big-revisions
 tags:
 - DevOps
 - svn

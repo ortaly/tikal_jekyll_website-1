@@ -3,7 +3,7 @@ layout: post
 title: test fb-comments-count
 created: 1363099131
 author: admin
-permalink: /alm/test-fb-comments-count
+permalink: /devops/test-fb-comments-count
 ---
 <p>Comments Count using regular URL:</p>
 <div class="fb-comments-count" data-href="<?php global $base_url; print $base_url .'/'. drupal_get_path_alias('node/' .  $node->nid); ?>">

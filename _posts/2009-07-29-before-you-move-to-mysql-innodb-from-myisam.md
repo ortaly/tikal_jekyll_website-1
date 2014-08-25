@@ -3,7 +3,7 @@ layout: post
 title: Before you move to MySQL InnoDB from MyISAM...
 created: 1248842957
 author: yanai
-permalink: /alm/you-move-mysql-innodb-myisam
+permalink: /devops/you-move-mysql-innodb-myisam
 tags:
 - DevOps
 - Innodb MyISAM

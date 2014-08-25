@@ -3,7 +3,7 @@ layout: post
 title: Why Git is Better than X
 created: 1269850523
 author: ittayd
-permalink: /alm/why-git-better-x
+permalink: /devops/why-git-better-x
 tags:
 - DevOps
 - git

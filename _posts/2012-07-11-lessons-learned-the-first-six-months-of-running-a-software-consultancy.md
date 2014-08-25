@@ -3,11 +3,10 @@ layout: post
 title: 'Lessons Learned: The First Six Months of Running a Software Consultancy'
 created: 1342030489
 author: avit
-permalink: /ror/lessons-learned-first-six-months-running-software-consultancy
+permalink: /ruby/lessons-learned-first-six-months-running-software-consultancy
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>If you are running a consultancy business, or even thinking about it, this post is a must read for you.</p>
 <p>The comments are sometimes even more interesting then the post itself, some very interesting discussions were ignited by this post.</p>

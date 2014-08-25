@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /net-myth-balloon-exploding
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2009/11/12/the-net-myth-balloon-exploding/surprise/' rel='attachment wp-att-290'><img alt='bursting the .net rumors bubble' class='alignleft size-thumbnail wp-image-290' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/11/iStock_000008504500XSmall-150x150.jpg' title='bursting the .net rumors bubble' width='150' /></a>
 <p>Also, you probably know that I do love to code .net and create amazing application with these technologies and frameworks MS are putting out into the market for years now.</p>

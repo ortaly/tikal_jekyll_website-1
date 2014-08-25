@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /xmlload-problem-ie6
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img alt='Flash' class='alignleft size-thumbnail wp-image-214' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/08/adobe_flash_1470_1470-150x150.jpg' title='Flash' width='150' />
 <p>IE6 has been for a very long time an enemy for web developers because of the way it renders HTML and CSS.</p>

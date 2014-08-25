@@ -3,7 +3,7 @@ layout: post
 title: Looking for Management Studio & SVN integration experience
 created: 1246194275
 author: hagzag
-permalink: /alm/looking-management-studio-svn-integration-experience
+permalink: /devops/looking-management-studio-svn-integration-experience
 tags:
 - DevOps
 ---

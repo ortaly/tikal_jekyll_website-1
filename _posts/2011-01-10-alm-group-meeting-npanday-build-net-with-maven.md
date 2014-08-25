@@ -3,7 +3,7 @@ layout: post
 title: 'ALM Group meeting: Npanday .... build .net with maven'
 created: 1294642008
 author: itai
-permalink: /alm/alm-group-meeting-npanday-build-net-maven
+permalink: /devops/alm-group-meeting-npanday-build-net-maven
 tags:
 - DevOps
 ---

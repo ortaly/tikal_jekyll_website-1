@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /free-flex-uploader-coming-along-pretty-great
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Hello All,</p>
 

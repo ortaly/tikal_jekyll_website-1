@@ -3,7 +3,7 @@ layout: post
 title: Starting Tomcat as part of the build process with HUDSON-CI
 created: 1262555650
 author: hagzag
-permalink: /alm/starting-tomcat-part-build-process-hudson-ci
+permalink: /devops/starting-tomcat-part-build-process-hudson-ci
 tags:
 - DevOps
 - Continuous Integration

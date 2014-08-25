@@ -5,9 +5,8 @@ created: 1334663203
 author: avit
 permalink: /pivotal-tracker-git-integration-ease
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>This post makes 2 assumptions</p>
 <ol>

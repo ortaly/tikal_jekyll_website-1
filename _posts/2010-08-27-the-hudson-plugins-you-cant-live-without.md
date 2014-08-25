@@ -3,7 +3,7 @@ layout: post
 title: The hudson plugins you can't live without
 created: 1282915829
 author: hagzag
-permalink: /alm/hudson-plugins-you-cant-live-without
+permalink: /devops/hudson-plugins-you-cant-live-without
 tags:
 - DevOps
 - Hudson

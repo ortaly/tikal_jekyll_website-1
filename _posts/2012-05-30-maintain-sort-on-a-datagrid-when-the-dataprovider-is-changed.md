@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /maintain-sort-datagrid-when-dataprovider-changed
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Usually, in our <a href='http://www.kensodev.com/category/flex/' title='Flex'>Flex</a> application we do have a data-grid. This component is very useful for displaying data and have a sorting, ordering of columns and more, out of the box.</p>
 

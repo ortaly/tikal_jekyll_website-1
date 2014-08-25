@@ -3,9 +3,9 @@ layout: post
 title: copy all files from a folder into a folder without the confirmation on linux
 created: 1344161388
 author: avit
-permalink: /ror/copy-all-files-folder-folder-without-confirmation-linux
+permalink: /ruby/copy-all-files-folder-folder-without-confirmation-linux
 tags:
-- RoR
+- Ruby
 ---
 <p>As a developer, there are things that never mind how many times you’ll do them, you will never ever remember how to do it exactly without googling for a couple of minutes or looking through the last executed list of commands on the terminal.</p>
 

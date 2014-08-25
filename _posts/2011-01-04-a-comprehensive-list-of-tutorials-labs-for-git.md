@@ -3,7 +3,7 @@ layout: post
 title: A comprehensive list of tutorials (labs) for git
 created: 1294153333
 author: ittayd
-permalink: /alm/comprehensive-list-tutorials-labs-git
+permalink: /devops/comprehensive-list-tutorials-labs-git
 tags:
 - DevOps
 - git

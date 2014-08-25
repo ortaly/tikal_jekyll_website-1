@@ -3,9 +3,9 @@ layout: post
 title: project specific settings using zshell and dotfiles
 created: 1344161388
 author: avit
-permalink: /ror/project-specific-settings-using-zshell-and-dotfiles
+permalink: /ruby/project-specific-settings-using-zshell-and-dotfiles
 tags:
-- RoR
+- Ruby
 ---
 <p>I have been working with ZHell pretty much since the first day that I have been using a Mac.</p>
 

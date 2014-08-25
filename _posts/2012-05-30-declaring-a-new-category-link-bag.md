@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /declaring-new-category-link-bag
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Well, I have decided. After a while of reading very interesting blogs and stumbling upon quite a few useful links for fellow developers, I decided to put together a new category in the blog.</p>
 

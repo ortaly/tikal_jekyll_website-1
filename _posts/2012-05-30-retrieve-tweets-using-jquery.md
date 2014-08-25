@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /retrieve-tweets-using-jquery
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img alt='Twitter Logo' class='alignleft size-thumbnail wp-image-211' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/09/Twitter_256x256-150x150.png' title='Twitter Logo' width='150' />
 <p>As many of you out there, I’m a <a href='http://www.twitter.com' target='_blank'>Twitter</a> user too. As most of you have, I too have spent quite some time reading the Twitter API and understanding it.</p>

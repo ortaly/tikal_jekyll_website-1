@@ -3,7 +3,7 @@ layout: post
 title: automated deployment with maven
 created: 1253774018
 author: ittayd
-permalink: /alm/automated-deployment-maven
+permalink: /devops/automated-deployment-maven
 tags:
 - DevOps
 ---

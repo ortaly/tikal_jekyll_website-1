@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /foursquare-live-updates-push-api-using-rails
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Recently, I have been working extensively with the Foursquare API, also contributing to the open source <a href='http://www.github.com/kensodev/foursquare2'>foursquare2</a> gem.</p>
 

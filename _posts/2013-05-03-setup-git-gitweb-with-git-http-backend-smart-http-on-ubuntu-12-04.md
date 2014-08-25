@@ -3,7 +3,7 @@ layout: post
 title: Setup Git, Gitweb with git-http-backend / smart http on ubuntu 12.04
 created: 1367563862
 author: hagzag
-permalink: /alm/setup-git-gitweb-git-http-backend-smart-http-ubuntu-1204
+permalink: /devops/setup-git-gitweb-git-http-backend-smart-http-ubuntu-1204
 tags:
 - DevOps
 ---

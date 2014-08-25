@@ -3,7 +3,7 @@ layout: post
 title: Software Quality – OS BI for Bugzilla – now on Pentaho 3.0 - part 2
 created: 1247554385
 author: udid
-permalink: /alm/software-quality-–-os-bi-bugzilla-–-now-pentaho-30-part-2
+permalink: /devops/software-quality-–-os-bi-bugzilla-–-now-pentaho-30-part-2
 tags:
 - DevOps
 - SQR

@@ -3,7 +3,7 @@ layout: post
 title: 'Immortal Objects - Or: How to Find Memory Leaks'
 created: 1208796840
 author: lior.kanfi
-permalink: /alm/immortal-objects-or-how-find-memory-leaks
+permalink: /devops/immortal-objects-or-how-find-memory-leaks
 tags:
 - DevOps
 ---

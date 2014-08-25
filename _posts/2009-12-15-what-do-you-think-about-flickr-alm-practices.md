@@ -3,7 +3,7 @@ layout: post
 title: 'What do you think about Flickr ALM practices?:'
 created: 1260892503
 author: ittayd
-permalink: /alm/what-do-you-think-about-flickr-alm-practices
+permalink: /devops/what-do-you-think-about-flickr-alm-practices
 tags:
 - DevOps
 ---

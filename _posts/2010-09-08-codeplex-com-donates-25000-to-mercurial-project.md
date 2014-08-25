@@ -3,7 +3,7 @@ layout: post
 title: CodePlex.com donates $25,000 to Mercurial project
 created: 1283936564
 author: ittayd
-permalink: /alm/codeplexcom-donates-25000-mercurial-project
+permalink: /devops/codeplexcom-donates-25000-mercurial-project
 tags:
 - DevOps
 - mercurial

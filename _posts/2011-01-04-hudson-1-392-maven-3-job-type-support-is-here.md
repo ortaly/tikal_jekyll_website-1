@@ -3,7 +3,7 @@ layout: post
 title: Hudson 1.392 - Maven 3 Job type support is here !
 created: 1294125515
 author: hagzag
-permalink: /alm/hudson-1392-maven-3-job-type-support-here
+permalink: /devops/hudson-1392-maven-3-job-type-support-here
 tags:
 - DevOps
 - Hudson

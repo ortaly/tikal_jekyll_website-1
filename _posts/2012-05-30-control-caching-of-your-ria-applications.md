@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /control-caching-your-ria-applications
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>For all of us working with RIA applications (<a href='http://www.kensodev.com/tag/flex/' title='Flex'>Flex</a>/<a href='http://www.kensodev.com/tag/flash/' title='Flash'>Flash</a>) we know the hell of having to worry about a user cache.</p>
 

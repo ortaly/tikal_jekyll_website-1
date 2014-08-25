@@ -4,7 +4,7 @@ title: Creating an image for OpenStack (windows + Ubuntu that'll perform as Jenk
   slave)
 created: 1356973351
 author: gil
-permalink: /alm/creating-image-openstack-windows-ubuntu-thatll-perform-jenkins-slave
+permalink: /devops/creating-image-openstack-windows-ubuntu-thatll-perform-jenkins-slave
 tags:
 - DevOps
 - tikal

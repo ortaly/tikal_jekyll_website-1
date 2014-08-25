@@ -3,7 +3,7 @@ layout: post
 title: Maven 2 Archetypes for Web Projects
 created: 1217409180
 author: zvika
-permalink: /alm/maven-2-archetypes-web-projects
+permalink: /devops/maven-2-archetypes-web-projects
 tags:
 - DevOps
 - web maven archetype

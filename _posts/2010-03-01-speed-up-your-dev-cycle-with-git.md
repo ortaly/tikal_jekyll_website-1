@@ -3,7 +3,7 @@ layout: post
 title: Speed up your dev cycle with git
 created: 1267441376
 author: ittayd
-permalink: /alm/speed-your-dev-cycle-git
+permalink: /devops/speed-your-dev-cycle-git
 tags:
 - DevOps
 - git

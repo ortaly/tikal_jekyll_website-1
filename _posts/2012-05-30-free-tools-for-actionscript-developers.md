@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /free-tools-actionscript-developers
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img alt='kids-tools-05' class='alignleft size-thumbnail wp-image-218' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/08/kids-tools-05-150x150.jpg' title='kids-tools-05' width='150' />
 <p>As you know, on top of being a .NET developer and client side (HTML) developer I do quite a bit of RIA using Flash/Flex and of course ActionScript 3.</p>

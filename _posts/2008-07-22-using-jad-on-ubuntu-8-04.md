@@ -3,7 +3,7 @@ layout: post
 title: Using Jad on Ubuntu 8.04
 created: 1216714020
 author: itai
-permalink: /alm/using-jad-ubuntu-804
+permalink: /devops/using-jad-ubuntu-804
 tags:
 - DevOps
 - jad

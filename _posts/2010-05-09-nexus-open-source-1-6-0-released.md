@@ -3,7 +3,7 @@ layout: post
 title: Nexus Open Source 1.6.0 released
 created: 1273437853
 author: hagzag
-permalink: /alm/nexus-open-source-160-released
+permalink: /devops/nexus-open-source-160-released
 tags:
 - DevOps
 - Nexus Open Source

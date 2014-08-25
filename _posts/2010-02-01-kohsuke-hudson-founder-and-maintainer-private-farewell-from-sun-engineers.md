@@ -3,7 +3,7 @@ layout: post
 title: Kohsuke (Hudson founder & maintainer) "private" farewell from Sun engineers
 created: 1265017381
 author: hagzag
-permalink: /alm/kohsuke-hudson-founder-maintainer-private-farewell-sun-engineers
+permalink: /devops/kohsuke-hudson-founder-maintainer-private-farewell-sun-engineers
 tags:
 - DevOps
 - Hudson

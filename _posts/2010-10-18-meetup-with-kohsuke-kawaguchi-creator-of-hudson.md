@@ -3,7 +3,7 @@ layout: post
 title: Meetup with Kohsuke Kawaguchi creator of Hudson
 created: 1287404403
 author: ittayd
-permalink: /alm/meetup-kohsuke-kawaguchi-creator-hudson
+permalink: /devops/meetup-kohsuke-kawaguchi-creator-hudson
 tags:
 - DevOps
 - Hudson

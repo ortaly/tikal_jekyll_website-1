@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /mount-sinatra-app-your-ruby-rails-3-application
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been migrating a Rails 2.3.10 application to Rails 3.0.9, while doing so I also migrated our queue system from delayed_jobs that ripped our system apart to Resque.</p>
 

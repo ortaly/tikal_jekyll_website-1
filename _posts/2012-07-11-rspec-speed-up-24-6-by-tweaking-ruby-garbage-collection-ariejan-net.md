@@ -3,11 +3,10 @@ layout: post
 title: RSpec speed-up (24.6%) by tweaking ruby garbage collection – Ariejan.net
 created: 1342029132
 author: avit
-permalink: /ror/rspec-speed-246-tweaking-ruby-garbage-collection-–-ariejannet
+permalink: /ruby/rspec-speed-246-tweaking-ruby-garbage-collection-–-ariejannet
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>We have been tweaking the GC for the Gogobot website, the affects it has are simply mind blowing.</p>
 <p>Since I am clearly not happy with the test suite time that we currently have, This seems like a nice solution and I am definitely gonna try it.</p>

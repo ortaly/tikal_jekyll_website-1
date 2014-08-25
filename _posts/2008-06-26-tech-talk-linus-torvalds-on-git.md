@@ -3,7 +3,7 @@ layout: post
 title: 'Tech Talk: Linus Torvalds on git'
 created: 1214455560
 author: miron
-permalink: /alm/tech-talk-linus-torvalds-git
+permalink: /devops/tech-talk-linus-torvalds-git
 tags:
 - DevOps
 - git

@@ -5,7 +5,7 @@ created: 1338536384
 author: yossi
 permalink: /cross-domain-jquery-ajax-calls-yql
 tags:
-- RoR
+- Ruby
 ---
 <p><span style="font-size: medium; "><font color="#808080" face="Tahoma, Verdana, Arial, Helvetica, sans-serif"><span style="line-height: 21px; ">Recently&nbsp;i had to make client side&nbsp;</span></font><span style="background-color: rgb(255, 255, 255); "><span class="J-JK9eJ-PJVNOc" style="background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; ">ajax</span></span><font color="#808080" face="Tahoma, Verdana, Arial, Helvetica, sans-serif"><span style="line-height: 21px; ">&nbsp;call to&nbsp;</span></font>fetch<font color="#808080" face="Tahoma, Verdana, Arial, Helvetica, sans-serif"><span style="line-height: 21px; ">&nbsp;data for domain other then my on and got this&nbsp;</span></font><font color="#808080" face="Tahoma, Verdana, Arial, Helvetica, sans-serif"><span style="line-height: 21px; ">ugly&nbsp;error:</span></font></span></p>
 <p>&nbsp;</p>

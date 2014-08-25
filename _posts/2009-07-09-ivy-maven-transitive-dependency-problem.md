@@ -3,7 +3,7 @@ layout: post
 title: Ivy-Maven transitive dependency problem
 created: 1247134992
 author: liya
-permalink: /alm/ivy-maven-transitive-dependency-problem
+permalink: /devops/ivy-maven-transitive-dependency-problem
 tags:
 - DevOps
 - Ant

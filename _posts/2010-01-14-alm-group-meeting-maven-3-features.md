@@ -3,7 +3,7 @@ layout: post
 title: 'ALM group meeting: Maven 3 features'
 created: 1263467576
 author: liya
-permalink: /alm/alm-group-meeting-maven-3-features
+permalink: /devops/alm-group-meeting-maven-3-features
 tags:
 - DevOps
 ---

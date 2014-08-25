@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /rails-polymorphic-association-without-type-column-possible
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>These last two weeks has been very hard on me, this post will describe why and how you can help me</p>
 

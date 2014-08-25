@@ -3,7 +3,7 @@ layout: post
 title: 27th of April Site Downtime
 created: 1272398164
 author: hagzag
-permalink: /alm/27th-april-site-downtime
+permalink: /devops/27th-april-site-downtime
 tags:
 - DevOps
 - Drupal

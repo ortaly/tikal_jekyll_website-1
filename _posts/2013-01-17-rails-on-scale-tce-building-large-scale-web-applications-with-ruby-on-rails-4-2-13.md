@@ -6,7 +6,7 @@ created: 1358411954
 author: admin
 permalink: /events/rails-scale-tce-building-large-scale-web-applications-ruby-rails-4213
 tags:
-- RoR
+- Ruby
 ---
 <p>&nbsp;</p>
 <p>&quot;Rails on scale&quot; is an event focused on giving you ideas and tools to use on your real life rails application. The presentations will go in depth, into the language ,the framework, the tools and methods we used when building large scaled apps for customers. Even if you have an app that you don&#39;t call &quot;big scale&quot;,this event will be very interesting to you since the depth of the lectures will be such that any rails/ruby developer will enjoy.&nbsp;</p>

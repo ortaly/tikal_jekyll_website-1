@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /source-code-credit-card-number-validation-israeli-visa
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/01/18/source-code-credit-card-number-validation-israeli-visa/credit-card-with-dollars/' rel='attachment wp-att-309'><img alt='' class='alignleft size-thumbnail wp-image-309' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/01/iStock_000004333130XSmall-150x150.jpg' title='Credit card with dollars' width='150' /></a>
 <p>Usually, it’s enough, yet sometimes a client demand or a product demand is to create a more sophisticated validation, using known credit card algorithm that the CreditCard company issues from time to time.</p>

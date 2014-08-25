@@ -4,7 +4,7 @@ title: 'Developing and deploying Java on middleware and in the cloud: rise of th
   Virtual Appliance?'
 created: 1268818428
 author: itai
-permalink: /alm/developing-and-deploying-java-middleware-and-cloud-rise-virtual-appliance
+permalink: /devops/developing-and-deploying-java-middleware-and-cloud-rise-virtual-appliance
 tags:
 - DevOps
 - cloud computing

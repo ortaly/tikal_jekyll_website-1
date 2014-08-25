@@ -3,7 +3,7 @@ layout: post
 title: 'Computer Language Benchmarks Game  '
 created: 1260280370
 author: ittayd
-permalink: /alm/computer-language-benchmarks-game
+permalink: /devops/computer-language-benchmarks-game
 tags:
 - DevOps
 - benchmark

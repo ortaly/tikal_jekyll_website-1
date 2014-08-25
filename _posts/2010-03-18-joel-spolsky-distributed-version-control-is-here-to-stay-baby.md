@@ -3,7 +3,7 @@ layout: post
 title: 'Joel Spolsky: Distributed Version Control is here to stay, baby'
 created: 1268929658
 author: ittayd
-permalink: /alm/joel-spolsky-distributed-version-control-here-stay-baby
+permalink: /devops/joel-spolsky-distributed-version-control-here-stay-baby
 tags:
 - DevOps
 - dvcs

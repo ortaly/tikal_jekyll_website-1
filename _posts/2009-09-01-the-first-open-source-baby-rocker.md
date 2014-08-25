@@ -3,7 +3,7 @@ layout: post
 title: The "first" Open Source baby rocker?
 created: 1251826432
 author: hagzag
-permalink: /alm/first-open-source-baby-rocker
+permalink: /devops/first-open-source-baby-rocker
 tags:
 - DevOps
 - Geeks-fun

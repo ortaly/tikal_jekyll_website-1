@@ -3,9 +3,9 @@ layout: post
 title: building the gogobot social graph
 created: 1360010203
 author: avit
-permalink: /ror/building-gogobot-social-graph
+permalink: /ruby/building-gogobot-social-graph
 tags:
-- RoR
+- Ruby
 ---
 <p>For the past few months I have been super busy building the social graph behind Gogobot.</p>
 

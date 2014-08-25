@@ -3,7 +3,7 @@ layout: post
 title: Creating a Continuous Integration Server for Java Projects Using Hudson
 created: 1257337382
 author: liya
-permalink: /alm/creating-continuous-integration-server-java-projects-using-hudson
+permalink: /devops/creating-continuous-integration-server-java-projects-using-hudson
 tags:
 - DevOps
 ---

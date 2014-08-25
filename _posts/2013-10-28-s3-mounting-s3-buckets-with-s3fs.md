@@ -3,7 +3,7 @@ layout: post
 title: S3 - Mounting S3 Buckets With S3fs
 created: 1382944340
 author: hagzag
-permalink: /alm/s3-mounting-s3-buckets-s3fs
+permalink: /devops/s3-mounting-s3-buckets-s3fs
 tags:
 - DevOps
 - Amazon EC2

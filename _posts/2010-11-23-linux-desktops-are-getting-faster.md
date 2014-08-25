@@ -3,7 +3,7 @@ layout: post
 title: Linux Desktops are getting faster
 created: 1290547359
 author: shalom
-permalink: /alm/linux-desktops-are-getting-faster
+permalink: /devops/linux-desktops-are-getting-faster
 tags:
 - DevOps
 - Linux

@@ -3,11 +3,10 @@ layout: post
 title: A solution for the “I Follow” bug with cucumber and Capybara
 created: 1338394544
 author: avit
-permalink: /ror/solution-“i-follow”-bug-cucumber-and-capybara
+permalink: /ruby/solution-i-follow-bug-cucumber-and-capybara
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>While working on a new application and writing tests I encountered a problem: This is the test I have been using:</p>
 <div class="highlight">

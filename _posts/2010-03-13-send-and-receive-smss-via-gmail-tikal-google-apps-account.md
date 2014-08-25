@@ -3,7 +3,7 @@ layout: post
 title: ' Send & Receive SMS''s via Gmail / Tikal Google apps account'
 created: 1268513065
 author: hagzag
-permalink: /alm/send-receive-smss-gmail-tikal-google-apps-account
+permalink: /devops/send-receive-smss-gmail-tikal-google-apps-account
 tags:
 - DevOps
 ---

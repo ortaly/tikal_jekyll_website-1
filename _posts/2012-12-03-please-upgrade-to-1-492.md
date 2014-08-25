@@ -3,7 +3,7 @@ layout: post
 title: Please upgrade to 1.492
 created: 1354528343
 author: hagzag
-permalink: /alm/please-upgrade-1492
+permalink: /devops/please-upgrade-1492
 tags:
 - DevOps
 - regression

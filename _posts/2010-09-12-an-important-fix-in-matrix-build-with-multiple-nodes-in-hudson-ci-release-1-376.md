@@ -3,7 +3,7 @@ layout: post
 title: An important fix in matrix build with multiple nodes in Hudson-ci release 1.376
 created: 1284319807
 author: hagzag
-permalink: /alm/important-fix-matrix-build-multiple-nodes-hudson-ci-release-1376
+permalink: /devops/important-fix-matrix-build-multiple-nodes-hudson-ci-release-1376
 tags:
 - DevOps
 - Hudson

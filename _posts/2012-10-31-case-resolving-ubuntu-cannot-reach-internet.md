@@ -3,7 +3,7 @@ layout: post
 title: 'Case resolving: ubuntu cannot reach internet'
 created: 1351668196
 author: yorammi
-permalink: /alm/case-resolving-ubuntu-cannot-reach-internet
+permalink: /devops/case-resolving-ubuntu-cannot-reach-internet
 tags:
 - DevOps
 - ubuntu network

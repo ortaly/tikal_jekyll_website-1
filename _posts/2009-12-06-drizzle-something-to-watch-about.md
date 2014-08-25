@@ -3,7 +3,7 @@ layout: post
 title: 'drizzle: something to watch about'
 created: 1260105736
 author: ittayd
-permalink: /alm/drizzle-something-watch-about
+permalink: /devops/drizzle-something-watch-about
 tags:
 - DevOps
 ---

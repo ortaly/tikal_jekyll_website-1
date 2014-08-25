@@ -3,7 +3,7 @@ layout: post
 title: Solution MySQL ERROR 1045 Access denied for 'user'@'localhost' - breaks OpenStack
 created: 1340636377
 author: ori.tzoran
-permalink: /alm/solution-mysql-error-1045-access-denied-userlocalhost-breaks-openstack
+permalink: /devops/solution-mysql-error-1045-access-denied-userlocalhost-breaks-openstack
 tags:
 - DevOps
 - MySQL access denied localhost 1045

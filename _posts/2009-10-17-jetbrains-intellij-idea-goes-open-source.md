@@ -3,7 +3,7 @@ layout: post
 title: JetBrains' IntelliJ IDEA Goes Open Source
 created: 1255812485
 author: lior.kanfi
-permalink: /alm/jetbrains-intellij-idea-goes-open-source
+permalink: /devops/jetbrains-intellij-idea-goes-open-source
 tags:
 - DevOps
 - Java IDE

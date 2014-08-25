@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /svn-steroids-using-beanstalk-and-integrating-basecamp
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2010/01/20/svn-on-steroids-using-beanstalk-and-integrating-basecamp/istock_000006154797xsmall/' rel='attachment wp-att-322'><img alt='' class='alignleft size-thumbnail wp-image-322' height='150' src='http://www.kensodev.com/wp-content/uploads/2010/01/iStock_000006154797XSmall-150x150.jpg' title='Code' width='150' /></a>
 <p>Whether you are using GIT or SVN, both self hosted or in the cloud.</p>

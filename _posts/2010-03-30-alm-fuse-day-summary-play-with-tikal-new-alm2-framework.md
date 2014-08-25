@@ -3,7 +3,7 @@ layout: post
 title: ALM fuse day summary - "Play" with Tikal new ALM2 framework
 created: 1269977853
 author: liya
-permalink: /alm/alm-fuse-day-summary-play-tikal-new-alm2-framework
+permalink: /devops/alm-fuse-day-summary-play-tikal-new-alm2-framework
 tags:
 - DevOps
 - Fuse day

@@ -3,7 +3,7 @@ layout: post
 title: Learn About Continuous Integration With Hudson Directly From the Source
 created: 1267862972
 author: hagzag
-permalink: /alm/learn-about-continuous-integration-hudson-directly-source
+permalink: /devops/learn-about-continuous-integration-hudson-directly-source
 tags:
 - DevOps
 - Hudson

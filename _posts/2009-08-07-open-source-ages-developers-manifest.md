@@ -3,7 +3,7 @@ layout: post
 title: Open Source Ages Developer's Manifest
 created: 1249607612
 author: zvika
-permalink: /alm/open-source-ages-developers-manifest
+permalink: /devops/open-source-ages-developers-manifest
 tags:
 - DevOps
 - Design & Architecture

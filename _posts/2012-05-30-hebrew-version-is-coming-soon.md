@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /hebrew-version-coming-soon
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Hello all,</p>
 

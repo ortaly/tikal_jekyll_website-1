@@ -3,7 +3,7 @@ layout: post
 title: VMware ext3 partition re-sizing without loosing data ...
 created: 1357653164
 author: hagzag
-permalink: /alm/vmware-ext3-partition-re-sizing-without-loosing-data
+permalink: /devops/vmware-ext3-partition-re-sizing-without-loosing-data
 tags:
 - DevOps
 - VMWare

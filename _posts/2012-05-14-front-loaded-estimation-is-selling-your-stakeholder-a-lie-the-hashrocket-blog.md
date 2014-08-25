@@ -6,9 +6,8 @@ created: 1337004370
 author: avit
 permalink: /front-loaded-estimation-selling-your-stakeholder-lie-–-hashrocket-blog
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I am singing this song for something like 3 years now.<br />
 Estimations, fixed price projects and estimation ahead are all a scam.</p>

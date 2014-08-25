@@ -3,7 +3,7 @@ layout: post
 title: Maven 3 RC1 - available for early adapters / beta testers
 created: 1284638791
 author: hagzag
-permalink: /alm/maven-3-rc1-available-early-adapters-beta-testers
+permalink: /devops/maven-3-rc1-available-early-adapters-beta-testers
 tags:
 - DevOps
 ---

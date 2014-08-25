@@ -3,7 +3,7 @@ layout: post
 title: Fuse Day– “Jenkins As A service” Chef route – summary
 created: 1388938559
 author: hagzag
-permalink: /alm/fuse-day–jenkins-service-chef-route-summary
+permalink: /devops/fuse-day–jenkins-service-chef-route-summary
 tags:
 - DevOps
 ---

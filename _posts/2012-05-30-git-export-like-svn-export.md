@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /git-export-svn-export
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been working with git for a while now on my <a href='http://www.kensodev.com/2011/09/16/kill-all-resque-workers-with-a-single-command/' title='Ruby on Rails'>Ruby on Rails</a> projects and client side (css, Html and <a href='http://www.kensodev.com/tag/javascript/' title='JavaScript'>JavaScript</a>) projects. I haven’t moved completely in <a href='http://www.kensodev.com/category/flex/' title='Flex'>flex</a> projects and other projects, but I do plan to in the near future, mainly because of the reason that you can integrate <a href='http://www.kensodev.com/tag/git/' title='GIT'>GIT</a> into flash builder 4. But, that is not the point.</p>
 

@@ -3,7 +3,7 @@ layout: post
 title: Tikal ALM 2013.1 is released
 created: 1367943176
 author: liya
-permalink: /alm/tikal-alm-20131-released
+permalink: /devops/tikal-alm-20131-released
 tags:
 - DevOps
 - bugzilla alm

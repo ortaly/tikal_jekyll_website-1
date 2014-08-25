@@ -1,14 +1,14 @@
 ---
 layout: offering
-title: ALM workshops and training
+title: DevOps workshops and training
 created: 1369074498
-permalink: /solutions/offerings/workshop/alm-workshops-and-training
+permalink: /solutions/offerings/workshop/devops-workshops-and-training
 name: offerings
 ---
 <div>
-<p>Tikal&#39;s ALM group workshops and courses are available for our local customers, custome made for there needs. Also you can join our public workshops at <a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a> meetup group.&nbsp;</p>
+<p>Tikal&#39;s DevOps group workshops and courses are available for our local customers, custome made for there needs. Also you can join our public workshops at <a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a> meetup group.&nbsp;</p>
 
-<p>Here with is a list of available ALM&nbsp;workshops :</p>
+<p>Here with is a list of available DevOps&nbsp;workshops :</p>
 </div>
 <h2>Chef & Vagrant for Dev 'n' Ops workshop</h2><div class='offering-description'><p><a id="chef" name="chef"></a>Managing and infrastructure&#39;s lifecycle using Opscode Chef &amp; Vagrant. We will cover Chef and how to use / implement it. Understand a software development lifecycle using vagrant.</p>
 
@@ -40,12 +40,12 @@ name: offerings
 <p><em>Workshop will have a lot of hands-on - bring your laptops !</em></p>
 
 <p><strong>Time Frame: 8&nbsp;hours.<br />
-Lecturer: Haggai Zagury - Tikal&#39;s ALM group member.&nbsp;<br />
+Lecturer: Haggai Zagury - Tikal&#39;s DevOps group member.&nbsp;<br />
 Price: will be advised per demand.&nbsp;</strong></p>
 </div><h2>OpenStack Grizzly All-in-One on VirtualBox workshop</h2><div class='offering-description'><p><span style="line-height: 1.6em;"><a id="openstack" name="openstack"></a>The best way to get an insight into OpenStack is playing with a live installation, but OpenStack&#39;s simplest configuration requires 2 machines, each equipped with 2 network cards, interconnected with 2 switches - which makes a lot of hardware and cables. Using VirtualBox we can set up a full OpenStack installation on a single laptop and in this workshop we will learn how to do it right.</span></p>
 
 <p><strong style="line-height: 1.6em;">Time Frame : 4 Hours.</strong><br />
-<strong style="line-height: 1.6em;">Lecturer : <a href="http://www.tikalk.com/alm/oritzoran">Ori Tzoran</a> - Tikal&#39;s ALM group member.&nbsp;</strong><br />
+<strong style="line-height: 1.6em;">Lecturer : <a href="http://www.tikalk.com/devops/oritzoran">Ori Tzoran</a> - Tikal&#39;s DevOps group member.&nbsp;</strong><br />
 <strong style="line-height: 1.6em;">Price : will be advised per demand.&nbsp;</strong></p>
 </div><h2>GIT Introduction workshop</h2><div class='offering-description'><p><a name="git"></a><span style="line-height: 1.6em;">In this workshop we will start from the very beginning so no knowledge in git is required.</span></p>
 
@@ -64,7 +64,7 @@ Price: will be advised per demand.&nbsp;</strong></p>
 
 <div><strong>Time Frame : 2 sessions of 3 hours.</strong></div>
 
-<div><strong>Lecturer : <a href="http://www.tikalk.com/alm/miron">Miron Gofer&nbsp;</a>- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer : <a href="http://www.tikalk.com/devops/miron">Miron Gofer&nbsp;</a>- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : will be advised per demand.&nbsp;</strong></div>
 </div><h2>Chef introduction workshop</h2><div class='offering-description'><p><a id="chef" name="chef"></a><span style="line-height: 1.6em;">This workshop covers the following topics:</span></p>
@@ -82,7 +82,7 @@ Price: will be advised per demand.&nbsp;</strong></p>
 
 <div><strong>Time Frame : 4 hours.</strong></div>
 
-<div><strong>Lecturer : <a href="http://www.tikalk.com/alm/hagzag">Haggai Zagury</a>&nbsp;- Tikal&#39;s ALM group member.&nbsp;</strong></div>
+<div><strong>Lecturer : <a href="http://www.tikalk.com/devops/hagzag">Haggai Zagury</a>&nbsp;- Tikal&#39;s DevOps group member.&nbsp;</strong></div>
 
 <div><strong>Price : will be advised per demand.&nbsp;</strong></div>
 </div>

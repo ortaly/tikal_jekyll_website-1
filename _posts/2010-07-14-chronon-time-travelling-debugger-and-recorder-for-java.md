@@ -3,7 +3,7 @@ layout: post
 title: Chronon - Time Travelling Debugger and Recorder for Java
 created: 1279089744
 author: ittayd
-permalink: /alm/chronon-time-travelling-debugger-and-recorder-java
+permalink: /devops/chronon-time-travelling-debugger-and-recorder-java
 tags:
 - DevOps
 - java debugger

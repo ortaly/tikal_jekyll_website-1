@@ -3,7 +3,7 @@ layout: post
 title: Fuse Day3 - Reactor job, new hudson job type - session summary
 created: 1298545935
 author: admin
-permalink: /alm/fuse-day3-reactor-job-new-hudson-job-type-session-summary
+permalink: /devops/fuse-day3-reactor-job-new-hudson-job-type-session-summary
 tags:
 - DevOps
 - hudson jenkins

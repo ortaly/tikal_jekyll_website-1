@@ -3,7 +3,7 @@ layout: post
 title: Twitter drops MySQL for Cassandra
 created: 1267594785
 author: yanai
-permalink: /alm/twitter-drops-mysql-cassandra
+permalink: /devops/twitter-drops-mysql-cassandra
 tags:
 - DevOps
 - Cassandra Twitter

@@ -3,9 +3,9 @@ layout: post
 title: Creating self starting worker machines for fun and profit
 created: 1344437586
 author: avit
-permalink: /ror/creating-self-starting-worker-machines-fun-and-profit
+permalink: /ruby/creating-self-starting-worker-machines-fun-and-profit
 tags:
-- RoR
+- Ruby
 ---
 <p>Lately, I needed to create worker machines (Machines that have Resque workers on them).</p>
 

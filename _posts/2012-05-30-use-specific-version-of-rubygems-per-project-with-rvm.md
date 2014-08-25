@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /use-specific-version-rubygems-project-rvm
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>If you’re following this blog (and of course you should), you know by now that I have been upgrading a bug project to rails 3. One of the things that I needed to do was to upgrade RubyGems.</p>
 

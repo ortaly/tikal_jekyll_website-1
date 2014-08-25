@@ -3,7 +3,7 @@ layout: post
 title: Kohsuke Kawaguchi on OTN @ JavaOne
 created: 1285486383
 author: hagzag
-permalink: /alm/kohsuke-kawaguchi-otn-javaone
+permalink: /devops/kohsuke-kawaguchi-otn-javaone
 tags:
 - DevOps
 - Hudson

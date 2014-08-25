@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /memory-management-flex-applications
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <span>Lately there is <span>alot</span> of buzz about Flex application performance, keeping your memory low and just in general, keeping everything managed under your fingers and not just counting on the flex framework to manage your memory.</span><a href='http://www.kensodev.com/tag/flex/' title='Flex'>Flex</a><span>First thing we need to understand is that any application we will build in our careers will be using some amount of memory, and because memory is not infinite, we should keep our applications memory as low as possible.</span>
 <p>I always say the best way to describe memory management is to “be smart” meaning - always have memory in mind, never let it go and by doing this your application will keep lean and thin all the time.</p>

@@ -3,7 +3,7 @@ layout: post
 title: Continuous Deployment by Eishay Smith
 created: 1293980384
 author: admin
-permalink: /alm/continuous-deployment-eishay-smith
+permalink: /devops/continuous-deployment-eishay-smith
 tags:
 - DevOps
 ---

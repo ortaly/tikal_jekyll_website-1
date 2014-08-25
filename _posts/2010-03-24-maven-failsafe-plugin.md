@@ -3,7 +3,7 @@ layout: post
 title: maven failsafe plugin
 created: 1269413056
 author: ittayd
-permalink: /alm/maven-failsafe-plugin
+permalink: /devops/maven-failsafe-plugin
 tags:
 - DevOps
 ---

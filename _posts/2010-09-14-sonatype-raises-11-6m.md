@@ -3,7 +3,7 @@ layout: post
 title: Sonatype raises $11.6M
 created: 1284461965
 author: ittayd
-permalink: /alm/sonatype-raises-116m
+permalink: /devops/sonatype-raises-116m
 tags:
 - DevOps
 - maven

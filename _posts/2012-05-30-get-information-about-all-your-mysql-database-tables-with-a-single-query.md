@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /get-information-about-all-your-mysql-database-tables-single-query
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I am working on tweaking our database these days, doing tons of work on making the queries faster, making sure the users are not being delayed by infrastructure stuff.</p>
 

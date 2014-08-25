@@ -3,7 +3,7 @@ layout: post
 title: 'Mercurial and Git: a technical comparison'
 created: 1305125217
 author: ittayd
-permalink: /alm/mercurial-and-git-technical-comparison
+permalink: /devops/mercurial-and-git-technical-comparison
 tags:
 - DevOps
 - git

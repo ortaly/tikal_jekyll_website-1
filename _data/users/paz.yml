@@ -3,12 +3,12 @@ id: 122
 login: paz
 first_name: Paz
 last_name: Aricha
-description: RoR Developer
+description: Ruby on Rails Developer
 about: ''
 follow_me_urls:
 - il.linkedin.com/in/pazaricha
 image_path: pictures/picture-122-1373355951.jpg
-permalink: /ror/paz
+permalink: /ruby/paz
 skills:
   expert_skills:
     RoR: '2'

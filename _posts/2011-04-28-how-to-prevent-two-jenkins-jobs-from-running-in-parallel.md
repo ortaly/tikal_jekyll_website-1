@@ -3,7 +3,7 @@ layout: post
 title: How to prevent two Jenkins jobs from running in parallel ?
 created: 1303988611
 author: shalom
-permalink: /alm/how-prevent-two-jenkins-jobs-running-parallel
+permalink: /devops/how-prevent-two-jenkins-jobs-running-parallel
 tags:
 - DevOps
 - jenkins

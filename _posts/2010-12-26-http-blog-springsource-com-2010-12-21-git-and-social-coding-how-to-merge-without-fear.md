@@ -3,7 +3,7 @@ layout: post
 title: http://blog.springsource.com/2010/12/21/git-and-social-coding-how-to-merge-without-fear/
 created: 1293351953
 author: ittayd
-permalink: /alm/httpblogspringsourcecom20101221git-and-social-coding-how-merge-without-fear
+permalink: /devops/httpblogspringsourcecom20101221git-and-social-coding-how-merge-without-fear
 tags:
 - DevOps
 - git

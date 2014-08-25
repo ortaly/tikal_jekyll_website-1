@@ -3,7 +3,7 @@ layout: post
 title: Subversion - serverside action - auto add property to file
 created: 1226228564
 author: hagzag
-permalink: /alm/subversion-serverside-action-auto-add-property-file
+permalink: /devops/subversion-serverside-action-auto-add-property-file
 tags:
 - DevOps
 - auto_set_svn_prop

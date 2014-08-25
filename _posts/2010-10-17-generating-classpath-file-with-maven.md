@@ -3,7 +3,7 @@ layout: post
 title: generating classpath file with maven
 created: 1287315488
 author: ittayd
-permalink: /alm/generating-classpath-file-maven
+permalink: /devops/generating-classpath-file-maven
 tags:
 - DevOps
 - maven dependency

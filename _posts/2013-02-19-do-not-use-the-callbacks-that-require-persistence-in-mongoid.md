@@ -3,9 +3,9 @@ layout: post
 title: DO NOT use the callbacks that require persistence in Mongoid
 created: 1361309827
 author: avit
-permalink: /ror/do-not-use-callbacks-require-persistence-mongoid
+permalink: /ruby/do-not-use-callbacks-require-persistence-mongoid
 tags:
-- RoR
+- Ruby
 ---
 <p>I started using MongoDB at <a href="http://www.gogobot.com">Gogobot</a> a little while ago. While using it, I encountered some <a href="http://avi.io/blog/2013/01/30/problems-with-mongoid-and-sidekiq-brainstorming/">problems</a>, but for the most part, things went pretty smooth.</p>
 

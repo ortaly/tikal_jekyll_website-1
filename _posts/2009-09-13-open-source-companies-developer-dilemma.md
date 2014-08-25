@@ -3,7 +3,7 @@ layout: post
 title: Open-source companies' developer dilemma
 created: 1252813935
 author: yanai
-permalink: /alm/open-source-companies-developer-dilemma
+permalink: /devops/open-source-companies-developer-dilemma
 tags:
 - DevOps
 - operations

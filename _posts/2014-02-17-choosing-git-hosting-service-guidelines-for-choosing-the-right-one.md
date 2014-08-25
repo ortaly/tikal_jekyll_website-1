@@ -3,7 +3,7 @@ layout: post
 title: Choosing Git Hosting Service - guidelines for choosing the right one
 created: 1392624115
 author: yorammi
-permalink: /alm/choosing-git-hosting-service-guidelines-choosing-right-one
+permalink: /devops/choosing-git-hosting-service-guidelines-choosing-right-one
 tags:
 - DevOps
 - git

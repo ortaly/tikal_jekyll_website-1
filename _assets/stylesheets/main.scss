@@ -587,12 +587,13 @@
 {
   margin-left:auto;
   margin-right:auto;
-  width:967px
+  width:967px;
 }
   #header-first
 {
   background-color:#3c3c3c;
-  height:33px
+  height:33px;
+  min-width: 967px;
 }
 .admin #header-first
 {
@@ -622,12 +623,13 @@
 }
   #featured
 {
+  min-width: 967px;
   width:100%;
   margin:0;
   height:282px;
   background-color:#e2e2e2;
   display:block;
-  float:none
+  float:none;
 }
   #footer
 {
@@ -914,7 +916,7 @@
       transition:all 200ms
     }
 
-    li.alm a {
+    li.devops a {
       width:77px;
     }
 
@@ -926,16 +928,16 @@
       width:47px;
     }
 
-    li[class*="net"] a {
+    li.android a {
       width:79px;
     }
 
-    li.ror a {
+    li.ruby a {
       width:62px;
     }
 
 }
-.section-alm #block-menu-menu-domains ul.menu li.alm a
+.section-devops #block-menu-menu-domains ul.menu li.devops a
 {
   border-right:1px solid black;
   border-bottom:1px solid black;
@@ -965,7 +967,7 @@
   background-color:#547a7d;
   border-top-color:#547a7d
 }
-.section-net #block-menu-menu-domains ul.menu li[class*="net"] a
+.section-android #block-menu-menu-domains ul.menu li.android a
 {
   border-right:1px solid black;
   border-bottom:1px solid black;
@@ -975,7 +977,7 @@
   background-color:#e05e46;
   border-top-color:#e05e46
 }
-.section-ror #block-menu-menu-domains ul.menu li.ror a
+.section-ruby #block-menu-menu-domains ul.menu li.ruby a
 {
   border-right:1px solid black;
   border-bottom:1px solid black;
@@ -985,7 +987,7 @@
   background-color:#726869;
   border-top-color:#726869
 }
-  #block-menu-menu-domains ul.menu li.alm a:hover
+  #block-menu-menu-domains ul.menu li.devops a:hover
 {
   border-right:1px solid black;
   border-bottom:1px solid black;
@@ -1015,7 +1017,7 @@
   background-color:#547a7d;
   border-top-color:#547a7d
 }
-  #block-menu-menu-domains ul.menu li[class*="net"] a:hover
+  #block-menu-menu-domains ul.menu li.android a:hover
 {
   border-right:1px solid black;
   border-bottom:1px solid black;
@@ -1025,7 +1027,7 @@
   background-color:#e05e46;
   border-top-color:#e05e46
 }
-  #block-menu-menu-domains ul.menu li.ror a:hover
+  #block-menu-menu-domains ul.menu li.ruby a:hover
 {
   border-right:1px solid black;
   border-bottom:1px solid black;
@@ -1503,7 +1505,7 @@
 {
   background:#e05e46
 }
-.block-domains-home-page ul.menu li.ror a
+.block-domains-home-page ul.menu li.ruby a
 {
   background:#726869
 }
@@ -1571,11 +1573,11 @@
   width:100%;
   height:100%
 }
-  #block-views-article-latest-articles .view-article .views-field-name .field-content .ALM
+  #block-views-article-latest-articles .view-article .views-field-name .field-content .DEVOPS
 {
   background-color:#c42a44
 }
-  #block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .ALM
+  #block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .DEVOPS
 {
 background-color:#c42a44
 }
@@ -1604,6 +1606,7 @@ background-color:#c42a44
   background-color:#547a7d
 }
 
+<<<<<<< HEAD
 #block-views-article-latest-articles .view-article .views-field-name .field-content .INCUBATOR
 {
   background-color:green
@@ -1614,18 +1617,21 @@ background-color:#c42a44
 }
 
   #block-views-article-latest-articles .view-article .views-field-name .field-content div[class*=NET]
+=======
+  #block-views-article-latest-articles .view-article .views-field-name .field-content .ANDROID
+>>>>>>> 5e1399f92728661cebffade3d5eeb9e6730d4d76
 {
   background-color:#e05e46
 }
-  #block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content div[class*=NET]
+  #block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .ANDROID
 {
   background-color:#e05e46
 }
-  #block-views-article-latest-articles .view-article .views-field-name .field-content .RoR
+  #block-views-article-latest-articles .view-article .views-field-name .field-content .RUBY
 {
   background-color:#726869
 }
-  #block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .RoR
+  #block-views-article-latest-articles .view-article .views-field-term-node-tid .field-content .RUBY
 {
   background-color:#726869
 }
@@ -2497,7 +2503,7 @@ background-color:#c42a44
   width:140px;
   background-color:#e05e46
 }
-.our-expertese ul.menu li.ror a,.our-technology-domains ul.menu li.ror a
+.our-expertese ul.menu li.ruby a,.our-technology-domains ul.menu li.ruby a
 {
   background-color:#726869
 }
@@ -4447,15 +4453,15 @@ background-color:#c42a44
 {
   display:none
 }
-.section-alm .featured-background,.node-type-article.section-alm .featured-background
+.section-devops .featured-background,.node-type-article.section-devops .featured-background
 {
   background:url(asset_path('backgrounds/tiled-bg-red.jpg')) repeat
 }
-.section-alm .featured-background #featured,.node-type-article.section-alm .featured-background #featured
+.section-devops .featured-background #featured,.node-type-article.section-devops .featured-background #featured
 {
   background:url('/sites/all/themes/sasson/tikal/images/featured/alm.jpg') no-repeat center 0
 }
-.section-alm .featured-background #featured .section_subtitle,.section-alm .featured-background #featured .section_title,.node-type-article.section-alm .featured-background #featured .section_subtitle,.node-type-article.section-alm .featured-background #featured .section_title
+.section-devops .featured-background #featured .section_subtitle,.section-devops .featured-background #featured .section_title,.node-type-article.section-devops .featured-background #featured .section_subtitle,.node-type-article.section-devops .featured-background #featured .section_title
 {
   background-color:#c42a44
 }
@@ -4483,27 +4489,27 @@ background-color:#c42a44
 {
   background-color:#547a7d
 }
-.section-net .featured-background,.node-type-article.section-net .featured-background
+.section-android .featured-background,.node-type-article.section-android .featured-background
 {
   background:url(asset_path('backgrounds/tiled-bg-orange2.jpg')) repeat
 }
-.section-net .featured-background #featured,.node-type-article.section-net .featured-background #featured
+.section-android .featured-background #featured,.node-type-article.section-android .featured-background #featured
 {
   background:url('/sites/all/themes/sasson/tikal/images/featured/net.jpg') no-repeat center 0
 }
-.section-net .featured-background #featured .section_subtitle,.section-net .featured-background #featured .section_title,.node-type-article.section-net .featured-background #featured .section_subtitle,.node-type-article.section-net .featured-background #featured .section_title
+.section-android .featured-background #featured .section_subtitle,.section-android .featured-background #featured .section_title,.node-type-article.section-android .featured-background #featured .section_subtitle,.node-type-article.section-android .featured-background #featured .section_title
 {
   background-color:#e05e46
 }
-.section-ror .featured-background,.node-type-article.section-ror .featured-background
+.section-ruby .featured-background,.node-type-article.section-ruby .featured-background
 {
   background:url(asset_path('backgrounds/tiled-bg-gray.jpg')) repeat
 }
-.section-ror .featured-background #featured,.node-type-article.section-ror .featured-background #featured
+.section-ruby .featured-background #featured,.node-type-article.section-ruby .featured-background #featured
 {
   background:url('/sites/all/themes/sasson/tikal/images/featured/ror.jpg') no-repeat center 0
 }
-.section-ror .featured-background #featured .section_subtitle,.section-ror .featured-background #featured .section_title,.node-type-article.section-ror .featured-background #featured .section_subtitle,.node-type-article.section-ror .featured-background #featured .section_title
+.section-ruby .featured-background #featured .section_subtitle,.section-ruby .featured-background #featured .section_title,.node-type-article.section-ruby .featured-background #featured .section_subtitle,.node-type-article.section-ruby .featured-background #featured .section_title
 {
   background-color:#726869
 }
@@ -4966,7 +4972,7 @@ background-color:#c42a44
   height:173px;
   font-size:0
 }
-  #block-general-tikal-banners a.alm
+  #block-general-tikal-banners a.devops
 {
   background:url(asset_path('banners/alm.jpg')) no-repeat
 }
@@ -4978,11 +4984,11 @@ background-color:#c42a44
 {
   background:url(asset_path('banners/js.jpg')) no-repeat
 }
-  #block-general-tikal-banners a.net
+  #block-general-tikal-banners a.android
 {
   background:url(asset_path('banners/net.jpg')) no-repeat
 }
-  #block-general-tikal-banners a.ror
+  #block-general-tikal-banners a.ruby
 {
   background:url(asset_path('banners/ror.jpg')) no-repeat
 }
@@ -5062,7 +5068,7 @@ background-color:#c42a44
   margin:-3px 0px 13px 9px;
   height:20px
 }
-.node-type-article.section-alm #block-views-author-block .views-field-field-first-name,.node-type-article.section-alm #block-views-author-block .views-field-field-last-name
+.node-type-article.section-devops #block-views-author-block .views-field-field-first-name,.node-type-article.section-devops #block-views-author-block .views-field-field-last-name
 {
   color:#c42a44
 }
@@ -5074,11 +5080,11 @@ background-color:#c42a44
 {
   color:#547a7d
 }
-.node-type-article.section-net #block-views-author-block .views-field-field-first-name,.node-type-article.section-net #block-views-author-block .views-field-field-last-name
+.node-type-article.section-android #block-views-author-block .views-field-field-first-name,.node-type-article.section-android #block-views-author-block .views-field-field-last-name
 {
   color:#e05e46
 }
-.node-type-article.section-ror #block-views-author-block .views-field-field-first-name,.node-type-article.section-ror #block-views-author-block .views-field-field-last-name
+.node-type-article.section-ruby #block-views-author-block .views-field-field-first-name,.node-type-article.section-ruby #block-views-author-block .views-field-field-last-name
 {
   color:#726869
 }
@@ -5286,7 +5292,7 @@ background-color:#c42a44
   color:black;
   margin-top:0
 }
-.node-type-article.section-alm .node-article h2
+.node-type-article.section-devops .node-article h2
 {
   color:#c42a44
 }
@@ -5298,11 +5304,11 @@ background-color:#c42a44
 {
   color:#547a7d
 }
-.node-type-article.section-net .node-article h2
+.node-type-article.section-android .node-article h2
 {
   color:#e05e46
 }
-.node-type-article.section-ror .node-article h2
+.node-type-article.section-ruby .node-article h2
 {
   color:#726869
 }
@@ -5822,7 +5828,7 @@ background-color:#c42a44
 {
   background:url(asset_path('backgrounds/tiled-bg-orange.jpg')) repeat
 }
-.section-profile.section-alm #featured
+.section-profile.section-devops #featured
 {
   background:url(asset_path('backgrounds/tiled-bg-red.jpg')) repeat
 }
@@ -5834,11 +5840,11 @@ background-color:#c42a44
 {
   background:url(asset_path('backgrounds/tiled-bg-blue.jpg')) repeat
 }
-.section-profile.section-net #featured
+.section-profile.section-android #featured
 {
   background:url(asset_path('backgrounds/tiled-bg-orange2.jpg')) repeat
 }
-.section-profile.section-ror #featured
+.section-profile.section-ruby #featured
 {
   background:url(asset_path('backgrounds/tiled-bg-gray.jpg')) repeat
 }
@@ -5963,7 +5969,7 @@ background-color:#c42a44
 {
   background-color:#e18403
 }
-  #block-views-employee-skills-block .ALM
+  #block-views-employee-skills-block .DEVOPS
 {
   background-color:#c42a44
 }
@@ -5975,11 +5981,11 @@ background-color:#c42a44
 {
   background-color:#547a7d
 }
-  #block-views-employee-skills-block .double-field-second[class*="NET"]
+  #block-views-employee-skills-block .ANDROID
 {
   background-color:#e05e46
 }
-  #block-views-employee-skills-block .RoR
+  #block-views-employee-skills-block .RUBY
 {
   background-color:#726869
 }
@@ -6631,7 +6637,7 @@ background-color:#c42a44
   transition-duration:0.2s;
   -webkit-transition-duration:0.2s
 }
-.view-id-page_by_view .our-expertese ul.menu li.alm a,.view-id-page_by_view .our-technology-domains ul.menu li.alm a
+.view-id-page_by_view .our-expertese ul.menu li.devops a,.view-id-page_by_view .our-technology-domains ul.menu li.devops a
 {
   background-color:#c42a44;
   margin-left:0
@@ -6648,7 +6654,7 @@ background-color:#c42a44
 {
   background-color:#e05e46
 }
-.view-id-page_by_view .our-expertese ul.menu li.ror a,.view-id-page_by_view .our-technology-domains ul.menu li.ror a
+.view-id-page_by_view .our-expertese ul.menu li.ruby a,.view-id-page_by_view .our-technology-domains ul.menu li.ruby a
 {
   background-color:#726869
 }

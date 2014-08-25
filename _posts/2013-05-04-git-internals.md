@@ -3,7 +3,7 @@ layout: post
 title: Git internals
 created: 1367676800
 author: hagzag
-permalink: /alm/git-internals
+permalink: /devops/git-internals
 tags:
 - DevOps
 - git

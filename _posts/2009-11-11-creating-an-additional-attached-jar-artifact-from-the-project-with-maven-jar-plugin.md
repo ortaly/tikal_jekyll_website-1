@@ -3,7 +3,7 @@ layout: post
 title: Creating an additional attached jar artifact from the project with maven-jar-plugin
 created: 1257967935
 author: liya
-permalink: /alm/creating-additional-attached-jar-artifact-project-maven-jar-plugin
+permalink: /devops/creating-additional-attached-jar-artifact-project-maven-jar-plugin
 tags:
 - DevOps
 ---

@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /javaiounsupportedencodingexception-problem-solution
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>As a <a href='http://www.kensodev.com/2011/09/17/kill-all-resque-workers-with-a-single-command/' target='_blank' title='web developer'>web developer</a>, I’m working on lots of things. Today, while working on a windows machine and trying to run an ANT task and then run JBoss to test my build, I encountered this error:</p>
 <div class='highlight'><pre><code class='bash'>java.io.UnsupportedEncodingException: cp1255

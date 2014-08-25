@@ -3,7 +3,7 @@ layout: post
 title: Yet another CI server popularity poll
 created: 1283529207
 author: hagzag
-permalink: /alm/yet-another-ci-server-popularity-poll
+permalink: /devops/yet-another-ci-server-popularity-poll
 tags:
 - DevOps
 - Hudson

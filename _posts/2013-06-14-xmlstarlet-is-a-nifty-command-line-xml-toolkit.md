@@ -3,7 +3,7 @@ layout: post
 title: 'xmlstarlet is a nifty Command Line XML Toolkit '
 created: 1371190642
 author: hagzag
-permalink: /alm/xmlstarlet-nifty-command-line-xml-toolkit
+permalink: /devops/xmlstarlet-nifty-command-line-xml-toolkit
 tags:
 - DevOps
 - XML

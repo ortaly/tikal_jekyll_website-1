@@ -3,7 +3,7 @@ layout: post
 title: Deploying self-contained Spring apps on JBoss 5.1.GA
 created: 1299765620
 author: zvika
-permalink: /alm/deploying-self-contained-spring-apps-jboss-51ga
+permalink: /devops/deploying-self-contained-spring-apps-jboss-51ga
 tags:
 - DevOps
 - Spring

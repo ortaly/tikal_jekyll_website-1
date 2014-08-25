@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /set-button-width-text-width-flex
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Well, I have been working on a very interesting project recently, really stretching <a href='http://www.kensodev.com/tag/flex/' title='Flex'>flex</a> to the limits :-) I needed to set buttons, linkButtons, Labels and more components width to the width of the text inside them. Usually, <a href='http://www.kensodev.com/category/flex/' title='Flex'>flex</a> does it for you, but the width was hardcoded in compile time and I needed to change the text and the width in runtime and resize the component according to that.</p>
 

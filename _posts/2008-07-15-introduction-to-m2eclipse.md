@@ -3,7 +3,7 @@ layout: post
 title: Introduction to m2eclipse
 created: 1216100820
 author: itai
-permalink: /alm/introduction-m2eclipse
+permalink: /devops/introduction-m2eclipse
 tags:
 - DevOps
 - eclipse

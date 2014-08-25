@@ -3,7 +3,7 @@ layout: post
 title: Eclipse illustrates open source development diversity
 created: 1310992822
 author: hagzag
-permalink: /alm/eclipse-illustrates-open-source-development-diversity
+permalink: /devops/eclipse-illustrates-open-source-development-diversity
 tags:
 - DevOps
 ---

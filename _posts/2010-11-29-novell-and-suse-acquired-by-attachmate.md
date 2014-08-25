@@ -3,7 +3,7 @@ layout: post
 title: 'Novell and SUSE acquired by Attachmate '
 created: 1291027010
 author: shalom
-permalink: /alm/novell-and-suse-acquired-attachmate
+permalink: /devops/novell-and-suse-acquired-attachmate
 tags:
 - DevOps
 - linux opensuse

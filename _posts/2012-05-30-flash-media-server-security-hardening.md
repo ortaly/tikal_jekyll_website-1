@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /flash-media-server-security-hardening
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Today, while browsing my feed in google reader, I found something very interesting. This <a href='http://www.adobe.com/devnet/flashmediaserver/articles/hardening_guide.html'>link</a> is a hardening guide for <a href='http://www.kensodev.com/tag/flash-media-server/' title='Flash media server'>flash media server</a>.</p>
 

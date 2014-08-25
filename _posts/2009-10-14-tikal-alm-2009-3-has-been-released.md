@@ -3,7 +3,7 @@ layout: post
 title: Tikal ALM 2009.3 has been released
 created: 1255540676
 author: liya
-permalink: /alm/tikal-alm-20093-has-been-released
+permalink: /devops/tikal-alm-20093-has-been-released
 tags:
 - DevOps
 ---

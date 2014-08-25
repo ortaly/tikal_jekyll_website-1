@@ -4,7 +4,7 @@ title: 'ALM group meeting: 3 different customer''s implementations of integratio
   tests using Ant, Maven and VMware  '
 created: 1280139473
 author: liya
-permalink: /alm/alm-group-meeting-3-different-customers-implementations-integration-tests-using-ant-maven-and
+permalink: /devops/alm-group-meeting-3-different-customers-implementations-integration-tests-using-ant-maven-and
 tags:
 - DevOps
 ---

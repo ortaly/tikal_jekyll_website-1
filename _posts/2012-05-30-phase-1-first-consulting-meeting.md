@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /phase-1-first-consulting-meeting
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Hey all,</p>
 

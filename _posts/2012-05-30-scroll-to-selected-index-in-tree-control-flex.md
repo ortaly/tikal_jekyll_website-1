@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /scroll-selected-index-tree-control-flex
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Sometimes, in your application you have a tree that has many nodes, folders, sub-folders and many items.</p>
 

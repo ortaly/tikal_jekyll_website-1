@@ -3,7 +3,7 @@ layout: post
 title: How not to download the Internet
 created: 1304453957
 author: liya
-permalink: /alm/how-not-download-internet
+permalink: /devops/how-not-download-internet
 tags:
 - DevOps
 - build maven

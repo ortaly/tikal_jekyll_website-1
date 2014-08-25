@@ -3,7 +3,7 @@ layout: post
 title: 'ALM group meeting: Automation of deployment and testing.'
 created: 1270959491
 author: itai
-permalink: /alm/alm-group-meeting-automation-deployment-and-testing
+permalink: /devops/alm-group-meeting-automation-deployment-and-testing
 tags:
 - DevOps
 ---

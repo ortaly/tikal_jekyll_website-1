@@ -5,8 +5,7 @@ created: 1338394544
 author: avit
 permalink: /gitignore-template-flex-projects
 tags:
-- RoR
-- ruby
+- Ruby
 - web
 ---
 <p>Hi All,</p>

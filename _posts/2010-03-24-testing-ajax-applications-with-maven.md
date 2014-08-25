@@ -3,7 +3,7 @@ layout: post
 title: Testing AJAX applications with Maven
 created: 1269418157
 author: ittayd
-permalink: /alm/testing-ajax-applications-maven
+permalink: /devops/testing-ajax-applications-maven
 tags:
 - DevOps
 ---

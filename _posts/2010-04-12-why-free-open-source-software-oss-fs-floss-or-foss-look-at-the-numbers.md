@@ -3,7 +3,7 @@ layout: post
 title: Why Free Open Source Software (OSS/FS, FLOSS, or FOSS)? Look at the Numbers!
 created: 1271086062
 author: udid
-permalink: /alm/why-free-open-source-software-ossfs-floss-or-foss-look-numbers
+permalink: /devops/why-free-open-source-software-ossfs-floss-or-foss-look-numbers
 tags:
 - DevOps
 - foss

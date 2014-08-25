@@ -3,7 +3,7 @@ layout: post
 title: Comprehensive Project Intelligence - Current Tools Overview
 created: 1226039519
 author: zvika
-permalink: /alm/comprehensive-project-intelligence-current-tools-overview
+permalink: /devops/comprehensive-project-intelligence-current-tools-overview
 tags:
 - DevOps
 ---

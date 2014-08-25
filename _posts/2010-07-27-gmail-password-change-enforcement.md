@@ -3,7 +3,7 @@ layout: post
 title: Gmail password change enforcement
 created: 1280230432
 author: hagzag
-permalink: /alm/gmail-password-change-enforcement
+permalink: /devops/gmail-password-change-enforcement
 tags:
 - DevOps
 - google

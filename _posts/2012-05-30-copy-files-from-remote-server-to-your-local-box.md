@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /copy-files-remote-server-your-local-box
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I work a lot with remote servers (as any developer working with production).</p>
 

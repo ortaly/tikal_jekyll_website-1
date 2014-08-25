@@ -3,7 +3,7 @@ layout: post
 title: 'Error running devenv.exe using ant exec task with Ant 1.71 '
 created: 1235408076
 author: liya
-permalink: /alm/error-running-devenvexe-using-ant-exec-task-ant-171
+permalink: /devops/error-running-devenvexe-using-ant-exec-task-ant-171
 tags:
 - DevOps
 - Ant

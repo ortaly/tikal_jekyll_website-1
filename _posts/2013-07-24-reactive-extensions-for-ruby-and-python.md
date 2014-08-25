@@ -5,8 +5,7 @@ created: 1374644355
 author: menny
 permalink: /reactive-extensions-ruby-and-python
 tags:
-- RoR
-- ruby
+- Ruby
 - Python
 - Reactive Extensions
 ---

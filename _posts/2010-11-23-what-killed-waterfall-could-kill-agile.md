@@ -3,7 +3,7 @@ layout: post
 title: What Killed Waterfall Could Kill Agile.
 created: 1290498749
 author: ittayd
-permalink: /alm/what-killed-waterfall-could-kill-agile
+permalink: /devops/what-killed-waterfall-could-kill-agile
 tags:
 - DevOps
 - scrum

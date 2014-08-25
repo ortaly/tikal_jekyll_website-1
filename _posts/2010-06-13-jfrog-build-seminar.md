@@ -3,7 +3,7 @@ layout: post
 title: JFrog Build Seminar
 created: 1276413930
 author: itai
-permalink: /alm/jfrog-build-seminar
+permalink: /devops/jfrog-build-seminar
 tags:
 - DevOps
 ---

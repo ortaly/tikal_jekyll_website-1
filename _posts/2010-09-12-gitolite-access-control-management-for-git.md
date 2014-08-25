@@ -3,7 +3,7 @@ layout: post
 title: gitolite - access control management for git
 created: 1284318190
 author: ittayd
-permalink: /alm/gitolite-access-control-management-git
+permalink: /devops/gitolite-access-control-management-git
 tags:
 - DevOps
 - git

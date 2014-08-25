@@ -3,7 +3,7 @@ layout: post
 title: Goodbye apple, Hello Honey
 created: 1297094388
 author: shalom
-permalink: /alm/goodbye-apple-hello-honey
+permalink: /devops/goodbye-apple-hello-honey
 tags:
 - DevOps
 - linux android

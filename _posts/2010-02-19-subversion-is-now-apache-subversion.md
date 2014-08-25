@@ -3,7 +3,7 @@ layout: post
 title: subversion is now apache subversion
 created: 1266555042
 author: ittayd
-permalink: /alm/subversion-now-apache-subversion
+permalink: /devops/subversion-now-apache-subversion
 tags:
 - DevOps
 - subversion

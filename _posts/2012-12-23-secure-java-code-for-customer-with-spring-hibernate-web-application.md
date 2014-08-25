@@ -3,7 +3,7 @@ layout: post
 title: Secure Java code for customer with Spring/Hibernate web application
 created: 1356256251
 author: yanai
-permalink: /alm/secure-java-code-customer-springhibernate-web-application
+permalink: /devops/secure-java-code-customer-springhibernate-web-application
 tags:
 - DevOps
 - Obfuscation Java code

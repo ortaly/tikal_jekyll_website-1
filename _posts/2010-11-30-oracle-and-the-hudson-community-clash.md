@@ -3,7 +3,7 @@ layout: post
 title: Oracle and the Hudson community clash
 created: 1291141564
 author: ittayd
-permalink: /alm/oracle-and-hudson-community-clash
+permalink: /devops/oracle-and-hudson-community-clash
 tags:
 - DevOps
 - Hudson

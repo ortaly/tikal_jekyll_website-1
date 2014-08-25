@@ -1,5 +1,5 @@
 - group:
-    name: alm
+    name: devops
     tag: devops
     title: DevOps | Tikal
     header_title: DevOps
@@ -30,7 +30,7 @@
       - Assaf Gannon
       - Sefi Ninio
 - group:
-    name: net
+    name: android
     tag: android
     title: Android | Tikal
     header_title: Android
@@ -38,8 +38,8 @@
     highlighted_team_members:
       - Igor Zalmanovich
 - group:
-    name: ror
-    tag: ror
+    name: ruby
+    tag: ruby
     title: Ruby | Tikal
     header_title: Ruby
     header_subtitle: Hello there Ruby Gurus. This is Tikal's Ruby Domain.

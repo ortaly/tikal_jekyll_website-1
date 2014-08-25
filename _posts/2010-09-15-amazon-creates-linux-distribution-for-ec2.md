@@ -3,7 +3,7 @@ layout: post
 title: Amazon creates Linux distribution for EC2
 created: 1284524415
 author: ittayd
-permalink: /alm/amazon-creates-linux-distribution-ec2
+permalink: /devops/amazon-creates-linux-distribution-ec2
 tags:
 - DevOps
 - linux cloud

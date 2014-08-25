@@ -3,7 +3,7 @@ layout: post
 title: SVN 1.5 released
 created: 1214109600
 author: miron
-permalink: /alm/svn-15-released
+permalink: /devops/svn-15-released
 tags:
 - DevOps
 - scm

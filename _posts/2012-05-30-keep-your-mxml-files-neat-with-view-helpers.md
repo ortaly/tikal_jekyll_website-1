@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /keep-your-mxml-files-neat-view-helpers
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I have been working with<a href='http://www.kensodev.com/category/flex/' title='flex'> flex</a> and consulting about flex development for quite some time now. I guess about 3 years of consulting and 4 years of hands-on development.</p>
 

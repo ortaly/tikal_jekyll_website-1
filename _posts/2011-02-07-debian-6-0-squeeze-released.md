@@ -3,7 +3,7 @@ layout: post
 title: Debian 6.0 "Squeeze" released
 created: 1297075483
 author: shalom
-permalink: /alm/debian-60-squeeze-released
+permalink: /devops/debian-60-squeeze-released
 tags:
 - DevOps
 - linux debian

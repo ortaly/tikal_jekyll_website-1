@@ -3,7 +3,7 @@ layout: post
 title: language popularity
 created: 1248772736
 author: ittayd
-permalink: /alm/language-popularity
+permalink: /devops/language-popularity
 tags:
 - DevOps
 - language popularity index

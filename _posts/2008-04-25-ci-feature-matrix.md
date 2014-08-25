@@ -3,7 +3,7 @@ layout: post
 title: ' CI Feature Matrix'
 created: 1209138900
 author: lior.kanfi
-permalink: /alm/ci-feature-matrix
+permalink: /devops/ci-feature-matrix
 tags:
 - DevOps
 - Continuous Integration

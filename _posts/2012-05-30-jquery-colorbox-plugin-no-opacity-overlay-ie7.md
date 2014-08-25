@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /jquery-colorbox-plugin-no-opacity-overlay-ie7
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Today, while checking a website I did heavy client side work - converting PSD’s to html, CSS and <a href='http://www.kensodev.com/tag/javascript/' title='JavaScript'>JavaScript</a>, I checked everything on IE7. One of the most annoying things I encountered was that the colorbox overlay color was pitch black.</p>
 

@@ -43,7 +43,7 @@ While working on the project we will be doing full TDD, showing the attendants h
 </ul>
 
 <p><strong>Time Frame : 5 sessions of 4 hours each.&nbsp;<br />
-Lecturer : <a href="http://www.tikalk.com/ror/avit">Avi Tzuriel</a> - Tikal&#39;s RoR group leader&nbsp;<br />
+Lecturer : <a href="http://www.tikalk.com/ruby/avit">Avi Tzuriel</a> - Tikal&#39;s Ruby group leader&nbsp;<br />
 Price : will be advised per demand.&nbsp;</strong></p>
 </div><h2>The Fundamentals of Scaling Rails App</h2><div class='offering-description'><div><a name="scale"></a><span style="line-height: 1.6em;">The next step after building your website is to plan and prepare it for higher website exposure through different channels. Your website must successfully face massive visitors landing without crashing or slowing down significantly.</span></div>
 
@@ -95,7 +95,7 @@ If you are a Ruby on Rails developer or at least completed the basic blog tutori
 <div>
 <div><strong>Time Frame : 2 sessions of 4 hours each.&nbsp;</strong></div>
 
-<div><strong>Lecturer : </strong><strong style="color: rgb(34, 34, 34); font-family: 'Open Sans', 'Open Sans', sans-serif; font-size: 16px; line-height: 22px; background-color: rgb(236, 236, 236);"><a href="http://www.tikalk.com/ror/avit" style="color: rgb(85, 26, 139); text-decoration: none;" target="_blank">Avi Tzuriel</a>&nbsp;</strong><strong> - Tikal&#39;s RoR group leader</strong></div>
+<div><strong>Lecturer : </strong><strong style="color: rgb(34, 34, 34); font-family: 'Open Sans', 'Open Sans', sans-serif; font-size: 16px; line-height: 22px; background-color: rgb(236, 236, 236);"><a href="http://www.tikalk.com/ruby/avit" style="color: rgb(85, 26, 139); text-decoration: none;" target="_blank">Avi Tzurel</a>&nbsp;</strong><strong> - Tikal&#39;s Ruby group leader</strong></div>
 
 <div>Price : will be advised per demand.&nbsp;</div>
 </div>

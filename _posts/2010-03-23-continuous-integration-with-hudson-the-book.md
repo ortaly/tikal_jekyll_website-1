@@ -3,7 +3,7 @@ layout: post
 title: Continuous Integration with Hudson - the book
 created: 1269338706
 author: liya
-permalink: /alm/continuous-integration-hudson-book
+permalink: /devops/continuous-integration-hudson-book
 tags:
 - DevOps
 - Hudson

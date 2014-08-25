@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /stop-chasing-green-light
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <a href='http://www.kensodev.com/2009/11/04/stop-chasing-that-green-light/istock_000009156726xsmall/' rel='attachment wp-att-270'><img alt='Green light' class='alignleft size-thumbnail wp-image-270' height='150' src='http://www.kensodev.com/wp-content/uploads/2009/11/iStock_000009156726XSmall-150x150.jpg' title='Green light' width='150' /></a><a href='http://www.mattcutts.com/blog/'>Matt Cutts</a>
 <p>DO NOT break your head struggling with getting your code to validate, I will exaplain some more about my opinion in this post.</p>

@@ -3,7 +3,7 @@ layout: post
 title: Including an external non mavanized jar in maven build and packaging
 created: 1263433896
 author: shalom
-permalink: /alm/including-external-non-mavanized-jar-maven-build-and-packaging
+permalink: /devops/including-external-non-mavanized-jar-maven-build-and-packaging
 tags:
 - DevOps
 - package

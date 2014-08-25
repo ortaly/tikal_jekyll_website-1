@@ -5,8 +5,7 @@ created: 1338394544
 author: avit
 permalink: /ssl-verification-issue-foursquare2-gem
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <img src="http://feeds.feedburner.com/~r/KensoDev-en/~4/go3ha_VUf90" height="1" width="1"/>

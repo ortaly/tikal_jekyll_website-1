@@ -3,7 +3,7 @@ layout: post
 title: Make Large Scale Changes Incrementally with Branch By Abstraction
 created: 1310915685
 author: lior.kanfi
-permalink: /alm/make-large-scale-changes-incrementally-branch-abstraction
+permalink: /devops/make-large-scale-changes-incrementally-branch-abstraction
 tags:
 - DevOps
 - git

@@ -3,7 +3,7 @@ layout: post
 title: The Defenders of Free Software (from N.Y times)
 created: 1285679469
 author: hagzag
-permalink: /alm/defenders-free-software-ny-times
+permalink: /devops/defenders-free-software-ny-times
 tags:
 - DevOps
 ---

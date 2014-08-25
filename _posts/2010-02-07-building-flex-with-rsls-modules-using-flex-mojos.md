@@ -3,7 +3,7 @@ layout: post
 title: Building flex with RSL's modules using flex-mojos
 created: 1265520617
 author: itai
-permalink: /alm/building-flex-rsls-modules-using-flex-mojos
+permalink: /devops/building-flex-rsls-modules-using-flex-mojos
 tags:
 - DevOps
 - build maven Flex

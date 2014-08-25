@@ -3,7 +3,7 @@ layout: post
 title: svn pre-commit hook
 created: 1240915337
 author: liya
-permalink: /alm/svn-pre-commit-hook
+permalink: /devops/svn-pre-commit-hook
 tags:
 - DevOps
 - subversion

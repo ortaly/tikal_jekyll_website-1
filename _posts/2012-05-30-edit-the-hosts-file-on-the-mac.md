@@ -5,9 +5,8 @@ created: 1338394544
 author: avit
 permalink: /edit-hosts-file-mac
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>Sometimes, you may need to edit the hosts file on the mac.</p>
 
