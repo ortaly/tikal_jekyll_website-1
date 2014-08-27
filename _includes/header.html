@@ -3,7 +3,7 @@
     <div id="block-search-form" class="block block-search block-odd">
 
       <div class="content">
-        <form action="/about" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
               <h2 class="element-invisible">Search form</h2>
               <div class="form-item form-type-textfield form-item-search-block-form">
                 <label class="element-invisible" for="edit-search-block-form--2">Search </label>
@@ -21,10 +21,45 @@
       </ul>  </div><!-- /.content -->
     </div><!-- /.block -->
     <div id="block-menu-menu-language" class="block block-menu block-odd">
-
+      
       <div class="content">
         <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
       </ul>  </div><!-- /.content -->
     </div><!-- /.block -->
   </div>
 </div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+  (function() {
+    var cx = '012617499894110201007:qu0yvmmzksu';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+    });
+
+</script>
