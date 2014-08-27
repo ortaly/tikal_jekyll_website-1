@@ -3,11 +3,11 @@
     <div id="block-search-form" class="block block-search block-odd">
 
       <div class="content">
-        <form action="/about" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
               <h2 class="element-invisible">Search form</h2>
               <div class="form-item form-type-textfield form-item-search-block-form">
                 <label class="element-invisible" for="edit-search-block-form--2">Search </label>
-                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" onclick="$('#google-search-form').show()">
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
               </div>
               <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
               <input type="hidden" name="form_id" value="search_block_form">
@@ -28,7 +28,7 @@
     </div><!-- /.block -->
   </div>
 </div>
-<div id="google-search-form" style="display:none">
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
   <script>
   (function() {
     var cx = '012617499894110201007:qu0yvmmzksu';
@@ -43,3 +43,23 @@
 </script>
 <gcse:search></gcse:search>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+    });
+
+</script>
