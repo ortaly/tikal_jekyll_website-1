@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Asynchronous functions, actors and CPS</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-java page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Asynchronous functions, actors and CPS</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Scala">Scala</a>
+              </li>
+            
+              <li>
+                <a href="/tags/cps-scala-actors-asynchronous">cps scala actors asynchronous</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2010-07-06 00:00:00 +0300">
+        <div class="day">06</div>
+        Jul. 2010
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/asynchronous-functions-actors-and-cps' st_title='Asynchronous functions, actors and CPS' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/asynchronous-functions-actors-and-cps' st_title='Asynchronous functions, actors and CPS' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/asynchronous-functions-actors-and-cps' st_title='Asynchronous functions, actors and CPS' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/asynchronous-functions-actors-and-cps' st_title='Asynchronous functions, actors and CPS' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/asynchronous-functions-actors-and-cps' st_title='Asynchronous functions, actors and CPS' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>Using<span style="mso-spacerun:yes">&nbsp; </span>Scala we can easily create lock free multi-threaded code, while still maintaining a familiar programming model.</p>
+
+<p>&nbsp;</p>
+
+<p class="MsoNormal">There are two issues of writing multi-threaded code: synchronizing shared access to resources and running code asynchronously. In Java this is usually done with locks and implementing interfaces that wrap the asynchronous code. This leads to code that is cumbersome to write, error prone and inefficient in how it uses threads (since a thread may block for an unspecified time waiting on a lock).</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">In Scala we have actors (of course there are actor libraries for Java also, they are just less popular). <span style="mso-spacerun:yes">&nbsp;</span>However, using actors means giving away on type safety (we cannot know the exact set of messages an actor handled) and is also cumbersome to use as a replacement for method calls.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Instead of just calling a method, one has to create a message and the actor needs to receive it and call the actual method. There are situations where actors provide the right abstraction, by being able to determine the order in which messages are handled, but this is not the focus of this post.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">In this post I&rsquo;d like to present an alternative way of programming, that will utilize actors behind the scenes, giving front stage to objects and method calls.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">First, let&rsquo;s model an asynchronous method. Such a method handles the computation in another thread. Since we don&rsquo;t want to block, we create a followup function that is called once the computation is done:</p>
+
+<p class="MsoNormal"><b><br />
+</b></p>
+
+<pre title="code" class="brush: scala;">
+def mult(i: Int, j: Int)(followup: Int =&gt; Unit)</pre>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">We use it like:</p>
+<p class="MsoNormal">&nbsp;</p>
+<pre title="code" class="brush: scala;">
+mult(3, 4) {r =&gt; println(r)}</pre>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">In this case, implementing mult is trivial:</p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+<pre title="code" class="brush: scala;">
+def mult(i: Int, j: Int)(followup: Int =&gt; Unit) =
+  followup(i * j)
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><br />
+</b></p>
+
+<p class="MsoNormal">(in general, followup should probably modeled as an Either of value or error, but I&rsquo;d like to keep things simple for this post)</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">The body of mult runs in the thread of the caller. This is not good in the general case where a method modifies the state of an object, or where other methods modify the state and we want to avoid collisions.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">A way of synching all methods is through a use of an actor. The trivial way is to create an internal actor inside the object and send it messages that do the computation:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+class Obj {
+  case class Mult(i: int, j: Int, followup: Int =&gt; Unit)
+  def mult(i: Int, j: Int)(followup: Int =&gt; Unit) =
+    impl ! Mult(i, j, followup)
+ 
+  val impl = actor {
+    loop {
+      react {
+       case Mult(i, j, followup) =&gt; followup(i * j)
+      }
+    }
+  }
+}
+ 
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">Of course<span style="mso-spacerun:yes">&nbsp; </span>this is very cumbersome. The messages are used internally and quite trivially. Instead, we can use the actor to evaluate functions that each method creates:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+trait AsyncSupport {
+  val syncActor = actor {
+    loop {
+      react {
+       case x: Function0[Unit]  =&gt; x()
+      }
+    }
+  }
+ 
+  def sync(body: =&gt; Unit) = syncActor ! {() =&gt; body}
+}
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal">(This is of course not a full implementation, need to add handling of the actor&rsquo;s exit and maybe explicit start)</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Then implementing mult is:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+class Obj extends AsyncSupport {
+  def mult(i: Int, j: Int)(followup: Int =&gt; Unit) =
+    sync{followup(i * j)}
+} 
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">So far, so good. But when we start creating more and more such function, code starts to become unreadable. For example, consider the expression (a + b) * (c + d). With asynchronous methods this would be:</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+add(a, b){r1 =&gt; add(c, d){r2 =&gt; mult(r1, r2)(followup)}}</pre>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">One solution is to use for comprehension to hide the use of followup functions. Then code will look like:</p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+<pre title="code" class="brush: scala;">
+for (r1 &lt;- add(a,b);
+       r2 &lt;- add(c,d)
+      )  followup(mult(r1, r2))
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">This has several drawbacks: first, it isn&rsquo;t much more readable than the original code, second, it forces us to redesign our methods to conform to the rules of for comprehension, and thus make them less usable outside of its context.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Instead, we can use CPS</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">This post is not intended to introduce CPS, just to show its application here. I recommend searching for related articles (one linked below).</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">As a brief overview, CPS allows to take code that looks like this:</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+expr1 {a =&gt; expr2(a)}</pre>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">And turn it &ldquo;inside out&rdquo; into something like</p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+<pre title="code" class="brush: scala;">
+reset {
+  val a = shift {expr1}
+  expr2(a)
+}
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&lsquo;shift&rsquo; and &lsquo;reset&rsquo; can be given other more descriptive names.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">For example, it allows taking this code:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+List(&quot;x&quot;,&quot;y&quot;,&quot;z&quot;).flatMap{left =&gt;
+   List(4,5,6).flatMap{right =&gt;
+     List((s,i))
+  }
+}
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">And transforming it to:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+reset {
+  val left = List(&quot;x&quot;,&quot;y&quot;,&quot;z&quot;)
+  val right = List(4,5,6)
+ 
+  List((left.reflect[Any], right.reflect[Any]))
+}
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">(I didn&rsquo;t include the definitions of &lsquo;reflect&rsquo;, you can find it here: <a href="http://dcsobral.blogspot.com/2009/07/delimited-continuations-explained-in.html">http://dcsobral.blogspot.com/2009/07/delimited-continuations-explained-in.html</a>)</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">This is close to the sugar magic being done by for comprehension:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+for (left &lt;- List(&quot;x&quot;,&quot;y&quot;,&quot;z&quot;);
+       right &lt;- List(4,5,6))
+    yield(List((left, right)))
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">So, in our case, the aim is to be able to rewrite</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+add(a, b){r1 =&gt; add(c, d){r2 =&gt; mult(r1, r2)(followup)}}</pre>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">As something like:</p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+<pre title="code" class="brush: scala;">
+val r1 = add(a,b)
+val r2 = add(c,d)
+mult(r1, r2)
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">One way is to completely transform &lsquo;add&rsquo; and &lsquo;mult&rsquo; into CPS methods.</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+def add(i: Int, j: Int) = shift {k: (Int =&gt; Unit) =&gt; sync{k(i + j)}}
+def mult(i: Int, j: Int) = shift {k: (Int =&gt; Unit) =&gt; sync{k(i * j)}}
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">And use it:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">scala&gt; def followup(r: Int) = println(&quot;Result: &quot; + r)</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">followup: (r: Int)Unit</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">scala&gt; reset {</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r1 = add(1,2)</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r2 = add(3,4)</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r = mult(r1, r2)</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; followup(r)</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; | }</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">Result: 21</span><em><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></em></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style="font-size:10.0pt;line-height:115%;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal">A disadvantage with this approach is that now our methods are only usable in the context of CPS (&lsquo;reset&rsquo;). It means making it harder to do simple compositions or allow the &ldquo;straight forward&rdquo; use for those that want it.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Let&rsquo;s look again at the original definitions:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+def mult(i: Int, j: Int)(followup: Int =&gt; Unit) =
+    sync{followup(i * j)}
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal">It is obvious that &lsquo;followup&rsquo; is our &lsquo;k&rsquo; from the CPS code.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">So how do we go from a simple method with followup argument to a CPS method? With partial application:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style="font-family: 'Courier New'; ">scala&gt; mult(3,4) _</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><span style="font-family: 'Courier New'; ">res3: ((Int) =&gt; Unit) =&gt; Unit = &lt;function1&gt;</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">The result of the partial application is a function that given a function (Int =&gt; Unit) will perform some computation.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">To use it, we define some syntactic sugar:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<pre title="code" class="brush: scala;">
+  type Followup[Result] = Result =&gt; Unit
+ 
+  class CpsSupport[Result](f: Followup[Result] =&gt; Unit) {
+    def ! = shift {k: Followup[Result] =&gt; f(k) }
+  }
+ 
+  implicit def cps[Result](f: Followup[Result] =&gt; Unit) = new CpsSupport[Result](f)
+</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none">Then, our methods are defined in the standard way, without CPS, and the usage is:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">scala&gt; reset {</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r1 = add(1, 2) _!</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r2 = add(3, 4) _!</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r = mult(r1, r2) _!</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; followup(r)</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; | }</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p><span style="font-family: 'Courier New'; ">&nbsp;</span></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">scala&gt; Result: 21</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><em><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p>&nbsp;</o:p></span></em></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal">An alternative way is to put the body of &lsquo;!&rsquo; directly in &lsquo;cps&rsquo;:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<pre title="code" class="brush: scala;">
+def cps[Result](f: Followup[Result] =&gt; Unit) = shift {k: Followup[Result] =&gt; f(k) }</pre>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><br />
+</b></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black"><span style="mso-spacerun:yes">&nbsp;</span></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="mso-spacerun:yes">&nbsp;</span>and use it as:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">scala&gt; reset {</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r1 = cps(add(1, 2))</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r2 = cps(add(3, 4))</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; val r = cps(mult(r1, r2))</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; followup(r)</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">&nbsp;&nbsp;&nbsp;&nbsp; | }</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p><span style="font-family: 'Courier New'; ">&nbsp;</span></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-family: 'Courier New'; ">scala&gt; Result: 21</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><em><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Arial"><o:p>&nbsp;</o:p></span></em></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal">(Note: The newlines between the calls to methods are required, otherwise Scala thinks that each line is a parameter to the previous one and complains that &lsquo;!&rsquo; takes no parameters)</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal">The methods &lsquo;add&rsquo; and &lsquo;mult&rsquo; need to explicitly use &lsquo;sync&rsquo; this is both to guard their body (&lsquo;i * j&rsquo;)<span style="mso-spacerun:yes">&nbsp; </span>and the call to followup, which maybe any code, including code that modifies the object and therefore needs to be synced. Instead, the method &lsquo;!&rsquo; can call sync. This can be done explicitly, or using an implicit adapter that receives &lsquo;k&rsquo; and adapts it. I leave this as an exercise for the reader.<span style="mso-spacerun:yes">&nbsp; </span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal">This adapter can further be used if the followup method is of arity higher than 1. In that case, &lsquo;k&rsquo; will be a function receiving a tuple and the adapter&rsquo;s job will be to convert it to FunctionN</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="mso-spacerun:yes">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><em><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Arial"><o:p>&nbsp;</o:p></span></em></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><em><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Arial"><o:p>&nbsp;</o:p></span></em></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/java/asynchronous-functions-actors-and-cps" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

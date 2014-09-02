@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Single Page Application using MVC, Web API & knockout</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Single Page Application using MVC, Web API & knockout</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img typeof="foaf:Image" src="/assets/pictures/picture-109-1361229168-2c88133bf456f3af7f06cc46c9e35c32.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Menny</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Rachmanny</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">.NET Architect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/android/menny'>menny</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/dot-NET">.NET</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2012-06-01 00:00:00 +0300">
+        <div class="day">01</div>
+        Jun. 2012
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/single-page-application-using-mvc-web-api-knockout' st_title='Single Page Application using MVC, Web API & knockout' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/single-page-application-using-mvc-web-api-knockout' st_title='Single Page Application using MVC, Web API & knockout' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/single-page-application-using-mvc-web-api-knockout' st_title='Single Page Application using MVC, Web API & knockout' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/single-page-application-using-mvc-web-api-knockout' st_title='Single Page Application using MVC, Web API & knockout' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/single-page-application-using-mvc-web-api-knockout' st_title='Single Page Application using MVC, Web API & knockout' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>This is the first post in a series about Tikal’s fuse day session “Building Single Page Application with knockout and <a href="http://ASP.NET">ASP.NET</a> <a href="http://www.asp.net/mvc/mvc4">MVC 4</a>”. If you have already installed the new <a href="http://www.asp.net/mvc/mvc4">MVC 4</a> you can see there is a template solution called <a href="http://channel9.msdn.com/Events/TechDays/Techdays-2012-the-Netherlands/2159">“SPA” (Single Page Application)</a>. This SPA application is used with conjunction of Web API (new to <a href="http://www.asp.net/mvc/mvc4">MVC 4</a>) and on top of upshot.JS, knockout and nav.js. upshot.JS is a new micro framework from Microsoft that ease the interpretation between C# and JS, and since I wanted to stick to current open source technologies and maybe later not relay on a windows server (and IIS for that matter) I decided to do it with just knockout. I already <a href="http://www.onemenny.com/blog/javascript-frameworks-and-knockout/">talked</a> about knockout and why it’s my preferred binding solution.
+<p>What I’m going to explain here is the basic architecture for the application. The solution is composed of 4 projects. I’ll walk through each of them from the simplest to the real deal.
+<p><a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px 31px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: left; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" align="left" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb.png" width="194" height="419"></a> <strong><u>The first project ReleaseIt</u></strong> is called after our demo company, and is the root for all the common functionality and tools we are going to use. For that matter it’s the same as System.dll assembly. And if we want to write helpers for XML serialization, will place them under ReleaseIt.Xml.Serialization. If the serialization folder will become too large, we’ll then split the folder into a new assembly called ReleaseIt.XML. So far the regular stuff, but just to make the things super clear I’m going over the basics here again.
+<p><b></b> 
+<p><b></b> 
+<p><b></b> 
+<p><b></b> 
+<p><strong><u>The second project ReleaseIt.Web</u>.</strong> Since we are writing a web application we’ll put all the web helpers in this assembly, just like the ReleaseIt assembly for general (system) stuff, here we’ll locate the web classes sticking to the same convention. In this assembly we’ll have the MVC folder for MVC extensions.
+<p><a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image1.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px 18px 0px 0px; padding-left: 0px; padding-right: 0px; display: inline; float: left; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" align="left" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb1.png" width="350" height="164"></a>And in our case, the extensions to wire up the <a href="http://www.onemenny.com/blog/mvc-4-beta-registertemplatebundles-and-enabledefaultbundles/">bundling</a> in our application. So whenever we are in debug mode we want our JS files to be exactly as we wrote them: a separate file for each module or component that when put together – builds our entire application. But we still want them as separate files so it will be easy to debug when using the browsers developer tools. On release we want the opposite. We want all the files to bundle into a single file and go over minification process. In that way the browser will only execute 1 request for our entire JS app, instead of multiple requests for each JS module.
+<p>Now this is a philosophy of decision making. You can decide if you want to load your entire application as a single file when the user starts the application (much like Gmail), or load only the necessary files and later load asynchronously the rest of the needed files (<a href="http://engineering.twitter.com/2012/05/improving-performance-on-twittercom.html">like twitter is doing now</a>).
+<p>There is one more important issue when bundling all your JS file: the order in which they are bundle. This can be a tricky situation if one module is dependent on others. The common solution is to use the <a href="file:///C:\Users\Onemenny\AppData\Roaming\Microsoft\Word\commonjs.org\">CommonJS</a> modules approach. The basics of this approach is that each module declares what are the other modules it depends on, and later a tool like <a href="http://requirejs.org/docs/commonjs.html">require.js</a> can be used to make sure a particular module requirements are fully fulfilled.
+<p>In our case the situation is very simple so we only iterated between the JS files and concatenated them into a single file. Much like the <a href="http://blog.kurtschindler.net/post/disabling-bundling-and-minification-in-aspnet-45mvc-4">approach seen on this blog</a> for CSS.
+<p><a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image2.png"><strong><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px 12px 0px 0px; padding-left: 0px; padding-right: 0px; display: inline; float: left; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" align="left" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb2.png" width="283" height="324"></strong></a><u><strong>The third and fourth projects</strong></u> are basically the DAL implemented with a repository pattern: ReleaseIt.Repository is where all our interfaces and entities lie (much like a contract DLL in WCF), while the other project ReleaseIt.Repository.EF is the EntityFramework implementation of these contracts.
+<p>The hard wiring is done via <a href="http://msdn.microsoft.com/en-us/library/dd460648.aspx">MEF</a>. It just was the simplest DI container for this job. So our DataProviders in the EF implementation declares an export <a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/clip_image008.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="clip_image008" border="0" alt="clip_image008" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/clip_image008_thumb.png" width="467" height="140"></a></p>
+
+<p>then, in the build events of the EF project we copy the output DLL to our main application’s bin folder, and on the global.ascx (our main app) we tell MEF to initiate with this assembly <a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image3.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb3.png" width="569" height="263"></a> </p>
+
+<p>what we should have done is to register our DI container with MVC, or use MVC service locator. But then again, this was faster. </p>
+
+<h2><u>The main project</u></h2>
+
+<p>The main project is really just a regular MVC project with a few manipulations. I’ll go over each folder and explain:
+<ul>
+<li><strong>Content</strong> – the CSS, media and stuff</li>
+<li><strong>Controllers</strong> – the MVC controllers. Here we only have 1 controller to serve our only page in the application. <a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image4.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb4.png" width="569" height="141"></a></li>
+<ul>
+<li>Underneath it we have an <strong>API</strong> folder for all our Web API. Each controller will inherit from ApiController and use MEF to get the proper provider </li>
+</ul>
+</ul>
+<p><a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image5.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb5.png" width="569" height="449"></a></p>
+
+<p>If you are not familiar with MEF or DI or Ioc, I suggest you read about these supper cools approaches. In most cases, because our DLL’s don’t have references to each other cause we are using MEF, the <u>compilation time will reduce in half </u>+ we get loosely coupled components. </p>
+
+<ul>
+<li>The <strong>Scripts</strong> folder is where all our JS Script are (I used NuGet for all the scripts packages) like JQuery and alike. </li>
+<li><strong>JS</strong> folder is where our application located. We have controllers and viewModels that serve each view in the application. All our modules are implement with the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">module design pattern</a> </li>
+</ul>
+
+<p><a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image6.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb6.png" width="560" height="333"></a></p>
+
+<ul>
+<li>The<strong> Views</strong> folder is the basic MVC views folder. I stripped it out of most of its content, since we only have 1 page in the application (Index.cshtml). The other file in the folder is _ViewStart.cshtml which is the code that executes before every view is rendered. <a href="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image7.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.onemenny.com/blog/wp-content/uploads/2012/06/image_thumb7.png" width="569" height="93"></a></li>
+</ul>
+
+<blockquote><p>Under the <strong>Shared</strong> folder we still have our _Layout.cshtml (the master page) and others alike (footer & header). By the way the convention for _XXX (underscore) is for partial views in MVC. </p>
+</blockquote>
+
+<ul>
+<ul>
+<li>Underneath the shared folder we have the <strong>Pagelayouts</strong> that we are going to use: each page can be composed of 1 or more templates. And of course the <strong>Templates</strong> folder for the, well, templates. </li>
+</ul>
+
+<p></ul>
+<p>Well, that’s basically it; you can catch the main drift. On the next post I’ll go over the views and JS to explain how we composed our application so keep tuned.</p></p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/single-page-application-using-mvc-web-api-knockout" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

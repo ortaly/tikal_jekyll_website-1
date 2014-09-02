@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Java Group Meeting: Actor Model in Scala</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-java page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Java Group Meeting: Actor Model in Scala</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Scala">Scala</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2011-01-06 00:00:00 +0200">
+        <div class="day">06</div>
+        Jan. 2011
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/java-group-meeting-actor-model-scala' st_title='Java Group Meeting: Actor Model in Scala' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/java-group-meeting-actor-model-scala' st_title='Java Group Meeting: Actor Model in Scala' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/java-group-meeting-actor-model-scala' st_title='Java Group Meeting: Actor Model in Scala' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/java-group-meeting-actor-model-scala' st_title='Java Group Meeting: Actor Model in Scala' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/java-group-meeting-actor-model-scala' st_title='Java Group Meeting: Actor Model in Scala' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p dir="rtl" class="rteright">שלום חברי קבוצת ג'אווה!</p>
+
+<p dir="rtl" class="rteright">&nbsp;</p>
+
+<p dir="rtl" class="rteright">ביום שלישי הבא, ה-18 בינואר, בשעה 9 בבוקר נתכנס במשרד לפגישת קבוצת הג'אווה החודשית.</p>
+
+<p dir="rtl" class="rteright">&nbsp;</p>
+
+<p dir="rtl" class="rteright">על שוקו חם וארוחת בוקר טעימה ירצה איתי דרור אודות ה-Actor Model בשפת Scala, מה שמהווה הזדמנות ייחודית&nbsp; ללמוד קצת על השפה החדשה שמאיימת (או מבטיחה?) להחליף את ג'אווה. למרות שלא זכתה(עדיין) לאימוץ רב בארץ, הרי שנתמזל מזלנו ולנו יש מרצה מנוסה ומוכשר שיסבר אוזנינו ויבאר לנו עקרונות&nbsp; concurrency מתקדמים שבאו אחרי שפת ג'אווה.</p>
+
+<p dir="rtl" class="rteright">&nbsp;</p>
+
+<p dir="rtl" class="rteright">בפינת ההווי והבידור, אציג את פרוייקט הארדואינו - חומרה בקוד פתוח, המשמשת כיום מעצבי מוצר, מתכנני משחקים, אמני אינטראקטיביות ועוד בפיתוח המצאות, יצירות ומוצרים חדשים, מעניינים ומגניבים. בהרצאה יוצגו וינותחו מספר דוגמאות לפרוייקטים - בהן התפוח המזמר, גלאי הקרינה המנגן, הסיימון המשודרג ורובוט אחד שמפריח בועות ענק סתם כך להנאתו...</p>
+
+<p dir="rtl" class="rteright">&nbsp;</p>
+
+<p dir="rtl" class="rteright">בואו בהמוניכם!</p>
+
+<p dir="rtl" class="rteright">&nbsp;</p>
+
+<p dir="rtl" class="rteright">&nbsp;</p>
+
+<p dir="rtl" class="rteright">&nbsp;</p>
+
+<p dir="ltr" class="rteleft"><!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:view>
+<w:Zoom>0</w:zoom>
+<w:TrackMoves />
+<w:TrackFormatting />
+<w:PunctuationKerning />
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:saveifxmlinvalid>
+<w:IgnoreMixedContent>false</w:ignoremixedcontent>
+<w:AlwaysShowPlaceholderText>false</w:alwaysshowplaceholdertext>
+<w:DoNotPromoteQF />
+<w:LidThemeOther>EN-US</w:lidthemeother>
+<w:LidThemeAsian>X-NONE</w:lidthemeasian>
+<w:LidThemeComplexScript>HE</w:lidthemecomplexscript>
+<w:Compatibility>
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:SplitPgBreakAndParaMark />
+<w:DontVertAlignCellWithSp />
+<w:DontBreakConstrainedForcedTables />
+<w:DontVertAlignInTxbx />
+<w:Word11KerningPairs />
+<w:CachedColBalance />
+</w:cachedcolbalance></w:word11kerningpairs></w:dontvertalignintxbx></w:dontbreakconstrainedforcedtables></w:dontvertaligncellwithsp></w:splitpgbreakandparamark></w:dontgrowautofit></w:useasianbreakrules></w:wraptextwithpunct></w:snaptogridincell></w:breakwrappedtables></w:compatibility>
+<w:BrowserLevel>MicrosoftInternetExplorer4</w:browserlevel>
+<m:mathPr>
+<m:mathFont m:val="Cambria Math" />
+<m:brkBin m:val="before" />
+<m:brkBinSub m:val="&#45;-" />
+<m:smallFrac m:val="off" />
+<m:dispDef />
+<m:lMargin m:val="0" />
+<m:rMargin m:val="0" />
+<m:defJc m:val="centerGroup" />
+<m:wrapIndent m:val="1440" />
+<m:intLim m:val="subSup" />
+<m:naryLim m:val="undOvr" />
+</m:narylim></m:intlim></m:wrapindent></m:defjc></m:rmargin></m:lmargin></m:dispdef></m:smallfrac></m:brkbinsub></m:brkbin></m:mathfont></m:mathpr></w:donotpromoteqf></w:validateagainstschemas></w:punctuationkerning></w:trackformatting></w:trackmoves></w:worddocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+LatentStyleCount="267">
+<w:LsdException Locked="false" Priority="0" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Normal" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="heading 1" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" />
+<w:LsdException Locked="false" Priority="39" Name="toc 1" />
+<w:LsdException Locked="false" Priority="39" Name="toc 2" />
+<w:LsdException Locked="false" Priority="39" Name="toc 3" />
+<w:LsdException Locked="false" Priority="39" Name="toc 4" />
+<w:LsdException Locked="false" Priority="39" Name="toc 5" />
+<w:LsdException Locked="false" Priority="39" Name="toc 6" />
+<w:LsdException Locked="false" Priority="39" Name="toc 7" />
+<w:LsdException Locked="false" Priority="39" Name="toc 8" />
+<w:LsdException Locked="false" Priority="39" Name="toc 9" />
+<w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" />
+<w:LsdException Locked="false" Priority="10" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Title" />
+<w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" />
+<w:LsdException Locked="false" Priority="11" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtitle" />
+<w:LsdException Locked="false" Priority="22" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Strong" />
+<w:LsdException Locked="false" Priority="20" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Emphasis" />
+<w:LsdException Locked="false" Priority="59" SemiHidden="false"
+UnhideWhenUsed="false" Name="Table Grid" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" />
+<w:LsdException Locked="false" Priority="1" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="No Spacing" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 1" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 1" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 1" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 1" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" />
+<w:LsdException Locked="false" Priority="34" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" />
+<w:LsdException Locked="false" Priority="29" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Quote" />
+<w:LsdException Locked="false" Priority="30" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 1" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 1" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 1" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 1" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 1" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 2" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 2" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 2" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 2" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 2" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 2" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 2" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 2" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 3" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 3" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 3" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 3" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 3" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 3" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 3" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 3" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 3" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 4" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 4" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 4" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 4" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 4" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 4" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 4" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 4" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 4" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 5" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 5" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 5" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 5" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 5" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 5" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 5" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 5" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 5" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 6" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 6" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 6" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 6" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 6" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 6" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 6" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 6" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 6" />
+<w:LsdException Locked="false" Priority="19" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" />
+<w:LsdException Locked="false" Priority="21" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" />
+<w:LsdException Locked="false" Priority="31" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" />
+<w:LsdException Locked="false" Priority="32" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" />
+<w:LsdException Locked="false" Priority="33" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Book Title" />
+<w:LsdException Locked="false" Priority="37" Name="Bibliography" />
+<w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" />
+</w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:lsdexception></w:latentstyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:"Table Normal";
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-priority:99;
+mso-style-qformat:yes;
+mso-style-parent:"";
+mso-padding-alt:0in 5.4pt 0in 5.4pt;
+mso-para-margin-top:0in;
+mso-para-margin-right:0in;
+mso-para-margin-bottom:10.0pt;
+mso-para-margin-left:0in;
+line-height:115%;
+mso-pagination:widow-orphan;
+font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:"Times New Roman";
+mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]--></p>
+
+<p class="rteleft">Greetings Java Group members,</p>
+
+<p class="rteleft">&nbsp;</p>
+
+<p class="rteleft">On next Tuesday, January 18, 9:00 AM, the Java Group will in Tikal Offices for our monthly meeting.<br />
+Sipping hot chocolate over a tasty breakfast, we&rsquo;ll enjoy Ittay Dror&rsquo;s lecture on the Actor Model in the Scala. This seems like a unique opportunity to learn about the language that threatens (or promises!) to replace Java; although not widely adopted in Israel, we&rsquo;re lucky enough to have Ittay, who have been learning, developing and (now) lecturing on the topic for quite a while, explain us the language&rsquo;s next generation concurrency model: the Actor Model.</p>
+
+<p class="rteleft">&nbsp;</p>
+
+<p class="rteleft">In the enrichment section, Zvika will present the Arduino project &ndash; an open source <em>hardware </em>used by industrial designers, artists and invertors of all sorts to develop new inventions, installations, and product prototypes. Alongside the theoretical agenda, a number of projects will be presented &ndash; including the singing apple, an upgraded Simon game, musical electromagnetic field detector, and one robot that blows gigantic bubbles asif there&rsquo;s not tomorrow...</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">All are invited!</p>
+
+<p dir="ltr" class="rteleft">&nbsp;</p>
+
+<!--![endif]__comment__end__&nbsp;&nbsp;</![endif]__comment__end__</p-->
+
+<p>&lt;!--![endif]<strong>comment</strong>end_<em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;
+<p>&nbsp;</p>
+<p><object width="640" height="385">
+&lt;param value=&quot;http://www.youtube.com/v/PeScmRwzQho?fs=1&amp;hl=en</em>US&quot; name=&quot;movie&quot; /&gt;
+<param value="true" name="allowFullScreen" />
+<param value="always" name="allowscriptaccess" /><embed width="640" height="385" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.youtube.com/v/PeScmRwzQho?fs=1&amp;hl=en_US"></embed></object></p></p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/java/java-group-meeting-actor-model-scala" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

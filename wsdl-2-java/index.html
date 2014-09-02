@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>WSDL 2 Java</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">WSDL 2 Java</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Chaim</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Turkel</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">Sr. Java Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/java/chaimturkel'>chaim.turkel</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Java">Java</a>
+              </li>
+            
+              <li>
+                <a href="/tags/wsdl">wsdl</a>
+              </li>
+            
+              <li>
+                <a href="/tags/code-generation">code generation</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2013-11-13 00:00:00 +0200">
+        <div class="day">13</div>
+        Nov. 2013
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/wsdl-2-java' st_title='WSDL 2 Java' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/wsdl-2-java' st_title='WSDL 2 Java' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/wsdl-2-java' st_title='WSDL 2 Java' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/wsdl-2-java' st_title='WSDL 2 Java' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/wsdl-2-java' st_title='WSDL 2 Java' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <div style="border-bottom: solid #4F81BD 1.0pt; border: none; mso-border-bottom-themecolor: accent1; mso-element: para-border-div; padding: 0in 0in 4.0pt 0in;">
+<div class="MsoTitle">WSDL 2 Java<o:p></o:p></div>
+</div>
+
+<div class="MsoNormal">So you decided to do wsdl 2 java design. This is currently the more &ldquo;proper&rdquo; way to go about it. For more information about this debate see: <a href="http://docs.spring.io/spring-ws/site/reference/html/tutorial.html">http://docs.spring.io/spring-ws/site/reference/html/tutorial.html</a>. You have the wsdl but how do you generate the code?<o:p></o:p></div>
+
+<h1>Maven Plugin<o:p></o:p></h1>
+
+<div class="MsoNormal">If all you need is to convert one wsdl, you can do a quite simple solution with maven using the ant plugin:<o:p></o:p></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;">&nbsp;</div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">groupId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">org.apache.maven.plugins</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">groupId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">maven-antrun-plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">process-classes</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">target</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">java</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">classname</span>=<i><span style="color: #2a00ff;">&quot;org.apache.cxf.tools.wsdlto.WSDLToJava&quot;</span></i> <span style="color: #7f007f;">fork</span>=<i><span style="color: #2a00ff;">&quot;true&quot;</span></i><span style="color: teal;">&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;-impl&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;-b&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;bindings.xjb&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;-server&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;-d&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;gen&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;-wsdlLocation&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;/WEB-INF/wsdls/my.wsdl&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">arg</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;my.wsdl&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">classpath</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">path</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">refid</span>=<i><span style="color: #2a00ff;">&quot;maven.compile.classpath&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">classpath</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">java</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">target</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">run</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal">This plugin will generate using the cxf engine a java file with all the schema files needed for the code.<o:p></o:p></div>
+
+<div class="MsoNormal">This is a good solution if you just need one file or want to just look things over. <o:p></o:p></div>
+
+<div class="MsoNormal">If you have multiple wsdl&rsquo;s and you want to intervene during the generating process you need to do it by code. Also in the case that you do not know in advance what the wsdls are but only know the directory of the wsdls, then you need to generate them via code.<o:p></o:p></div>
+
+<h1>Java Code<o:p></o:p></h1>
+
+<div class="MsoNormal">To run the cxf engine via the java code you will need to run the same command line as above just via java code.<o:p></o:p></div>
+
+<div class="MsoNormal">So why do we want to use java code and not just a simple maven plugin. First reason is, if you want to add a binding file. For more about binding please see: <a href="http://www.oracle.com/technetwork/articles/entarch/jax-ws-jaxb-customization-082750.html">http://www.oracle.com/technetwork/articles/entarch/jax-ws-jaxb-customization-082750.html</a>, <a href="https://blogs.oracle.com/sdimilla/entry/implementing_handlers_using_jaxws_2">https://blogs.oracle.com/sdimilla/entry/implementing_handlers_using_jaxws_2</a>.<o:p></o:p></div>
+
+<div class="MsoNormal">Binding files allows you to change the way the java code is generated. You can add annotations, or define the package name and many more things.<o:p></o:p></div>
+
+<div class="MsoNormal">Binding files, recommend that you add the wsdl location in the binding file, like:<o:p></o:p></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="background: lightgrey; color: #3f7f7f; font-family: Consolas; font-size: 10.0pt; mso-highlight: lightgrey;">jaxws:bindings</span><span style="font-family: Consolas; font-size: 10.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10.0pt;">&nbsp; <span style="color: #7f007f;">wsdlLocation</span>=<i><span style="color: #2a00ff;">&quot;xxx.wsdl&quot;</span></i> <o:p></o:p></span></div>
+
+<div class="MsoNormal">The disadvantage of this, is that you need to create a template binding file so that you can change the name for each wsdl file. The other option is to just omit this section in the binding file.<o:p></o:p></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal">The main options are: &nbsp;where to generate the code, whether or not to compile it, and the wsdl location. For all options see <a href="http://cxf.apache.org/docs/wsdl-to-java.html">http://cxf.apache.org/docs/wsdl-to-java.html</a>.<o:p></o:p></div>
+
+<div class="MsoNormal">Another issue that needs to be handled is the location of the command path relevant to the bind file. You can put the bind file where ever you want, but when passing the location to the api, the relative path must be relative to the working directory of the command execution.&nbsp; For an easy way of calculating relative paths between directories please see:<o:p></o:p></div>
+
+<div class="MsoNormal"><a href="http://stackoverflow.com/questions/204784/how-to-construct-a-relative-path-in-java-from-two-absolute-paths-or-urls">http://stackoverflow.com/questions/204784/how-to-construct-a-relative-path-in-java-from-two-absolute-paths-or-urls</a><o:p></o:p></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<h1>Code generation intervene<o:p></o:p></h1>
+
+<div class="MsoNormal">One of the features that are greatly missing is the ability to intervene in the code generation of the wsdl service file. If you want to intervene in the generation of the xsd files, you can do this with jaxb plugins.<o:p></o:p></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal">For a nice example that adds support for XmlElementWrapper see (<a href="https://github.com/dmak/jaxb-xew-plugin">https://github.com/dmak/jaxb-xew-plugin</a>). For more information on plugins and jaxb extensions see <a href="http://www.jroller.com/gmazza/entry/enhancing_jaxb_artifacts">http://www.jroller.com/gmazza/entry/enhancing_jaxb_artifacts</a>.<o:p></o:p></div>
+
+<div class="MsoNormal">The problem is that for the wsdl generation cxf did not use the jaxb plugins scheme and there is no official way to intervene in the code generation.<o:p></o:p></div>
+
+<div class="MsoNormal">I &ldquo;hack&rdquo; can be done. Cxf uses a velocity template to generate the file. The velocity template name is iml.vm. So if you write your own template (and place it in the same package as cxf template), and add it to a jar that is in the classpath before the cxf jar, your template will be used by cxf and not the internal one.<o:p></o:p></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<h1>Other issues for code generation<o:p></o:p></h1>
+
+<div class="MsoNormal">If you are generating all the web service stubs, you will most probably also want your code to add to your cxf xml file all the proper endpoints as well.<o:p></o:p></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<h1>Generation of Code<o:p></o:p></h1>
+
+<div class="MsoNormal">Since we will be generating the service classes from the wsdl&rsquo;s you need to think if this process is a onetime process or an ongoing one. If it is part of your build system, then you cannot edit the generated files (by default cxf generates the files with a TEMP suffix). There are a few options to solve this issue. First you need to make sure that all generated files are not in the source area but in the generated (/target/ generated-sources). <o:p></o:p></div>
+
+<p>&nbsp;</p>
+
+<div class="MsoNormal">You now have a few options of how to add your specific code, while still continue to regenerate the service classes. The simple one is to just copy the service class into you source code. This sort of defeats the idea of having new services added dynamically. Second solution is if you edited the &nbsp;template generation you can have all services delegate the call to a central spring bean, and then use the proxy pattern to handle all calls. Third option is to add an AOP layer to catch all calls to the service and write a generic code for all of them without having to do any wiring or changing of cxf templates.<o:p></o:p></div>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/wsdl-2-java" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

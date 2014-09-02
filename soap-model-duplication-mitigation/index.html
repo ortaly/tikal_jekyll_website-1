@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Soap Model Duplication / Mitigation</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Soap Model Duplication / Mitigation</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Chaim</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Turkel</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">Sr. Java Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/java/chaimturkel'>chaim.turkel</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Java">Java</a>
+              </li>
+            
+              <li>
+                <a href="/tags/soap">soap</a>
+              </li>
+            
+              <li>
+                <a href="/tags/XML">XML</a>
+              </li>
+            
+              <li>
+                <a href="/tags/xsl">xsl</a>
+              </li>
+            
+              <li>
+                <a href="/tags/domain-trasfromations">domain trasfromations</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2013-04-08 00:00:00 +0300">
+        <div class="day">08</div>
+        Apr. 2013
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/soap-model-duplication-mitigation' st_title='Soap Model Duplication / Mitigation' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/soap-model-duplication-mitigation' st_title='Soap Model Duplication / Mitigation' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/soap-model-duplication-mitigation' st_title='Soap Model Duplication / Mitigation' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/soap-model-duplication-mitigation' st_title='Soap Model Duplication / Mitigation' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/soap-model-duplication-mitigation' st_title='Soap Model Duplication / Mitigation' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p><br />
+<div class="MsoNormal" style="background: #EEEEEE; line-height: 31.5pt; margin-left: 9.75pt; margin-top: 27.0pt; mso-margin-bottom-alt: auto; mso-outline-level: 1;">
+    &nbsp;</div>
+<div class="MsoNormal" style="background-position: initial initial; background-repeat: initial initial; line-height: 31.5pt; margin-left: 9.75pt; margin-top: 27pt;">
+    <span style="color: white; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 26.5pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-font-kerning: 18.0pt;">Soap Model Duplication / Mitigation<o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="text-align: justify;">
+    When creating a soap interface (or any other external api) after you already have a very big internal model base can be very difficult<b>. <o:p><a href="/o:p">/o:p</a></b></div>
+<div class="MsoNormal" style="text-align: justify;">
+    The optimal architectural design is to have two model bases one internal and one external. The reason for this is to decouple internal code from external. Usually the external interface does not change much and refactoring is not an option (since the clients are already using this interface). On the other hand internal structures are always being refactored to meet new requirements. If the subset functionality needed to be exported is well defined, then the decision is usually strait forward, since the external api by requirement will be different from the internal.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    The problem is that if your model is very big and the requirement are to export all internal functionally then we have the problem of duplicating the full model (which can be tens if not hundreds of classes). <o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal">
+    In any case when having a dto we need a simple way to covert from the external api to the internal and vice versa. <o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    When looking from above there are two major options (in the case of xml based protocols). In the case of soap the protocol is based on xml documents. So any request is converted from xml to an object and then the result is converted from the object back to xml. <o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    So if we need to transform the request from the external api to the internal api, we can either do it on the object level or on the xml level.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    The object level is the more known way to do conversions since it is not protocol specific, and can be done on the external level in code. The disadvantage is that the transformations are not always easy and need an external framework to help (see <a href="http://dozer.sourceforge.net/">http://dozer.sourceforge.net/</a>). Another disadvantage is that the code becomes very &ldquo;dirty&rdquo; with a lot of lines just for the transformation.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    Another option that I want to expand on is the option for transformation on the xml level. Since the protocol of soap is based on xml and xsd schemes, there is an option of transforming the incoming and outgoing xml using xslt. Xslt is widely known and has a lot of transformation capabilities (<a href="http://www.w3schools.com/XSL/">http://www.w3schools.com/XSL/</a>).<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    In this solution you have only one model base and do the transformations on the xml level and not on the object level.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    Using a framework like CXF (<a href="http://cxf.apache.org/">http://cxf.apache.org/</a>) for soap, it is very easy to add xslt files for your soap requests. <o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    The way CXF works, is that for every incoming and outgoing request there is a list of interceptors that are called. The message is sent to each interceptor (order can be set) in the chain before and after. So the soap request will pass through the interceptors, and one of them will do the transformations.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    CXF supports two types of transformations: StaxTransformFeature, XSLTFeature.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    The difference between the two, I copied from the site of CXF (http://cxf.apache.org/docs/xslt-feature.html):<o:p><a href="/o:p">/o:p</a></div>
+<div style="background: #F0F0F0; border-bottom: solid #3C78B5 1.0pt; border: none; mso-border-bottom-alt: solid #3C78B5 .75pt; mso-element: para-border-div; padding: 0in 0in 2.0pt 0in;">
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 27pt 0in 3pt; padding: 0in;">
+        <span style="color: #003366; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 18.0pt;">When should I use Transformation Feature and when XSLT Feature?<o:p><a href="/o:p">/o:p</a></span></h1>
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 27pt 0in 3pt; padding: 0in;">
+        <span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">If only trivial transformations must be done, it is recommended to use lightweight and fast Transformation Feature. It covers the most use cases as:<o:p><a href="/o:p">/o:p</a></span></h1>
+</div>
+<div style="background: #F0F0F0; border-bottom: solid #3C78B5 1.0pt; border: none; margin-left: .25in; margin-right: 0in; mso-border-bottom-alt: solid #3C78B5 .75pt; mso-element: para-border-div; padding: 0in 0in 2.0pt 0in;">
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 0in 0in 0.0001pt 0.25in; padding: 0in; text-indent: -0.25in;">
+        &lt;!--[if !supportLists]--&gt;<span style="font-family: Symbol; font-size: 8.5pt; font-weight: normal; mso-bidi-font-family: Symbol; mso-fareast-font-family: Symbol;">&middot;<span style="font-family: 'Times New Roman'; font-size: 7pt; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>&lt;!--[endif]--&gt;<span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">dropping the namespace of the outbound messages;<o:p><a href="/o:p">/o:p</a></span></h1>
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 0in 0in 0.0001pt 0.25in; padding: 0in; text-indent: -0.25in;">
+        &lt;!--[if !supportLists]--&gt;<span style="font-family: Symbol; font-size: 8.5pt; font-weight: normal; mso-bidi-font-family: Symbol; mso-fareast-font-family: Symbol;">&middot;<span style="font-family: 'Times New Roman'; font-size: 7pt; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>&lt;!--[endif]--&gt;<span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">qualifying the incoming message;<o:p><a href="/o:p">/o:p</a></span></h1>
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 0in 0in 0.0001pt 0.25in; padding: 0in; text-indent: -0.25in;">
+        &lt;!--[if !supportLists]--&gt;<span style="font-family: Symbol; font-size: 8.5pt; font-weight: normal; mso-bidi-font-family: Symbol; mso-fareast-font-family: Symbol;">&middot;<span style="font-family: 'Times New Roman'; font-size: 7pt; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>&lt;!--[endif]--&gt;<span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">changing namespaces;<o:p><a href="/o:p">/o:p</a></span></h1>
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 0in 0in 0.0001pt 0.25in; padding: 0in; text-indent: -0.25in;">
+        &lt;!--[if !supportLists]--&gt;<span style="font-family: Symbol; font-size: 8.5pt; font-weight: normal; mso-bidi-font-family: Symbol; mso-fareast-font-family: Symbol;">&middot;<span style="font-family: 'Times New Roman'; font-size: 7pt; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>&lt;!--[endif]--&gt;<span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">appending or dropping elements;<o:p><a href="/o:p">/o:p</a></span></h1>
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 0in 0in 0.0001pt 0.25in; padding: 0in; text-indent: -0.25in;">
+        &lt;!--[if !supportLists]--&gt;<span style="font-family: Symbol; font-size: 8.5pt; font-weight: normal; mso-bidi-font-family: Symbol; mso-fareast-font-family: Symbol;">&middot;<span style="font-family: 'Times New Roman'; font-size: 7pt; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>&lt;!--[endif]--&gt;<span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">converting attributes to elements.<o:p><a href="/o:p">/o:p</a></span></h1>
+</div>
+<div style="background: #F0F0F0; border-bottom: solid #3C78B5 1.0pt; border: none; mso-border-bottom-alt: solid #3C78B5 .75pt; mso-element: para-border-div; padding: 0in 0in 2.0pt 0in;">
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin: 27pt 0in 3pt; padding: 0in;">
+        <span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">Transformation Feature is completely stream oriented and work fast especially for large messages.<o:p><a href="/o:p">/o:p</a></span></h1>
+    <h1 style="background-position: initial initial; background-repeat: initial initial; border: none; margin-bottom: 3pt; padding: 0in;">
+        <span style="font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; font-size: 8.5pt; font-weight: normal;">If you should apply non-trivial transformation, not supported by Transformation Feature - it is use case for XSLT Feature. Here you can write any custom XSL Transformation and apply it to inbound and/or outbound messages.<br />
+        As far as Xalan XSLT engine is actually not completely stream oriented, XSLT Feature breaks streaming. However it uses high-performance DTM (Document Table Model) instead complete DOM model.<br />
+        Performance can be improved in the future by using further versions of Xalan or other XSLT engines (like Saxon or STX oriented Joost).<o:p><a href="/o:p">/o:p</a></span></h1>
+</div>
+<div class="MsoNormal">
+    &nbsp;</div>
+<div class="MsoNormal" style="text-align: justify;">
+    I will describe how to use the XSLTFeature since we need a full xsl file to transform the requests.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    &nbsp;</div>
+<div class="MsoNormal" style="text-align: justify;">
+    In the application context of the CXF where you define your endpoints you need to define the following:<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">bean</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">id</span>=<i><span style="color: #2a00ff;">&quot;xsltFeatureSoapTestService&quot;</span></i> <span style="color: #7f007f;">class</span>=<i><span style="color: #2a00ff;">&quot;org.apache.cxf.feature.transform.XSLTFeature&quot;</span></i><span style="color: teal;">&gt;</span><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">property</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">name</span>=<i><span style="color: #2a00ff;">&quot;inXSLTPath&quot;</span></i> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;soapTransformers/requestTransformation.xsl&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">property</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">name</span>=<i><span style="color: #2a00ff;">&quot;outXSLTPath&quot;</span></i> <span style="color: #7f007f;">value</span>=<i><span style="color: #2a00ff;">&quot;soapTransformers/responseTransformation.xsl&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">bean</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">jaxws:endpoint</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">implementor</span>=<i><span style="color: #2a00ff;">&quot;#soapTestService&quot;</span></i> <span style="color: #7f007f;">address</span>=<i><span style="color: #2a00ff;">&quot;/ws/SoapTestService&quot;</span></i><span style="color: teal;">&gt;</span><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">jaxws:features</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">ref</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">bean</span>=<i><span style="color: #2a00ff;">&quot;xsltFeatureSoapTestService&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">jaxws:features</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">jaxws:endpoint</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="text-align: justify;">
+    &nbsp;</div>
+<div class="MsoNormal" style="text-align: justify;">
+    The first bean is what the interceptor will use. You need to create one per endpoint, since this bean will hold the in and out xls. Then on your endpoint you add the jaxws:features with a reference to your bean. <o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    This will cause the CXF to run the transformers on the incoming message and the outgoing message. <o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    To start testing this you can use a simple xsl that actually just copies the original xsl:<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:stylesheet </span></b><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">version</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;1.0&quot; </span></i><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">xmlns:xsl</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span></i><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></i><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">xmlns:sapiens</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;http://soap.interfaces.internal.foundation.alis.sapiens.com/&quot;</span></i><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #3f5fbf; font-family: Consolas; font-size: 10.0pt;">&lt;!-- Identity Template # Copy everything --&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:template </span></b><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">match</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;@<em>|node()&quot;</span></i><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:copy</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:apply-templates </span></b><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">select</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;@</em>|node()&quot; </span></i><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">/&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:copy</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:template</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:stylesheet</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="text-align: justify;">
+    &nbsp;</div>
+<div class="MsoNormal" style="text-align: justify;">
+    Then to easily remove a specific property from the xml you can write:<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:stylesheet </span></b><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">version</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;1.0&quot; </span></i><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">xmlns:xsl</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span></i><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></i><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">xmlns:sapiens</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;http://soap.interfaces.internal.foundation.alis.sapiens.com/&quot;</span></i><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #3f5fbf; font-family: Consolas; font-size: 10.0pt;">&lt;!-- Identity Template # Copy everything --&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:template </span></b><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">match</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;@<em>|node()&quot;</span></i><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:copy</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:apply-templates </span></b><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">select</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;@</em>|node()&quot; </span></i><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">/&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:copy</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:template</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #3f5fbf; font-family: Consolas; font-size: 10.0pt;">&lt;!-- remove text --&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span></b><b><span style="background: silver; color: #3f7f7f; font-family: Consolas; font-size: 10.0pt; mso-highlight: silver;">xsl:template</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;"> </span></b><b><span style="color: #7f007f; font-family: Consolas; font-size: 10.0pt;">match</span></b><span style="font-family: Consolas; font-size: 10pt;">=</span><i><span style="color: #2a00ff; font-family: Consolas; font-size: 10.0pt;">&quot;msgText&quot;</span></i><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span></b><b><span style="background: silver; color: #3f7f7f; font-family: Consolas; font-size: 10.0pt; mso-highlight: silver;">xsl:template</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    &nbsp;</div>
+<div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in; mso-layout-grid-align: none; text-autospace: none;">
+    <b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span></b><b><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">xsl:stylesheet</span></b><b><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span></b><span style="font-family: Consolas; font-size: 10.0pt;"><o:p><a href="/o:p">/o:p</a></span></div>
+<div class="MsoNormal" style="text-align: justify;">
+    &nbsp;</div>
+<div class="MsoNormal" style="text-align: justify;">
+    This will remove the xml element of msgText from the xml.<o:p><a href="/o:p">/o:p</a></div>
+<div class="MsoNormal" style="text-align: justify;">
+    &nbsp;</div>
+<div class="MsoNormal" style="text-align: justify;">
+    As you can see it is very easy to remove attributes or nodes from the soap xml model, or to do any transformation that you need on the xml level, and not on the object level.<o:p><a href="/o:p">/o:p</a></div>
+<br /></p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/soap-model-duplication-mitigation" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Spring security 3 remember-me with LDAP authentication</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-java page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Spring security 3 remember-me with LDAP authentication</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Spring-security-3">Spring security 3</a>
+              </li>
+            
+              <li>
+                <a href="/tags/remember-me">remember-me</a>
+              </li>
+            
+              <li>
+                <a href="/tags/OpenLdap">OpenLdap</a>
+              </li>
+            
+              <li>
+                <a href="/tags/ldap">ldap</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2011-03-17 00:00:00 +0200">
+        <div class="day">17</div>
+        Mar. 2011
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/spring-security-3-remember-me-ldap-authentication' st_title='Spring security 3 remember-me with LDAP authentication' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/spring-security-3-remember-me-ldap-authentication' st_title='Spring security 3 remember-me with LDAP authentication' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/spring-security-3-remember-me-ldap-authentication' st_title='Spring security 3 remember-me with LDAP authentication' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/spring-security-3-remember-me-ldap-authentication' st_title='Spring security 3 remember-me with LDAP authentication' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/spring-security-3-remember-me-ldap-authentication' st_title='Spring security 3 remember-me with LDAP authentication' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>Hi,</p>
+
+<p>&nbsp;</p>
+
+<p>For a client I had to implement Springs &quot;remember-me&quot; functionality.Remember me allows a user to login, then close the browser and re open it and access a secured application without the need to re-enter the login details.<br />
+    <br />
+    To implement the feature, I read many resources freely available on the internet such as: <a href="http://static.springsource.org/spring-security/site/docs/3.0.x/reference/remember-me.html" target="_blank">http://static.springsource.<wbr />org/spring-security/site/docs/<wbr />3.0.x/reference/remember-me.<wbr />html</a>, <a href="http://www.jeviathon.com/2009/09/spring-security-30-with-active.html" target="_blank">http://www.jeviathon.com/2009/<wbr />09/spring-security-30-with-<wbr />active.html</a>, <a href="http://jamwiki.org/wiki/en/Permissions" target="_blank">http://jamwiki.org/wiki/en/<wbr />Permissions</a>, <a href="http://code.google.com/p/zk-sample-gui/" target="_blank">http://code.google.com/p/zk-<wbr />sample-gui/</a><br />
+    <br />
+    The application is web enabled application with a Flex client utilizing Spring security 3.0.5 and Springs LDAP template to authenticate and authorize against an OpenLdap server.<br />
+    <br />
+    What started (as I wrongly assumed) as a one liner inside the applicationContext.xml file:</p>
+
+<div>
+    <pre class="brush: php;" title="code">
+&lt;remember-me/&gt;
+</pre>
+    <div>
+        <code><br />
+</code></div>
+</div>
+
+<p>&nbsp;</p>
+
+<p>Turned out to be much more involved in term of the required configuration when LDAP is involved. So here are the details of how to do that, I am assuming you got the LDAP part working (with OpenLdap, active directory or whatever) and hence will not touch that here.</p>
+
+<p>&nbsp;</p>
+
+<p>Step 1:</p>
+
+<p>&nbsp;</p>
+
+<p>Add the necessary schema definitions to the applicationContext.xml&nbsp; file.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<pre class="brush: xhtml;" title="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:security=&quot;http://www.springframework.org/schema/security&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.0.xsd
+                        http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+</pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Step 2:</p>
+
+<p>&nbsp;</p>
+
+<p>Add a Spring token repository (c) , this repository will enable Spring to persist a token which identifies a user that has been already logged in, and assign him with a IS_AUTHENTICATED_REMEMBERED rule, or one of a predefined rules (see below such as RULE_APPLICATION) .</p>
+
+<p>&nbsp;</p>
+
+<pre class="brush: xhtml;" title="code">
+&lt;bean id=&quot;tokenRepository&quot; class=&quot;org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl&quot;&gt;
+      &lt;property name=&quot;createTableOnStartup&quot; value=&quot;false&quot; /&gt;
+      &lt;property name=&quot;dataSource&quot; ref=&quot;inMemDataSource&quot;/&gt;
+   &lt;/bean&gt;
+</pre>
+
+<p><br />
+    You may allow Spring to create the RDBMS schema for you automatically (createTableOnStartup=true), you may inspect the DDL :</p>
+
+<p>&nbsp;</p>
+
+<pre class="brush: sql;" title="code">
+create table persistent_logins (username varchar(64) not null, series varchar(64) primary key, token varchar(64) not null, last_used timestamp not null)
+</pre>
+
+<p><br />
+    Refer to JdbcTokenRepositoryImpl.<wbr />CREATE_TABLE_SQL by yourself&nbsp; and run it, or you can opt for a read only Hibernate entity that will be used solely for the creation of the table:</p>
+
+<pre class="brush: java;" title="code">
+/**
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+import org.hibernate.validator.NotNull;
+
+@Entity()
+@Table(name = &quot;persistent_logins&quot;)
+@org.hibernate.annotations.Entity(mutable = false)
+/**
+ * A Hibernate class used to create the table for the &quot;remember-me&quot;
+ * persistent token mechanism.
+ *
+ * @author skashani
+ *
+ */
+public class PersistentLogin implements java.io.Serializable {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    @Column(name = &quot;username&quot;)
+    private String userName;
+
+    @Id
+    @NotNull
+    private String series;
+
+    @NotNull
+    private String token;
+
+    @Column(name = &quot;last_used&quot;, columnDefinition = &quot;TIMESTAMP DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP&quot;)
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUsed;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(final String userName) {
+        this.userName = userName;
+    }
+
+    public String getSeries() {
+        return series;
+    }
+
+    public void setSeries(final String series) {
+        this.series = series;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(final String token) {
+        this.token = token;
+    }
+
+    public Date getLastUsed() {
+        return lastUsed;
+    }
+
+    public void setLastUsed(final Date lastUsed) {
+        this.lastUsed = lastUsed;
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(final Object other) {
+        if (!(other instanceof PersistentLogin)) {
+            return false;
+        }
+        final PersistentLogin castOther = (PersistentLogin) other;
+        return new EqualsBuilder().append(userName, castOther.userName)
+                                  .append(token, castOther.token)
+                                  .append(lastUsed, castOther.lastUsed)
+                                  .isEquals();
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(userName).append(token).append(lastUsed).toHashCode();
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE).append(&quot;userName&quot;,
+                                                                                userName)
+                                                                        .append(&quot;series&quot;, series)
+                                                                        .append(&quot;token&quot;, token)
+                                                                        .append(&quot;lastUsed&quot;,
+                                                                                lastUsed)
+                                                                        .toString();
+    }
+}
+</pre>
+
+<p><br />
+    <br />
+    The dataSource inMemDataSource must be a valid Spring datasource.<br />
+    <br />
+    Step 3:<br />
+    Add two Spring &quot;voters&quot; (please consult the full documentation for more details), namely, a role and authorization voters:<br />
+    <br />
+    &nbsp;</p>
+
+<pre class="brush: xhtml;" title="code">
+&lt;!-- Votes if any ConfigAttribute.getAttribute() starts with a prefix indicating that it is a role. The --&gt;
+&lt;!-- default prefix string is ROLE_, but this may be overridden to any value. It may also be set to --&gt;
+&lt;!-- empty, which means that essentially any attribute will be voted on. As described further --&gt;
+&lt;!-- below, the effect of an empty prefix may not be quite desirable. --&gt;
+&lt;!-- Abstains from voting if no configuration attribute commences with the role prefix. Votes to --&gt;
+&lt;!-- grant access if there is an exact matching --&gt;
+&lt;!-- org.springframework.security.core.GrantedAuthority to a ConfigAttribute starting with the role --&gt;
+&lt;!-- prefix. Votes to deny access if there is no exact matching GrantedAuthority to a --&gt;
+&lt;!-- ConfigAttribute starting with the role prefix. --&gt;
+&lt;!-- An empty role prefix means that the voter will vote for every ConfigAttribute. When there are --&gt;
+&lt;!-- different categories of ConfigAttributes used, this will not be optimal since the voter will be --&gt;
+&lt;!-- voting for attributes which do not represent roles. However, this option may be of some use --&gt;
+&lt;!-- when using pre-existing role names without a prefix, and no ability exists to prefix them with --&gt;
+&lt;!-- a role prefix on reading them in, such as provided for example in --&gt;
+&lt;!-- org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl. --&gt;
+&lt;!-- All comparisons and prefixes are case sensitive. --&gt; 
+&lt;bean id=&quot;roleVoter&quot; class=&quot;org.springframework.security.access.vote.RoleVoter&quot;
+           p:rolePrefix=&quot;&quot;    /&gt;  
+
+&lt;!-- Votes if a ConfigAttribute.getAttribute() of IS_AUTHENTICATED_FULLY or --&gt;
+&lt;!-- IS_AUTHENTICATED_REMEMBERED or IS_AUTHENTICATED_ANONYMOUSLY is present. This list --&gt;
+&lt;!-- is in order of most strict checking to least strict checking. --&gt;
+&lt;!-- The current Authentication will be inspected to determine if the principal has a particular --&gt;
+&lt;!-- level of authentication. The &quot;FULLY&quot; authenticated option means the user is authenticated --&gt;
+&lt;!-- fully (i.e. --&gt;
+&lt;!-- org.springframework.security.authentication.AuthenticationTrustResolver.isAnonymous--&gt;
+&lt;!-- (Authentication) is false and --&gt;
+&lt;!-- org.springframework.security.authentication.AuthenticationTrustResolver.isRememberMe--&gt;
+&lt;!-- (Authentication) is false). The &quot;REMEMBERED&quot; will grant access if the principal was either --&gt;
+&lt;!-- authenticated via remember-me OR is fully authenticated. The &quot;ANONYMOUSLY&quot; will grant --&gt;
+&lt;!-- access if the principal was authenticated via remember-me, OR anonymously, OR via full --&gt;
+&lt;!-- authentication. --&gt;
+&lt;!-- All comparisons and prefixes are case sensitive. --&gt;
+    &lt;bean id=&quot;authVoter&quot; class=&quot;org.springframework.security.access.vote.AuthenticatedVoter&quot;&gt;               
+    &lt;/bean&gt;
+</pre>
+
+<p><br />
+    Step 4:<br />
+    You must now configure a Spring AccessDecisionManager which utilizes the two voters above, in order to determine if a user was granted the correct authority to access a resource.</p>
+
+<p>&nbsp;</p>
+
+<pre class="brush: xhtml;" title="code">
+&lt;!--    Simple concrete implementation of --&gt;
+&lt;!--     org.springframework.security.access.AccessDecisionManager that uses a consensus-based --&gt;
+&lt;!--     approach. --&gt;
+&lt;!--    &quot;Consensus&quot; here means majority-rule (ignoring abstains) rather than unanimous agreement --&gt;
+&lt;!--     (ignoring abstains). If you require unanimity, please see UnanimousBased.--&gt;
+   &lt;bean id=&quot;accessDecisionManager&quot; class=&quot;org.springframework.security.access.vote.ConsensusBased&quot;&gt;
+        &lt;property name=&quot;allowIfAllAbstainDecisions&quot; value=&quot;false&quot; /&gt;
+        &lt;property name=&quot;decisionVoters&quot;&gt;
+            &lt;list&gt;
+                &lt;ref bean=&quot;roleVoter&quot;  /&gt;
+                &lt;ref bean=&quot;authVoter&quot; /&gt;
+            &lt;/list&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+ 
+</pre>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp;<br />
+    Step 5:<br />
+    This is the standard Spring security configuration,&nbsp; I commented the places in which setup is needed specifically for the remember-me feature.</p>
+
+<pre class="brush: xhtml;" title="code">
+&lt;!-- HTTP security configuration --&gt;
+    &lt;security:http auto-config=&quot;false&quot; use-expressions=&quot;false&quot; access-decision-manager-ref=&quot;accessDecisionManager&quot;&gt;
+   
+&lt;!--        token-repository-ref--&gt;
+&lt;!--        Configures a PersistentTokenBasedRememberMeServices but allows the use of a custom PersistentTokenRepository bean. --&gt;
+&lt;!--        token-validity-seconds--&gt;
+&lt;!--        Maps to the tokenValiditySeconds property of AbstractRememberMeServices. --&gt;
+&lt;!--        Specifies the period in seconds for which the remember-me cookie should be valid. By --&gt;
+&lt;!--        default it will be valid for 14 days. --&gt;
+        &lt;security:remember-me key=&quot;_spring_security_remember_me&quot; token-validity-seconds=&quot;864000&quot; token-repository-ref=&quot;tokenRepository&quot; /&gt;
+
+        &lt;!--  login page related urls - allow anonymous access --&gt;
+        &lt;security:intercept-url pattern=&quot;/security/login.html&quot; access=&quot;IS_AUTHENTICATED_ANONYMOUSLY&quot; /&gt;                   
+        &lt;security:intercept-url pattern=&quot;/admin-stuff/**&quot; access=&quot;ROLE_ADMINISTRATOR&quot; /&gt;               
+        &lt;security:intercept-url pattern=&quot;/**&quot; access=&quot;IS_AUTHENTICATED_REMEMBERED, IS_AUTHENTICATED_FULLY&quot; /&gt;
+                                               
+        &lt;!-- login &amp; logout redirection configuration --&gt;
+        &lt;security:form-login login-page=&quot;/security/login.html&quot; default-target-url=&quot;/Main.html&quot;/&gt;       
+        &lt;security:anonymous /&gt;   
+                                                          
+        &lt;security:logout logout-success-url=&quot;/security/login.html&quot; /&gt;                                   
+    &lt;/security:http&gt;
+
+</pre>
+
+<p><br />
+    Note the reference to the accessDecisionManager defined above, it is mandatory to add it to get this feature working.</p>
+
+<p>&nbsp;</p>
+
+<pre class="brush: xhtml;" title="code">
+    &lt;security:http auto-config=&quot;false&quot; use-expressions=&quot;false&quot; access-decision-manager-ref=&quot;accessDecisionManager&quot;&gt;</pre>
+<p><br />
+    <br />
+    LDAP configuration:<br />
+    <br />
+    (it is mandatory to add&nbsp; to get this feature working)</p>
+<p>&nbsp;</p>
+<pre class="brush: xhtml;" title="code">
+&lt;security:ldap-user-service id=&quot;ldapUserService&quot;
+     group-search-base=&quot;${spring.ldap.groupSearchBase}&quot;
+     group-role-attribute=&quot;${spring.ldap.groupRoleAttribute}&quot;
+     group-search-filter=&quot;${spring.ldap.groupSearchFilter}&quot;
+     user-search-base=&quot;${spring.ldap.userSearchBase}&quot;
+     user-search-filter=&quot;${spring.ldap.userSearchFilter}&quot;/&gt;
+    
+        
+    &lt;security:authentication-manager&gt;
+        &lt;security:ldap-authentication-provider
+            server-ref=&quot;contextSource&quot;
+            group-search-base=&quot;${spring.ldap.groupSearchBase}&quot;
+            user-search-base=&quot;${spring.ldap.userSearchBase}&quot;
+            user-search-filter=&quot;${spring.ldap.userSearchFilter}&quot;
+            group-role-attribute=&quot;${spring.ldap.groupRoleAttribute}&quot;
+            group-search-filter=&quot;${spring.ldap.groupSearchFilter}&quot;
+            role-prefix=&quot;${spring.ldap.rolePrefix}&quot; /&gt;
+    &lt;/security:authentication-manager&gt;
+
+    &lt;security:ldap-server id=&quot;contextSource&quot;
+                        url=&quot;${spring.ldap.url}&quot;
+                        port=&quot;389&quot;
+                        manager-dn=&quot;${spring.ldap.managerDn}&quot;
+                        manager-password=&quot;${spring.ldap.managerPassword}&quot; /&gt;
+
+    &lt;!-- LDAP Template used to execute core LDAP functionality --&gt;
+    &lt;bean id=&quot;ldapTemplate&quot; class=&quot;org.springframework.ldap.core.LdapTemplate&quot;&gt;
+        &lt;constructor-arg ref=&quot;contextSource&quot; /&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- LDAP Security Service --&gt;
+    &lt;bean id=&quot;securityService&quot;
+        class=&quot;com.xxx.LdapUserManagementServiceImpl&quot;&gt;
+        &lt;constructor-arg ref=&quot;ldapTemplate&quot; /&gt;
+    &lt;/bean&gt;
+
+</pre>
+
+<p><br />
+    Step 6:<br />
+    From your HTML/Flex application you must send the key to instruct Spring to use the remember-me feature:<br />
+    <br />
+    &nbsp;</p>
+
+<pre class="brush: xhtml;" title="code">
+      &lt;p&gt;&lt;input type=&#39;checkbox&#39; name=&#39;_spring_security_remember_me&#39;/&gt; Remember me on this computer.&lt;/p&gt;</pre>
+<p><br />
+    <br />
+    Step 7:<br />
+    Once you login and check the check box,&nbsp; a new row will be inserted for you automatically by spring into the persistent_logins table:<br />
+    <br />
+    &nbsp;</p>
+<pre class="brush: sql;" title="code">
+mysql&gt; describe persistent_logins;
++-----------+--------------+------+-----+-------------------+-----------------------------+
+| Field     | Type         | Null | Key | Default           | Extra                       |
++-----------+--------------+------+-----+-------------------+-----------------------------+
+| series    | varchar(255) | NO   | PRI | NULL              |                             |
+| last_used | timestamp    | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| token     | varchar(255) | NO   |     | NULL              |                             |
+| username  | varchar(255) | YES  |     | NULL              |                             |
++-----------+--------------+------+-----+-------------------+-----------------------------+
+4 rows in set (0.01 sec)
+</pre>
+
+<p>&nbsp;</p>
+
+<p>And after login:<br />
+    &nbsp;</p>
+
+<pre class="brush: sql;" title="code">
+mysql&gt; select * from  persistent_logins;
++--------------------------+---------------------+--------------------------+----------+
+| series                   | last_used           | token                    | username |
++--------------------------+---------------------+--------------------------+----------+
+| uLbBshezy3jsMBvZxgMmuw== | 2011-03-17 09:06:54 | bGZfz2+9by+ks+ZaDH3hhQ== | shlomo   |
++--------------------------+---------------------+--------------------------+----------+
+1 row in set (0.00 sec)
+</pre>
+
+<p><br />
+    <br />
+    If you now close the browser and re-visit the secured application, there will be no need to enter your credentials.<br />
+    <br />
+    Questions welcomed,<br />
+    <br />
+    <br />
+    &nbsp;<br />
+    &nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/java/spring-security-3-remember-me-ldap-authentication" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

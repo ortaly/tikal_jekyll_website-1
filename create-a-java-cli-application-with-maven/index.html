@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Create a Java CLI application with Maven</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Create a Java CLI application with Maven</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Chaim</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Turkel</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">Sr. Java Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/java/chaimturkel'>chaim.turkel</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Java">Java</a>
+              </li>
+            
+              <li>
+                <a href="/tags/maven">maven</a>
+              </li>
+            
+              <li>
+                <a href="/tags/DevOps">DevOps</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2013-10-07 00:00:00 +0300">
+        <div class="day">07</div>
+        Oct. 2013
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/create-a-java-cli-application-with-maven' st_title='Create a Java CLI application with Maven' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/create-a-java-cli-application-with-maven' st_title='Create a Java CLI application with Maven' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/create-a-java-cli-application-with-maven' st_title='Create a Java CLI application with Maven' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/create-a-java-cli-application-with-maven' st_title='Create a Java CLI application with Maven' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/create-a-java-cli-application-with-maven' st_title='Create a Java CLI application with Maven' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <h1>Create a Java CLI application with Maven<o:p></o:p></h1>
+
+<div class="MsoNormal">Creating a CLI application is part of our daily routine. In java it is strait forward; all you need to do is to add a class with the main function:<o:p></o:p></div>
+
+<div class="MsoNormal">public static void main(String[] args) {<o:p></o:p></div>
+
+<div class="MsoNormal">}<o:p></o:p></div>
+
+<div class="MsoNormal">This is nice for debugging from eclipse, but if you need to release this jar with the cli working, you will face the following issues:<o:p></o:p></div>
+
+<div class="MsoListParagraphCxSpFirst" style="mso-list: l0 level1 lfo1; text-indent: -.25in;"><!--[if !supportLists]-->1.<span style="font-size: 7pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]-->You need to add the main class to you manifest file and compile it in the jar.<o:p></o:p></div>
+
+<div class="MsoListParagraphCxSpLast" style="mso-list: l0 level1 lfo1; text-indent: -.25in;"><!--[if !supportLists]-->2.<span style="font-size: 7pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><!--[endif]-->You need to create a folder with all the jar&rsquo;s dependencies needed to run this cli.<o:p></o:p></div>
+
+<h2>Main Class<o:p></o:p></h2>
+
+<h3>maven-jar-plugin<o:p></o:p></h3>
+
+<div class="MsoNormal">The first issue can be solved by using the maven-jar-plugin:<span style="font-family: Consolas; font-size: 10pt; line-height: 115%;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">groupId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">org.apache.maven.plugins</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">groupId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">maven-jar-plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">archive</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">manifest</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">addClasspath</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">true</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">addClasspath</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">mainClass</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">com.package.Main</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">mainClass</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">manifest</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">archive</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">finalName</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">jarname-cli</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">finalName</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;">&nbsp;</div>
+
+<div class="MsoNormal">This plugin will create a jar file by the name of jarname-cli.jar, will a manifest file with the following entry:<o:p></o:p></div>
+
+<div class="MsoNormal">Main-Class: com.package.Main<o:p></o:p></div>
+
+<div class="MsoNormal">This will allow us to run from the command line:<o:p></o:p></div>
+
+<div class="MsoNormal">java -jar jarname-cli %1 %2.<o:p></o:p></div>
+
+<h2>Jar Dependencies<o:p></o:p></h2>
+
+<div class="MsoNormal">Though if your jar has dependencies to other jars you will receive the following error when running the command line:<o:p></o:p></div>
+
+<div class="MsoNormal">Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError:<o:p></o:p></div>
+
+<div class="MsoNormal">This is because we still need to package all the dependency jars into the same folder.<o:p></o:p></div>
+
+<div class="MsoNormal">To solve this you need two more plugins.<o:p></o:p></div>
+
+<h3>maven-dependency-plugin (<a href="http://maven.apache.org/plugins/maven-dependency-plugin/">http://maven.apache.org/plugins/maven-dependency-plugin/</a>)<o:p></o:p></h3>
+
+<div class="MsoNormal">The first plugin will calculate all the dependencies and copy them to a directory (cli):<o:p></o:p></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">maven-dependency-plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">install</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">copy-dependencies</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">outputDirectory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">${project.build.directory}/../cli/</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">outputDirectory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal">This plugin will copy all dependencies even though you don&rsquo;t need all of them (it will include testing and jars not necessarily in use). You can start to manage you dependencies with the exclude, but this way you will constantly need to check that new jars are not added. The other option is to tell the plugin only the jars you want added:<o:p></o:p></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">includeScope</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">runtime</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">includeScope</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">includeArtifactIds</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">commons-cli,spring-core,commons-logging,freemarker</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">includeArtifactIds</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">outputDirectory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">${project.build.directory}/../cli/</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">outputDirectory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal">This way any new dependencies will not be copied to the directory.<o:p></o:p></div>
+
+<div class="MsoNormal">Of course if there are dependencies that you need for the execution of your cli, you will need to add them. You can use either the includeArtifactIds, or <a href="" name="includeGroupIds">includeGroupIds</a> whichever is easier.<o:p></o:p></div>
+
+<div class="MsoNormal">This plugin is nice since it will get all the dependencies, but what it does not do is copy current jar to your cli directory. For this you need the ant plugin to copy the current jar<o:p></o:p></div>
+
+<h3>maven-antrun-plugin (<a href="http://maven.apache.org/plugins/maven-antrun-plugin/">http://maven.apache.org/plugins/maven-antrun-plugin/</a>)<o:p></o:p></h3>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">groupId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">org.apache.maven.plugins</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">groupId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">maven-antrun-plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">id</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">Copy Main Jar To Cli Directory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">id</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">install</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">tasks</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">copy</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">todir</span>=<i><span style="color: #2a00ff;">&quot;${project.build.directory}/../cli/&quot;</span></i><span style="color: teal;">&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">fileset</span><span style="font-family: Consolas; font-size: 10.0pt;"> <span style="color: #7f007f;">dir</span>=<i><span style="color: #2a00ff;">&quot;${project.build.directory}/&quot;</span></i> <span style="color: #7f007f;">includes</span>=<i><span style="color: #2a00ff;">&quot;*.jar&quot;</span></i><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10.0pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: #7f007f;">excludes</span>=<i><span style="color: #2a00ff;">&quot;*sources*.jar,*javadoc*.jar&quot;</span></i> <span style="color: teal;">/&gt;</span><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">copy</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">tasks</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">run</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal">The action is very simple, it is a copy action from ant, that will copy the jar from the target directory.<o:p></o:p></div>
+
+<h3>maven-clean-plugin (<a href="http://maven.apache.org/plugins/maven-clean-plugin/">http://maven.apache.org/plugins/maven-clean-plugin/</a>)<o:p></o:p></h3>
+
+<div class="MsoNormal">Since your maven project will create the dir and all the jars needed, you need to add the clean plugin to remove the dir when running clean in maven.<o:p></o:p></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">maven-clean-plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">filesets</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">fileset</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">directory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">${project.build.directory}/../cli</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">directory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">fileset</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">filesets</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal">This solution is good for most cases. But sometimes you need more flexibility. Occasionally you might want not to have a directory with all jar&rsquo;s but you might want to pack them all in one jar (thought licensing must be considered). Also sometimes you might want to add more files or resources to the jar, or maybe create a zip file instead of the jar file. For this you have the assembly plugin. The dependency plugin is actually a subset of the assembly plugin, so you can do all the above and more. <o:p></o:p></div>
+
+<h3>maven-assembly-plugin (<a href="http://maven.apache.org/plugins/maven-assembly-plugin/">http://maven.apache.org/plugins/maven-assembly-plugin/</a>)<o:p></o:p></h3>
+
+<div class="MsoNormal">We will not go into the whole plugin since you can do a lot with it (for a full set of options see <a href="http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html">http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html</a>).<o:p></o:p></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">maven-assembly-plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">artifactId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">finalName</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">wsf_${version}</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">finalName</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">appendAssemblyId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">false</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">appendAssemblyId</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">descriptors</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">descriptor</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">src/main/resources/assembly.xml</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">descriptor</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">descriptors</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">outputDirectory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">${project.build.directory}/../assembly/</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">outputDirectory</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">configuration</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">id</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">make-assembly</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">id</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #3f5fbf; font-family: Consolas; font-size: 10.0pt;">&lt;!-- this is used for inheritance merges --&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">package</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">phase</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: #3f5fbf; font-family: Consolas; font-size: 10.0pt;">&lt;!-- bind to the packaging phase --&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10pt;">single</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goal</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">goals</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">execution</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">executions</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="font-family: Consolas; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&lt;/</span><span style="color: #3f7f7f; font-family: Consolas; font-size: 10.0pt;">plugin</span><span style="color: teal; font-family: Consolas; font-size: 10.0pt;">&gt;</span><span style="font-family: Consolas; font-size: 10.0pt;"><o:p></o:p></span></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;">As you can see we can do both creating a manifest file with the mainclass, and adding other files. You can enable enhanced features by assigning an assembly.xml and do for example:<o:p></o:p></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;">&nbsp;</div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&lt;assembly&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;id&gt;bundle&lt;/id&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;formats&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;format&gt;jar&lt;/format&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/formats&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;includeBaseDirectory&gt;false&lt;/includeBaseDirectory&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dependencySets&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dependencySet&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;outputDirectory&gt;/&lt;/outputDirectory&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;useProjectArtifact&gt;true&lt;/useProjectArtifact&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;unpack&gt;true&lt;/unpack&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;scope&gt;runtime&lt;/scope&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;includes&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;include&gt;*:commons-cli:*&lt;/include&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;include&gt;*:spring-core:*&lt;/include&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;include&gt;*:commons-logging:*&lt;/include&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;include&gt;*:freemarker:*&lt;/include&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/includes&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dependencySet&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dependencySets&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal" style="background-color: white; background-position: initial initial; background-repeat: initial initial; margin-bottom: 0.0001pt;"><span style="font-family: 'Courier New'; font-size: 10pt;">&lt;/assembly&gt;<o:p></o:p></span></div>
+
+<div class="MsoNormal">&nbsp;</div>
+
+<p>&nbsp;</p>
+
+<div class="MsoNormal">Here you can notice that we used the option &lt;unpack&gt;true&lt;/unpack&gt;. This will unpack all jar&rsquo;s and then repack them all in one jar. This way you can bundle you cli into one jar only.<o:p></o:p></div>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/create-a-java-cli-application-with-maven" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

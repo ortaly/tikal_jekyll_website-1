@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Chop Hibernate Lazy Associations</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Chop Hibernate Lazy Associations</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img typeof="foaf:Image" src="/assets/pictures/picture-51-1361228853-03465e84095f1b341f59ad57fcb5e142.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Yanai</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Franchi</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">Java Architect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/java/yanai'>yanai</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Hibernate-JPA-Lazy-Associations">Hibernate JPA Lazy Associations</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2012-03-19 00:00:00 +0200">
+        <div class="day">19</div>
+        Mar. 2012
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/chop-hibernate-lazy-associations' st_title='Chop Hibernate Lazy Associations' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/chop-hibernate-lazy-associations' st_title='Chop Hibernate Lazy Associations' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/chop-hibernate-lazy-associations' st_title='Chop Hibernate Lazy Associations' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/chop-hibernate-lazy-associations' st_title='Chop Hibernate Lazy Associations' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/chop-hibernate-lazy-associations' st_title='Chop Hibernate Lazy Associations' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>&nbsp;</p>
+
+<p>&lt;!--[if gte mso 9]&gt;<xml>
+<o:DocumentProperties>
+<o:Revision>0<a href="/o:revision">/o:revision</a>
+<o:TotalTime>0<a href="/o:totaltime">/o:totaltime</a>
+<o:Pages>1<a href="/o:pages">/o:pages</a>
+<o:Words>639<a href="/o:words">/o:words</a>
+<o:Characters>3645<a href="/o:characters">/o:characters</a>
+<o:Company>Tikal<a href="/o:company">/o:company</a>
+<o:Lines>30<a href="/o:lines">/o:lines</a>
+<o:Paragraphs>8<a href="/o:paragraphs">/o:paragraphs</a>
+<o:CharactersWithSpaces>4276<a href="/o:characterswithspaces">/o:characterswithspaces</a>
+<o:Version>14.0<a href="/o:version">/o:version</a>
+<a href="/o:documentproperties">/o:documentproperties</a>
+<o:OfficeDocumentSettings>
+<o:AllowPNG />
+<a href="/o:allowpng">/o:allowpng</a><a href="/o:officedocumentsettings">/o:officedocumentsettings</a>
+</xml>&lt;![endif]--&gt;  &lt;!--[if gte mso 9]&gt;<xml>
+<w:WordDocument>
+<w:View>Normal<a href="/w:view">/w:view</a>
+<w:Zoom>0<a href="/w:zoom">/w:zoom</a>
+<w:TrackMoves />
+<w:TrackFormatting />
+<w:PunctuationKerning />
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false<a href="/w:saveifxmlinvalid">/w:saveifxmlinvalid</a>
+<w:IgnoreMixedContent>false<a href="/w:ignoremixedcontent">/w:ignoremixedcontent</a>
+<w:AlwaysShowPlaceholderText>false<a href="/w:alwaysshowplaceholdertext">/w:alwaysshowplaceholdertext</a>
+<w:DoNotPromoteQF />
+<w:LidThemeOther>EN-US<a href="/w:lidthemeother">/w:lidthemeother</a>
+<w:LidThemeAsian>JA<a href="/w:lidthemeasian">/w:lidthemeasian</a>
+<w:LidThemeComplexScript>X-NONE<a href="/w:lidthemecomplexscript">/w:lidthemecomplexscript</a>
+<w:Compatibility>
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:SplitPgBreakAndParaMark />
+<w:EnableOpenTypeKerning />
+<w:DontFlipMirrorIndents />
+<w:OverrideTableStyleHps />
+<w:UseFELayout />
+<a href="/w:usefelayout">/w:usefelayout</a><a href="/w:overridetablestylehps">/w:overridetablestylehps</a><a href="/w:dontflipmirrorindents">/w:dontflipmirrorindents</a><a href="/w:enableopentypekerning">/w:enableopentypekerning</a><a href="/w:splitpgbreakandparamark">/w:splitpgbreakandparamark</a><a href="/w:dontgrowautofit">/w:dontgrowautofit</a><a href="/w:useasianbreakrules">/w:useasianbreakrules</a><a href="/w:wraptextwithpunct">/w:wraptextwithpunct</a><a href="/w:snaptogridincell">/w:snaptogridincell</a><a href="/w:breakwrappedtables">/w:breakwrappedtables</a><a href="/w:compatibility">/w:compatibility</a>
+<m:mathPr>
+<m:mathFont m:val="Cambria Math" />
+<m:brkBin m:val="before" />
+<m:brkBinSub m:val="&#45;-" />
+<m:smallFrac m:val="off" />
+<m:dispDef />
+<m:lMargin m:val="0" />
+<m:rMargin m:val="0" />
+<m:defJc m:val="centerGroup" />
+<m:wrapIndent m:val="1440" />
+<m:intLim m:val="subSup" />
+<m:naryLim m:val="undOvr" />
+<a href="/m:narylim">/m:narylim</a><a href="/m:intlim">/m:intlim</a><a href="/m:wrapindent">/m:wrapindent</a><a href="/m:defjc">/m:defjc</a><a href="/m:rmargin">/m:rmargin</a><a href="/m:lmargin">/m:lmargin</a><a href="/m:dispdef">/m:dispdef</a><a href="/m:smallfrac">/m:smallfrac</a><a href="/m:brkbinsub">/m:brkbinsub</a><a href="/m:brkbin">/m:brkbin</a><a href="/m:mathfont">/m:mathfont</a><a href="/m:mathpr">/m:mathpr</a><a href="/w:donotpromoteqf">/w:donotpromoteqf</a><a href="/w:validateagainstschemas">/w:validateagainstschemas</a><a href="/w:punctuationkerning">/w:punctuationkerning</a><a href="/w:trackformatting">/w:trackformatting</a><a href="/w:trackmoves">/w:trackmoves</a><a href="/w:worddocument">/w:worddocument</a>
+</xml>&lt;![endif]--&gt;&lt;!--[if gte mso 9]&gt;<xml>
+<w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+LatentStyleCount="276">
+<w:LsdException Locked="false" Priority="0" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Normal" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="heading 1" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" />
+<w:LsdException Locked="false" Priority="39" Name="toc 1" />
+<w:LsdException Locked="false" Priority="39" Name="toc 2" />
+<w:LsdException Locked="false" Priority="39" Name="toc 3" />
+<w:LsdException Locked="false" Priority="39" Name="toc 4" />
+<w:LsdException Locked="false" Priority="39" Name="toc 5" />
+<w:LsdException Locked="false" Priority="39" Name="toc 6" />
+<w:LsdException Locked="false" Priority="39" Name="toc 7" />
+<w:LsdException Locked="false" Priority="39" Name="toc 8" />
+<w:LsdException Locked="false" Priority="39" Name="toc 9" />
+<w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" />
+<w:LsdException Locked="false" Priority="10" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Title" />
+<w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" />
+<w:LsdException Locked="false" Priority="11" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtitle" />
+<w:LsdException Locked="false" Priority="22" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Strong" />
+<w:LsdException Locked="false" Priority="20" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Emphasis" />
+<w:LsdException Locked="false" Priority="59" SemiHidden="false"
+UnhideWhenUsed="false" Name="Table Grid" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" />
+<w:LsdException Locked="false" Priority="1" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="No Spacing" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 1" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 1" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 1" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 1" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" />
+<w:LsdException Locked="false" Priority="34" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" />
+<w:LsdException Locked="false" Priority="29" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Quote" />
+<w:LsdException Locked="false" Priority="30" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 1" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 1" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 1" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 1" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 1" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 2" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 2" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 2" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 2" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 2" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 2" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 2" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 2" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 3" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 3" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 3" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 3" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 3" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 3" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 3" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 3" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 3" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 4" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 4" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 4" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 4" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 4" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 4" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 4" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 4" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 4" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 5" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 5" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 5" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 5" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 5" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 5" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 5" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 5" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 5" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 6" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 6" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 6" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 6" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 6" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 6" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 6" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 6" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 6" />
+<w:LsdException Locked="false" Priority="19" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" />
+<w:LsdException Locked="false" Priority="21" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" />
+<w:LsdException Locked="false" Priority="31" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" />
+<w:LsdException Locked="false" Priority="32" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" />
+<w:LsdException Locked="false" Priority="33" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Book Title" />
+<w:LsdException Locked="false" Priority="37" Name="Bibliography" />
+<w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" />
+<a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:latentstyles">/w:latentstyles</a>
+</xml>&lt;![endif]--&gt;  &lt;!--[if gte mso 10]&gt;
+<style>
+/* Style Definitions <em>/
+table.MsoNormalTable
+{mso-style-name:&quot;Table Normal&quot;;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-priority:99;
+mso-style-parent:&quot;&quot;;
+mso-padding-alt:0in 5.4pt 0in 5.4pt;
+mso-para-margin:0in;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:Cambria;
+mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;
+mso-hansi-font-family:Cambria;
+mso-hansi-theme-font:minor-latin;}
+</style>
+&lt;![endif]--&gt;    &lt;!--StartFragment--&gt;
+<p class="MsoNormal"><o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">&lt;!--[if gte mso 9]&gt;<xml>
+ <o:DocumentProperties>
+  <o:Revision>0<a href="/o:revision">/o:revision</a>
+  <o:TotalTime>0<a href="/o:totaltime">/o:totaltime</a>
+  <o:Pages>1<a href="/o:pages">/o:pages</a>
+  <o:Words>639<a href="/o:words">/o:words</a>
+  <o:Characters>3645<a href="/o:characters">/o:characters</a>
+  <o:Company>Tikal<a href="/o:company">/o:company</a>
+  <o:Lines>30<a href="/o:lines">/o:lines</a>
+  <o:Paragraphs>8<a href="/o:paragraphs">/o:paragraphs</a>
+  <o:CharactersWithSpaces>4276<a href="/o:characterswithspaces">/o:characterswithspaces</a>
+  <o:Version>14.0<a href="/o:version">/o:version</a>
+ <a href="/o:documentproperties">/o:documentproperties</a>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ <a href="/o:allowpng/">/o:allowpng/</a><a href="/o:officedocumentsettings">/o:officedocumentsettings</a>
+</xml>&lt;![endif]--&gt;  &lt;!--[if gte mso 9]&gt;<xml>
+ <w:WordDocument>
+  <w:View>Normal<a href="/w:view">/w:view</a>
+  <w:Zoom>0<a href="/w:zoom">/w:zoom</a>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false<a href="/w:saveifxmlinvalid">/w:saveifxmlinvalid</a>
+  <w:IgnoreMixedContent>false<a href="/w:ignoremixedcontent">/w:ignoremixedcontent</a>
+  <w:AlwaysShowPlaceholderText>false<a href="/w:alwaysshowplaceholdertext">/w:alwaysshowplaceholdertext</a>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US<a href="/w:lidthemeother">/w:lidthemeother</a>
+  <w:LidThemeAsian>JA<a href="/w:lidthemeasian">/w:lidthemeasian</a>
+  <w:LidThemeComplexScript>X-NONE<a href="/w:lidthemecomplexscript">/w:lidthemecomplexscript</a>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  <a href="/w:usefelayout/">/w:usefelayout/</a><a href="/w:overridetablestylehps/">/w:overridetablestylehps/</a><a href="/w:dontflipmirrorindents/">/w:dontflipmirrorindents/</a><a href="/w:enableopentypekerning/">/w:enableopentypekerning/</a><a href="/w:splitpgbreakandparamark/">/w:splitpgbreakandparamark/</a><a href="/w:dontgrowautofit/">/w:dontgrowautofit/</a><a href="/w:useasianbreakrules/">/w:useasianbreakrules/</a><a href="/w:wraptextwithpunct/">/w:wraptextwithpunct/</a><a href="/w:snaptogridincell/">/w:snaptogridincell/</a><a href="/w:breakwrappedtables/">/w:breakwrappedtables/</a><a href="/w:compatibility">/w:compatibility</a>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  <a href="/m:narylim">/m:narylim</a><a href="/m:intlim">/m:intlim</a><a href="/m:wrapindent">/m:wrapindent</a><a href="/m:defjc">/m:defjc</a><a href="/m:rmargin">/m:rmargin</a><a href="/m:lmargin">/m:lmargin</a><a href="/m:dispdef/">/m:dispdef/</a><a href="/m:smallfrac">/m:smallfrac</a><a href="/m:brkbinsub">/m:brkbinsub</a><a href="/m:brkbin">/m:brkbin</a><a href="/m:mathfont">/m:mathfont</a><a href="/m:mathpr">/m:mathpr</a><a href="/w:donotpromoteqf/">/w:donotpromoteqf/</a><a href="/w:validateagainstschemas/">/w:validateagainstschemas/</a><a href="/w:punctuationkerning/">/w:punctuationkerning/</a><a href="/w:trackformatting/">/w:trackformatting/</a><a href="/w:trackmoves/">/w:trackmoves/</a><a href="/w:worddocument">/w:worddocument</a>
+</xml>&lt;![endif]--&gt;&lt;!--[if gte mso 9]&gt;<xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="276">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ <a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:latentstyles">/w:latentstyles</a>
+</xml>&lt;![endif]--&gt;  &lt;!--[if gte mso 10]&gt;
+<style>
+ /</em> Style Definitions <em>/
+table.MsoNormalTable
+    {mso-style-name:&quot;Table Normal&quot;;
+    mso-tstyle-rowband-size:0;
+    mso-tstyle-colband-size:0;
+    mso-style-noshow:yes;
+    mso-style-priority:99;
+    mso-style-parent:&quot;&quot;;
+    mso-padding-alt:0in 5.4pt 0in 5.4pt;
+    mso-para-margin:0in;
+    mso-para-margin-bottom:.0001pt;
+    mso-pagination:widow-orphan;
+    font-size:12.0pt;
+    font-family:Cambria;
+    mso-ascii-font-family:Cambria;
+    mso-ascii-theme-font:minor-latin;
+    mso-hansi-font-family:Cambria;
+    mso-hansi-theme-font:minor-latin;}
+</style>
+&lt;![endif]--&gt;    &lt;!--StartFragment--&gt;</p>
+<p class="MsoNormal">&lt;!--[if gte mso 9]&gt;<xml>
+ <o:DocumentProperties>
+  <o:Revision>0<a href="/o:revision">/o:revision</a>
+  <o:TotalTime>0<a href="/o:totaltime">/o:totaltime</a>
+  <o:Pages>1<a href="/o:pages">/o:pages</a>
+  <o:Words>1042<a href="/o:words">/o:words</a>
+  <o:Characters>5941<a href="/o:characters">/o:characters</a>
+  <o:Company>Tikal<a href="/o:company">/o:company</a>
+  <o:Lines>49<a href="/o:lines">/o:lines</a>
+  <o:Paragraphs>13<a href="/o:paragraphs">/o:paragraphs</a>
+  <o:CharactersWithSpaces>6970<a href="/o:characterswithspaces">/o:characterswithspaces</a>
+  <o:Version>14.0<a href="/o:version">/o:version</a>
+ <a href="/o:documentproperties">/o:documentproperties</a>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ <a href="/o:allowpng/">/o:allowpng/</a><a href="/o:officedocumentsettings">/o:officedocumentsettings</a>
+</xml>&lt;![endif]--&gt;  &lt;!--[if gte mso 9]&gt;<xml>
+ <w:WordDocument>
+  <w:View>Normal<a href="/w:view">/w:view</a>
+  <w:Zoom>0<a href="/w:zoom">/w:zoom</a>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false<a href="/w:saveifxmlinvalid">/w:saveifxmlinvalid</a>
+  <w:IgnoreMixedContent>false<a href="/w:ignoremixedcontent">/w:ignoremixedcontent</a>
+  <w:AlwaysShowPlaceholderText>false<a href="/w:alwaysshowplaceholdertext">/w:alwaysshowplaceholdertext</a>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US<a href="/w:lidthemeother">/w:lidthemeother</a>
+  <w:LidThemeAsian>JA<a href="/w:lidthemeasian">/w:lidthemeasian</a>
+  <w:LidThemeComplexScript>X-NONE<a href="/w:lidthemecomplexscript">/w:lidthemecomplexscript</a>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  <a href="/w:usefelayout/">/w:usefelayout/</a><a href="/w:overridetablestylehps/">/w:overridetablestylehps/</a><a href="/w:dontflipmirrorindents/">/w:dontflipmirrorindents/</a><a href="/w:enableopentypekerning/">/w:enableopentypekerning/</a><a href="/w:splitpgbreakandparamark/">/w:splitpgbreakandparamark/</a><a href="/w:dontgrowautofit/">/w:dontgrowautofit/</a><a href="/w:useasianbreakrules/">/w:useasianbreakrules/</a><a href="/w:wraptextwithpunct/">/w:wraptextwithpunct/</a><a href="/w:snaptogridincell/">/w:snaptogridincell/</a><a href="/w:breakwrappedtables/">/w:breakwrappedtables/</a><a href="/w:compatibility">/w:compatibility</a>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  <a href="/m:narylim">/m:narylim</a><a href="/m:intlim">/m:intlim</a><a href="/m:wrapindent">/m:wrapindent</a><a href="/m:defjc">/m:defjc</a><a href="/m:rmargin">/m:rmargin</a><a href="/m:lmargin">/m:lmargin</a><a href="/m:dispdef/">/m:dispdef/</a><a href="/m:smallfrac">/m:smallfrac</a><a href="/m:brkbinsub">/m:brkbinsub</a><a href="/m:brkbin">/m:brkbin</a><a href="/m:mathfont">/m:mathfont</a><a href="/m:mathpr">/m:mathpr</a><a href="/w:donotpromoteqf/">/w:donotpromoteqf/</a><a href="/w:validateagainstschemas/">/w:validateagainstschemas/</a><a href="/w:punctuationkerning/">/w:punctuationkerning/</a><a href="/w:trackformatting/">/w:trackformatting/</a><a href="/w:trackmoves/">/w:trackmoves/</a><a href="/w:worddocument">/w:worddocument</a>
+</xml>&lt;![endif]--&gt;&lt;!--[if gte mso 9]&gt;<xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="276">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ <a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:lsdexception">/w:lsdexception</a><a href="/w:latentstyles">/w:latentstyles</a>
+</xml>&lt;![endif]--&gt;  &lt;!--[if gte mso 10]&gt;
+<style>
+ /</em> Style Definitions <em>/
+table.MsoNormalTable
+    {mso-style-name:&quot;Table Normal&quot;;
+    mso-tstyle-rowband-size:0;
+    mso-tstyle-colband-size:0;
+    mso-style-noshow:yes;
+    mso-style-priority:99;
+    mso-style-parent:&quot;&quot;;
+    mso-padding-alt:0in 5.4pt 0in 5.4pt;
+    mso-para-margin:0in;
+    mso-para-margin-bottom:.0001pt;
+    mso-pagination:widow-orphan;
+    font-size:12.0pt;
+    font-family:Cambria;
+    mso-ascii-font-family:Cambria;
+    mso-ascii-theme-font:minor-latin;
+    mso-hansi-font-family:Cambria;
+    mso-hansi-theme-font:minor-latin;}
+</style>
+&lt;![endif]--&gt;    &lt;!--StartFragment--&gt;</p>
+<p class="MsoNormal">In many Java application architectures, the domain model is been used by the presentation tier as the &ldquo;Model&rdquo; in MVC architecture. This can be done with various Java Web Framework: Spring-MVC, JSF, GWT etc. <o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">However, in many cases this is not the case, and you have different client-server architecture. The presentation tier might reside in a different process, for example: JavaScript, Flex, Silverlight and have their own process (or at least &ldquo;live&rdquo; within the browser process). In this case the client has its &ldquo;own&rdquo; model, which resides in a different address space at runtime than the server. The server may use one or more serialization libraries to marshal/unmashal its domain model to the client. For example, if you use <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> as your client-server architecture, you may use <a href="http://jackson.codehaus.org/">Jackson</a>. If you use <a href="http://en.wikipedia.org/wiki/SOAP">SOAP</a> as your communication protocol, you may use <a href="http://jaxb.java.net/">JAXB</a>. If you have FLEX client, you may use <a href="http://opensource.adobe.com/wiki/display/blazeds/BlazeDS">BlazeDS</a>. Sometimes, you may even use a few serialization mechanisms in the same application, since you may have more than client type.<o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">And here comes the problem&hellip;<o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">If you reuse your Hibernate entities as an output of your api to the client, you will probably probably face &ldquo;org.hibernate.LazyInitializationException&rdquo;. <o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">The reason for this, is the way Hibernate load entities from the DB: Whenever you use a persistent Collection or MAP in your domain model, Hibernate will use its own implementation, and by default will NOT load this map or collection, unless you explicitly load it, or request it in your query. More than that &ndash; &ldquo;ManyToOne&rdquo; and &ldquo;OneToOne&rdquo; association can also be declared as lazy. In this case Hiberante will use a Proxy, which will act as a &ldquo;lazy&rdquo; mediator, and will load the lazy association only upon request. <o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">In general, this Hibernate &ldquo;laziness&rdquo; approach is great &ndash; You can load lazy associations on the server while your code is in the transaction boundaries. As long as your presentation layer is in the same address space as the server, it doesn&rsquo;t make any problem to the client - The presentation layer will render only the loaded entities graph, which was fetched by Hibernate at the server tier.<o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">But what should we do in the second architecture type? What should we do when the client tier is on a different address space than our Java server &ndash; i.e. Silverlight, JavaScript, Flex or any external application? How can the serialization frameworks translate the results from the server to the client, when the output from the server contains lazy Hibernate associations?<o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">There are several approaches to this. One of them is simply decouple the domain model completely from the clients by using yet another layer &ndash; <a href="http://en.wikipedia.org/wiki/Data_transfer_object">DTO (Data Transfer Objects)</a>. This decouple is an advantage, since there is a separation between the client and server code. However, personally, I don&rsquo;t like them much, since they put a parallel hierarchy to the domain model. A change in one place usually makes a change in the second hierarchy, and there is a lot of code to translate from and back the domain model to the DTOs. Even with libraries like <a href="http://dozer.sourceforge.net/">Dozer</a>, you will still have to maintain a parallel hierarchy.<o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">Many times it&rsquo;s easier to use the same model all over. So I looked for a solution that &ldquo;chop&rdquo; all lazy associations, just before marshaling the entities to the client. Since I haven&rsquo;t found any library that does it, I decided to develop such a &ldquo;chopping library&rdquo;, and this is what we did in one of our customers. <o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">We called it &ldquo;Hibernate Lazy Chopper&rdquo; &ndash; and the idea is simple: Whenever the results comes out of the server to the client, just before the serialization framework apply its marshaling, the framework goes over all the object graph recursively, and &ldquo;chop&rdquo; lazy associations. This chopping works on both Hibernate lazy collections and Hibernate lazy proxies, and uses Spring AOP mechanism.<o:p><a href="/o:p">/o:p</a></p>
+<p class="MsoNormal"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p class="MsoNormal">Here are the technical details, for how you should use the lazy chopper:<o:p><a href="/o:p">/o:p</a></p>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpFirst">&lt;!--[if !supportLists]--&gt;<span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;font-family:&quot;Andale Mono&quot;;
+mso-fareast-font-family:&quot;Andale Mono&quot;;mso-bidi-font-family:&quot;Andale Mono&quot;">1.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp; </span></span>&lt;!--[endif]--&gt;Add Tikal Maven Repository with the following URL : <a href="http://network.tikalk.com/release/repository">http://network.tikalk.com/release/repository</a></p>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpFirst">&nbsp;</p>
+<pre class="brush: java;" title="code">
+&lt;repositories&gt;
+       &lt;repository&gt;
+              &lt;id&gt;tikalnet-release&lt;/id&gt;
+             &lt;name&gt;tikalnet-release&lt;/name&gt;
+             &lt;url&gt;
+               http://network.tikalk.com/release/repository<br>
+            &lt;/url&gt; 
+      &lt;/repository&gt;
+&lt;/repositories&gt;</pre>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpFirst"><font face="'Andale Mono'"><span style="font-size: 12px;"> </span></font><span style="font-size:9.0pt;mso-bidi-font-size:
+12.0pt;font-family:&quot;Andale Mono&quot;"><br />
+&lt;!--[endif]--&gt;<o:p><a href="/o:p">/o:p</a></span></p>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpLast">&lt;!--[if !supportLists]--&gt;<span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;font-family:&quot;Andale Mono&quot;;
+mso-fareast-font-family:&quot;Andale Mono&quot;;mso-bidi-font-family:&quot;Andale Mono&quot;">2.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp; </span></span>&lt;!--[endif]--&gt;Add it as a Maven dependency to your project:<br />
+<font face="'Andale Mono'"><span style="font-size: 12px;"><br />
+</span></font></p>
+<pre class="brush: java;" title="code">
+&lt;dependency&gt;
+           &lt;groupId&gt;com.tikal.lazychopper&lt;/groupId&gt;
+           &lt;artifactId&gt;lazy-chopper&lt;/artifactId&gt;
+           &lt;version&gt;1.1.8&lt;/version&gt;
+&lt;/dependency&gt;</pre>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpFirst">&lt;!--[if !supportLists]--&gt;<span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;font-family:&quot;Andale Mono&quot;;
+mso-fareast-font-family:&quot;Andale Mono&quot;;mso-bidi-font-family:&quot;Andale Mono&quot;">3.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp; </span></span>&lt;!--[endif]--&gt;Add lazy chopper beans to your application by including its application context file:<br />
+<font face="'Andale Mono'"><span style="font-size: 12px;"><br />
+</span></font></p>
+<pre class="brush: java;" title="code">
+&lt;import resource=&quot;classpath:lazychopper-ApplicationContext.xml&quot;/&gt;</pre>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpMiddle">&nbsp;</p>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpMiddle">&lt;!--[if !supportLists]--&gt;4.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;!--[endif]--&gt;Declare 2 properties on your application properties file (I assume you already included this file with PropertyPlaceHolderConfigurer)<o:p><a href="/o:p">/o:p</a></p>
+<p style="margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l0 level2 lfo1" class="MsoListParagraphCxSpMiddle">&lt;!--[if !supportLists]--&gt;a.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;!--[endif]--&gt;modelpackage -&nbsp; This is the package to scan lazy entities on your domain model. For example: <br />
+<span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;font-family:&quot;Andale Mono&quot;">modelpackage=com.mycompany.myproduct</span><o:p><a href="/o:p">/o:p</a></p>
+<p style="margin-left:1.0in;mso-add-space:
+auto;text-indent:-.25in;mso-list:l0 level2 lfo1" class="MsoListParagraphCxSpMiddle">&lt;!--[if !supportLists]--&gt;b.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;!--[endif]--&gt;abstractEntityClass &ndash; Your base class for your entities, that each entity &nbsp;that is scanned for lazy associations should be inherited from. For example:<br />
+<span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;font-family:&quot;Andale Mono&quot;">abstractEntityClass=com.mycompany.myproduct.common.model.entity.AbstractEntity</span><o:p><a href="/o:p">/o:p</a></p>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraphCxSpLast">&lt;!--[if !supportLists]--&gt;<span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;font-family:&quot;Andale Mono&quot;;
+mso-fareast-font-family:&quot;Andale Mono&quot;;mso-bidi-font-family:&quot;Andale Mono&quot;">5.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp; </span></span>&lt;!--[endif]--&gt;Declare a pointcut named &ldquo;<i>allServices&rdquo; in </i>your application context<i> </i>that represent your service layer. This Pointcut will be use to apply the lazy chopping &ndash; When a service in this layer finishes, the lazy chopper will apply the chopping the output graph. Here is an example<br />
+<font face="'Andale Mono'"><span style="font-size: 12px;"><br />
+</span></font></p>
+<pre class="brush: java;" title="code">
+&lt;aop:config&gt;
+  &lt;aop:pointcut id=&quot;allServices&quot; expression=&quot;execution(</em>  com.mycompany.myproduct.server.services..<em>Service.</em>(..))&quot; /&gt;
+&lt;/aop:config&gt;</pre>
+<p style="text-indent:-.25in;mso-list:l0 level1 lfo1" class="MsoListParagraph">&lt;!--[if !supportLists]--&gt;<span style="font-size:9.0pt;mso-bidi-font-size:12.0pt;font-family:&quot;Andale Mono&quot;;
+mso-fareast-font-family:&quot;Andale Mono&quot;;mso-bidi-font-family:&quot;Andale Mono&quot;">6.<span style="font-family: 'Times New Roman'; font-size: 7pt; ">&nbsp; </span></span>&lt;!--[endif]--&gt;Configure your transaction advice to be higher order number than 10 (the choppingAdvice&rsquo;s order value) &ndash; This makes sure, the chopping advice should take place <strong>after</strong> the transaction advice. Otherwise the chopped entities would have been be modified in the DB, since they would have been in the transaction context. So change the aop:config above and add the transaction advice as follow:<br />
+<font face="'Andale Mono'"><span style="font-size: 12px;"><br />
+</span></font></p>
+<pre class="brush: java;" title="code">
+&lt;aop:config&gt;
+  &lt;aop:pointcut id=&quot;allServices&quot; expression=&quot;execution(* com.mycompany.myproduct.server.services..<em>Service.</em>(..))&quot; /&gt;
+&lt;aop:advisor advice-ref=&quot;txAdvice&quot; pointcut-ref=&quot;allServices&quot; order=&quot;200&quot; /&gt;
+&lt;/aop:config&gt;</pre>
+<p style="margin-left:0in;mso-add-space:auto" class="MsoListParagraphCxSpFirst"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p style="margin-left:0in;mso-add-space:auto" class="MsoListParagraphCxSpMiddle">That&rsquo;s it!<o:p><a href="/o:p">/o:p</a></p>
+<p style="margin-left:0in;mso-add-space:auto" class="MsoListParagraphCxSpMiddle"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p style="margin-left:0in;mso-add-space:auto" class="MsoListParagraphCxSpMiddle">Now whenever, a client will call your server, you will NOT get the LazyIntinalizationException. You can use this library from against any client or external system to your server, and it does NOT matter which protocol or serialization mechanism is been used.<o:p><a href="/o:p">/o:p</a></p>
+<p style="margin-left:0in;mso-add-space:auto" class="MsoListParagraphCxSpMiddle"><o:p>&nbsp;<a href="/o:p">/o:p</a></p>
+<p style="margin-left:0in;mso-add-space:auto" class="MsoListParagraphCxSpLast">The sources for the project can be downloaded <a href="https://github.com/tikalk/Hibernate-Lazy-Chopper">from GitHub here</a>.<o:p><a href="/o:p">/o:p</a></p>
+&lt;!--EndFragment--&gt;
+<p>&nbsp;</p>
+&lt;!--EndFragment--&gt;
+<p>&nbsp;</p>
+<p class="MsoNormal"><o:p><a href="/o:p">/o:p</a></p>
+&lt;!--EndFragment--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]<strong>comment</strong>end<strong>--&gt;&lt;!--![endif]</strong>comment<strong>end</strong>--&gt;&lt;!--![endif]<strong>comment</strong>end_<em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;
+<p>&nbsp;</p>
+&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em><em>__comment</em><em>start</em><em>[if--&gt;&lt;!--![endif]</em><em>comment</em><em>end</em>_--&gt;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/chop-hibernate-lazy-associations" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

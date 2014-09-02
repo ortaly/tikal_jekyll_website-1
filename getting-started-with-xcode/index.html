@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Getting Started With Xcode</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Getting Started With Xcode</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/Incubator">Incubator</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Mobile">Mobile</a>
+              </li>
+            
+              <li>
+                <a href="/tags/iOS">iOS</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2011-04-05 00:00:00 +0300">
+        <div class="day">05</div>
+        Apr. 2011
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/getting-started-with-xcode' st_title='Getting Started With Xcode' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/getting-started-with-xcode' st_title='Getting Started With Xcode' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/getting-started-with-xcode' st_title='Getting Started With Xcode' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/getting-started-with-xcode' st_title='Getting Started With Xcode' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/getting-started-with-xcode' st_title='Getting Started With Xcode' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>I have been developing for iPhone for almost 2 years now.  I got started when my company asked if anyone had experience in iPhone development and of course I raised my hand and said “I do”!  Little did they know,  I had never opened xcode let alone compiled a single iPhone app.</p>
+
+<p>I spent the next two weeks watching Stanford University’s iPhone lectures during my train rides to work each day.  I quickly learned all about Objective C and Apple’s strict guidelines for deploying apps on the Apple App Store.  I would like to share some of my experiences with you here.</p>
+
+<p>If you are serious about iPhone development then the following are absolutely required:</p>
+
+<p>1) Mac – for developing</p>
+
+<p>2) iPhone – for debugging</p>
+
+<p>3) Apple Developer Account – to install apps on your iPhone</p>
+
+<p>4) xcode – iPhone SDK version</p>
+
+<p>5) a little patience <img src='http://ogonium.com/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+
+<p>OK,  now I am sure some of you are not thrilled at the idea of having to shell out your hard earned cash on that Mac you are going to need.  Some of you might even think about taking a PC and “turning” it into a Mac by downloading some version of the OSX86 project.  I highly recommend getting a Mac that supports the latest version of xcode.  Your life as an iPhone developer will be much easier.</p>
+
+<p>Next you should get yourself an iPhone.  This is important since you will need to test any app you create on a device before you upload it to apple for approval.  The simulator included with xcode is great but, it will not come close to showing you what your actual user experience is going to be.  The simulator is running on your computer and therefore the CPU is faster,  battery is a non-issue and any animations you create will perform very well.  Testing on a device will also reveal any memory leaks you may have so you can figure out how to fix ‘em.</p>
+
+<p>Next I recommend getting a developer license.  Head on over to:<a href="http://developer.apple.com/devcenter/ios/index.action" target="_blank">http://developer.apple.com/devcenter/ios/index.action</a>.  Here you will find a great deal of help.  Take some time to read some of the How-Tos and watch some of the videos.   If you don’t already have an Apple ID create one and login.  You don’t have to pay any money just yet.  You can download xcode for free.  The first time you will have to worry about money is when you want to start testing on your device.  You will need to purchase an annual license to be a member of the Apple Developer Program.  The cost is 99 dollars.</p>
+
+<p>Once you download xcode run the installer.  When it is done find it in your Application folder and run it.  You will get the following window:</p>
+
+<p>Xcode Opening Window.</p>
+
+<div class="wp-caption alignnone" style="width: 816px"><img title="Xcode Opening Window" src="http://www.tikalk.com/files/Screen%20shot%202011-02-17%20at%203.53.28%20PM.png" alt="Xcode Opening Window" width="806" height="528" /><p class="wp-caption-text">Xcode Opening Window</p></div>
+
+<p>Click on: Create a new Xcode project.</p>
+
+<p>The next window will look something like this:</p>
+
+<p>Xcode Project Types.</p>
+
+<div class="wp-caption alignnone" style="width: 779px"><img title="Xcode Project Types" src="http://www.tikalk.com/files/Screen%20shot%202011-02-17%20at%203.55.00%20PM.png" alt="Xcode Project Types." width="769" height="721" /><p class="wp-caption-text">Xcode Project Types.</p></div>
+
+<p>Go ahead and select Navigation based application.  Also,  select the check box for Core Data.  Core Data is described here: <a href="http://en.wikipedia.org/wiki/Core_Data" target="_blank">http://en.wikipedia.org/wiki/Core_Data</a> and a great tutorial is here:<a href="http://blog.sallarp.com/iphone-core-data-uitableview-drill-down/" target="_blank">http://blog.sallarp.com/iphone-core-data-uitableview-drill-down/</a>.</p>
+
+<p>Once you complete the new project wizard your xcode window will look something like this:</p>
+
+<p>Xcode Project Window.</p>
+
+<div class="wp-caption alignnone" style="width: 903px"><img title="Xcode Project Window" src="http://www.tikalk.com/files/Screen%20shot%202011-02-17%20at%204.03.51%20PM.png" alt="Xcode Project Window" width="893" height="825" /><p class="wp-caption-text">Xcode Project Window</p></div>
+
+<p>Now I will briefly explain what the folders and items are in the xcode project.  The blue icon at the top represents the project and double clicking on it will open a window to configure project properties.  In this window you will be able to configure things like build output folder,  target os,  and developer certificate configuration.  It is a good idea to open this window and look through it to familiarize yourself with what is available.  However,  when getting started it is not likely you will have to touch any of these settings.</p>
+
+<p> </p>
+
+<p>The next folder is called Classes.  This is where you can (and should) store all your classes that will make up your models, controllers, and views.  Xcode won’t enforce any of this, but it is a good idea to keep your code organized into logical sections.</p>
+
+<p> </p>
+
+<p>Other sources starts out containing a *.pch file and your application’s main.m file.  Your application will run in a loop.  It will listen for user interaction and other events from the system and process them in the main run loop.  You will most likely never touch this file.  The *.pch file is your pre compiled header.  It is not necessary to ever edit this file.  However,  sometimes you will want to define some application level constants using #define and this is a good place to put them.  This way all your constants will be available throughout your application.</p>
+
+<p> </p>
+
+<p>The resources folder will contain your application images,  sounds,  database diagrams (if using core data) and any XIB files you create to represent your views.  I usually add subfolders to store the images and XIBs separately so I can easily find the file I want to work on later.</p>
+
+<p> </p>
+
+<p>Frameworks contains libraries that are used in your application.  For example, if you want to add support for Maps to your application you would right click on this folder and select add existing Framework.  In the popup that shows next select the MapKit.framwork folder and click OK.  The folder already comes configured with the most commonly used Frameworks.  UIKit contains the views like buttons,  switches,  view controllers and labels your app will use.  Foundation contains objects to represent strings,  url requests,  dates and other such datatypes.  If you open the folder with the arrow next to it you can see the header files included with each framework.  This will help determine what each framework can do.  Coregraphics is used to draw on the screen.  Lastly,  CoreData contains the headers to support the coredata feature we selected when opting for coredata support when we created our app.</p>
+
+<p> </p>
+
+<p>The Products folder contains a shortcut to your app.  Until you first compile your app it will show up in red text indicating that Xcode cannot find it in the specified location.  This is fine.</p>
+
+<p> </p>
+
+<p>Targets contains references to your application bundle.  Here you can configure what headers and source files and XIBs will get compiled into your app.  More often this will just happen on its own and it will be rare that you have to even venture inside this folder.</p>
+
+<p> </p>
+
+<p>Executibles contains a reference to you app as an executable.  Double clicking on the contents will show a window where you can configure items such as launch parameters.</p>
+
+<p> </p>
+
+<p>Find results will contain active project searches.  Select Edit -> Find -> Find In Project…  to bring up the project find window.  Once you do a search you can close the window and the results will appear here as well.</p>
+
+<p> </p>
+
+<p>Bookmarks will contain your project bookmarks.  To add a bookmark simply press Command+D while at a particular line of code and type a name.  The newly created bookmark will appear in the Bookmarks folder of your Xcode project.</p>
+
+<p> </p>
+
+<p>SCM will contain information regarding source control management.  I will not go into particulars here but it is worth looking up.</p>
+
+<p> </p>
+
+<p>The Project Symbols smart group, one of the built-in smart groups provided by Xcode, allows you to view all of the symbols defined in your project. You can sort symbols by type, name, file, and file path, and you can search for symbols that match a string. To see the symbols defined in your project, select the Project Symbols smart group in the Groups & Files list. The detail view displays the symbols in your project.</p>
+
+<p> </p>
+
+<p>The last two items are smart folders that contain your projects implementation (*.m) and XIB files.</p>
+
+<p> </p>
+
+<p>The project that we added sets up a basic app for you that contains the following important classes</p>
+
+<p> </p>
+
+<p>1) DemoAppDelegate – This is your app’s delegate class.</p>
+
+<p>2) RootViewController – This is the view controller that is first displayed.</p>
+
+<p>3) Demo.xcdatamodel – This contains the CoreData Entity Diagram.</p>
+
+<p>4) MainWindow.xib – the first XIB file used to define the view.</p>
+
+<p>5) RootViewController.xib – Defines the view used in the RootViewController.</p>
+
+<p> </p>
+
+<p>If you click the build and run button you will see the following running inside the simulator window:</p>
+
+<p>Xcode Simulator Window.</p>
+
+<div class="wp-caption alignnone" style="width: 657px"><img title="Xcode Simulator Window" src="http://www.tikalk.com/files/Screen%20shot%202011-02-20%20at%2010.52.42%20AM.png" alt="Xcode Simulator Window" width="647" height="965" /><p class="wp-caption-text">Xcode Simulator Window</p></div>
+
+<p>This is what you for free when creating a new UINavigation based project.</p>
+
+<p> </p>
+
+<p>To get you started I will show you the code that gets the view up and the code that handles the buttons displayed.</p>
+
+<p> </p>
+
+<p>Inside the DemoAppDelegate.m file you will see a function like this:</p>
+
+<p> </p>
+
+<p><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {</p>
+
+<p>// Override point for customization after application launch.</p>
+
+<p>// Add the navigation controller's view to the window and display.</p>
+
+<p>[self.window addSubview:navigationController.view];</p>
+
+<p>[self.window makeKeyAndVisible];</p>
+
+<p>return YES;</p>
+
+<p>}<br />
+</code><br />
+ </p>
+
+<p>As the name implies this function is run when the application is done starting up for the first time.  The navigationController which is defined inside the MainWindow.xib file is added as the main view of the window.  The navigationController contains a root view controller called RootViewController that contains the code for the buttons that are used to edit and add new items to the table view.</p>
+
+<p> </p>
+
+<p>Inside the RootViewController.m file there is a function:</p>
+
+<p> </p>
+
+<p><code>- (void)viewDidLoad {</p>
+
+<p>[super viewDidLoad];<br />
+// Set up the edit and add buttons.</p>
+
+<p>self.navigationItem.leftBarButtonItem = self.editButtonItem;<br />
+UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:selfaction:@selector(insertNewObject)];</p>
+
+<p>self.navigationItem.rightBarButtonItem = addButton;</p>
+
+<p>[addButton release];</p>
+
+<p>}</code></p>
+
+<p> </p>
+
+<p>This function adds the edit button defined in the RootViewController.xib file as the navigation bar’s left bar button item.  A new add button is added with an action of insertNewObject.</p>
+
+<p> </p>
+
+<p><code>- (void)insertNewObject {</p>
+
+<p>// Create a new instance of the entity managed by the fetched results controller.</p>
+
+<p>NSManagedObjectContext *context = [self.fetchedResultsControllermanagedObjectContext];</p>
+
+<p>NSEntityDescription *entity = [[self.fetchedResultsControllerfetchRequest] entity];</p>
+
+<p>NSManagedObject *newManagedObject = [NSEntityDescriptioninsertNewObjectForEntityForName:[entity name]inManagedObjectContext:context];</p>
+
+<p>// If appropriate, configure the new managed object.</p>
+
+<p>[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];</p>
+
+<p>// Save the context.</p>
+
+<p>NSError *error = nil;</p>
+
+<p>if (![context save:&error]) {</p>
+
+<p>/*<br />
+Replace this implementation with code to handle the error appropriately.<br />
+abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.<br />
+*/</p>
+
+<p>            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);</p>
+
+<p>            abort();</p>
+
+<p>     }</p>
+
+<p>}</code></p>
+
+<p> </p>
+
+<p>This function accesses the Managed Context and adds a new item to the database.  If you read the tutorial on CoreData provided above, you will know all about how the table view is automatically updated.</p>
+
+<p> </p>
+
+<p>Please go through the rest of the code.  This project is a great starting point and will get you started as an iPhone developer.</p>
+
+<p> </p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/getting-started-with-xcode" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

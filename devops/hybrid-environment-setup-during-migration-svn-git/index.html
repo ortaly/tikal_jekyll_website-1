@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Hybrid environment setup during migration from SVN to GIT</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-devops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Hybrid environment setup during migration from SVN to GIT</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img typeof="foaf:Image" src="/assets/pictures/picture-46-1362341962-2a7992b538e713fe724fb13b81a347e7.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Miron</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Gofer</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">DevOps Engineer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/devops/miron'>miron</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/DevOps">DevOps</a>
+              </li>
+            
+              <li>
+                <a href="/tags/git">git</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2012-10-20 00:00:00 +0200">
+        <div class="day">20</div>
+        Oct. 2012
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/devops/hybrid-environment-setup-during-migration-svn-git' st_title='Hybrid environment setup during migration from SVN to GIT' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/devops/hybrid-environment-setup-during-migration-svn-git' st_title='Hybrid environment setup during migration from SVN to GIT' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/devops/hybrid-environment-setup-during-migration-svn-git' st_title='Hybrid environment setup during migration from SVN to GIT' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/devops/hybrid-environment-setup-during-migration-svn-git' st_title='Hybrid environment setup during migration from SVN to GIT' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/devops/hybrid-environment-setup-during-migration-svn-git' st_title='Hybrid environment setup during migration from SVN to GIT' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Moving  a +-150 developers dev group from SVN to git is a challenging task.  Management wanted some POC and pilot. Team leaders wanted that the team  agenda and timeline will be taken under consideration. And no one wanted  to decrease productivity more than necessary.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">In  an effort to make everyone happy we established an hybrid SVN-GIT  environment for the transition period. Started on the POC phase and  lasted until the last team was trained and moved to git, this transition  took a little less than a whole year. In this article i will describe  the hybrid environment and working methodologies we use during the  transition period.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Since  we were using a &ldquo;Branch on release&rdquo; methodology, we planned to move  only the trunk to git. Other branches (released versions maintenance  branches) will continue to live in svn. There was very little (if any)  merging from the maintenance branches to trunk and we wanted to keep  things simple. so the main requirements were:</span></p>
+
+<ol style="margin-top:0pt;margin-bottom:0pt;">
+    <ol style="margin-top:0pt;margin-bottom:0pt;">
+        <li style="list-style-type:lower-alpha;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Every change being pushed to git central repository must be committed to SVN as well.</span></li>
+        <li style="list-style-type:lower-alpha;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Git users must have an easy access to SVN commits from within git local repo.</span></li>
+        <li style="list-style-type:lower-alpha;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">All developers (both SVN and GIT users) must have an immediate feedback, by email, from jenkins on build-breaking commits.</span></li>
+        <li style="list-style-type:lower-alpha;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">There should be a possibility to abandon GIT and move back to SVN without losing any development history.</span></li>
+    </ol>
+</ol>
+
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">The  resulting environment was made out of 3 repositories: The projects  original SVN repository, A &lsquo;bare&rsquo; GIT repository (git-main.git) that was  the main sync point for all developers that moved to GIT and,  eventually, became the only code repository of the project trunk. And  another git repository that was transparent to developers and functioned  as sync point between SVN and the main GIT repo. I will call it the  &lsquo;git-svn repo&rsquo;. </span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">SVN  server was remote and unavailable for administration. Both GIT  repositories were installed on a RHEL5 server. the git-main repo was  exposed by httpd and ssh to all developers.</span><img width="523" height="558" src="https://lh6.googleusercontent.com/krBqKdXnMrxTjV8FVfwsdrSuoxBebRxLtgfvioiE4rmAUH2wzj-Y6YbFTTtRwgyrDoFjB2exzdDspKis-PN3rhG1Dbwsf5A1UzFoHFAbp7pgqMmw7HQ" alt="" /><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">The &lsquo;git-svn repo&rsquo; was indeed a git-svn clone of the SVN trunk url. It was created using the git-svn tool:</span></p>
+
+<pre class="brush: python;" title="code">
+git-svn clone http://svn-server/svn/repo/trunk</pre>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Only trunk was cloned so all git-svn configuration regarding branches and tag handling were unnecessary.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">The  result of the git-svn clone command is a non-bare git repository. It  means that pushing to it is disabled by default. Instead of opening the  repo for push, it was cloned again using:</span></p>
+<pre class="brush: python;" title="code">
+cd /path/to/git-main/repo
+git clone --bare /path/to/git-svn/repo
+</pre>
+
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">To  The git-main repository (the new bare repo) we add another branch  &ldquo;work&rdquo; and made it the current (by editing the HEAD file in the bare  repository) this branch was the one all developers were pulling from and  pushing to.<br />
+From the developer-using-git point of view, after cloning the git-main repo, there were 2 remote-tracking branches: </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">master</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> and </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">work</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">. </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Work</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> was the one you work on. </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Master</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> was the one representing SVN trunk. Merges from </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">master</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> to </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">work</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> (syncing the changes from SVN trunk to the working git environment) was the developers responsibility and had no automation.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">However, Keeping the </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">master</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> branch synced with the SVN </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">trunk</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> HEAD, and sync the changes pushed to </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">work</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> branch into svn </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:bold;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">trunk</span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"> was the build team responsibility. We did it using a jenkins jobs and a sync script.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">The first job svn2git was polling from SVN (with 1 min time interval) and run a very simple script:</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">(jobs were running inside a jenkins slave on the git server)</span></p>
+
+<pre class="brush: python;" title="code">
+#go to the git-svn repo.
+cd /path/to/git-svn/repo
+#make sure we are on the correct branch
+git checkout master
+#get SVN latest
+git svn rebase
+#and push it to the git main repo.
+git push -f git-main master:master</pre>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">For this script to run a remote must be defined on the git-svn repo pointing to the git-main repo:</span></p>
+<pre class="brush: python;" title="code">
+git remote add git-main file:///path/to/git-main/repo</pre>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">That way we kept the master branch synced with the SVN trunk HEAD.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">The second job, git2svn, was polling from git work branch (again every one min) and run this script upon every push: </span></p>
+<pre class="brush: python;" title="code">
+git-svn-autosync.sh &lt;/path/to/git/repo&gt; &lt;/path/to/git-svn/repo&gt; &lt;branch to sync&gt; &lt;svn tracking branch&gt; &lt;git-repo remote name&gt;</pre>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">The </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">git-svn-autosync.sh </span><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">script  was the heart of the sync infrastructure. It is a spinoff of a (bit  simpler) script i found online. Unfortunately I was not able to find it  again so i can&rsquo;t give a proper credit. Here I will only go over the main  logic of it.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Generally, the script does those tasks (in the git-svn repo context):</span></p>
+<ol style="margin-top:0pt;margin-bottom:0pt;">
+    <li style="list-style-type:decimal;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Fetches the latest commits from the git-main repository. Using a temporary remote and branch.</span></li>
+    <li style="list-style-type:decimal;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Create a log message that document the new commits.</span></li>
+    <li style="list-style-type:decimal;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Merge the commits into the master branch (the master is the branch that track SVN trunk)</span></li>
+    <li style="list-style-type:decimal;font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;"><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Call git-svn dcommit command that push the new commits to SVN.</span></li>
+</ol>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">In more details this is how we do it:</span><br />
+<br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">We use &ldquo;die&rdquo; to clean and restore the environment in case of failure (a conflict in merge or rebase is treated as failure):</span></p>
+<pre class="brush: python;" title="code">
+die() {
+       echo &quot;sync-git-to-svn died: $*&quot;
+       git rebase --abort  #in case arebase failed
+       git branch -D ${TMP_DST_BRANCH} #remove the temp branch we use to sync.
+       git remote rm ${TMP_REMOTE_NAME} # Remove the temp remote we use the sync
+       git reset --hard ${HEAD_SHA1} #we record the current commit before we start so we can reset to it upon failure.
+       exit 1
+}</pre>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">All work is done inside the git-svn repo (it is a non bare repo)</span></p>
+<pre class="brush: java;" title="code">
+cd /path/to/git-svn/repo</pre>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">We  connect to the git-main server and fetch using a temporary remote and  branch. Note that this branch also acts as sort of a mutex. we always  use the same name.</span>&nbsp;</p>
+<pre class="brush: python;" title="code">
+git remote add  ${TMP_REMOTE_NAME} ${SRC_REPO_PATH} || die 'Could not create remote that point to the git repo'
+git branch -v ${TMP_DST_BRANCH} || die 'Could not create temporary working branch, maybe another sync is in progress?'
+git fetch -v ${TMP_REMOTE_NAME} +${SRC_BRANCH}:${DST_BRANCH}</pre>
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Since  we use merge (as oppose to rebase). Only one new svn commit will be  created for every run of this script (normally for every push to the  git-main repo). This SVN commit owner will be the admin user that cloned  the git-svn repo. We want all the meta information from all the git  commits participating in this push to be inserted to the SVN commit log  message. To do that We have a permanent remote tracking branch that  tracks the work branch. We use it as a pointer to the last commit that  was merged in the previous run of this script.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Now  we use it to list the commits in this merge and gather the meta  information we need.(see git help log for the pretty format syntax)</span></p>
+<pre class="brush: python;" title="code">
+# we use the --first-parent to filter out merges of master into the working branch.
+git log --first-parent --pretty=format:&quot;%h %ae: %n%s%n%b=======&quot; git-main/work..${TMP_DST_BRANCH} &gt; ${MSG_FILE}
+#avoid empty logs that will fail merge -m...
+echo &quot;====&quot; &gt;&gt; ${MSG_FILE}
+</pre>
+
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Now we are ready to merge</span></p>
+
+<pre class="brush: python;" title="code">
+# Make sure we work on the correct branch
+git checkout  ${SVN_SYNC_BRANCH} || die &quot;Cant checkout svn sync branch.&quot;
+# Make sure we uptodate with svn (we do not use git-svn rebase to avoid creation of unnecessary new git commits. git-svn fetch &amp; merge does the trick.
+git svn fetch || die &quot;svn fetch failed.&quot;
+git merge --ff-only remotes/git-svn || die &quot;Fail to sync ${SVN_SYNC_BRANCH} and svn HEAD&quot;
+git merge --no-ff -v -m &quot;$(cat $MSG_FILE)&quot; ${DST_BRANCH} || die &quot;Merge failed. There may be unresolved conflicts.&quot;</pre>
+
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Note  the use of --ff-only in the sync merge. (if it is not ff - something  went wrong and some manually troubleshooting is needed.) And the --no-ff  in the actual merge. We must have a new commit so we can insert the  meta-info in its log message.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">If all went well by now - lets push it to SVN:</span></p>
+
+<pre class="brush: python;" title="code">
+git svn dcommit -v  --add-author-from || die &quot;Dcommmit failed.&quot;</pre>
+
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Clean tmp branch and remote</span></p>
+
+<pre class="brush: python;" title="code">
+git branch -D ${TMP_DST_BRANCH}
+git remote rm ${TMP_REMOTE_NAME}</pre>
+
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">Sync  the (permanent) remote tracking branch. This must be the last thing we  do since we do not want that sync to happen if the script has failed for  any reason.</span></p>
+
+<pre class="brush: python;" title="code">
+git fetch -v main-git
+exit 0</pre>
+
+<p><span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">As  you can see, every change that was pushed to GIT was committed to SVN  but GIT commits was squashed into one svn commit per push (or per script  run, we did had some failures and the script had to run again on more  than one push). This was acceptable. Every &ldquo;squashed&rdquo; commit was pushed  back to git-main since it was an SVN commit and invoked the svn2git job  when committed. This process created an anomaly because every change  appear twice in GIT history. It was acceptable as well and git merge  treated the anomaly with no issues. Developers using SVN could see the  meta information of a &ldquo;squashed&rdquo; commit by reading the SVN commit log.  The log message was a list of the &ldquo;original&rdquo; GIT commits sha1, committer  and comment.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">We  created 2 jenkins continuous integration jobs. One polling from SVN and  the other from GIT. The nightly build use the sources from SVN.</span><br />
+<span style="font-size:15px;color:#000000;background-color:transparent;font-weight:normal;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;">To  summarize: I do not recommend using Hybrid environment as a standard  development environment. It has too many limitations. But, as a solution  for relatively long transition period It worked for us and enable us to  train and move the teams from SVN to GIT one by one, according to teams  planned timeline with no development downtime and a very small  productivity penalty. &nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<br />
+<br />
+&nbsp;</p>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/devops/hybrid-environment-setup-during-migration-svn-git" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

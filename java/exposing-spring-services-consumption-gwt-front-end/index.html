@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Exposing Spring Services for consumption by GWT Front End</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-java page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Exposing Spring Services for consumption by GWT Front End</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/JSON">JSON</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Spring">Spring</a>
+              </li>
+            
+              <li>
+                <a href="/tags/REST">REST</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2010-11-29 00:00:00 +0200">
+        <div class="day">29</div>
+        Nov. 2010
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>This is a summary of the communication methods I&rsquo;ve employed in an application at one of our clients recently, methods gathered from various other sites, blogs, etc.</p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">I&rsquo;ll start with some basic terminology -<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">MVC Controller:<o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></i></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Pure client-side component, written in Java and translated to JavaScript. Takes part in the Model-View-Controller flow by listening to application events typically generated by GUI widgets, issuing http requests to the controller layer and passing back the results, again usually via custom application events.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">Controller:<o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Server side component intercepting client side requests and typically delegating them to the service layer. Acts as a thin mediation layer between the client side components and the business logic. Controllers can either be handwritten or act in a generic manner and used as transparent proxies to the services.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">Service:<o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>A Class implementing some business logic, typically communicating with the backend vialocal calls, web service calls, RMI calls, or other. Services are nowadays usually declared using Spring annotations and be picked up by Spring's annotation detection mechanism once, during web application startup.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">From here on, I will present 3 techniques for setting up communication between MVC controllers and application services:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><b><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">1. GWT<span style="mso-spacerun:yes">&nbsp; </span>Transport/Serialization <br />
+(based on <a href="http://www.oktech.hu/kb/spring-gwt-integration-with-ease">http://www.oktech.hu/kb/spring-<i>gwt</i>-integration-with-ease</a>)<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">This method should be employed as default for invocation/serialization mechanism, being fast and native to GWT. Here, instead of writing GWT servlets, we use the power of Spring for detection and auto-wiring of the services.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">Configuration<o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">1.1 WEB-INF/web.xml servlet definitions (here only showing snippets which apply to gwt-rpc-style services):<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">servlet</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span>spring-<u>rpc</u><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">servlet-class</span><span style="color:teal">&gt;</span>org.springframework.web.servlet.DispatcherServlet<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-class</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">load-on-startup</span><span style="color:teal">&gt;</span>1<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">load-on-startup</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet</span><span style="color:teal">&gt;<o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&hellip;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">servlet-mapping</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span>spring-<u>rpc</u><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">url-pattern</span><span style="color:teal">&gt;</span>/<u>my-app</u>/<u>rpc</u>/*<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">url-pattern</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-mapping</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">These definitions set up a Spring dispatcher servlet picking up all services that should be exposed as gwt-rpc<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">1.2 Setting up WEB-INF/spring-rpc-servlet.xml containing generic Spring Web definitions of handler-mapping (mapping between incoming requests and controllers) and Handler Adapter, responsible for the actual bridging between GWT and Spring.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;?</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">xml</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"> <span style="color:#7F007F">version</span>=<span style="color:#2A00FF">&quot;1.0&quot;</span> <span style="color:#7F007F">encoding</span>=<span style="color:#2A00FF">&quot;UTF-8&quot;</span><span style="color:teal">?&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">beans</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"> <span style="color:#7F007F">...</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:teal"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&lt;</span><span style="font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:#3F7F7F">context:component-scan</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"> <span style="color:#7F007F">base-package</span>=<span style="color:#2A00FF">&quot;com.mycompany.myapp&quot;</span> <span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">bean</span> <span style="color:#7F007F">class</span>=<span style="color:#2A00FF">&quot;com. mycompany.myapp.server.GwtServiceHandlerAdapter&quot;</span><span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">bean</span> <span style="color:#7F007F">class</span>=<span style="color:#2A00FF">&quot;com. mycompany.myapp.server.GwtServiceHandlerMapping&quot;</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">property</span> <span style="color:#7F007F">name</span>=<span style="color:#2A00FF">&quot;prefix&quot;</span> <span style="color:#7F007F">value</span>=<span style="color:#2A00FF">&quot;&quot;</span><span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">property</span> <span style="color:#7F007F">name</span>=<span style="color:#2A00FF">&quot;suffix&quot;</span> <span style="color:#7F007F">value</span>=<span style="color:#2A00FF">&quot;&quot;</span><span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">bean</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;/</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">beans</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&hellip;to get a better insight of the mechanism, take a look at GwtServiceHandlerAdapter class:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-size:12.0pt;
+font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#646464">@Override</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">public</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> String processCall(<b><span style="color:#7F0055">final</span></b> String payload) <b><span style="color:#7F0055">throws</span></b> SerializationException {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#7F0055">try</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Object handler = <span style="color:#0000C0">handlerHolder</span>.get();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">final</span></b> RPCRequest rpcRequest = RPC.decodeRequest(<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">payload, handler.getClass(), <b><span style="color:#7F0055">this</span></b>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;line-height:normal;mso-pagination:none;
+mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;
+font-family:&quot;Courier New&quot;;color:#7F0055"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;line-height:normal;mso-pagination:none;
+mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;
+font-family:&quot;Courier New&quot;;color:#7F0055">return</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> RPC.invokeAndEncodeResponse(handler, rpcRequest.getMethod(), <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">rpcRequest.getParameters(), rpcRequest.getSerializationPolicy());<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;mso-pagination:none;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;
+font-family:&quot;Courier New&quot;">} <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;mso-pagination:none;
+mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;
+font-family:&quot;Courier New&quot;;color:#7F0055">catch</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> (<b><span style="color:#7F0055">final</span></b> IncompatibleRemoteServiceException ex) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;line-height:normal;mso-pagination:none;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;
+font-family:&quot;Courier New&quot;">getServletContext().log(<span style="color:#2A00FF">&quot;Exception was thrown while processing this call.&quot;</span>, ex);<span style="color:#2A00FF"><o:p></o:p></span></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">return</span></b> RPC.encodeResponseForFailure(<b><span style="color:#7F0055">null</span></b>, ex);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">}</span><span style="font-size:6.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">the first 2 parts are generic configuration which is not specific to any controller. From here on starts specific per-service code<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">1.3 Sample Service interface:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#646464">@RemoteServiceRelativePath</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">(<span style="color:#2A00FF">&quot;rpc/tray&quot;</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">public</span></b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> <b><span style="color:#7F0055">interface</span></b> DashboardTrayController <b><span style="color:#7F0055">extends</span></b> RemoteService {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>TrayModel retrieve(TrayQueryConfig trayConfig);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&hellip;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Note, that for the mechanism to work, there must be correspondence between the </span><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">@RemoteServiceRelativePath</span></b><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">'s first path element (namely, 'rpc') and the servlet-mapping's (in the above web.xml) last part. The annotation, by the way, is used for GWT's clientside proxy generation and results in the following code in DashboardTrayControllerAsync.java (courtesy of gwt-maven-plugin's code generation):<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">public</span></b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> <b><span style="color:#7F0055">static</span></b> <b><span style="color:#7F0055">final</span></b> DashboardTrayControllerAsync getInstance() {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+color:#7F0055">if</span></b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> ( <span style="color:#0000C0">instance</span> == <b><span style="color:#7F0055">null</span></b> ) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#0000C0">instance</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> = (DashboardTrayControllerAsync) GWT.create(<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">DashboardTrayController.<b><span style="color:#7F0055">class</span></b> );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">ServiceDefTarget target = (ServiceDefTarget) <span style="color:#0000C0">instance</span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>target.setServiceEntryPoint( GWT.getModuleBaseURL() + <span style="color:#2A00FF">&quot;rpc/tray&quot;</span> );<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;mso-pagination:none;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;
+font-family:&quot;Courier New&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+color:#7F0055">return</span></b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> <span style="color:#0000C0">instance</span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Also please note, we are using GWT's RemoteService as a base interface both to satisfy GWT's requirement but also to enable the above-mentioned async interface generation by gwt-maven-plugin.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><b><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">2. Automated JSON Serialization (based on Spring/Jackson intergration)<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">This solution is suitable for situations where API need to be externalized over REST/JSON and still be consumed by the application's clientside. Note: when consuming client is GWT code, one may use one of the existing JSON decoding techniques, for example see: <a href="http://code.google.com/p/google-web-toolkit-doc-1-5/wiki/GettingStartedJSON">http://code.google.com/p/google-web-toolkit-doc-1-5/wiki/GettingStartedJSON</a>. In our application, the only consumers of JSON data are GXT widgets that are directly wired to the controller's endpoints and so no such decoding is required.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">Configuration<o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">2.1 In WEB-INF/web.xml, we define another entry of the DispatcherServlet, this time mapped to a different URL:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">servlet-name</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">spring-rest<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">servlet-class</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">org.springframework.web.servlet.DispatcherServlet<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-class</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">load-on-startup</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">1<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">load-on-startup</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;/</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet-mapping</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">servlet-name</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">spring-rest<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">url-pattern</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">/<u>my-app</u>/rest/*<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">url-pattern</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;/</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet-mapping</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">2.2 Spring's context descriptor (WEB-INF/spring-rest-servlet.xml) now contains Spring/Jackson definitions that are generic to all controllers deployed as REST/JSON endpoints:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;?</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">xml</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> <span style="color:#7F007F">version</span>=<span style="color:#2A00FF">&quot;1.0&quot;</span> <span style="color:#7F007F">encoding</span>=<span style="color:#2A00FF">&quot;UTF-8&quot;</span><span style="color:teal">?&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">beans</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> ...<span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">context:component-scan</span> <span style="color:#7F007F">base-package</span>=<span style="color:#2A00FF">&quot;com. mycompany.myapp&quot;</span> <span style="color:teal">/&gt;</span></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom: 0.0001pt; "><font class="Apple-style-span" face="'Courier New'"><span class="Apple-style-span" style="font-size: 11px; line-height: normal;">&nbsp;&nbsp;</span></font><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; "><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: teal; ">&lt;</span><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: rgb(63, 127, 127); ">bean&nbsp;</span></span><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; ">id=&quot;<span style="color: rgb(0, 0, 255); ">handlerMapping</span>&quot; </span><span class="Apple-style-span" style="color: rgb(127, 0, 127); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">class</span><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; ">=</span><span class="Apple-style-span" style="color: rgb(42, 0, 255); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">&quot;</span><span style="color: rgb(0, 0, 255); "><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; ">org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping</span></span><span class="Apple-style-span" style="color: rgb(42, 0, 255); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">&quot;</span><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; "> </span><span class="Apple-style-span" style="color: rgb(0, 128, 128); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">/&gt;</span></p>
+
+<p class="MsoNormal" style="margin-bottom: 0.0001pt; "><font class="Apple-style-span" face="'Courier New'"><span class="Apple-style-span" style="font-size: 11px; line-height: normal;">&nbsp;&nbsp;</span></font></p>
+
+<p class="MsoNormal" style="margin-bottom: 0.0001pt; "><font class="Apple-style-span" face="'Courier New'"><span class="Apple-style-span" style="font-size: 11px; line-height: normal;">&nbsp;&nbsp;</span></font><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; "><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: teal; ">&lt;</span><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: rgb(63, 127, 127); ">bean&nbsp;</span></span><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; ">id=&quot;<span style="color: rgb(0, 0, 255); ">handlerAdapter</span>&quot; </span><span class="Apple-style-span" style="color: rgb(127, 0, 127); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">class</span><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; ">=</span><span class="Apple-style-span" style="color: rgb(42, 0, 255); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">&quot;</span><span style="color: rgb(0, 0, 255); "><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; line-height: normal; ">org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter</span></span><span class="Apple-style-span" style="color: rgb(42, 0, 255); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">&quot;</span><span class="Apple-style-span" style="color: rgb(0, 128, 128); font-family: 'Courier New'; font-size: 11px; line-height: normal; ">/&gt;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span class="Apple-style-span" style="font-family: 'Courier New'; font-size: 11px; "><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: teal; ">&lt;</span><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: rgb(63, 127, 127); ">bean</span></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#7F007F">class</span>=<span style="color:#2A00FF">&quot;org.springframework.web.servlet.view.ContentNegotiatingViewResolver&quot;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#7F007F">p:order</span>=<span style="color:#2A00FF">&quot;1&quot;</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">property</span> <span style="color:#7F007F">name</span>=<span style="color:#2A00FF">&quot;mediaTypes&quot;</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">map</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">entry</span> <span style="color:#7F007F">key</span>=<span style="color:#2A00FF">&quot;json&quot;</span> <span style="color:#7F007F">value</span>=<span style="color:#2A00FF">&quot;application/json&quot;</span> <span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">map</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">property</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">property</span> <span style="color:#7F007F">name</span>=<span style="color:#2A00FF">&quot;defaultViews&quot;</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">list</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">bean</span> <span style="color:#7F007F">class</span>=<span style="color:#2A00FF">&quot;com.mycompany.myapp.server.ObjectJacksonJsonView&quot;</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">property</span> <span style="color:#7F007F">name</span>=<span style="color:#2A00FF">&quot;disableCaching&quot;</span> <span style="color:
+#7F007F">value</span>=<span style="color:#2A00FF">&quot;true&quot;</span><span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">property</span> <span style="color:#7F007F">name</span>=<span style="color:#2A00FF">&quot;useImplicitRoot&quot;</span> <span style="color:#7F007F">value</span>=<span style="color:#2A00FF">&quot;true&quot;</span><span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">bean</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">list</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">property</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;/</span><span style="color:#3F7F7F">bean</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;/</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">beans</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:7.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">In order to be able to slightly customize the generated JSON, I had to extend the class MappingJacksonJsonView provided by Spring, adding the useImplicitRoot property that allows trimming the root JSON element, for better digestion by out client-side widgets. My override to the </span><span style="font-size: smaller; "><span style="font-family: 'Courier New'; ">renderMergedOutputModel(Map&lt;String, Object&gt; model, HttpServletRequest req, HttpServletResponse res</span></span><span style="font-size:10.0pt;
+font-family:ComicSansMS;mso-bidi-font-family:ComicSansMS">)<span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">method included the following logic:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">if</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">(<span style="color:#0000C0">useImplicitRoot</span>) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><u><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">Map</span></u><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> valueMap = (<u>Map</u>)value;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#7F0055">if</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">(valueMap.size() == 0) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#0000C0">objectMapper</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">.writeValue(generator, value);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">else</span></b> <b><span style="color:#7F0055">if</span></b>(valueMap.size() == 1) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#0000C0">objectMapper</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">.writeValue(generator, valueMap.values().iterator().next());<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#7F0055">else</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">throw</span></b> <b><span style="color:#7F0055">new</span></b> IllegalArgumentException(<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#2A00FF">&quot;cannot serialize multiple objects when useImplicitTree set to true&quot;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">else</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> <span style="mso-spacerun:yes">&nbsp;</span>{<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#0000C0">objectMapper</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">.writeValue(generator, value);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">2.3 Controller Code<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">The controller interface has no special requirements in this case so we will skip it; as for the controller implementation, it is a standard Spring Web controller, which may look like this:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#646464">@RequestMapping</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">(<span style="color:#2A00FF">&quot;/tag-suggest&quot;</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#646464">@Controller</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">public</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> <b><span style="color:#7F0055">class</span></b> TagSuggestControllerImpl <b><span style="color:#7F0055">implements</span></b> TagSuggestController {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">private</span></b> <b><span style="color:#7F0055">static</span></b> <b><span style="color:#7F0055">final</span></b> <b><span style="color:#7F0055">int</span></b> <span style="color:#0000C0">MAX_LIMIT</span> = 50;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;line-height:normal;mso-pagination:none;
+mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;
+font-family:&quot;Courier New&quot;;color:#7F0055">private</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> <b><span style="color:#7F0055">static</span></b> <b><span style="color:#7F0055">final</span></b> Log <span style="color:#0000C0">logger</span> =<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">LogFactory.getLog(TagSuggestControllerImpl.<b><span style="color:#7F0055">class</span></b>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#646464">@Autowired</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">private</span></b> MyService <span style="color:#0000C0">svc</span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#646464">@Override</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#646464">@RequestMapping</span>(value = <span style="color:#2A00FF">&quot;/get&quot;</span>, method = { RequestMethod.<span style="color:#0000C0">GET</span> })<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">public</span></b> TagList getAvailableTags(<span style="color:#646464">@RequestParam</span> String query, <span style="color:#646464">@RequestParam</span> <b><span style="color:#7F0055">int</span></b> limit, <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#646464">@RequestParam</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> String dictionary) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>// &hellip;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">The class's RequestMapping annotation is configured to &quot;/tag-suggest&quot;, meaning that in order to externally invoke any of the methods in this controller, a prefix of &quot;/my-app/rest/&quot; is needed (if you are not sure why, check web.xml above). In addition, for every public method in this type of controller, a </span><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">@ReuqestMapping</span></b><span style="font-size:9.0pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"> </span><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">annotation is required, specifying the remaining url, including query/path parameters etc. For full documentation regarding web controller methods annotations, parameter and request object binding, see: <a href="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html">http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html</a>. <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">2.4 Customizing the returned JSON <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">At runtime, the value returned from every mapped method (a.k.a &quot;web-method&quot; in Microsoft jargon) is automatically converted to JSON by the converters specified in spring-rest-servlet.xml, which we reviewed earlier. The conversion is done according to the JavaBean default standards, which might, in some cases, just not cut it. In these caesars, you may customize the returned JSON by annotating the value objects themselves, in a manner similar to:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.0pt 56.0pt 84.0pt 112.0pt 140.0pt 168.0pt 196.0pt 224.0pt 3.5in 280.0pt 308.0pt 336.0pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-size:10.0pt;
+font-family:ComicSansMS;mso-bidi-font-family:ComicSansMS"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#646464">@JsonUseSerializer</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">(TagCollectionSerializer.<b><span style="color:#7F0055">class</span></b>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">public</span></b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> <b><span style="color:#7F0055">class</span></b> TagList {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">}</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">This annotation is Jackson specific, which is a sad leakage of layer logic, but cannot be helped. The class specified as the annotation value should implement the JsonSerializer interface (which is, again, Jackson-specific) and implement the main serialization method: serialize(Object value, JsonGenerator gen, SerializerProvider provider). For example, consider the following relatively simple implementation:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#646464">@Override</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">public</span></b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> <b><span style="color:#7F0055">void</span></b> serialize(Object value, JsonGenerator jgen, SerializerProvider provider) <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">throws</span></b><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> IOException, JsonProcessingException {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">if</span></b>(value == <b><span style="color:#7F0055">null</span></b>) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>provider.getNullValueSerializer().serialize(<b><span style="color:#7F0055">null</span></b>, jgen, provider);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">else</span></b> <b><span style="color:#7F0055">if</span></b>(!value.getClass().isAssignableFrom(TagList.<b><span style="color:#7F0055">class</span></b>)) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">throw</span></b> <b><span style="color:#7F0055">new</span></b> IllegalArgumentException(<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#2A00FF">&quot;not a TagList instance: &quot;</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> + value.getClass());<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">else</span></b> {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>TagList tags = (TagList)value;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeStartObject();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeNumberField(<span style="color:#2A00FF">&quot;total&quot;</span>, tags.getTotal());<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeArrayFieldStart(<span style="color:#2A00FF">&quot;results&quot;</span>);<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">for</span></b>(String tag : tags.getTags()) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">if</span></b>(tag == <b><span style="color:#7F0055">null</span></b>) {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeNull();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>} <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">else</span></b> {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeStartObject();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeStringField(<span style="color:#2A00FF">&quot;tag&quot;</span>, tag.toString());<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeEndObject();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeEndArray();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>jgen.writeEndObject();<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;">}</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><b><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">3. Raw Content Generation<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">A third option, relevant in cases where JSON content is brought from a third party and should be conveyed to the client as-is, or where massive customization of the value object is impractical is writing Spring controllers that generate the actual JSON and do not take advantage of Spring/Jackson's automatic serialization mechanism.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;">Configuration</span></i><span style="font-family:
+&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">3.1 Again, we start by defining another DispatcherServlet in web.xml:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span>spring-raw<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">servlet-class</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">org.springframework.web.servlet.DispatcherServlet<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-class</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">load-on-startup</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">1<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">load-on-startup</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;/</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-size:7.0pt;
+font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet-mapping</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">servlet-name</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:
+&quot;Courier New&quot;">spring-raw<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">servlet-name</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">url-pattern</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">/<u>my-app</u>/raw/*<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">url-pattern</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;text-indent:
+.5in;line-height:normal;mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&lt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:#3F7F7F">url-pattern</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;
+color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">/my-other-app/raw/*<span style="color:teal">&lt;/</span><span style="color:#3F7F7F">url-pattern</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;/</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">servlet-mapping</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">3.2 This time, our Spring configuration file (WEB-INF/spring-raw-servlet.xml) will not contain any special definitions, since we will be using Spring MVC's defaults:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;?</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">xml</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> <span style="color:#7F007F">version</span>=<span style="color:#2A00FF">&quot;1.0&quot;</span> <span style="color:#7F007F">encoding</span>=<span style="color:#2A00FF">&quot;UTF-8&quot;</span><span style="color:teal">?&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">beans</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"> <span style="color:#7F007F">...</span><span style="color:teal">&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:teal">&lt;</span><span style="color:#3F7F7F">context:component-scan</span> <span style="color:#7F007F">base-package</span>=<span style="color:#2A00FF">&quot;com. mycompany.myapp&quot;</span> <span style="color:teal">/&gt;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:teal">&lt;/</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:#3F7F7F">beans</span><span style="font-size:9.0pt;font-family:&quot;Courier New&quot;;color:teal">&gt;</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">3.3 Same as in previous scenario, we define a no brainer Controller interface and provide its implementation:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#646464">@Controller</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#646464">@RequestMapping</span><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">(<span style="color:#2A00FF">&quot;/info-items&quot;</span>)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">public</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> <b><span style="color:#7F0055">class</span></b> InfoItemsControllerImpl <b><span style="color:#7F0055">implements</span></b> InfoItemsController {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.0pt 56.0pt 84.0pt 112.0pt 140.0pt 168.0pt 196.0pt 224.0pt 3.5in 280.0pt 308.0pt 336.0pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;
+font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#646464">@Autowired</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">private</span></b> InfoItemsQueryManager <span style="color:#0000C0">infoItemsQueryManager</span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#646464">@Autowired</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">private</span></b> QueryContextAssembler <span style="color:#0000C0">contextAssembler</span>;<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#646464">@ResponseBody</span><o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#646464">@RequestMapping</span>(value = <span style="color:#2A00FF">&quot;/get/{docId}&quot;</span>, method = { RequestMethod.<span style="color:#0000C0">GET</span> })<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style="color:#7F0055">public</span></b> String get(<span style="color:#646464">@PathVariable</span> String docId, <span style="color:#646464">@RequestParam</span> String dictionary) <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in;line-height:normal;
+mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;;color:#7F0055">throws</span></b><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"> IOException {<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//...<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:8.0pt;font-family:&quot;Courier New&quot;">}<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt;
+mso-layout-grid-align:none;text-autospace:none"><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">The only new thing worth noticing here is the </span><b><span style="font-size:
+9.0pt;font-family:&quot;Courier New&quot;">@ResponseBody</span></b><span style="font-size:9.0pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"> </span><span style="font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">annotation on the web method. This (Spring-)standard annotation tells Spring MVC to transmit the value returned from the method as-is. Remember this option should be used sparingly, even if it gets you to your end-goal in the shortest time, it involves writing more and more JSON code, creating an undesired relationship between your web-oriented business logic implementation and the serialization mechanism.</span></p>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

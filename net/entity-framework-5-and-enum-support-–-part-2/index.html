@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Entity Framework 5 and Enum support – Part 2</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Entity Framework 5 and Enum support – Part 2</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img typeof="foaf:Image" src="/assets/pictures/picture-107-1361373332-d8caa9c7de4f0472dfb68f47f7631c32.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Amiram</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Korach</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">Sr. .NET Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/android/amiram'>amiram</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/dot-NET">.NET</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2012-10-23 00:00:00 +0200">
+        <div class="day">23</div>
+        Oct. 2012
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/net/entity-framework-5-and-enum-support-–-part-2' st_title='Entity Framework 5 and Enum support – Part 2' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/net/entity-framework-5-and-enum-support-–-part-2' st_title='Entity Framework 5 and Enum support – Part 2' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/net/entity-framework-5-and-enum-support-–-part-2' st_title='Entity Framework 5 and Enum support – Part 2' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/net/entity-framework-5-and-enum-support-–-part-2' st_title='Entity Framework 5 and Enum support – Part 2' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/net/entity-framework-5-and-enum-support-–-part-2' st_title='Entity Framework 5 and Enum support – Part 2' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>In my <a href="http://linqto.net/blog/2012/10/entity-framework-code-first-and-enum-support/" target="_blank">previous post</a>, I showed how to populate an enum to a lookup table using <strong>EF Code First</strong> and a new database. Although you might think that having a database prior to coding force you to go to the <strong>Database First</strong> workflow, you’d be happy to know you can still use the Code First workflow with the help of <a href="http://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d" target="_blank">EF Power Tools</a> to <a href="http://msdn.microsoft.com/en-us/data/jj200620" target="_blank">reverse engineer your database</a> to a Code First starting point.</p>
+
+<p>The database schema for this post is:</p>
+
+<p>Lookup table:</p><pre class="crayon-plain-tag">CREATE TABLE [dbo].[StudentStatusType] (
+    [ID] INT NOT NULL,
+    [StatusName] NVARCHAR (MAX) NULL
+);</pre><p>Students table:</p><pre class="crayon-plain-tag">CREATE TABLE [dbo].[Students] (
+    [ID] INT IDENTITY (1, 1) NOT NULL,
+    [StatusTypeID] INT NOT NULL
+);</pre><p>In addition to this, StudentStatusType.ID is the PK for the FK column Students.StatusTypeID.</p>
+
+<p>The steps to reverse engineer a database are:</p>
+
+<ol>
+<li>Install <a href="http://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d" target="_blank">EF Power Tools</a> extension.</li>
+<li>Create a project (Console, web etc.).</li>
+<li>Add <strong>Entity Framework</strong> NuGet package.</li>
+<li>Right click on the project. In the context menu click on <strong>Entity Framework -> Reverse Engineer Code First</strong>.</li>
+<li>In the connection dialog enter your server and database name and click <strong>OK</strong>.</li>
+</ol>
+
+<p>In your project you have now some more files in the <strong>Models</strong> folder.</p>
+
+<p><strong>Student.cs</strong>:</p><pre class="crayon-plain-tag">public class Student
+{
+    public int ID { get; set; }
+    public int StatusTypeID { get; set; }
+    public virtual StudentStatusType StudentStatusType { get; set; }
+}</pre><p><strong>StudentStatusType.cs</strong>:</p><pre class="crayon-plain-tag">public class StudentStatusType
+{
+    public StudentStatusType()
+    {
+        this.Students = new List();
+    }
+
+    public int ID { get; set; }
+    public string StatusName { get; set; }
+    public virtual ICollection Students { get; set; }
+}</pre><p>In your <strong>[dbname]Context.cs</strong> you have a standard <strong>DbContext</strong> class with DbSet for <strong>Student</strong> and <strong>StudentStatusType</strong>. In addition you’ll see a folder named <strong>Mapping</strong> with mapping details using the <a href="http://msdn.microsoft.com/en-us/data/jj591617" target="_blank">FluentAPI</a>.</p>
+
+<p>In an earlier post I showed <a href="http://linqto.net/blog/2012/07/entity-framework-5-and-enum-support/" target="_blank">how to generate an enum from a lookup table in the Database First workflow</a>. Although we’re using the Code First workflow, we can use a similar method since the database was created first.</p>
+
+<p>The things we need to change are:</p>
+
+<ul>
+<li>Create an enum in addition to the the StudentStatusType class named <strong>StudentStatusTypeEnum</strong> and populate it with the data in the StudentStatusType table.</li>
+<li>The PK StudentStatusType.ID should be of type StudentStatusTypeEnum instead of int.</li>
+<li>The FK Student.StatusTypeID should be of type StudentStatusTypeEnum instead of int.</li>
+</ul>
+
+<p>In order to change the reverse engineer process, right click again on the project but this time click on <strong>Entity Framework -> Customize Reverse Engineer Templates</strong> (No icon for you buddy, it is still beta).</p>
+
+<p>In the project there are now three more T4 files in <strong>CodeTemplates\ReverseEngineerCodeFirst</strong> folder:</p>
+
+<ul>
+<li><strong>Context.tt</strong> – generates the class that inherits DbContext</li>
+<li><strong>Entity.tt</strong> – generates the entities Student and StudentStatusType</li>
+<li><strong>Mapping.tt</strong> – generates the FluentAPI mapping classes</li>
+</ul>
+
+<div>I advise you to install the <a href="http://t4-editor.tangible-engineering.com/Download_T4Editor_Plus_ModelingTools.html" target="_blank">Tangible T4 Editor</a>. It has a free version and it really helps editing T4 templates.</div>
+
+<h3>Creating the enum</h3>
+
+<p>Assuming any table name ending with <strong>Type</strong> should be populated as an enum, we need to add the following code in <strong>Entity.tt</strong> right before the enclosing bracket of the namespace:</p><pre class="crayon-plain-tag"><# if (efHost.EntityType.Name.EndsWith("Type")) { #>
+    public enum <#= efHost.EntityType.Name + "Enum" #>
+    {
+    }
+<# } #></pre><p>Inside the enum we need to read the table data and populate the enum values. First, just like <a href="http://linqto.net/blog/2012/07/entity-framework-5-and-enum-support/" target="_blank">we did in Database First Workflow</a>, we need to find the connection string in the application config file. With the Database First workflow we used a T4 template who its host can give you access to the Visual Studio environment classes that allows you to enumerate the project files. In our case though, the T4 template host only exposes the model data (it is still beta). Fortunately, the source code of EF Power Tools can be downloaded and changed in a way you’ll get the connection string ready to use!</p>
+
+<p>The steps to do that are:</p>
+
+<ol>
+<li>Download EF source code from <a href="http://entityframework.codeplex.com/">http://entityframework.codeplex.com/</a></li>
+<li>Download <a href="http://go.microsoft.com/fwlink/?LinkId=251401" target="_blank">Visual Studio 2012 SDK</a></li>
+<li>Open the Power Tools solution. The sln file is in the root folder of the source code.</li>
+<li>Open the <strong>EfTextTemplateHost </strong>class and add this property:<br />
+<pre class="crayon-plain-tag">public string ConnectionString { get; set; }</pre>
+</li>
+<li>Open the <strong>ReverseEngineerCodeFirstHandler </strong>class. This code is responsible to open the connection dialog when you reverse engineer a database. The line that do it is:<br />
+<pre class="crayon-plain-tag">var dialogResult = dialog.ShowDialog(connect: true);</pre><br />
+After a few rows the connection string is extracted:<br />
+<pre class="crayon-plain-tag">var connectionString = connection.ConnectionString;</pre><br />
+In this class, every place an <strong>EfTextTemplateHost</strong> is initiated, set its <strong>ConnectionString</strong> property with the value of the <strong>connectionString</strong> variable, for example:<br />
+<pre class="crayon-plain-tag">var entityHost = new EfTextTemplateHost
+    {
+        ConnectionString = connectionString
+    // Rest of properties
+    };</pre>
+</li>
+<li>Build the project.</li>
+<li>Copy <strong>EFPowerTools.dll</strong>from the output directory to the extension directory. The directory should be
+<pre class="crayon:false">C:\Users\[YourUserName]\AppData\Local\Microsoft\VisualStudio\11.0\Extensions\rj2pbzdi.3ea</pre>
+<p>The last folder name might be different. This path can also be found in the registry in this key</p>
+<pre class="crayon:false">HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\11.0_Config\Packages\{2b119c79-9836-46e2-b5ed-eb766cebbf7c}\CodeBase</pre>
+<p>Close all Visual Studio windows if you can’t replace the file.</li>
+</ol>
+
+<p>Now that we got the connection string in our hand we can add code to query the database and populate the enum:</p>
+
+<p>Add these two lines after the first row in the <strong>Entity.tt</strong> file:</p><pre class="crayon-plain-tag"><#@ assembly name="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #></pre><p>Add this code where we created the enum before:</p><pre class="crayon-plain-tag"><#  if (efHost.EntityType.Name.EndsWith("Type"))   { #>
+    public enum <#= efHost.EntityType.Name + "Enum" #>
+    {
+<#      // assuming the first string column is the name of the enum value   var firstStringColumnName = efHost.EntityType.Properties.First(p => (p.TypeUsage.EdmType as System.Data.Metadata.Edm.PrimitiveType).ClrEquivalentType.Equals(typeof(string))).Name;
+    var keyColumnName = efHost.EntityType.KeyMembers[0].Name;
+    var connectionString = efHost.ConnectionString;
+    using (var con = new SqlConnection(connectionString))
+    {
+        con.Open();
+        var cmd = new SqlCommand("SELECT * FROM " + efHost.EntityType.Name);
+        cmd.Connection = con;
+        using (var reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+#>
+        <#= code.Escape(reader[firstStringColumnName].ToString()) #> = <#= reader[keyColumnName].ToString() #>,
+<#             }         }     } #>
+    }
+<# } #></pre><p></p>
+
+<h3>Change the PK and FK columns type</h3>
+
+<p>In <strong>Entity.tt</strong> file there is a <strong>foreach</strong> loop that creates the properties for each table column. Inside it we need to add some code that will find out if the current property is the PK or the FK and change the type accordingly:</p><pre class="crayon-plain-tag">foreach (var property in efHost.EntityType.Properties)
+{
+    string typeName = code.Escape(property.TypeUsage);;
+
+    // If we are iterating the properties of the lookup table
+    if (efHost.EntityType.Name.EndsWith("Type"))
+    {
+        // If this property is the primary key - change the type
+        if (efHost.EntityType.KeyMembers.Any(km => km.Name == property.Name))
+        {
+            typeName = efHost.EntityType.Name + "Enum";
+        }
+    }
+    // We are iterating another table - look if this is the FK property
+    else
+    {
+        // Find the navigation property of this property and see if this connects us to the lookup table
+        var navProperty = efHost.EntityType.NavigationProperties.FirstOrDefault(np => np.GetDependentProperties().Any(p => p.Name == property.Name) && np.ToEndMember.GetEntityType().Name.EndsWith("Type"));
+
+        if (navProperty != null)
+            typeName = code.Escape(navProperty.ToEndMember.GetEntityType()) + "Enum";
+    }
+#>
+    <#= Accessibility.ForProperty(property) #> <#= typeName #> <#= code.Escape(property) #> { get; set; }
+<#
+}</pre><p>I used some mapping classes that can be found with MSDN help and also by debugging the EF Power Tools. Now that we have the source code we can attach the VS debugger with the source code to the VS with our project.</p>
+
+<p>Save the T4 template we edited and reverse engineer again. In <strong>StudentStatusType.cs</strong> you’ll see our enum, and the PK and the FK properties have the type of the new enum.</p>
+
+<p>Run this code and see if you get a new row in the Students table:</p><pre class="crayon-plain-tag">using (var dc = new YourContext())
+{
+    dc.Students.Add(new Student() { ID = 1, StatusTypeID = StudentStatusTypeEnum.Graduate });
+    dc.SaveChanges();
+}</pre><p>What would we do if the lookup table will have more rows? Well, <strong>Code First Reverse Engineer</strong> is still one time action. You can do that again but it will override all your code and you still want to use Code First. Incremental reverse engineering might come in the future, but I think that after reverse engineering you should only edit your code. If you add more enum values, you can add them to the lookup table with <a href="http://msdn.microsoft.com/en-us/data/jj591621" target="_blank">Migrations</a> as I’ve written in my <a href="http://linqto.net/blog/2012/10/entity-framework-code-first-and-enum-support/" target="_blank">previous post</a>.</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/net/entity-framework-5-and-enum-support-–-part-2" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

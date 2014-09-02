@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Simplifying JPA Code with Hades</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Simplifying JPA Code with Hades</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Gabi</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Axel</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">Sr. Java Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/java/gabi'>gabi</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2011-01-19 00:00:00 +0200">
+        <div class="day">19</div>
+        Jan. 2011
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/simplifying-jpa-code-hades' st_title='Simplifying JPA Code with Hades' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/simplifying-jpa-code-hades' st_title='Simplifying JPA Code with Hades' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/simplifying-jpa-code-hades' st_title='Simplifying JPA Code with Hades' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/simplifying-jpa-code-hades' st_title='Simplifying JPA Code with Hades' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/simplifying-jpa-code-hades' st_title='Simplifying JPA Code with Hades' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>JPA is not that much fun anymore. It was a great improvement compared to plain JDBC and XML mapping of many persistence frameworks, but after a while you come to realize that in many cases you need to write quite a lot of code to do very little work (like many other things in Java).<br /><br />Enters <a href="http://redmine.synyx.org/projects/show/hades">Hades</a>. In one sentence, it reduces the amount of JPA code by using convention over configuration. The Hades documentation is clear and comprehensive, so I won&#39;t explain it in detail here. I will demonstrate the process of migrating a simple JPA project to use Hades, something you will probably want to do once you get to know Hades.<br /><br /><span style="font-size: large;">Setting Up a JPA Project</span><br /><br />In this example we use Hibernate as the persistence provider and JUnit for the unit tests. If you want to use Maven, you just need to add the following dependencies to your POM:<br /><br /><pre class="brush: xml"><dependency><br />   <groupId>org.hibernate</groupId><br />   <artifactId>hibernate-entitymanager</artifactId><br />   <version>3.6.0.Final</version><br /></dependency> <br /><dependency><br />   <groupId>junit</groupId><br />   <artifactId>junit</artifactId><br />   <version>4.8.2</version><br />   <scope>test</scope><br /></dependency> </pre><br />Let&#39;s create a very simple persistent model class named User:<br /><br /><pre class="brush: java">@Entity<br />public class User {<br />    <br />    @Id<br />    @GeneratedValue(strategy=IDENTITY)<br />    private Long id;<br />  <br />    private String username;<br />    <br />    private String fullName;<br />        <br />    private User() {}<br />    <br />    public User(String username, String fullName) {<br />        this.username = username;<br />        this.fullName = fullName;<br />    }<br />    <br />    public Long getId() {<br />        return id;<br />    }<br /><br />    public String getUsername() {<br />        return username;<br />    }<br /><br />    public String getFullName() {<br />        return fullName;<br />    }<br />    <br />}  </pre><br />A simple DAO interface:<br /><br /><pre class="brush: java">public interface UserDao {<br /><br />    void saveUser(User user);<br />    User findById(Long id);<br />    List<User> findByFullName(String fullName);<br />    void deleteUser(User user);<br />}<br /></pre><br />And of course there is a DAO implementation class, but we will not show it here, soon you will see why.<br /><br />No project is complete without unit tests, so here is a very simple one:<br /><br /><pre class="brush: java">public class UserDaoTest {<br /><br />    @Test<br />    public void generalTest() {<br /><br />        EntityManagerFactory emf = Persistence.createEntityManagerFactory(&quot;pu&quot;);<br />        EntityManager em = emf.createEntityManager();<br />        UserDao userDao = new UserDaoImpl(em);<br />        <br />        final String username = &quot;jsmith&quot;;<br />        final String fullName = &quot;John Smith&quot;;<br />        final Long id;<br />        <br />        // Save user<br />        User user = new User(username, fullName);<br />        userDao.saveUser(user);<br />        id = user.getId();<br />        <br />        // Find by ID<br />        user = userDao.findById(id);<br />        assertEquals(username, user.getUsername());<br />        <br />        // Find by Full Name<br />        List<User> results = userDao.findByFullName(&quot;John Smith&quot;);<br />        assertEquals(1, results.size());<br />        assertEquals(username, results.get(0).getUsername());<br />        <br />        // Delete<br />        userDao.deleteUser(user);<br />        user = userDao.findById(id);<br />        assertNull(user);<br />    }<br />}<br /></pre><br />Regarding implementation details: the findByFullName() method can be implemented either with a named query or with a criteria, it doesn&#39;t matter for our example.<br /><br /><span style="font-size: large;">Adding Hades</span><br /><br />Add Hades to your project. With Maven we add this dependency:<br /><br /><pre class="brush: xml"><dependency><br />   <groupId>org.synyx.hades</groupId><br />   <artifactId>org.synyx.hades</artifactId><br />   <version>2.0.1.RELEASE</version><br /></dependency> </pre><br />To make our DAO work with Hades, we make UserDao inherit from GenericDao<User, Long>. This is a Hades interface where the first type is the persistent class it will work with and the second type is the type of the persistent class identifier.<br />Now we simply delete stuff. That&#39;s right - we delete the DAO implementation class, the named query (if you have one) and some of the DAO interface methods.<br /><br />The UserDao interface should now look like this:<br /><br /><pre class="brush: java">public interface UserDao extends GenericDao<User, Long> {<br /><br />    List<User> findByFullName(String fullName);<br />}<br /></pre><br />But what about all the methods that we removed? They are no longer needed because GenericDao has equivalent methods, and Hades provides the implementation. Take a look at the JavaDoc of GenericDao to see what you get &quot;for free&quot;.<br /><br />That&#39;s great, but doesn&#39;t findByFullName() need an implementation? That depends. For simple finder methods you can use method names that matches Hades conventions. In this case, the prefix &quot;findBy&quot; that precedes &quot;FullName&quot; means that this is a search query that uses the &quot;fullName&quot; property in the &quot;where&quot; clause, meaning Hades generates a this query from the method name: &quot;from User where fullName = ?&quot; .<br /><br />If we do want to write more complex queries, we can do it by annotating the method in the DAO interface. Let&#39;s change findByFullName() to use the &quot;like&quot; operator instead of &quot;=&quot; :<br /><br /><pre class="brush: java">public interface UserDao extends GenericDao<User, Long> {<br /><br />    @Query(&quot;from User where fullName like ?1&quot;)<br />    List<User> findByFullName(String fullName); <br /><br />}</pre>This makes much more sense (at least to me) than writing the query as part of the model code.<br /><br />So, if there is no implementation class (more correctly - Hades generates the implementation class at runtime), how do we instantiate the DAO ? We use Hades GenericDaoFactory. Let&#39;s change the unit test code accordingly:  <br /><pre class="brush: java">public class UserDaoTest {<br /><br />    @Test<br />    public void generalTest() {<br />        <br />        EntityManagerFactory emf = Persistence.createEntityManagerFactory(&quot;pu&quot;);<br />        EntityManager em = emf.createEntityManager();<br />        <br />        GenericDaoFactory gdf = GenericDaoFactory.create(em);<br />        UserDao userDao = gdf.getDao(UserDao.class);<br />        <br />        // rest of the code as before<br />    }<br />}<br /></pre>That&#39;s it. By using Hades we made our code much more clean because: <br /><ul><li>We get the basic CRUD operations in every DAO out of the box</li><li>We don&#39;t need to write DAO implementation class in many cases</li><li>We write JPQL queries in the DAO interface and not in the model</li><li>We don&#39;t even need to write JPQL queries for simple cases where we can use conventional method names</li></ul>Although Hades removes the need to write DAO implementation code, sometimes we have no choice. Maybe we want to build a dynamic query or we simple want to migrate gradually to Hades while keeping existing JPA code. For this case we can write an additional custom DAO interface with an implementation, and make the Hades DAO inherit the custom DAO:<br /><br /><pre class="brush: java">public interface UserDaoCustom {<br /><br />    List<User> searchUsers(String username, String fullName);<br />}<br /></pre><br /><pre class="brush: java">public class UserDaoImpl implements UserDaoCustom {<br /><br />    List<User> searchUsers(String username, String fullName) {<br />        // implementation code...<br />    }<br />}<br /></pre><br /><pre class="brush: java">public interface UserDao extends GenericDao<User, Long>, UserDaoCustom {<br /><br />    @Query(&quot;from User where fullName like ?1&quot;)<br />    List<User> findByFullName(String fullName); <br />} </pre><br />When we use a custom DAO with implementation, we need to tell the Hades factory to use this implementation, so we modify one line the unit test code:<br /><br /><pre class="brush: java">UserDao userDao = gdf.getDao(UserDao.class, UserDaoImpl.class);</pre><br />So there - you don&#39;t have to make any drastic changes to your codebase at once in order to benefit from Hades.<br /><br />There are plenty of nice features in Hades we didn&#39;t cover such as pagination, sorting, named parameters and Spring integration. I encourage you to read the <a href="http://redmine.synyx.org/projects/hades/wiki">Hades Documentation</a> to learn about its features. We will cover some of them in future posts.</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/simplifying-jpa-code-hades" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

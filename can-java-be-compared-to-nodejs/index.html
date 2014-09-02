@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Can Java be compared to NodeJS?</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Can Java be compared to NodeJS?</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img typeof="foaf:Image" src="/assets/pictures/picture-126-1361283272-d6fbaa7867cd6ec552e9cf0ea350406e.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Assaf</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Gannon</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">JS & Java Architect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/js/assafg'>assafg</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JS">JS</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Java">Java</a>
+              </li>
+            
+              <li>
+                <a href="/tags/node-dot-js">node.js</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2013-03-18 00:00:00 +0200">
+        <div class="day">18</div>
+        Mar. 2013
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/can-java-be-compared-to-nodejs' st_title='Can Java be compared to NodeJS?' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/can-java-be-compared-to-nodejs' st_title='Can Java be compared to NodeJS?' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/can-java-be-compared-to-nodejs' st_title='Can Java be compared to NodeJS?' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/can-java-be-compared-to-nodejs' st_title='Can Java be compared to NodeJS?' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/can-java-be-compared-to-nodejs' st_title='Can Java be compared to NodeJS?' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>TL;DR&nbsp;<strong>:</strong><strong> </strong><u><strong>NO!</strong></u></p>
+
+<p><span style="font-family: Arial, sans-serif; font-size: 9pt;">Background: A discussion on the Tikal mailing list started by comparing search trends of Ruby and NodeJS and soon evolved to a comparison of Java and</span>&nbsp;NodeJS...<br />
+    <span style="font-size: 9pt; font-family: Arial, sans-serif;">First off - I must say I have quite a lot of experience with Java and am a pretty big fan</span>&nbsp;of NodeJS.</p>
+
+<p><span style="font-family: Arial, sans-serif; font-size: 9pt;">And now to the point: None in their right mind should event try to compare Java and Node. All the clich&eacute;s about Apples and oranges apply here. The discussion whether or not Node can do anything Java can do but better or the other way round is not relevant. The fact is that in many cases Node can get the job done with much less effort at a much lower costs. This reminds me of what I felt as a young cocky Java developer whenever PHP was mentioned. Sure you can build an e-commerce site with PHP in 3 months with a budget of $20K but it will SUCK - while if you build it with Java it will take 6 months and a budget of $200K and it will be great.... Guess what most the e-commerce systems run with... actually seems like most of the websites out there run with this inferior wannabe scripting language</span>&nbsp;-&nbsp;<a href="http://w3techs.com/technologies/details/pl-php/all/all">http://w3techs.com/technologies/details/pl-php/all/all</a></p>
+
+<p><span style="font-family: Arial, sans-serif; font-size: 9pt;">Over time I learned some hard truths:</span></p>
+
+<ul>
+    <li>
+        Not every project needs to be a military grade fortress</li>
+    <li>
+        Not every piece of code will evolve - not everything requires abstraction</li>
+    <li>
+        PHP still sucks but in many cases it gets the job done fast and cheap</li>
+    <li>
+        Javascript on the server is not such a bad idea</li>
+</ul>
+
+<p><span style="font-size: 9pt; font-family: Arial, sans-serif;">There is much more to software development than the actual software -</span>&nbsp;<strong>budget </strong>and <strong>time-to-market&nbsp;</strong><span style="font-size: 9pt; font-family: Arial, sans-serif;">often are more important than stability, scalability, security, and maintainability. There are also issues of recruiting, and educating new engineers</span>.</p>
+
+<p><span style="font-family: Arial, sans-serif; font-size: 9pt;">The bottom line is that many medium to small to very small projects can benefit from Node&#39;s ease, speed, and fun(!) of development. I wonder where Mark Zuckerberg would be now if he had chosen to go with Java and had taken the time to set up a Model layer with ORM and an abstract service layer and abstract Data layer and Spring security and Hibernate and MVC and mod_jk and JSF and you get the picture...</span><span class="apple-converted-space" style="font-family: Arial, sans-serif; font-size: 9pt;">&nbsp;</span></p>
+
+<p><span style="font-family: Arial, sans-serif; font-size: 9pt;">We&#39;ve all seen a lot of java projects that were engineering masterpieces but failed horribly and crappy projects that succeeded beyond any wildest dream.</span><span class="apple-converted-space" style="font-family: Arial, sans-serif; font-size: 9pt;">&nbsp;</span></p>
+
+<p><span style="font-family: Arial, sans-serif; font-size: 9pt;">So what to choose for your next project? - It doesn&#39;t really matter as long as you don&#39;t</span>&nbsp;use&nbsp;<img alt="" src="http://stophittingyourbrother.files.wordpress.com/2011/05/movie-thor-hammer.jpg" style="width: 80px; height: 59px;" />&nbsp;for&nbsp;<img alt="" src="data:image/jpeg;base64,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" style="width: 44px; height: 59px;" /></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/can-java-be-compared-to-nodejs" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

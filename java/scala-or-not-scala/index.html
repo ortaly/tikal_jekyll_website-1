@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>To Scala or not to Scala? </title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-java page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">To Scala or not to Scala? </h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Scala">Scala</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2009-10-27 00:00:00 +0200">
+        <div class="day">27</div>
+        Oct. 2009
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/scala-or-not-scala' st_title='To Scala or not to Scala? ' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/scala-or-not-scala' st_title='To Scala or not to Scala? ' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/scala-or-not-scala' st_title='To Scala or not to Scala? ' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/scala-or-not-scala' st_title='To Scala or not to Scala? ' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/scala-or-not-scala' st_title='To Scala or not to Scala? ' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>I heard today I'm considered an advocate of Scala for a client I'm at. I came across Scala in 2006 and was at first very excite about it, but decided not to keep with it, so I thought I'd share my view of the language.</p>
+
+<p>&nbsp;</p>
+
+<p>So, why should you choose to use Scala:</p>
+
+<ul>
+    <li>
+    <p>It is a type-safe functional language with nice syntax. There    are languages (Ruby, Python, Javascript) that are functional, but   not type safe. There's <a href="http://functionaljava.org/">Functional  Java</a> but code becomes very cluttered with template parameters.</p>
+    </li>
+    <li>
+    <p>Functional programming makes some code a lot shorter. You    can google for many examples. For a short example, in Scala I can   write</p>
+    </li>
+</ul>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#1a1a1a">        </font><font color="#000000">task(</font><font color="#2a00ff">&quot;foo&quot;</font><font color="#000000">)</font><font color="#1a1a1a"> </font><font color="#000000">{</font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#1a1a1a">            </font><font color="#3f7f5f">// do stuff</font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#1a1a1a">        </font><font color="#000000">}</font></font></font></p>
+
+<p>where the task is invoked later. In Java you'd need to write:</p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#000000">        </font><font color="#7f0055"><b>new</b></font><font color="#000000"> Task(</font><font color="#2a00ff">&quot;foo&quot;</font><font color="#000000">) {</font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#000000">            </font><font color="#7f0055"><b>public</b></font><font color="#000000"> </font><font color="#7f0055"><b>void</b></font><font color="#000000"> </font><font color="#000000"><u>execute()</u></font><font color="#000000"> {</font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#000000">                </font><font color="#3f7f5f">// do some stuff</font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font color="#000000"><font face="Monospace"><font size="2">            }</font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font color="#000000"><font face="Monospace"><font size="2">        };</font></font></font></p>
+
+<ul>
+    <li>
+    <p>Type safety is important to get IDE code completion and  navigation as well as JIT optimizations (it's hard to compile 'a *  b' to machine code unless you know what a and b are)</p>
+    <ul>
+        <li>
+        <p>My experience with Ruby was that I did not miss this as code         is easy to follow by reading it. In scala, things are different,        see example below.</p>
+        </li>
+    </ul>
+    </li>
+</ul>
+
+<ul>
+    <li>
+    <p>Scala has some cool features like operator methods ('a * b'  means 'a.*(b)'), pattern matching (making switch statements a lot   richer), multiple assignment, type inference, actors library, and   more</p>
+    </li>
+    <li>
+    <p>Scala can seamlessly use Java code. So you can use all your  favourite libraries and frameworks.</p>
+    </li>
+    <li>
+    <p>Type safety gives you some extent of code check.</p>
+    </li>
+    <li>
+    <p>Scala is where all the cool kids hang.</p>
+    </li>
+</ul>
+
+<p><br />
+&nbsp;</p>
+
+<p>So far, so good, right? Well, not so good:</p>
+
+<ul>
+    <li>
+    <p>Scala's rich (as in a lot) syntax structures mean it is easy     to get weird compilation errors. In essence, it is like being in C++    again. In dynamic-typed languages, the syntax tends to be a lot     simpler (not needing to declare types), and so errors are easier to     understand.</p>
+    </li>
+    <li>
+    <p>All the idioms Scala provides means a lot of idioms to learn     and master. People may say that you need not use all of them, which     is true, but you probably need all of them to read others' code and     to reason about it.</p>
+    </li>
+    <li>
+    <p>While reading Scala code, a lot of compilation is going in   your head. Granted, the code is shorter, but until you get used to  the tricks done by the code to make it shorter, it is hard to   understand just by glancing at it.</p>
+    </li>
+    <li>
+    <p>For example, you might see a bit of code like &quot;<i>foo ?:    bar</i>&quot;. What does it mean? You might want to know what the   type of <i>foo</i> is, to open up its file and find the method <i>?:</i>.   But <i>foo</i> is declared as '<i>val foo = car</i>'. Now <i>car</i>    may not be in site. Why? because it is a method imported from some  other package. How do you know which? If you're lucky, it is    explicit (<i>import ....car</i>), but in Scala, many imports are for    everything in a package (or type). Now say you figure out where <i>car</i>  is and find its return type, so now you know what <i>foo</i>'s type     is. Assume it turns out to be <i>Foo</i>. You try finding Foo.scala,    but it doesn't exist, since scala allows to define many types in a  single file and name it whatever you want. Finally you find that <i>Foo</i>     is defined in Helpers.scala. You look for the method <i>?:</i>, but     it is not there. Why? well you figure that in Scala, methods ending     with colon are right associative, so the method is actually invoked     on <i>bar</i>. You go through the process again and find that <i>Bar</i>    is defined in file Util.scala. You open up that file, and no,   there's no <i>?:</i> defined there. Why? because when the Scala     compiler sees an object (class) does not support some method invoked    on it, it looks for an implicit method that converts the object to  another one which does support the method. So now you need to hunt  for the implicit method. Finally you find it and there <i>?:</i> is     in all its glory.</p>
+    </li>
+    <li>
+    <p>Yes, I know, IDEs will help you find this at a click of a    button. Still, IDE support is not robust enough yet (for me the     Eclipse plugin provided just syntax highlighting and conflicted with    the spring plugins and I had to resort to using IDEA). And also, for    me, whenever I see code as in the above I need to &quot;compile&quot;   it in my head to understand the flow.</p>
+    </li>
+    <li>
+    <p>For those interested, ?: is not part of Scala, but an    operator that can be added with 3 lines of code to mean 'if foo is  not null, use its value, otherwise, use bar' where both foo and bar     can be method calls that will be evaluated only if needed.</p>
+    </li>
+    <li>
+    <p>Because Scala compiles to JVM bytecode, they had to do some  tricks which are not easy to follow.</p>
+    <ul>
+        <li>
+        <p>The reason I left scala can be found in this <a href="http://osdir.com/ml/lang.scala/2006-04/msg00022.html">thread</a>:      basically, try to figure out the difference between:</p>
+        </li>
+    </ul>
+    </li>
+</ul>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font color="#1a1a1a"><font face="Monospace"><font size="2">        </font></font></font><font color="#7f0055"><font face="Monospace"><font size="2"><b>var</b></font></font></font><font color="#1a1a1a"><font face="Monospace"><font size="2"> </font></font></font><font color="#000000"><font face="Monospace"><font size="2">cond</font></font></font><font color="#1a1a1a"><font face="Monospace"><font size="2"> </font></font></font><font color="#000000"><font face="Monospace"><font size="2">=</font></font></font><font color="#1a1a1a"><font face="Monospace"><font size="2"> </font></font></font><font color="#7f0055"><font face="Monospace"><font size="2"><b>true</b></font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font color="#1a1a1a"><font face="Monospace"><font size="2">        </font></font></font><font color="#7f0055"><font face="Monospace"><font size="2"><b>for</b></font></font></font><font color="#1a1a1a"><font face="Monospace"><font size="2"> </font></font></font><font color="#000000"><font face="Monospace"><font size="2">(</font></font></font><font color="#7f0055"><font face="Monospace"><font size="2"><b>val</b></font></font></font><font color="#1a1a1a"><font face="Monospace"><font size="2"> </font></font></font><font color="#000000"><font face="Monospace"><font size="2">x&lt;-List.range(0,10);cond){</font></font></font><font color="#7f0055"><font face="Monospace"><font size="2"><b>if</b></font></font></font><font color="#1a1a1a"><font face="Monospace"><font size="2"> </font></font></font><font color="#000000"><font face="Monospace"><font size="2">(x&gt;=5)cond=</font></font></font><font color="#7f0055"><font face="Monospace"><font size="2"><b>false</b></font></font></font><font color="#000000"><font face="Monospace"><font size="2">;</font></font></font><font color="#1a1a1a"><font face="Monospace"><font size="2"> </font></font></font><font color="#000000"><font face="Monospace"><font size="2">Console.println(x)}</font></font></font></p>
+
+<p><br />
+&nbsp;</p>
+
+<p style="margin-left: 0.49in;">which prints 0 to 10</p>
+
+<p style="margin-left: 0.49in;">and</p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#1a1a1a">        </font><font color="#7f0055"><b>var</b></font><font color="#1a1a1a"> </font><font color="#000000">cond</font><font color="#1a1a1a"> </font><font color="#000000">=</font><font color="#1a1a1a"> </font><font color="#7f0055"><b>true</b></font></font></font></p>
+
+<p align="LEFT" style="margin-bottom: 0in;"><font face="Monospace"><font size="2"><font color="#1a1a1a">        </font><font color="#7f0055"><b>for</b></font><font color="#1a1a1a"> </font><font color="#000000">(</font><font color="#7f0055"><b>val</b></font><font color="#1a1a1a"> </font><font color="#000000">x&lt;-List.range(0,10);{</font><font color="#7f0055"><b>if</b></font><font color="#1a1a1a"> </font><font color="#000000">(x&gt;=5)cond=</font><font color="#7f0055"><b>false</b></font><font color="#000000">;cond})</font><font color="#1a1a1a"> </font><font color="#000000">Console.println(x)</font></font></font></p>
+
+<p><br />
+&nbsp;</p>
+
+<p><br />
+&nbsp;</p>
+
+<p>which prints 0 to 4.</p>
+
+<p>What is the difference? It's hard to tell because it is all legal code. The secret (which I couldn't find then, but learned now because I had to) is that whateve is inside the parenthesis of the for statement is evaluated prior to executing the body (which is counter intuitive since it is not howregular  <i>for</i> and <i>while</i> behave). So in the firs example, cond is always evaluated to true, even though in the body it is set to false.</p>
+
+<ul>
+    <li>
+    <p>See this <a href="http://creativekarma.com/ee.php/weblog/comments/the_scala_for_comprehension_from_a_java_perspective/">The  Scala &ldquo;for comprehension&rdquo; from a Java perspective</a></p>
+    </li>
+</ul>
+
+<ul>
+    <li>
+    <p>It is easy for people to create unreadable code: invent  operators, use functions where not needed etc.</p>
+    </li>
+    <li>
+    <p>Some libraries are not as robust as they are assumed to be.  For example, the lift framework (a web framework) has abandoned the     actors library of Scala because they found it to be hard to use due     to its bugs (they created they're own actors library)</p>
+    </li>
+    <li>
+    <p>The language is still evolving (2.8 will add named parameters    for example).</p>
+    </li>
+    <li>
+    <p>Compared to dynamic-typed languages, Scala still requires the    compile-package-deploy cycle that Java defined.</p>
+    </li>
+</ul>
+
+<p><br />
+&nbsp;</p>
+
+<p><br />
+&nbsp;</p>
+
+<p style="margin-bottom: 0in;">&nbsp;</p>
+
+<p style="margin-bottom: 0in;">So, should you choose Scala? You should if:</p>
+
+<ul>
+    <li>
+    <p style="margin-bottom: 0in;">You like functional programming,     but don't want to loose on static typing (optimization, code    completion)</p>
+    </li>
+    <li>
+    <p style="margin-bottom: 0in;">You want to keep your team on edge   with the latest advancements. This is not necessarily a bad thing.  It can mean that people do not stagnate into doing repeated work but    stay sharp as the learn new things.</p>
+    </li>
+    <li>
+    <p style="margin-bottom: 0in;">You are confident in your team to    use the power of Scala to create readable code</p>
+    </li>
+    <li>
+    <p style="margin-bottom: 0in;">You think that most innovations  will be implemented in Scala and you want to be able to use them    (while Scala can access Java code, the reverse is not always true   since all the Scala features created un-intuitive JVM classes and   methods).</p>
+    <ul>
+        <li>
+        <p style="margin-bottom: 0in;">Examples are specs, scalatest,       lift, akka</p>
+        </li>
+    </ul>
+    <p style="margin-bottom: 0in;">&nbsp;</p>
+    </li>
+</ul>
+
+<p style="margin-bottom: 0in;">&nbsp;</p>
+
+<p style="margin-bottom: 0in;">You should stick with Java if:</p>
+
+<ul>
+    <li>
+    <p style="margin-bottom: 0in;">Your team members don't want to  learn new things (Scala has a steep learning curve) or they will not    be able to leverage the language correctly.</p>
+    </li>
+    <li>
+    <p style="margin-bottom: 0in;">You have a large existing code   base and you don't see your existing framework changing. In this    situation, you'll end up writing code in Scala that is just Java    with different syntax.</p>
+    </li>
+</ul>
+
+<p style="margin-bottom: 0in;">&nbsp;</p>
+
+<p style="margin-bottom: 0in;">You should use Jruby, Groovy or Jython if:</p>
+
+<ul>
+    <li>
+    <p style="margin-bottom: 0in;">You want the agility of a    dynamic-typed language with less syntactic structures</p>
+    </li>
+    <li>
+    <p style="margin-bottom: 0in;">You are confident you'll write   enough tests to cover the code</p>
+    </li>
+    <li>
+    <p style="margin-bottom: 0in;">Your are not concerned you need to   squeeze every bit of performance (note that many large sites, with  lots of traffic use php/ruby/python. Erlang, a language developed as    a soft-runtime environment to develop phone switchboards, is    dynamic-typed)</p>
+    </li>
+</ul>
+
+<p style="margin-bottom: 0in;">&nbsp;</p>
+
+<p style="margin-bottom: 0in;">(I left Ruby, Ptyhon out of the equation as I assume most people will want to be able to use existing Java libraries and code)</p>
+
+<p style="margin-bottom: 0in;">&nbsp;</p>
+
+<p style="margin-bottom: 0in;">So why I decided to not keep with Scala back then: First, since I learned it for fun, I was not interested in searching for answers for the many problems I encountered trying to figure how code works. Second, for functional programming, I felt other languages&nbsp; did a better job at providing functional programming (and other idioms) while keeping the syntax simple and without compile-deploy cycle. But given an enterprise environment, where existing code base is important and so is performance, and with the right team of people, I'd definitly want to use it over Java.</p>
+
+<ul>
+    <ul>
+        <p style="margin-bottom: 0in;">&nbsp;</p>
+    </ul>
+</ul>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/java/scala-or-not-scala" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

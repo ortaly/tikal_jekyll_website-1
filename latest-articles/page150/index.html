@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="section- group-page- page-taxonomy section-domains one-sidebar sidebar-second page-taxonomy page-taxonomy-term">
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <div class="section_title">
+        
+          Latest Articles
+        
+      </div>
+      <div class="section_subtitle">
+        <div class="field field-name-field-sub-title field-type-text field-label-hidden">
+          <div class="field-items">
+            <div class="field-item  field-item-1 even">
+              
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#region-title-and-featured -->
+  </div><!-- /#featured -->
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+  <div id="block-system-main" class="block block-system block-even">
+    <div class="content">
+      <div class="view view-article view-id-article view-display-id-articles_view">
+        <div class="view-content">
+          <div class="view-content-limit">
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/js/flash-builder-4-–-my-impressions">Flash Builder 4 – My impressions</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/js/sefi'>sefi</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+          <a href="/tags/flex" class="active">flex</a>
+        
+          <a href="/tags/flash-builder-4" class="active">flash builder 4</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-17 00:00:00 +0200">
+        <div class="day">17</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/js/flash-builder-4-–-my-impressions' st_title='Flash Builder 4 – My impressions' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/js/flash-builder-4-–-my-impressions' st_title='Flash Builder 4 – My impressions' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/js/flash-builder-4-–-my-impressions' st_title='Flash Builder 4 – My impressions' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/js/flash-builder-4-–-my-impressions' st_title='Flash Builder 4 – My impressions' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/js/flash-builder-4-–-my-impressions' st_title='Flash Builder 4 – My impressions' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        I have been using the Flash Builder 4 (TM) for a few months now, and besides what you can read here, below are my impressions: Code completion &ndash; While this is nothing new, I did find a small improvement there that I missed. Suppose you start creating a new instance,...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/js/flash-builder-4-–-my-impressions">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/elips-studio-3-new-beta-version-released">ELIPS Studio 3 new beta version released</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/js/sefi'>sefi</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/flex" class="active">flex</a>
+        
+          <a href="/tags/gwt" class="active">gwt</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-15 00:00:00 +0200">
+        <div class="day">15</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/elips-studio-3-new-beta-version-released' st_title='ELIPS Studio 3 new beta version released' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/elips-studio-3-new-beta-version-released' st_title='ELIPS Studio 3 new beta version released' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/elips-studio-3-new-beta-version-released' st_title='ELIPS Studio 3 new beta version released' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/elips-studio-3-new-beta-version-released' st_title='ELIPS Studio 3 new beta version released' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/elips-studio-3-new-beta-version-released' st_title='ELIPS Studio 3 new beta version released' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        A new version of ELIPS studio 3 was released (Beta 3), you can download it here. The major additions are: Support Android 1.6 and 2.0: ELIPS Studio can now generate your application as a native Android application package (.apk). More information about the setup is provided in the website, tutorials...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/elips-studio-3-new-beta-version-released">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/devops/drupal-jerusalem">Drupal in Jerusalem</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/devops/hagzag'>hagzag</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/DevOps" class="active">DevOps</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-15 00:00:00 +0200">
+        <div class="day">15</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/devops/drupal-jerusalem' st_title='Drupal in Jerusalem' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/devops/drupal-jerusalem' st_title='Drupal in Jerusalem' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/devops/drupal-jerusalem' st_title='Drupal in Jerusalem' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/devops/drupal-jerusalem' st_title='Drupal in Jerusalem' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/devops/drupal-jerusalem' st_title='Drupal in Jerusalem' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        For sign-up go to:&nbsp;http://www.meetup.com/Drupal-Israel/calendar/12136793/?rv=mr1p &nbsp; Drupal in Jerusalem&nbsp;Agenda &nbsp;Introducing Drupal to non programmers as well, Intro to Drupal and community by Israel David ~15 mins Singing Communities Site presentation, User point of view and administrator point of view - by Amir Simantov ~ 20mins On Linux distros and Ubuntu, OpenOffice...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/devops/drupal-jerusalem">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/incubator/tce-tikal-community-event-27110-presenting-django">TCE - Tikal Community Event 27.1.10 Presenting "Django"</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/yifat'>yifat</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/Incubator" class="active">Incubator</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-14 00:00:00 +0200">
+        <div class="day">14</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/incubator/tce-tikal-community-event-27110-presenting-django' st_title='TCE - Tikal Community Event 27.1.10 Presenting "Django"' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/incubator/tce-tikal-community-event-27110-presenting-django' st_title='TCE - Tikal Community Event 27.1.10 Presenting "Django"' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/incubator/tce-tikal-community-event-27110-presenting-django' st_title='TCE - Tikal Community Event 27.1.10 Presenting "Django"' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/incubator/tce-tikal-community-event-27110-presenting-django' st_title='TCE - Tikal Community Event 27.1.10 Presenting "Django"' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/incubator/tce-tikal-community-event-27110-presenting-django' st_title='TCE - Tikal Community Event 27.1.10 Presenting "Django"' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Dear Members and friends,&nbsp; The 2nd Tikal Community event on 27.1.10, will be presenting &quot;Django&quot; Django is the hottest word in web development today, across the globe. It's a revolutionary web framework that changes the rules of the game in software development: whatever used to take months or more to...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/incubator/tce-tikal-community-event-27110-presenting-django">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/devops/including-external-non-mavanized-jar-maven-build-and-packaging">Including an external non mavanized jar in maven build and packaging</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/java/shalom'>shalom</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/DevOps" class="active">DevOps</a>
+        
+          <a href="/tags/package" class="active">package</a>
+        
+          <a href="/tags/maven-install-plugin" class="active">maven-install-plugin</a>
+        
+          <a href="/tags/maven" class="active">maven</a>
+        
+          <a href="/tags/external-jar" class="active">external jar</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-14 00:00:00 +0200">
+        <div class="day">14</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/devops/including-external-non-mavanized-jar-maven-build-and-packaging' st_title='Including an external non mavanized jar in maven build and packaging' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/devops/including-external-non-mavanized-jar-maven-build-and-packaging' st_title='Including an external non mavanized jar in maven build and packaging' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/devops/including-external-non-mavanized-jar-maven-build-and-packaging' st_title='Including an external non mavanized jar in maven build and packaging' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/devops/including-external-non-mavanized-jar-maven-build-and-packaging' st_title='Including an external non mavanized jar in maven build and packaging' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/devops/including-external-non-mavanized-jar-maven-build-and-packaging' st_title='Including an external non mavanized jar in maven build and packaging' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        I said that before and will say again, maven sometimes sucks. Its like your mother in low, you respect her because she brought the comfort into your life, you must live with her coz there is no other, but sometimes you really really wan'a kill her, and your at least...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/devops/including-external-non-mavanized-jar-maven-build-and-packaging">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/flex-group-meeting-flex-foundation-kickoff">Flex group meeting: Flex Foundation kickoff</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-14 00:00:00 +0200">
+        <div class="day">14</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/flex-group-meeting-flex-foundation-kickoff' st_title='Flex group meeting: Flex Foundation kickoff' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/flex-group-meeting-flex-foundation-kickoff' st_title='Flex group meeting: Flex Foundation kickoff' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/flex-group-meeting-flex-foundation-kickoff' st_title='Flex group meeting: Flex Foundation kickoff' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/flex-group-meeting-flex-foundation-kickoff' st_title='Flex group meeting: Flex Foundation kickoff' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/flex-group-meeting-flex-foundation-kickoff' st_title='Flex group meeting: Flex Foundation kickoff' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        I&nbsp;changed the meeting's agenda in favor of a cickoff meeting for the planned, open source,&nbsp;Flex Foundation project. It was originally planned for next month, but, well, we're just eager to start.. &nbsp; agenda: - Introduction. -&nbsp;Presenting proposed architecture,&nbsp;design and implementation (based on aspect oriented design concepts and the Facet design...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/flex-group-meeting-flex-foundation-kickoff">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/flex-file-does-not-load-when-using-ssl">Flex file does not load when using SSL</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+          <a href="/tags/XML" class="active">XML</a>
+        
+          <a href="/tags/ssl" class="active">ssl</a>
+        
+          <a href="/tags/flex" class="active">flex</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-14 00:00:00 +0200">
+        <div class="day">14</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/flex-file-does-not-load-when-using-ssl' st_title='Flex file does not load when using SSL' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/flex-file-does-not-load-when-using-ssl' st_title='Flex file does not load when using SSL' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/flex-file-does-not-load-when-using-ssl' st_title='Flex file does not load when using SSL' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/flex-file-does-not-load-when-using-ssl' st_title='Flex file does not load when using SSL' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/flex-file-does-not-load-when-using-ssl' st_title='Flex file does not load when using SSL' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Hi all, &nbsp; I wrote a flex application, using BlazeDS that was working just fine. &nbsp; Then I was asked to change my server to work with SSL. &nbsp; After I changed the server settings to run with SSL, the flex file just refuses to load, without any error. &nbsp;...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/flex-file-does-not-load-when-using-ssl">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/flex-black-belt-growing">Flex Black Belt is growing!</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/js/sefi'>sefi</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/gwt" class="active">gwt</a>
+        
+          <a href="/tags/flex" class="active">flex</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-14 00:00:00 +0200">
+        <div class="day">14</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/flex-black-belt-growing' st_title='Flex Black Belt is growing!' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/flex-black-belt-growing' st_title='Flex Black Belt is growing!' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/flex-black-belt-growing' st_title='Flex Black Belt is growing!' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/flex-black-belt-growing' st_title='Flex Black Belt is growing!' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/flex-black-belt-growing' st_title='Flex Black Belt is growing!' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        This month the blog crossed the 500 unique visitors a week mark! So, this is just a thank you post to all the visitors of my blog for visiting. I am glad people are finding what I post interesting and/or useful. I’d love to hear what you think about the...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/flex-black-belt-growing">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/elips-impressions-and-hands-event">Elips impressions and hands-on event</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/js/sefi'>sefi</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/gwt" class="active">gwt</a>
+        
+          <a href="/tags/flex" class="active">flex</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-14 00:00:00 +0200">
+        <div class="day">14</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/elips-impressions-and-hands-event' st_title='Elips impressions and hands-on event' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/elips-impressions-and-hands-event' st_title='Elips impressions and hands-on event' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/elips-impressions-and-hands-event' st_title='Elips impressions and hands-on event' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/elips-impressions-and-hands-event' st_title='Elips impressions and hands-on event' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/elips-impressions-and-hands-event' st_title='Elips impressions and hands-on event' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        A few weeks ago, Ilan and I evaluated the ELIPS plugin for Flex Builder which allows Flex to go mobile. You can read the post we co-wrote here. We are going to host an event, under the sponsorship of Tikal. This time, we are going to cover RSLs – In...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/elips-impressions-and-hands-event">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/devops/alm-group-meeting-maven-3-features">ALM group meeting: Maven 3 features</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/devops/liya'>liya</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/DevOps" class="active">DevOps</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-01-14 00:00:00 +0200">
+        <div class="day">14</div>
+        Jan. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/devops/alm-group-meeting-maven-3-features' st_title='ALM group meeting: Maven 3 features' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/devops/alm-group-meeting-maven-3-features' st_title='ALM group meeting: Maven 3 features' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/devops/alm-group-meeting-maven-3-features' st_title='ALM group meeting: Maven 3 features' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/devops/alm-group-meeting-maven-3-features' st_title='ALM group meeting: Maven 3 features' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/devops/alm-group-meeting-maven-3-features' st_title='ALM group meeting: Maven 3 features' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Next ALM forum meeting will take place on Wednesday, 20th of January in Tikal new office (4 HaBarzel Tel Aviv, first floor) &nbsp; Meeting Agenda: - Maven 3 features - by Liya - Discuss the next topic: deployment/integration tests stage and its different implementations &nbsp; Please sign-up to participate. Thank...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/devops/alm-group-meeting-maven-3-features">Read More »</a></span>  
+  </div>
+</div>
+
+            
+            
+  <div class="item-list">
+    
+    
+      <ul class="pager">
+        <li class="pager-first first">
+          <a title="Go to first page" href="/latest-articles">« first</a>
+        </li>
+
+        <li class='pager-item'><a title='Go to page 148' href='/latest-articles/page148'>148</a></li> <li class='pager-item'><a title='Go to page 149' href='/latest-articles/page149'>149</a></li> <li class='pager-current'>150</li> <li class='pager-item'><a title='Go to page 151' href='/latest-articles/page151'>151</a></li> <li class='pager-item'><a title='Go to page 152' href='/latest-articles/page152'>152</a></li>
+
+        
+          <li class="pager-last last">
+            <a title="Go to last page" href="/latest-articles/page239">last »</a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+          </div>
+          <aside id="sidebar-second" class="sidebar" role="complementary">
+  <div class="region region-sidebar-second">
+    <div id="block-block-10" class="block block-block facebook-banner block-even">
+        <div class="content">
+            <p><a href="http://www.facebook.com/TikalKnowledge" target="_blank">Facebook</a></p>
+        </div>
+    </div>
+    <section id="block-tikal-meetup-meetup-domain-pages-events" class="block block-tikal-meetup block-odd" >
+    <h2 class="block-title">Events</h2>
+    <div class="content" ng-app="meetups-module">
+      <div ng-controller="Sn.MainCtrl as mainCtrl" >
+        <div class="meetup-logo"></div>
+        <div class="buttons-container" >
+            <div
+              ng-class="{'active': mainCtrl.isUpComing}"
+              class="switch-events button button-upcoming"
+              ng-click="mainCtrl.displayUpComing()"
+            >Upcoming</div>
+            <div
+              ng-class="{'active': mainCtrl.isPast}"
+              class="switch-events button button-past"
+              ng-click="mainCtrl.displayPast()"
+            >Past</div>
+        </div>
+        <div id="meetups" ng-controller="Sn.MeetupsCtrl as meetupsCtrl">
+          <div ng-show="mainCtrl.isUpComing" >
+             <meetup-list-event
+                    title="Upcoming Events"
+                    meetups="meetupsCtrl.meetupsByStatus.upcoming"
+                    ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
+                    is-upcoming-event="true"
+                    rsvps="meetupsCtrl.meetupsRsvps"
+              ></meetup-list-event>
+          </div>
+
+           <div ng-show="mainCtrl.isPast">
+                <meetup-list-event
+                    title="Past Events"
+                    meetups="meetupsCtrl.meetupsByStatus.past"
+                    ng-show="meetupsCtrl.meetupsByStatus.past.length"
+                    rsvps="meetupsCtrl.meetupsRsvps"
+                ></meetup-list-event>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <section id="block-general-tikal-banners" class="block block-general-tikal block-odd">
+        <h2 class="block-title"><none></none></h2>
+        <div class="content">
+          <a class="" href="/careers"></a>
+        </div>
+    </section>
+  </div>
+</aside>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

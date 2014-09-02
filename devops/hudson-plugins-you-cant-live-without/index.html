@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>The hudson plugins you can't live without</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-devops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">The hudson plugins you can't live without</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img typeof="foaf:Image" src="/assets/pictures/picture-53-1363331338-7605fa3cdebfa522a4a18ef8fd642e3d.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Haggai</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Zagury</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">DevOps Architect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/devops/hagzag'>hagzag</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/DevOps">DevOps</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Hudson">Hudson</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2010-08-27 00:00:00 +0300">
+        <div class="day">27</div>
+        Aug. 2010
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/devops/hudson-plugins-you-cant-live-without' st_title='The hudson plugins you can't live without' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/devops/hudson-plugins-you-cant-live-without' st_title='The hudson plugins you can't live without' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/devops/hudson-plugins-you-cant-live-without' st_title='The hudson plugins you can't live without' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/devops/hudson-plugins-you-cant-live-without' st_title='The hudson plugins you can't live without' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/devops/hudson-plugins-you-cant-live-without' st_title='The hudson plugins you can't live without' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>As a big fan of hudson-ci I would like to take a note of the most commonly used hudson plug-ins (at least by me) needed in order to maintain a good build environment.</p>
+
+<p>This list was collected as part of my experience in the last couple of years. I am sure your may differ then mine mine :).</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Setenv plugin</span></p>
+
+<p>The <a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://wiki.hudson-ci.org/display/HUDSON/Setenv+Plugin">The Setenv plugin</a>  lets you set environment variables for a job upon build execution. During migration from CruiseControl I found this plugin extremely useful, for I could provide the imported script the exact environment it had on the CC machine without the need to change a thing in the build's logic / parameters, this also applied to the following recommended plugin:</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Parameterized Trigger plugin</span></p>
+
+<p>The <a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://wiki.hudson-ci.org/display/HUDSON/Parameterized+Trigger+Plugin">Parameterized Trigger</a>  plugin lets you add parameters to your build jobs that users enter when  they trigger a build. This a very useful plugin for release or deployment  automation, for example, where you want to enter the version number (or  label) you want to release or deploy. The biggest feature of this plugin is the default value so even automatic / SCM triggers get a default value to execute silently.</p>
+
+<p>&nbsp;</p>
+
+<p><img hspace="5" height="90" width="90" vspace="5" border="0" align="left" alt="cygwin logo" src="/files/upload/1/small_cygwin-logo.jpg" /><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Cygpath plugin</span><strong><br />
+</strong></p>
+
+<p>The <a href="http://wiki.hudson-ci.org/display/HUDSON/Cygpath+Plugin">Cygpath Plugin</a> <span class="smalltext">for a *nix oriented guy as myself, this was a great help, all our &quot;special&quot; shell script do not have to be re-written when we are running builds on Windows nodes - and yest we have too ... :)</span></p>
+
+<p><span class="smalltext">The Cygpath gave me the </span><span class="smalltext">opportunity</span><span class="smalltext"> to share tools between linux and windows machines this gave us the ability to maintain one tool repository for all our slave regardless of </span><span class="smalltext">their</span><span class="smalltext"> architecture.</span></p>
+
+<p>And did I forget to say all you need it to enable this and automatically every batch executed on a windows slave will automatically use Cygwin ? from Cygpath wiki:</p>
+
+<p>- You install Cygwin on all the Windows slaves</p>
+
+<p>- Jobs on Hudson that assume Unix environment can now run on all the slaves (including Windows ones)</p>
+
+<p>- In the system configuration, you use Unix paths for all your tools.</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Promoted Builds plugin</span><a href="http://wiki.hudson-ci.org/display/HUDSON/Promoted+Builds+Plugin"><strong><br />
+</strong><img hspace="5" height="56" width="61" vspace="5" border="0" align="left" src="/files/upload/1/promotion.png" alt="Promotion" /></a><a href="http://wiki.hudson-ci.org/display/HUDSON/Promoted+Builds+Plugin">Definitely</a><a href="http://wiki.hudson-ci.org/display/HUDSON/Promoted+Builds+Plugin"> the </a><a href="http://search.twitter.com/search?q=%231">#1</a> plugin on the list here - this plugin enables you to do almost anything you can do in a certain Job but run it as a promotion task - if you wish to promote you build to your QA team for testing, or if you want to tag it in SVN or Deploy your artifacts to a maven repository, this is the plugin you &quot;cannot live without&quot;. Without this plugin you will need to configure a seperate job or Bach Task (see <a href="http://wiki.hudson-ci.org/display/HUDSON/Batch+Task+Plugin">batch tasks plugin</a> for more details) for every task you want to perform on your build - which makes managing hudson job a nightmare ...</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle"><br />
+</span></p>
+
+<p><a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://www.atlassian.com/software/clover/"><img hspace="5" height="76" width="80" vspace="5" border="0" align="left" src="/files/upload/1/logo-clover.png" alt="Clover logo" /><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Clover plugin</span></a></p>
+
+<p><a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://www.atlassian.com/software/clover/">Clover</a> is a non-free code coverage tool which is the commercial alternative to Cobertura Emma etc, the Hudson <a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://wiki.hudson-ci.org/display/HUDSON/Clover+Plugin">Clover</a>  plugin is an amazing add on which integrates Clover reports and Historical reports into the build flow, which I found extremely helpful. Try configuring Clover to generate historical reports and then publish them to some third-party web server for viewing - this has made Clover integration a breeze, the challenge is even bigger with a distributed build environment which Hudson &amp;&nbsp;Clover plugin have overcome.</p>
+
+<p><img height="323" width="580" src="/files/upload/1/CloverSS.jpg" alt="Clover in Job" /></p>
+
+<p>If you don't have Clover, as mentioned above - the <a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://wiki.hudson-ci.org/display/HUDSON/Cobertura+Plugin">Cobertura</a> and <a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://wiki.hudson-ci.org/display/HUDSON/Emma+Plugin">Emma</a> plugins are great too which will also integrate with:</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle"><br />
+</span></p>
+
+<p><img hspace="5" height="54" width="100" vspace="5" border="0" align="left" src="/files/upload/1/sonar_0.png" alt="" /><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Sonar plugin</span></p>
+
+<p>Although I am only &quot;P.O.C ing&quot; Sonar+Hudson+Clover, The <a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://wiki.hudson-ci.org/display/HUDSON/Sonar+plugin">Sonar</a> plugin made it trivial to integrate hudson projects with Sonar. <a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://sonar.codehaus.org/">Sonar</a>  is a powerful open source code quality metrics reporting tool, which  displays code quality metrics for multiple projects in a variety of ways  on a centralized web location.</p>
+
+<p>For Maven based builds you do not even need to change a line of code in order to get sonar to work which made this module a <a href="http://search.twitter.com/search?q=%232">#2</a> on my &quot;can't live without plugins&quot;.</p>
+
+<p>&nbsp;</p>
+
+<p><span class="subTitle" style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;">Sectioned View plugin</span><a style="color: rgb(128, 0, 0); text-decoration: underline; font-weight: normal;" href="http://wiki.hudson-ci.org/display/HUDSON/Setenv+Plugin"><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle"> <br />
+</span></a></p>
+
+<p><a href="http://wiki.hudson-ci.org/display/HUDSON/Sectioned+View+Plugin">Sectioned view</a> gives you the ability to create a &quot;Dashboard view&quot; for your job(s) / project(s) - it is quite feature rich if you take a look at it's configuration and it is very simple to comprehend. A great example is taken from the plugins wiki page see:</p>
+
+<p><img height="507" width="580" border="0" src="/files/upload/1/sectioned.png" alt="Section view scrrenshot" /></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Nested Views plugin<br />
+</span></p>
+
+<p><a href="http://wiki.hudson-ci.org/display/HUDSON/Nested+View+Plugin">Nested view</a>s another View type which allows grouping job views into multiple levels instead of one big list of tabs - this is quite useful and the only disadvantage is you can have both a view and jobs in the same page it's either a nested view or a list of views - but I presume it will sure be included.</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Sheleve Project plugin</span></p>
+
+<p><span id="title-text">If you ever wanted to Hide a jo you are working on and you also would like to prevent it from being triggered by mistake this is the plugin for you. I often find my self setting up a job and it becomes a work in progress so hiding it to a later time is a great help - this plugin does just that.<br />
+</span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14px; font-weight: bold; color: rgb(0, 0, 0); font-style: normal; font-family: Georgia;" class="subTitle">Bugzilla &amp; Jira plugins </span>(&amp;&nbsp;there or others I presume)</p>
+
+<p><img hspace="5" height="90" width="90" vspace="5" border="0" align="left" alt="Bugzilla logo" src="/files/upload/1/bugzilla.png" />Well the fact I need both in the same Hudson cluster and I can still have them work side by side was really important. In order for this plugin to serve you well your CM team has to some extra work on your SCM side, that done you got yourself a link directly into your bug tracking system - the latest versions, query <a href="http://wiki.hudson-ci.org/display/HUDSON/Bugzilla+Plugin">Bugzilla</a> &amp; <a href="http://wiki.hudson-ci.org/display/HUDSON/JIRA+Plugin">Jira</a> and can display the Bug details.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/devops/hudson-plugins-you-cant-live-without" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

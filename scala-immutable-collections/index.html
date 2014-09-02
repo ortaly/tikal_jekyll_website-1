@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Scala immutable collections</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Scala immutable collections</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img typeof="foaf:Image" src="/assets/pictures/picture-40-1361178042-42ba2f9ec8d58fda7f806c0502a1088e.png" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content">Andrew</div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content">Skiba</div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content">Java Architect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        <a href='/java/andrew'>andrew</a>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Java">Java</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Scala">Scala</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2013-08-06 00:00:00 +0300">
+        <div class="day">06</div>
+        Aug. 2013
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/scala-immutable-collections' st_title='Scala immutable collections' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/scala-immutable-collections' st_title='Scala immutable collections' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/scala-immutable-collections' st_title='Scala immutable collections' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/scala-immutable-collections' st_title='Scala immutable collections' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/scala-immutable-collections' st_title='Scala immutable collections' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>I want to start from a citation from the oficial Oracle documentation of Java concurrency:</p>
+
+<blockquote>
+    <p>&quot;Immutable objects are particularly useful in concurrent applications. Since they cannot change state, they cannot be corrupted by thread interference or observed in an inconsistent state.</p>
+    <p>Programmers are often reluctant to employ immutable objects, because they worry about the cost of creating a new object as opposed to updating an object in place...&quot;</p>
+</blockquote>
+
+<p>This explanation is not exact. In fact, programmers often don&#39;t use immutable objects, because it&#39;s hard to use them in Java. For example, if we use <span style="font-family:courier new,courier,monospace;">Collections.unmodifiableCollection</span>, we are stuck with something, which must be copied to a new writable collection, if we want a changed version of it. Also, there are no immutable or unmodifiable versions of the major interfaces (Set, Map, List, etc.) to mark our methods which are not supposed to change the contents of the arguments.</p>
+
+<p>On the other hand, Scala gives us many handy tools for working with immutables with pleasure. It starts from the fact, that variable and constant declaration are equaly easy (in Java we have to add a &quot;final&quot; keyword to make a constant, and many people just omit that out of habit and laziness). But really helps is the fact that Scala has two separate hierarchies of all major collections in packages <span style="font-family:courier new,courier,monospace;">scala.collection.immutable</span> and <span style="font-family:courier new,courier,monospace;">scala.collection.mutable</span>.&nbsp;</p>
+
+<p>And the authors of the standard Scala library even made immutable collections the default, which is always accessible, without any imports. That&#39;s because there are aliases for them in the Predef object. Let&#39;s play with them a little in the Scala REPL, available by entering &quot;scala&quot; in the command line:</p>
+
+<pre>
+scala&gt; val v = Vector(1, 2, 3, 4)
+v: scala.collection.immutable.Vector[Int] = Vector(1, 2, 3, 4)
+
+scala&gt; val v2 = v.map(_ * 2)
+v2: scala.collection.immutable.Vector[Int] = Vector(2, 4, 6, 8)
+
+scala&gt; val v0 = v2.updated(0, 0)
+v0: scala.collection.immutable.Vector[Int] = Vector(0, 4, 6, 8)
+</pre>
+
+<p>Notice, that we can actually change immutable collections, by creating new copies of it. In Java if you have an immutable collection, you need to select a new container for it (for example, for List you need to select ArrayList or LinkedList), copy the immutable collection into that container, change whatever you need to change, and then you can finally wrap the collection in unmodifiable wrapper with the help of the standard library. With all that hassle, no wonder they are rarely used.</p>
+
+<p>But this brings us to another question: if I create new collections when I work with immutables, what will happen to the performance? Let&#39;s check it. First, let&#39;s define a function, allowing us to measure the execution time of different constructs, and then let&#39;s measure the performance of Java ArrayList:</p>
+
+<pre>
+scala&gt; def howLong (f: =&gt; Unit) {
+  import compat.Platform._
+  val start = currentTime
+  f
+  println(&quot;Execution time: &quot;+(currentTime - start))
+}
+howLong: (f: =&gt; Unit)Unit
+
+scala&gt; howLong {
+   (0 until 1000000) foreach {i=&gt; javaArray.add(i, i)}
+}
+Execution time: 1254
+
+scala&gt; var javaArray = new java.util.ArrayList[Int]
+javaArray: java.util.ArrayList[Int] = []
+
+scala&gt; howLong {
+   (0 until 1000000) foreach {i=&gt; javaArray.add(i, i)}
+}
+Execution time: 88
+</pre>
+
+<p>As you see, it is pretty slow the first time, and much faster on the second attempt. Your experience may vary. Let&#39;s compare that to Scala&#39;s immutable Vector:</p>
+
+<pre>
+scala&gt; var v = Vector.fill(1000000)(0)
+v: scala.collection.immutable.Vector[Int] = Vector(0, 0, 0, 0, 0, 0, 0, 0, 0, 0,...
+
+howLong {
+  (0 until 1000000).foreach {i=&gt; v=v.updated(i, i)}
+}
+Execution time: 739
+</pre>
+
+<p>As you see, we apparently copy the whole 1-million array 1 million times, changing only 1 element in each copy, but it executes much faster, than one could expect. Of course there is a trick - that&#39;s not a simple array. This technique is called &quot;persistent collections&quot;. The simplest example of a persistent collection is a linked list: if you give me a linked list, and I create a new head for it, which points to your old list, we&#39;ll hold apparently different collections, with different length, but the cost of such &quot;duplication&quot; is really cheap. If you add a new head to your list, I will be not affected by your change, so for all practical means, we can think of these lists as different object, despite the fact, that most elements are common.</p>
+
+<p>Such persistent collections are extremely useful for optimization algorithms. When such algorithm tries different options to find the best (or feasible) solution, it can copy different collections with some changes, to reflect the setup at each stage. An easy illustration can be a famous 8-Queens problem applied for a giant table instead of 8x8. When the algorithm tries different places for queens, it can create a 2 dimensional Vector to mark all cells under attack, and recursively try to put more and more new queens on the safe cells. At every level of recursion it will hold a different picture of the board, so if it rolls back from bad selection, it returns to the setup it was before. With Java ArrayList you&#39;d need to create a full copy of the board, instead of logical copies as with Scala&#39;s Vector.</p>
+
+<p>Another strength of the built-in feature of Scala immutable collections is the ability to run parallel operations. Let&#39;s create a mathematical function, with minimum at x=50:</p>
+
+<pre>
+scala&gt;def myFunc(x:Int) =Math.log(10 + Math.pow(x-50, 2) - Math.log(Math.pow(x, 0.9)))
+myFunc: (x: Int)Double
+
+scala&gt; var min = Double.PositiveInfinity
+min: Double = Infinity
+
+scala&gt; var minI = -1
+min: Double = Infinity
+
+scala&gt; howLong { (0 until javaArray.size).foreach {i=&gt;
+  val currF = myFunc(javaArray.get(i))
+  if (currF &lt; min) {
+    min = currF
+    minI = i
+  }
+}}
+Execution time: 384
+
+scala&gt; minI
+res38: Int = 50
+
+scala&gt; howLong(minI = v.minBy(myFunc))
+Execution time: 802
+
+scala&gt; minI
+res40: Int = 50
+</pre>
+
+<p>As we see, at this point Java is faster - well, there is an overhead of the Vector, to allow cheap copy operation as we saw earlier. But now let&#39;s use the parallel ability of the Vector:</p>
+
+<pre class="scala">
+scala&gt; howLong(minI = v.par.minBy(myFunc))
+Execution time: 426
+</pre>
+
+<p>So just by adding &quot;.par&quot; we received a parallelized version of our collection, and it gave some advantage. But my laptop is pretty old, let&#39;s see what will happen on Amazon EC2 c2.xlarge instance with 8 CPUs:</p>
+
+<p>Let&#39;s run exactly the same code on Amazon c1.xlarge instance with 8 CPUs:</p>
+
+<pre>
+scala&gt; howLong { (0 until javaArray.size).foreach {i=&gt; val currF = myFunc(javaArray.get(i)); if (currF &lt; min) { min = currF; minI = i } } }
+Execution time: 515
+
+scala&gt; howLong(minI = v.minBy(myFunc))
+Execution time: 1005
+
+scala&gt; howLong(minI = v.par.minBy(myFunc))
+Execution time: 209
+</pre>
+
+<p>As you can see, now our naive code utilizes runs x5 times faster thanks to the parallel collections. CPU clocks are not getting faster every year, as it used to be, and with the power of Scala immutable collections we can now utilize our multi-core machines for common operations. In the next article we&#39;ll talk about adapting classical sequential algorithms to immutable collections and parallel execution</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/scala-immutable-collections" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

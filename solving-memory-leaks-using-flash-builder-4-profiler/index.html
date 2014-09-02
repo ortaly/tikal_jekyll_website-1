@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Solving memory leaks using Flash builder 4 profiler</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Solving memory leaks using Flash builder 4 profiler</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JS">JS</a>
+              </li>
+            
+              <li>
+                <a href="/tags/profiler">profiler</a>
+              </li>
+            
+              <li>
+                <a href="/tags/methodology">methodology</a>
+              </li>
+            
+              <li>
+                <a href="/tags/memory-leaks">memory leaks</a>
+              </li>
+            
+              <li>
+                <a href="/tags/guide">guide</a>
+              </li>
+            
+              <li>
+                <a href="/tags/FB4">FB4</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2010-05-10 00:00:00 +0300">
+        <div class="day">10</div>
+        May. 2010
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/solving-memory-leaks-using-flash-builder-4-profiler' st_title='Solving memory leaks using Flash builder 4 profiler' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/solving-memory-leaks-using-flash-builder-4-profiler' st_title='Solving memory leaks using Flash builder 4 profiler' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/solving-memory-leaks-using-flash-builder-4-profiler' st_title='Solving memory leaks using Flash builder 4 profiler' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/solving-memory-leaks-using-flash-builder-4-profiler' st_title='Solving memory leaks using Flash builder 4 profiler' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/solving-memory-leaks-using-flash-builder-4-profiler' st_title='Solving memory leaks using Flash builder 4 profiler' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p><a href="http://help.adobe.com/en_US/flashbuilder/using/WS6f97d7caa66ef6eb1e63e3d11b6c4d0169-7ff6.html#WS6f97d7caa66ef6eb1e63e3d11b6c4d0d21-7ee2">Locating memory leaks </a>section in FB4 docs provides an overview and few techniques for handling this issue.</p>
+
+<p><br />
+In this article I would like to offer another technique for using the object references view to quickly track down the root of a memory leak, straight down to the exact line of code causing it.</p>
+
+<!--break-->
+
+<p>&nbsp;</p>
+
+<p><strong>In short:</strong></p>
+
+<p><br />
+1. Choose a repeatable sequence.</p>
+
+<p><br />
+2. Use the &quot;Generate object allocation stack traces&quot; checkbox when starting the profiling session.</p>
+
+<p><br />
+3. Execute the sequence several times, and take a first memory snapshot. Execute it few times more and take a second snapshot.</p>
+
+<p><br />
+4. Locate a class whose instances are not being GCed.</p>
+
+<p><br />
+5. Open this class in the object references view for both snapshots.</p>
+
+<p><br />
+6. Expand the first instance's back reference list, and look for suspicious path.</p>
+
+<p><br />
+7. Starting from top to root, go through the path, and for each object compare its instance count for both snapshots.&nbsp;</p>
+
+<p>&nbsp;<br />
+The instance whose count is the same for both snapshots is causing the memory leak, and accumulates instances of the object it holds a reference to. it is a one-to-many-reference-holder.</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+8. By looking at the Allocation Trace view for the accumulated object, you can find where in the code the reference was added to it.</p>
+
+<p><br />
+9. Make sure the reference is removed.<br />
+&nbsp;<br />
+<strong>Details:<br />
+</strong></p>
+
+<p><br />
+I assume you are already familiar with this view, and got to the point where you know which the object not being GCed is, and needs to find out who's preventing it from being released.</p>
+
+<p><br />
+In an average application, after running a sequence of steps a few times, you may find yourself with hundreds of instances of the same class, each has hundreds of back references listed in the object references view, which can be quite overwhelming. <br />
+&nbsp;</p>
+
+<p>Where do you start? What should you look for? <br />
+&nbsp;</p>
+
+<p>You came to the right place! I will show you a very quick and simple way to spot the bug:</p>
+
+<p><br />
+Before I start, there is an important concept you should get familiar with. I call it &quot;the one to many reference holder&quot;. <br />
+The idea is quite simple, and is best visualized by an&nbsp;illustration:</p>
+
+<p>&nbsp;</p>
+
+<p>Let's say you have a memory leak which results with 3 instances of the same object (class A) in the first snapshot, and 6 instances in the second snapshot (taken after repeating the same sequence of steps few more times) . A possible topology of these objects references may look like this in the first and second snapshots:<br />
+&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><img height="273" alt="" width="576" src="/files/upload/7/snapshots%20topology.JPG" /></p>
+
+<p>In the above illustration, all three instances are referenced by a single object (of class B), which is referenced up to the GC root. <br />
+Class B is a one&ndash;to-many-reference-holder,and&nbsp; is a good candidate for causing a memory leak. In case the number of class A instances keeps growing while you repeat the scenario, then class B has a memory leak. <br />
+&nbsp;</p>
+
+<p>Another possible reference topology may end up with the same result of 3 and 6 instances:<br />
+<br />
+&nbsp;</p>
+
+<p><img height="361" alt="" width="586" src="/files/upload/7/snapshots%20topology2.JPG" /></p>
+
+<p>This time, the 3 instances are held by other 3 instances (class B), which in turn are held, again, by a single object (class C), which is held up to the root. In this topology, although class B does hold a reference to class A, we can clearly see that it is pointless to deal with it, since class C is the one accumulating references. He is a one-to-many-reference-holder and causes the memory leak. If we deal with class C, the class B instances along with class A instances are all gone.</p>
+
+<p>&nbsp;</p>
+
+<p>Having this concept clear, answers the question &quot;what do we look for?&quot;.</p>
+
+<p>&nbsp;</p>
+
+<p>Although FB4 does not have this nice topology view for object references (<a href="http://corlan.org/">Mihai Corlan </a>kindly pointed me to <a href="http://www.gskinner.com/blog/archives/2010/04/the_flashsample.html">Grant skinner's article </a>on the flash sampler which might be used for&nbsp;allowing this kind of view), you'll see that finding these one-to-many-reference-holders is a matter of minutes. In the &quot;object references&quot; view, you open a suspected path to the object, and start following it to the root, checking the instance count of each object on this path.</p>
+
+<p>&nbsp;</p>
+
+<p>Let's look on a real life sample:</p>
+
+<p>&nbsp;</p>
+
+<p><img height="408" alt="" width="642" src="/files/upload/7/object%20references%20view.JPG" /></p>
+
+<p>&nbsp;</p>
+
+<p>Looking at this view(part of the namespaces is hidden for client's privacy sake), we see the following classes along this path:</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+DatagridItemRenderer, CoverageMetricRenderer, SummaryFooter, ConfigurableDataGrid, DataGridContent, ProfilerExtendedQueryResultWrapper , TransactionclassesProxy and so on.</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+We then go back to the <strong>Memory snapshot view</strong>, sort it by class name, and check the number of instances of each class (Instances column).</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+The following table summarizes the number instances of the above mentioned classes for two snapshots (the second taken after few more scenario repeats):<br />
+&nbsp;</p>
+
+<table cellspacing="1" cellpadding="1" width="200" border="1">
+    <thead>
+        <tr>
+            <th scope="col">class<br />
+            &nbsp;</th>
+            <th scope="col"><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: HE"><font color="#000000">Snapshot <a href="http://search.twitter.com/search?q=%231">#1</a> instances count</font></span></th>
+            <th scope="col"><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: HE"><font color="#000000">snapshot <a href="http://search.twitter.com/search?q=%232">#2</a> instances count</font></span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>DatagridItemRenderer<br />
+            &nbsp;</td>
+            <td>266</td>
+            <td>524</td>
+        </tr>
+        <tr>
+            <td>CoverageMetricRenderer<br />
+            &nbsp;</td>
+            <td>225</td>
+            <td>443</td>
+        </tr>
+        <tr>
+            <td>SummaryFooter<br />
+            &nbsp;</td>
+            <td>7</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>ConfigurableDataGrid<br />
+            &nbsp;</td>
+            <td>9</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>DataGridContent<br />
+            &nbsp;</td>
+            <td>9</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td><strong><span search.twitter.com="">ProfilerExtendedQueryResultWrapper<br />
+            </span></strong></td>
+            <td><strong><span search.twitter.com="">4</span></strong></td>
+            <td><strong><span search.twitter.com="">4</span></strong></td>
+        </tr>
+        <tr>
+            <td>TransactionclassesProxy<br />
+            &nbsp;</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The picture become very clear now: <strong><span search.twitter.com="">ProfilerExtendedQueryResultWrapper </span></strong>remains with the same number of instances between snapshots, but the number of instances (of class DataGridContent) it holds, keeps growing.</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+<strong>This is our one-to-many-reference-holder !</strong></p>
+
+<p>&nbsp;</p>
+
+<p><br />
+Resolving this will clear this path from this point up.</p>
+
+<p>&nbsp;</p>
+
+<p>Let's take a closer look at the suspected area:</p>
+
+<p>&nbsp;</p>
+
+<p><img height="91" alt="" width="535" src="/files/upload/7/zooming.JPG" /></p>
+
+<p>&nbsp;</p>
+
+<p>From looking at the object references view, we can see that ProfilerExtendedQueryResultWrapper has a property named _entries, which is of type ArrayCollection. This property accumulates references to DataGridContent instances.</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+When you see the [savedThis] and [listener0] properties, it's an indication of reference made by adding event listeners, and should be read as follows:<br />
+&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>One of DataGridContent's functions was added as an event handler to an event dispatched by _entries property of ProfilerExtendedQueryResultWrapper.<br />
+As a result, _entries holds a reference to DataGridContent instance through one of it's functions.</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+In case you are familiar with the code, it will probably take you few minutes to locate where exactly in the code does this happen.<br />
+However, FB4 can take you to the exact line of code, relieving you from the task of looking for it by yourself:</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+In order to let FB4 find the buggy line of code, you should check the &quot;Generate object allocation stack traces&quot; checkbox when starting the profiler session:<br />
+&nbsp;</p>
+
+<p><img height="503" alt="" width="398" src="/files/upload/7/generate%20object%20allocation.JPG" /></p>
+
+<p>&nbsp;</p>
+
+<p>Turning this feature on, allows you to see where in the code was an instance created.<br />
+In this case, the instance of interest is the instance of the function added to the arrayCollection's list of event listeners.</p>
+
+<p>&nbsp;</p>
+
+<p>Clicking on the &quot;Function&quot; row will show you it's allocation trace on the right &quot;Allocation trace&quot; pane. Clicking on the topmost line of this trace will open the code editor on the line where this function instance was created&nbsp; (line 99 in DataGridContent class):</p>
+
+<p>&nbsp;</p>
+
+<p><img height="355" alt="" width="779" src="/files/upload/7/event%20handler%20memory%20leak.JPG" /><br />
+&nbsp;</p>
+
+<p>&nbsp;Let's examine this code excerpt:</p>
+
+<p>&nbsp;</p>
+
+<pre class="brush: java;" title="code">
+allResults = (value as IProfilerResult).entries;
+allResults.addEventListener(CollectionEvent.COLLECTION_CHANGE,handleCollectionChange)
+</pre>
+
+<p>&nbsp;</p>
+
+<p><br />
+We can see that <em>handleCollectionChange </em>function, which belongs to <em>DataGridContent </em>class, is being added as a handler to the collection change event of the <em>entries </em>property.</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+As it turns out, this event listener is not removed, and the entries property does not belong to a child of <em>DataGridContent </em>(adding an event listener to your child does not cause memory leaks due to the GC sweep mechanism).</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+This is our memory leak bug&nbsp;&nbsp; !</p>
+
+<p>&nbsp;</p>
+
+<p><u>Resolving event listener memory leaks:</u></p>
+
+<p><br />
+A memory leak caused by an event listener can be solved by one of these ways:</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+1.&nbsp;Take care of removing the event listener when it is no longer needed.<br />
+2.&nbsp;Use the useWeakReference parameter to create a weak event listener .</p>
+
+<p>&nbsp;</p>
+
+<p>In our case changing the code to the following solved the problem:<br />
+allResults.addEventListener(CollectionEvent.COLLECTION_CHANGE,handleCollectionChange,false,0, <strong><span search.twitter.com="">true </span></strong>);</p>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/solving-memory-leaks-using-flash-builder-4-profiler" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

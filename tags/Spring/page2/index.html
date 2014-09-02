@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Spring</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+  </head>
+
+  <body class="one-sidebar sidebar-second page-taxonomy page-taxonomy-term all-pages with-navigation with-subnav dir-ltr page- section-tags">
+    <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+    <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+    <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <div class="section_title">
+        Posts taggsed with:
+      </div>
+      <h1 class="title" id="page-title">Spring</h1>
+    </div>
+  </div>
+</div>
+
+    <div class="shadow-page"></div>
+    <div id="page">
+      <div id="main">
+        <div class="region region-content">
+  <div id="block-system-main" class="block block-system block-even">
+    <div class="content">
+      <div class="view view-article view-id-article view-display-id-articles_view">
+        <div class="view-content">
+          <div class="view-content-limit">
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/spring-loading-bean-properties-external-source">Spring - Loading bean properties from external source.</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/java/danny'>danny</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2011-12-20 00:00:00 +0200">
+        <div class="day">20</div>
+        Dec. 2011
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/spring-loading-bean-properties-external-source' st_title='Spring - Loading bean properties from external source.' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/spring-loading-bean-properties-external-source' st_title='Spring - Loading bean properties from external source.' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/spring-loading-bean-properties-external-source' st_title='Spring - Loading bean properties from external source.' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/spring-loading-bean-properties-external-source' st_title='Spring - Loading bean properties from external source.' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/spring-loading-bean-properties-external-source' st_title='Spring - Loading bean properties from external source.' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        &nbsp;Sometimes, when we using Spring we need to define beans such as dataSource or taskExecutor and pass its parameters as properties. In our example we will create new ThreadPoolTaskExecutor which will be used as thread pool for our tasks. &nbsp; Basic configuration for such bean is very straight forward: &nbsp;...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/spring-loading-bean-properties-external-source">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/roo-12-different-layers-support">Roo 1.2 with different layers support</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/java/andrew'>andrew</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+          <a href="/tags/MongoDB" class="active">MongoDB</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2011-09-25 00:00:00 +0300">
+        <div class="day">25</div>
+        Sep. 2011
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/roo-12-different-layers-support' st_title='Roo 1.2 with different layers support' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/roo-12-different-layers-support' st_title='Roo 1.2 with different layers support' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/roo-12-different-layers-support' st_title='Roo 1.2 with different layers support' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/roo-12-different-layers-support' st_title='Roo 1.2 with different layers support' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/roo-12-different-layers-support' st_title='Roo 1.2 with different layers support' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        This is really impressing! They created a full application with several entites on MongoDb, and deployed it to Cloud Foundry. In less than 50 lines of Roo commands from an empty dir to the application deployed on CloudFoundry.com. Actually, in less than 40 lines, if you don't count comments and...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/roo-12-different-layers-support">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/spring-data-jpa-release">Spring Data - JPA release</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/java/dmitri'>dmitri</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/Spring-Data" class="active">Spring Data</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+          <a href="/tags/JPA" class="active">JPA</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2011-09-11 00:00:00 +0300">
+        <div class="day">11</div>
+        Sep. 2011
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/spring-data-jpa-release' st_title='Spring Data - JPA release' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/spring-data-jpa-release' st_title='Spring Data - JPA release' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/spring-data-jpa-release' st_title='Spring Data - JPA release' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/spring-data-jpa-release' st_title='Spring Data - JPA release' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/spring-data-jpa-release' st_title='Spring Data - JPA release' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Spring JPA aims to significantly improve the implementation of data access layers by reducing the effort to the amount that's actually needed. As a developer you write your repository interfaces, including custom finder methods, and Spring will provide the implementation automatically. &nbsp; Just to feel what Spring JPA is go...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/spring-data-jpa-release">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/annotaed-beans-dependency-analyzer">Annotaed Bean(s) Dependency Analyzer</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/java/dmitri'>dmitri</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+          <a href="/tags/jgraph" class="active">jgraph</a>
+        
+          <a href="/tags/graph" class="active">graph</a>
+        
+          <a href="/tags/dependency" class="active">dependency</a>
+        
+          <a href="/tags/beans" class="active">beans</a>
+        
+          <a href="/tags/annotation" class="active">annotation</a>
+        
+          <a href="/tags/analyzer" class="active">analyzer</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2011-03-21 00:00:00 +0200">
+        <div class="day">21</div>
+        Mar. 2011
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/annotaed-beans-dependency-analyzer' st_title='Annotaed Bean(s) Dependency Analyzer' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/annotaed-beans-dependency-analyzer' st_title='Annotaed Bean(s) Dependency Analyzer' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/annotaed-beans-dependency-analyzer' st_title='Annotaed Bean(s) Dependency Analyzer' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/annotaed-beans-dependency-analyzer' st_title='Annotaed Bean(s) Dependency Analyzer' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/annotaed-beans-dependency-analyzer' st_title='Annotaed Bean(s) Dependency Analyzer' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        For a client I had to implement spring based startup module. The module's context xml file simply defines annotation-config and component-scan element and doesn't define any bean. When I&nbsp;add 50-th bean into the module, I reliazed I&nbsp;can't manage dependencies without painting them anymore. &nbsp; The fast search had lead to...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/annotaed-beans-dependency-analyzer">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/devops/deploying-self-contained-spring-apps-jboss-51ga">Deploying self-contained Spring apps on JBoss 5.1.GA</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/DevOps" class="active">DevOps</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2011-03-10 00:00:00 +0200">
+        <div class="day">10</div>
+        Mar. 2011
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/devops/deploying-self-contained-spring-apps-jboss-51ga' st_title='Deploying self-contained Spring apps on JBoss 5.1.GA' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/devops/deploying-self-contained-spring-apps-jboss-51ga' st_title='Deploying self-contained Spring apps on JBoss 5.1.GA' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/devops/deploying-self-contained-spring-apps-jboss-51ga' st_title='Deploying self-contained Spring apps on JBoss 5.1.GA' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/devops/deploying-self-contained-spring-apps-jboss-51ga' st_title='Deploying self-contained Spring apps on JBoss 5.1.GA' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/devops/deploying-self-contained-spring-apps-jboss-51ga' st_title='Deploying self-contained Spring apps on JBoss 5.1.GA' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Recently, I was in need to deploy Spring's sample Travel web application on JBoss 5.1. The process of making the deployment pass mainly consisted of solving mismatches between JBoss JPA and the web-application-contained Hibernate. I hope the following description of the steps will help others (diminishing bunch?) &nbsp;deploy Spring apps...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/devops/deploying-self-contained-spring-apps-jboss-51ga">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/excellent-spring-blog">Excellent Spring blog</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2011-01-25 00:00:00 +0200">
+        <div class="day">25</div>
+        Jan. 2011
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/excellent-spring-blog' st_title='Excellent Spring blog' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/excellent-spring-blog' st_title='Excellent Spring blog' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/excellent-spring-blog' st_title='Excellent Spring blog' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/excellent-spring-blog' st_title='Excellent Spring blog' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/excellent-spring-blog' st_title='Excellent Spring blog' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        http://krams915.blogspot.com/search/label/Spring
+
+&nbsp;
+
+&nbsp;
+
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/excellent-spring-blog">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/spring-aop-proxy-self-access">Spring AOP Proxy Self Access</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-12-01 00:00:00 +0200">
+        <div class="day">01</div>
+        Dec. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/spring-aop-proxy-self-access' st_title='Spring AOP Proxy Self Access' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/spring-aop-proxy-self-access' st_title='Spring AOP Proxy Self Access' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/spring-aop-proxy-self-access' st_title='Spring AOP Proxy Self Access' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/spring-aop-proxy-self-access' st_title='Spring AOP Proxy Self Access' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/spring-aop-proxy-self-access' st_title='Spring AOP Proxy Self Access' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        &nbsp;While reading &quot;AspectJ In Action, 2nd Ed&quot;, I ran across the following method of accessing an advised aop proxy from within the proxied class while still activating the aspect functionality: &nbsp; AopContext.currentProxy() &nbsp; &nbsp; That's it. Barely worth a post, I know, but may come as great help if you...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/spring-aop-proxy-self-access">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/exposing-spring-services-consumption-gwt-front-end">Exposing Spring Services for consumption by GWT Front End</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/JSON" class="active">JSON</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+          <a href="/tags/REST" class="active">REST</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-11-29 00:00:00 +0200">
+        <div class="day">29</div>
+        Nov. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/exposing-spring-services-consumption-gwt-front-end' st_title='Exposing Spring Services for consumption by GWT Front End' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        This is a summary of the communication methods I&rsquo;ve employed in an application at one of our clients recently, methods gathered from various other sites, blogs, etc. <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height: normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt 141.7pt 170.05pt 198.4pt 226.75pt 255.1pt 283.45pt 311.8pt 340.15pt; mso-layout-grid-align:none;text-autospace:none">&nbsp; <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height: normal;mso-pagination:none;tab-stops:28.3pt 56.65pt 85.0pt 113.35pt...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/exposing-spring-services-consumption-gwt-front-end">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/java-bytecode-engineering">Java Bytecode Engineering</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/bcel" class="active">bcel</a>
+        
+          <a href="/tags/AOP" class="active">AOP</a>
+        
+          <a href="/tags/aspectj" class="active">aspectj</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-11-29 00:00:00 +0200">
+        <div class="day">29</div>
+        Nov. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/java-bytecode-engineering' st_title='Java Bytecode Engineering' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/java-bytecode-engineering' st_title='Java Bytecode Engineering' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/java-bytecode-engineering' st_title='Java Bytecode Engineering' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/java-bytecode-engineering' st_title='Java Bytecode Engineering' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/java-bytecode-engineering' st_title='Java Bytecode Engineering' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Great presentation based on a lecture given by Yoav Abrahami&nbsp;at Wix.com, which I went to this week - thanks for the invitation, Olga!
+
+AspectJ, AOP, code genetation, and other really interesting &amp; cool stuff!
+
+&nbsp;
+
+http://www.slideshare.net/yoavwix/java-bytecode-and-classes
+
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/java-bytecode-engineering">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/whats-new-spring-31">what's new in spring 3.1</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/Spring" class="active">Spring</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2010-11-17 00:00:00 +0200">
+        <div class="day">17</div>
+        Nov. 2010
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/whats-new-spring-31' st_title='what's new in spring 3.1' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/whats-new-spring-31' st_title='what's new in spring 3.1' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/whats-new-spring-31' st_title='what's new in spring 3.1' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/whats-new-spring-31' st_title='what's new in spring 3.1' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/whats-new-spring-31' st_title='what's new in spring 3.1' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        http://www.infoq.com/presentations/Spring-3.0-3.1-3.2
+
+&nbsp;
+
+&quot;Jurgen Holler reviews the most important features that came with Spring  3.0, he previews the 3.1 version of the framework planned to have its  first milestone release in late November 2010, and he takes a sneak  preview at Spring 3.2 which is supposed to support Java 7.&quot;
+
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/whats-new-spring-31">Read More »</a></span>  
+  </div>
+</div>
+
+            
+            
+  <div class="item-list">
+    
+    
+      <ul class="pager">
+        <li class="pager-first first">
+          <a title="Go to first page" href="/tags/Spring">« first</a>
+        </li>
+
+        <li class='pager-item'><a title='Go to page 1' href='/tags/Spring'>1</a></li> <li class='pager-current'>2</li> <li class='pager-item'><a title='Go to page 3' href='/tags/Spring/page3'>3</a></li> <li class='pager-item'><a title='Go to page 4' href='/tags/Spring/page4'>4</a></li> <li class='pager-item'><a title='Go to page 5' href='/tags/Spring/page5'>5</a></li>
+
+        
+          <li class="pager-last last">
+            <a title="Go to last page" href="/tags/Spring/page6">last »</a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+    <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+  </body>
+</html>

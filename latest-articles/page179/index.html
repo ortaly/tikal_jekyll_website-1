@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="section- group-page- page-taxonomy section-domains one-sidebar sidebar-second page-taxonomy page-taxonomy-term">
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <div class="section_title">
+        
+          Latest Articles
+        
+      </div>
+      <div class="section_subtitle">
+        <div class="field field-name-field-sub-title field-type-text field-label-hidden">
+          <div class="field-items">
+            <div class="field-item  field-item-1 even">
+              
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#region-title-and-featured -->
+  </div><!-- /#featured -->
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+  <div id="block-system-main" class="block block-system block-even">
+    <div class="content">
+      <div class="view view-article view-id-article view-display-id-articles_view">
+        <div class="view-content">
+          <div class="view-content-limit">
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/the-trend-towards-inversion-of-control-frameworks-in-flex">The Trend Towards Inversion-of-Control Frameworks in Flex</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/the-trend-towards-inversion-of-control-frameworks-in-flex' st_title='The Trend Towards Inversion-of-Control Frameworks in Flex' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/the-trend-towards-inversion-of-control-frameworks-in-flex' st_title='The Trend Towards Inversion-of-Control Frameworks in Flex' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/the-trend-towards-inversion-of-control-frameworks-in-flex' st_title='The Trend Towards Inversion-of-Control Frameworks in Flex' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/the-trend-towards-inversion-of-control-frameworks-in-flex' st_title='The Trend Towards Inversion-of-Control Frameworks in Flex' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/the-trend-towards-inversion-of-control-frameworks-in-flex' st_title='The Trend Towards Inversion-of-Control Frameworks in Flex' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Last year I ( The article author of course, not me :) wrote three chapters about the Cairngorm MVC framework for a new Flex book, Professional Flex 3, published by Wrox Press. Cairngorm has been widely adopted on enterprise projects, so it was important to explain its workings and cover...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/the-trend-towards-inversion-of-control-frameworks-in-flex">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/silex-open-source-ria">Silex - Open Source RIA</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+          <a href="/tags/ria" class="active">ria</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/silex-open-source-ria' st_title='Silex - Open Source RIA' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/silex-open-source-ria' st_title='Silex - Open Source RIA' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/silex-open-source-ria' st_title='Silex - Open Source RIA' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/silex-open-source-ria' st_title='Silex - Open Source RIA' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/silex-open-source-ria' st_title='Silex - Open Source RIA' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        I have to say that it looks very interesting. &nbsp; Silex is an open source RIA that enables you to build Flash websites for Flash Player 7, 8, 9, and 10. Silex is a new kind of CMS, a mix between an editing software like the Adobe Creative Suite, and...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/silex-open-source-ria">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/service-facades-and-data-transfers-objects">Service Facades and Data Transfers Objects</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/java/yanai'>yanai</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/JPA" class="active">JPA</a>
+        
+          <a href="/tags/Facade-JPA-Service-layer" class="active">Facade JPA Service layer</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/service-facades-and-data-transfers-objects' st_title='Service Facades and Data Transfers Objects' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/service-facades-and-data-transfers-objects' st_title='Service Facades and Data Transfers Objects' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/service-facades-and-data-transfers-objects' st_title='Service Facades and Data Transfers Objects' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/service-facades-and-data-transfers-objects' st_title='Service Facades and Data Transfers Objects' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/service-facades-and-data-transfers-objects' st_title='Service Facades and Data Transfers Objects' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        This blog explores why we would even need such patterns and put these patterns and the DAO pattern into the broader context of JPA application architecture
+
+&nbsp;
+
+&nbsp;
+
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/service-facades-and-data-transfers-objects">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/searching-event-log-viewer">Searching for an Event Log Viewer</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/log" class="active">log</a>
+        
+          <a href="/tags/log4j" class="active">log4j</a>
+        
+          <a href="/tags/Logging" class="active">Logging</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/searching-event-log-viewer' st_title='Searching for an Event Log Viewer' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/searching-event-log-viewer' st_title='Searching for an Event Log Viewer' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/searching-event-log-viewer' st_title='Searching for an Event Log Viewer' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/searching-event-log-viewer' st_title='Searching for an Event Log Viewer' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/searching-event-log-viewer' st_title='Searching for an Event Log Viewer' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        A letter I got today, asking about an event log viewer. Anyone? &nbsp; &nbsp; Hi Zvika, &nbsp; We&rsquo;ve been looking for quite some time for a good log viewer for our log files. By &ldquo;good&rdquo;, I mean &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simple view of the log &ndash; single message per line, in a...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/searching-event-log-viewer">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/open-source-javascript-frameworks">Open Source JavaScript Frameworks</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/open-source-javascript-frameworks' st_title='Open Source JavaScript Frameworks' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/open-source-javascript-frameworks' st_title='Open Source JavaScript Frameworks' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/open-source-javascript-frameworks' st_title='Open Source JavaScript Frameworks' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/open-source-javascript-frameworks' st_title='Open Source JavaScript Frameworks' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/open-source-javascript-frameworks' st_title='Open Source JavaScript Frameworks' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        This is a nice Blog of what JS Frameworks are available out there, with a short description.
+
+&nbsp;
+
+&nbsp;
+
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/open-source-javascript-frameworks">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/java/jpa-20-concurrency-and-locking">JPA 2.0 Concurrency and Locking</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"><a href='/java/yanai'>yanai</a></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/locking-JPA" class="active">locking JPA</a>
+        
+          <a href="/tags/JPA" class="active">JPA</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/jpa-20-concurrency-and-locking' st_title='JPA 2.0 Concurrency and Locking' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/jpa-20-concurrency-and-locking' st_title='JPA 2.0 Concurrency and Locking' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/jpa-20-concurrency-and-locking' st_title='JPA 2.0 Concurrency and Locking' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/jpa-20-concurrency-and-locking' st_title='JPA 2.0 Concurrency and Locking' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/jpa-20-concurrency-and-locking' st_title='JPA 2.0 Concurrency and Locking' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        http://java.dzone.com/articles/jpa-20-concurrency-and-locking
+
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/java/jpa-20-concurrency-and-locking">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/jmx-connection-to-jboss">JMX connection to JBoss</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/jmx-connection-to-jboss' st_title='JMX connection to JBoss' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/jmx-connection-to-jboss' st_title='JMX connection to JBoss' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/jmx-connection-to-jboss' st_title='JMX connection to JBoss' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/jmx-connection-to-jboss' st_title='JMX connection to JBoss' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/jmx-connection-to-jboss' st_title='JMX connection to JBoss' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Sometimes you need to control JBoss status from outside of JBoss's JVM or just talk with JBoss using JMX. Good example: starting JBoss from Installation programm and waiting upon it will started. &nbsp; Problem is that you must have jbossall-client.jar in your classpath but you have not. In JBoss 5...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/jmx-connection-to-jboss">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/general-interface-is-an-open-source-project-hosted-by-the-dojo-foundation">General Interface is an open source project hosted by the Dojo Foundation</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+          <a href="/tags/dojo" class="active">dojo</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/general-interface-is-an-open-source-project-hosted-by-the-dojo-foundation' st_title='General Interface is an open source project hosted by the Dojo Foundation' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/general-interface-is-an-open-source-project-hosted-by-the-dojo-foundation' st_title='General Interface is an open source project hosted by the Dojo Foundation' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/general-interface-is-an-open-source-project-hosted-by-the-dojo-foundation' st_title='General Interface is an open source project hosted by the Dojo Foundation' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/general-interface-is-an-open-source-project-hosted-by-the-dojo-foundation' st_title='General Interface is an open source project hosted by the Dojo Foundation' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/general-interface-is-an-open-source-project-hosted-by-the-dojo-foundation' st_title='General Interface is an open source project hosted by the Dojo Foundation' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        TIBCO has made its General Interface open source&nbsp;and it is now available for download. This comes just weeks after Adobe brought its AIR tool to Linux, and less than two months after Ariba took its AribaWeb open source&nbsp;and Sun called its JavaFX the fastest growing RIA tool in the market....
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/general-interface-is-an-open-source-project-hosted-by-the-dojo-foundation">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/deployment-directory-scanperiod-and-urls-attributes-in-jboss-5ga">Deployment directory ScanPeriod and URLs attributes in Jboss 5GA</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JAVA" class="active">JAVA</a>
+        
+          <a href="/tags/upgrade" class="active">upgrade</a>
+        
+          <a href="/tags/jboss" class="active">jboss</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/deployment-directory-scanperiod-and-urls-attributes-in-jboss-5ga' st_title='Deployment directory ScanPeriod and URLs attributes in Jboss 5GA' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/deployment-directory-scanperiod-and-urls-attributes-in-jboss-5ga' st_title='Deployment directory ScanPeriod and URLs attributes in Jboss 5GA' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/deployment-directory-scanperiod-and-urls-attributes-in-jboss-5ga' st_title='Deployment directory ScanPeriod and URLs attributes in Jboss 5GA' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/deployment-directory-scanperiod-and-urls-attributes-in-jboss-5ga' st_title='Deployment directory ScanPeriod and URLs attributes in Jboss 5GA' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/deployment-directory-scanperiod-and-urls-attributes-in-jboss-5ga' st_title='Deployment directory ScanPeriod and URLs attributes in Jboss 5GA' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Jboss 4 had two attriutes for setting the deployment scan period and the deployment directory in&nbsp; jboss-service.xml. I cant seem to find these attributes in JBoss 5GA.&nbsp; Anyone knows where have they disappread /renamed?
+
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/deployment-directory-scanperiod-and-urls-attributes-in-jboss-5ga">Read More »</a></span>  
+  </div>
+</div>
+
+            
+              <div class="views-row">
+  <div class="views-field views-field-title">
+    <span class="field-content"><a href="/why-test-for-the-existence-of-children-before-creating-them-in-createchildren">Why test for the existence of children before creating them in createChildren</a></span>  
+  </div>
+  <div class="views-field views-field-uid">    
+    <span class="views-label views-label-uid">by</span>
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-nothing">
+    <span class="views-label views-label-nothing">tags: </span>    
+    <span class="field-content">
+      <div class="tags">
+        
+          <a href="/tags/JS" class="active">JS</a>
+        
+          <a href="/tags/createChildren" class="active">createChildren</a>
+        
+      </div>
+    </span>
+  </div>
+  <div class="views-field views-field-nothing-1">    
+    <span class="views-label views-label-nothing-1">border: </span>    
+    <span class="field-content"></span>  
+  </div>
+  <div class="views-field views-field-created">        
+    <span class="field-content">
+      <time pubdate="" datetime="2009-08-09 00:00:00 +0300">
+        <div class="day">09</div>
+        Aug. 2009
+      </time>
+      
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/why-test-for-the-existence-of-children-before-creating-them-in-createchildren' st_title='Why test for the existence of children before creating them in createChildren' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/why-test-for-the-existence-of-children-before-creating-them-in-createchildren' st_title='Why test for the existence of children before creating them in createChildren' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/why-test-for-the-existence-of-children-before-creating-them-in-createchildren' st_title='Why test for the existence of children before creating them in createChildren' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/why-test-for-the-existence-of-children-before-creating-them-in-createchildren' st_title='Why test for the existence of children before creating them in createChildren' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/why-test-for-the-existence-of-children-before-creating-them-in-createchildren' st_title='Why test for the existence of children before creating them in createChildren' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+    </span>
+  </div>
+  <div class="views-field views-field-body">
+    <div class="field-content">
+      <p>
+        Testing for&nbsp;the existence of the children before creating them in createChildren is a documented best practice. The more common reason for this is, like documented,&nbsp;allowing a subclass&nbsp;to create a different&nbsp;child. The Panel is a good example of this, allowing to create a different header by replacing it's protected titleBar. &nbsp;...
+      </p>
+    </div>
+  </div>
+  <div class="views-field views-field-view-node">
+    <span class="field-content"><a href="/why-test-for-the-existence-of-children-before-creating-them-in-createchildren">Read More »</a></span>  
+  </div>
+</div>
+
+            
+            
+  <div class="item-list">
+    
+    
+      <ul class="pager">
+        <li class="pager-first first">
+          <a title="Go to first page" href="/latest-articles">« first</a>
+        </li>
+
+        <li class='pager-item'><a title='Go to page 177' href='/latest-articles/page177'>177</a></li> <li class='pager-item'><a title='Go to page 178' href='/latest-articles/page178'>178</a></li> <li class='pager-current'>179</li> <li class='pager-item'><a title='Go to page 180' href='/latest-articles/page180'>180</a></li> <li class='pager-item'><a title='Go to page 181' href='/latest-articles/page181'>181</a></li>
+
+        
+          <li class="pager-last last">
+            <a title="Go to last page" href="/latest-articles/page239">last »</a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+          </div>
+          <aside id="sidebar-second" class="sidebar" role="complementary">
+  <div class="region region-sidebar-second">
+    <div id="block-block-10" class="block block-block facebook-banner block-even">
+        <div class="content">
+            <p><a href="http://www.facebook.com/TikalKnowledge" target="_blank">Facebook</a></p>
+        </div>
+    </div>
+    <section id="block-tikal-meetup-meetup-domain-pages-events" class="block block-tikal-meetup block-odd" >
+    <h2 class="block-title">Events</h2>
+    <div class="content" ng-app="meetups-module">
+      <div ng-controller="Sn.MainCtrl as mainCtrl" >
+        <div class="meetup-logo"></div>
+        <div class="buttons-container" >
+            <div
+              ng-class="{'active': mainCtrl.isUpComing}"
+              class="switch-events button button-upcoming"
+              ng-click="mainCtrl.displayUpComing()"
+            >Upcoming</div>
+            <div
+              ng-class="{'active': mainCtrl.isPast}"
+              class="switch-events button button-past"
+              ng-click="mainCtrl.displayPast()"
+            >Past</div>
+        </div>
+        <div id="meetups" ng-controller="Sn.MeetupsCtrl as meetupsCtrl">
+          <div ng-show="mainCtrl.isUpComing" >
+             <meetup-list-event
+                    title="Upcoming Events"
+                    meetups="meetupsCtrl.meetupsByStatus.upcoming"
+                    ng-show="meetupsCtrl.meetupsByStatus.upcoming.length"
+                    is-upcoming-event="true"
+                    rsvps="meetupsCtrl.meetupsRsvps"
+              ></meetup-list-event>
+          </div>
+
+           <div ng-show="mainCtrl.isPast">
+                <meetup-list-event
+                    title="Past Events"
+                    meetups="meetupsCtrl.meetupsByStatus.past"
+                    ng-show="meetupsCtrl.meetupsByStatus.past.length"
+                    rsvps="meetupsCtrl.meetupsRsvps"
+                ></meetup-list-event>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <section id="block-general-tikal-banners" class="block block-general-tikal block-odd">
+        <h2 class="block-title"><none></none></h2>
+        <div class="content">
+          <a class="" href="/careers"></a>
+        </div>
+    </section>
+  </div>
+</aside>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

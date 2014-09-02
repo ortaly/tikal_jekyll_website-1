@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Mobile Development Using Phonegap</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-jsandroidjavarubydevops page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Mobile Development Using Phonegap</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/Incubator">Incubator</a>
+              </li>
+            
+              <li>
+                <a href="/tags/iOS">iOS</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Mobile">Mobile</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2012-06-10 00:00:00 +0300">
+        <div class="day">10</div>
+        Jun. 2012
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/mobile-development-using-phonegap' st_title='Mobile Development Using Phonegap' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/mobile-development-using-phonegap' st_title='Mobile Development Using Phonegap' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/mobile-development-using-phonegap' st_title='Mobile Development Using Phonegap' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/mobile-development-using-phonegap' st_title='Mobile Development Using Phonegap' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/mobile-development-using-phonegap' st_title='Mobile Development Using Phonegap' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>Perhaps one of the most tedious tasks I have to do monthly at Tikal is reporting the hours I work and on what project.  I have to open a special web portal and sort through all the projects I worked on over the last month.  This process is pretty repetitive and very boring.  It would be great if there was a better way to do this task.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">So,  after thinking about this problem for some time I came up with what I think is an ideal solution.  A solution that involves very little interaction from me.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">I carry my Mobile Phone with me everywhere.  I happen to have an iPhone 4.  It is in my pocket at every project I work on.  It has GPS technology which can be used to keep track of my location.  So,  why not let my phone keep track of where I am.  Based on my location,  my phone can log the hours I am at  projects.  Right,  this seems so obvious now that I mention it.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">Now I have a great idea for a new mobile app.  I want to build an app that can log hours based on my location and report those hours to tikal upon request.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">The next thing I thought about was what mobile OS do I want to support.  I have an iPhone,  but I think that most Tikal employees have Android phones.  So I would have to choose,  iOS or Android?  I want to be able to reach the greatest number of users.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">I looked on the web and noticed that there are frameworks that claim to be “Cross Platform”.  A lot of them cost money to use, like Monotouch and Titanium.  I wanted something that was free and open source.  I soon discovered Phonegap.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">Phonegap is an open source app platform.  It is based on familiar web technologies like HTML5,  CSS,  and Javascript.  Additionally,  it comes pre-packaged with “Plugins” that allow the Javascript to access native functions on the mobile device.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">What devices are supported was the next thing I wanted to know.  I read on the Phonegap site that it supports iOS and Android and Windows Mobile and many other popular Mobile OSes.  7 Platforms total.  Whew!!!</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">Now that I know what framework I want to use I need to architect my app.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">I set out to plan how I was going to create this app.  I would need a way to retrieve locations based on GPS.  I thought about Foursquare.  They have an open API that can be accessed by Javascript.  The application would need to show the location on a map.  Google Map API comes to the rescue and this,  too,  can be used via a javascript API.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">Once I determined that Phonegap was the ideal solution for my app I wanted to figure out what Javascript framework I would use.  After searching on the internet I found that the top two frameworks are Sench Touch and jQuery Mobile.  Sencha Touch seemed nice since it encourages MVC out of the box.  After reading more about it I shied away from this solution since coding was tedious since it seemed all my code need<span style="color: #9a0806;">ed</span> to be in JSON format.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">jQuery Mobile seemed like the most flexible solution.  It has many plugins since it is based on jQuery and this allowed me to get up and running quickly.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">I started up eclipse and went through the initial setup for a new Android app.  Checkout:  <a title="http://www.phonegap.com" href="http://www.phonegap.com" target="_blank">http://www.phonegap.com</a> for downloads and documentation.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">I created the WWW folder needed to store my HTML,  CSS and Javascript.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica;">This is how I decided to create the pages of my app:</p>
+
+<ol>
+<li>My Projects – This is the main page of my app. Here the user can see a list of all active projects. Additionally, there are buttons for the user to add new projects and see events by month:</li>
+<li>Project Details – This page shows the current status of a project. The user can manually checkin or checkout and set the auto update feature. The user can also opt to remove this project altogether.</li>
+<li>Events – This page allows the user to select a month and year and display the projects and hours worked. The send button will create a TSV file for each project and email them.</li>
+<li>Add new project – This page retrieves nearby locations from foursquare and allows the user to add them as current projects. The user can also select to see the project on a map before adding.</li>
+<li>Map View – Shows the project selected on a map.</li>
+</ol>
+
+<p> </p>
+
+<p>So now that we know what pages are too be included in the app lets figure out how to actually build it.</p>
+
+<p> </p>
+
+<p>I started by defining the model for my project.  The app will have two entities:  Project and Event.  I found an open source project called Persistence JS that wraps the functions needed to build a WebSQL database.</p>
+
+<p> </p>
+
+<p>PersistenceJS allows me to define a project as:</p>
+
+<pre class="brush: jscript;" title="code">var Project = persistence.define('Project', {
+  fid: "TEXT",
+  name: "TEXT",
+  address: "TEXT",
+  latitude: "TEXT",
+  longitude: "TEXT",
+  currentlyHere: "BOOL"
+});</pre>
+
+<p> </p>
+
+<p>This line will configure a new database:</p>
+
+<pre class="brush: jscript;" title="code">persistence.store.websql.config(persistence, 'tikaltimetracker', 'Tikal Time Tracker DB', 5 * 1024 * 1024);</pre>
+
+<p> </p>
+
+<p>My main view contains a list of projects.  Therefore,  I will need to use persistence to define a table in my database that stores Projects.</p>
+
+<p>persistence will sync the defined entities and create new tables for them if needed by running the following line:</p>
+
+<pre class="brush: jscript;" title="code">persistence.schemaSync(function(tx) { // callback });</pre>
+
+<p> </p>
+
+<p>These lines add a new Project to the table and flush the changes to the database.</p>
+
+<pre class="brush: jscript;" title="code">persistence.add(project);
+persistence.flush(function() { //callback });</pre>
+
+<p> </p>
+
+<p>Now that I have my model lets build the page that will display the list of projects.</p>
+
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px;">
+<p>This is how the projects page looks:</p>
+
+<pre class="brush: xhtml;" title="code"><div data-add-back-btn="true" data-role="page" id="mainPage">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <a href="#eventsPage" data-icon="grid" data-iconpos="left" class="ui-btn-left" data-theme="c">Events</a>
+            <a onClick="retrieveLocations();" data-icon="plus" data-iconpos="right" class="ui-btn-right" data-theme="c">Add</a>
+            <span class="ui-title">My Projects</span>
+        </div>
+          <ul class="lstMyProjects" data-role="listview" data-split-icon="gear" data-split-theme="d">
+          </ul>
+
+            <script id="projectItem" type="text/x-jquery-tmpl">
+                <li>
+                <a onclick="showMapForLocation('${fid}');">
+                <h3>${name}</h3>
+                <p>${address}</p>
+                </a>
+                <a onclick="doShowProjectOptions('${fid}');">${name}</a>
+                </li>
+            </script>
+      </div></pre>
+
+<p> </p>
+
+<p>This is all I needed to do in order to setup the first page.  My page is built using jQuery Mobile.  It has a div that designates the navigation bar.  The next element is a ul tag to contain the list that will display the table view of projects.</p>
+
+<p> </p>
+
+<p>Once we have the page that will list the projects we now need a way to add new projects.  I thought it would be great idea to have the add new project involve as little input from the user as possible.  This is how the Add Project page works:</p>
+
+<p> </p>
+
+<p>When the page is loaded it requests the devices GPS location using the GeoLocation Phonegap plugin.</p>
+
+<pre class="brush: jscript;" title="code">navigator.geolocation.getCurrentPosition(onSuccess, onError);</pre>
+
+<p>This code calls the phone gap plugin and calls the onSuccess or onError callback function once it is completed.  An error can happen if the user has declined Location services for the app.</p>
+
+<p> </p>
+
+<p>Because I want the user to have to do as little as possible to add a project I decided it would be great if I could show nearby locations.  This way the user could just select his project.</p>
+
+<p> </p>
+
+<p>Foursquare provides a venues API that can be accessed without any type of authentification.</p>
+
+<pre class="brush: jscript;" title="code">search: function(parameters, requestCallback)
+        {
+//          var parameters = {
+//              requestCallback,
+//              ll,
+//              llAcc,
+//              altAcc,
+//              alt,
+//              query,
+//              limit,
+//              intent,
+//              categoryId,
+//              url,
+//              providerId,
+//              linkedId,
+//              radius
+//          }
+
+            var requestUrl = this.SEARCH_URL + client.requestQuery();
+            requestUrl += FourSquareUtils.createQueryString("&", parameters);
+            FourSquareUtils.doRequest(requestUrl, requestCallback);
+        }</pre>
+
+<p> </p>
+
+<p>The Add Project page will display all nearby locations inside a ul element.  The model for this page is the same as the Current Projects page:</p>
+
+<pre class="brush: jscript;" title="code">var Project = persistence.define('Project', {
+  fid: "TEXT",  // Foursquare ID
+  name: "TEXT",
+  address: "TEXT",
+  latitude: "TEXT",
+  longitude: "TEXT",
+  currentlyHere: "BOOL"
+});</pre>
+
+<p> </p>
+
+<p>The user is now able to select a location to add as a current project.  Additionally,  I provide a map view to show the project on a map before the user confirms adding the project.</p>
+
+<p> </p>
+
+<p>Now the user is back on the Current Projects page.  So far all of our development has been done with simple HTML and Javascript using jQuery Mobile.  I haven’t had to build any native layouts for either Android or iPhone.  My entire project is in one HTML file.  I have of course included various javascript files to access jQuery Mobile and Foursquare,  but development so far has been straight forward.</p>
+
+<p> </p>
+
+<p>So now that we have our list of projects I want to program the app to automatically update my hours based on my location.  How am I going to do this?</p>
+
+<p> </p>
+
+<p>Geofencing!!!</p>
+
+<p> </p>
+
+<p>A geo-fence is a virtual perimeter for a real-world geographic area.  Wonderful.  How does this help me in this case?</p>
+
+<p> </p>
+
+<p>Well, I know what I want to do,  now the fun part is to see how I can actually program this on a mobile phone.  I first checked out phonegap and didn’t find any plugins for Geofencing.  This would be a good opportunity to build a custom Phonegap plugin.</p>
+
+<p> </p>
+
+<p>iOS supports Geofencing natively.  All I need is to define a unique id,  latitude, longitude and radius.  Once I register a Geofence the system will notify the app when the boundaries are crossed.  If the app isn’t running it will be launched in the background to process the geofence notification.</p>
+
+<p> </p>
+
+<p>Android was another story.  I didn’t find any native support for Geofencing.  Looking online yielded a number of sites offering subscription APIs.  I wasn’t going to spend money on this.</p>
+
+<p> </p>
+
+<p>I had an idea.  I wanted to create my own method to mimic Geofencing.  The simple choice would be to just have the GPS always on and monitoring my location.  This would probably work for about two hours before eating up all the battery.  I came up with another idea.  Every project I go to has at least one WIFI hotspot.  I could create a service that would scan for changes in WIFI hotspots.  When it found one that was at one of my projects the service would trigger a request to retrieve the current location.  This way only WIFI needed to be left on, instead of constant GPS monitoring, which is a lot less taxing on the battery from my experience.</p>
+
+<p> </p>
+
+<p>Now that I knew how each device would handle Geofencing on the native side it was time to create a Phonegap plugin for each platform to wrap this native code.  This way I could communicate with it from javascript.</p>
+
+<p> </p>
+
+<p>I came up with the following commands that I wanted the Javascript to be able to do:</p>
+
+<pre class="brush: jscript;" title="code">/*
+    Params:
+    #define KEY_REGION_ID       @"fid"
+    #define KEY_PROJECT_NAME    @"projectname"
+    #define KEY_PROJECT_LAT     @"latitude"
+    #define KEY_PROJECT_LNG     @"longitude"
+    #define KEY_PROJECT_ADDRESS @"address"
+    */
+     addProject: function(params, success, fail) {
+          return PhoneGap.exec(success, fail, "DGPTimeTracker", "addProject", [params]);
+     }
+
+    /*
+    Params:
+    #define KEY_REGION_ID       @"fid"
+    #define KEY_PROJECT_NAME    @"projectname"
+    #define KEY_PROJECT_LAT     @"latitude"
+    #define KEY_PROJECT_LNG     @"longitude"
+    #define KEY_PROJECT_ADDRESS @"address"
+    */
+     removeProject: function(params, success, fail) {
+          return PhoneGap.exec(success, fail, "DGPTimeTracker", "removeProject", [params]);
+     },
+
+    /*
+    Params:
+    #define KEY_REGION_ID                       @"fid"
+    #define KEY_PROJECT_LAT                     @"latitude"
+    #define KEY_PROJECT_LNG                     @"longitude"
+    */
+     setShouldAutoUpdateProjectEvents: function(params, success, fail) {
+          return PhoneGap.exec(success, fail, "DGPTimeTracker", "setShouldAutoUpdateProjectEvents", [params]);
+     },
+
+    /*
+    Params:
+    #define KEY_REGION_ID                       @"fid"
+    Returns
+    #define KEY_PROJECT_SHOULD_AUTO_UPDATE      @"shouldautoupdate"
+    #define KEY_PROJECT_CURRENTLY_HERE          @"currentlyhere"
+    */
+     getShouldAutoUpdateProjectEvents: function(params, success, fail) {
+          return PhoneGap.exec(success, fail, "DGPTimeTracker", "getShouldAutoUpdateProjectEvents", [params]);
+     },
+
+    /*
+    Params:
+    #define KEY_REGION_ID                       @"fid"
+    */
+     checkinToProject: function(params, success, fail) {
+          return PhoneGap.exec(success, fail, "DGPTimeTracker", "checkinToProject", [params]);
+     },
+
+    /*
+    Params:
+    #define KEY_REGION_ID                       @"fid"
+    */
+     checkoutOfProject: function(params, success, fail) {
+          return PhoneGap.exec(success, fail, "DGPTimeTracker", "checkoutOfProject", [params]);
+     },
+
+    /*
+    Params:
+    #define KEY_YEAR                            @"year"
+    #define KEY_MONTH                           @"month"
+    Returns array of
+    #define KEY_PROJECT_NAME                    @"projectname"
+    #define KEY_EVENT_CHECKIN                   @"checkin"
+    #define KEY_EVENT_CHECKOUT                  @"checkout"
+    */
+     retrieveProjectEventsForDate: function(params, success, fail) {
+          return PhoneGap.exec(success, fail, "DGPTimeTracker", "retrieveProjectEventsForDate", [params]);
+     }</pre>
+
+<p> </p>
+
+<p>These functions are all part of the Phonegap plugin.  The fun part was to create the native code that handled each one of them.</p>
+
+<p> </p>
+
+<p>In order to add a project for monitoring from the Javascript in the HTML I just need to call:</p>
+
+<pre class="brush: jscript;" title="code">currentLocation.location.lng, "address": currentLocation.location.address};
+DGPTimeTracker.addProject(
+            params,
+            function(result) {
+            },
+            function(error) {
+            }
+        );</pre>
+
+<p> </p>
+
+<p>Feel free to browse the source code for this project on GitHub.</p>
+
+<p>The source code for the plugins and the entire project can be found here:  <a title="https://github.com/tikalk/TikalTimeTracker" href="https://github.com/tikalk/TikalTimeTracker" target="_blank">https://github.com/tikalk/TikalTimeTracker</a></p>
+
+<p> </p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/mobile-development-using-phonegap" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

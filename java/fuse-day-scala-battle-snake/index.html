@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Fuse Day, Scala & Battle Snake!</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-java page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Fuse Day, Scala & Battle Snake!</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Scala">Scala</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Java">Java</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Akka">Akka</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Game">Game</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Multiplayer">Multiplayer</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Fuseday">Fuseday</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2013-07-09 00:00:00 +0300">
+        <div class="day">09</div>
+        Jul. 2013
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/fuse-day-scala-battle-snake' st_title='Fuse Day, Scala & Battle Snake!' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/fuse-day-scala-battle-snake' st_title='Fuse Day, Scala & Battle Snake!' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/fuse-day-scala-battle-snake' st_title='Fuse Day, Scala & Battle Snake!' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/fuse-day-scala-battle-snake' st_title='Fuse Day, Scala & Battle Snake!' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/fuse-day-scala-battle-snake' st_title='Fuse Day, Scala & Battle Snake!' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p><img alt="" src="http://www.fromoldbooks.org/DelamotteOrnamentalAlphabets/tn/051-16th-Century-letter-t-q85-468x500.jpg" style="width: 110px; height: 117px; float: left;" /><span style="font-size: 14px;">his Fuse Day, the Java group was concentrating on <a href="http://akka.io/">Akka</a>&nbsp;for creating highly concurrent and scalable code. A multiplayer online game was selected a</span><span style="font-size: 14px;">s an interesting and fun mini-project for the day, and&nbsp;</span><span style="font-size: 14px;">the Typesafe stack of the <a href="http://www.playframework.com/">Play Framework</a></span><span style="font-size: 14px;">, Akka and Scala/Java was the main focus of development. As I felt some people would be interested in the Scala side of things but have never tried it before, I suggested creating a sub-group that would only deal with Scala, and leave Akka for those more versed in the language or using Java instead.</span></p>
+
+<p><span style="font-size: 14px;">In preparation for the Fuse Day, I conducted a preliminary crash course in Scala that consisted of three concentrated hours, where I gave a rough presentation of what Scala is, what the basic syntax looks like, and also a few tricks such as Stackable Modification Traits.</span></p>
+
+<p><span style="font-size: 14px;">In preparation for the Fuse Day, The other group leaders and I tried to establish the API by which the different groups would communicate. This was especially important for the integration between the Java/Scala sub-groups, since we didn&#39;t want the Java sub-group to have to install Scala as part of their stack to get the whole thing to compile. Naturally, then, we ended up creating the API on the day itself.</span></p>
+
+<p><span style="font-size: 14px;"><img alt="" src="http://www.upsidedownbird.com/wp-content/uploads/2013/05/737890_10151220985711378_1745224235_o.jpg" style="width: 300px; height: 300px; margin-left: 100px; margin-right: 100px;" /></span></p>
+
+<p><span style="font-size: 14px;">The chosen multiplayer game was Battle Snake! - a classic snake game, where each player would have his own snake on the board, and would try to get the other players&#39; snakes killed by making them bumping into its tail, the walls or other snakes. The rest of the game rules would be the same as the well-known game, we said, which later on spurred some debate on what those rules actually were.</span></p>
+
+<p><span style="font-size: 14px;">To begin with, in an effort to spare the Java sub-group from the oh-so-terrible Scala dependancy, we set out to implement the model objects in Java, so we could then use them in our Scala code. This yielded a few classes such as Board, Snake, Fruit and Wall. Each of these were POJOs with your run of the mill fields, setters and getters, implementing an interface we called BoardElement. The Snake was comprised of a head and a tail, each of which was a Point, where the tail was comprised of BodyElements, each a single point on the board, pointing to the previous tail part. The Snake also held an enum value - Direction - which pointed to the direction in which the snake was advancing.</span></p>
+
+<p><span style="font-size: 14px;">When starting to build the Scala code, it was immediately apparent to me that Java programmers tend to try to write Java using Scala. This leads to code that is much less concise and more messy than it had to have been, since Scala provides us with some interesting ways of changing the syntactic representation of our code without changing the semantics, but making the code more readable. Even things like unnecessary semicolons took a while to root out.</span></p>
+
+<p><span style="font-size: 14px;">After a bit of code wrangling, we came up with a few cool things. Nested <span style="font-family:courier new,courier,monospace;">for</span>s became a single <span style="font-family:courier new,courier,monospace;">for</span> with multiple Ranges:</span></p>
+
+<p><span style="font-family:courier new,courier,monospace;"><span style="font-size:14px;"><span class="k" style="font-weight: bold;">for</span> <span class="o" style="font-weight: bold;">(</span><span class="n">x</span> <span class="k" style="font-weight: bold;">&lt;-</span> <span class="mi" style="color: rgb(0, 153, 153);">0</span> <span class="n">until</span> <span class="n">boardWidth</span><span class="o" style="font-weight: bold;">;</span> <span class="n">y</span> <span class="k" style="font-weight: bold;">&lt;-</span> <span class="mi" style="color: rgb(0, 153, 153);">0</span> <span class="n">until</span> <span class="n">boardHeight</span><span class="o" style="font-weight: bold;">)</span> <span class="o" style="font-weight: bold;">{</span></span></span></p>
+
+<pre style="font-family: Consolas, 'Liberation Mono', Courier, monospace; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); line-height: 18px;">
+</pre>
+
+<div class="line" id="LC25" style="padding-left: 10px;">
+    <span style="font-family:courier new,courier,monospace;"><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">board</span><span class="o" style="font-weight: bold;">.</span><span class="n">put</span><span class="o" style="font-weight: bold;">(</span><span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="mi" style="color: rgb(0, 153, 153);">0</span><span class="o" style="font-weight: bold;">,</span><span class="n">y</span><span class="o" style="font-weight: bold;">),</span><span class="n">wall</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC26" style="padding-left: 10px;">
+    <span style="font-family:courier new,courier,monospace;"><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">board</span><span class="o" style="font-weight: bold;">.</span><span class="n">put</span><span class="o" style="font-weight: bold;">(</span><span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">x</span><span class="o" style="font-weight: bold;">,</span><span class="mi" style="color: rgb(0, 153, 153);">0</span><span class="o" style="font-weight: bold;">),</span><span class="n">wall</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC27" style="padding-left: 10px;">
+    <span style="font-family:courier new,courier,monospace;"><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">board</span><span class="o" style="font-weight: bold;">.</span><span class="n">put</span><span class="o" style="font-weight: bold;">(</span><span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">boardWidth</span><span class="o" style="font-weight: bold;">-</span><span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">,</span><span class="n">y</span><span class="o" style="font-weight: bold;">),</span><span class="n">wall</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC28" style="padding-left: 10px;">
+    <span style="font-family:courier new,courier,monospace;"><span style="font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">board</span><span class="o" style="font-weight: bold;">.</span><span class="n">put</span><span class="o" style="font-weight: bold;">(</span><span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">x</span><span class="o" style="font-weight: bold;">,</span><span class="n">boardHeight</span><span class="o" style="font-weight: bold;">-</span><span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">),</span><span class="n">wall</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC29" style="padding-left: 10px;">
+    <span style="font-family:courier new,courier,monospace;"><span style="font-size:14px;"><span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<p><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:14px;">In this loop, the x and y variables are both initialized to the board height and width (the board is square), and wall points are created at the edges. The&nbsp;<em>until</em> keyword seen between the zero and the board width or height is not a keyword at all, but a function. Scala allows a function to be invoked in either form - <span style="font-family:courier new,courier,monospace;">a.func(b)</span> or <span style="font-family:courier new,courier,monospace;">a func b</span>. The latter provides a way to create natural looking DSLs without the noise of the supporting language. The <span style="font-family:courier new,courier,monospace;">until</span> function creates a <span style="font-family:courier new,courier,monospace;">Range</span> object with values ranging from the left operand to the right operand not inclusive.</span></span></p>
+
+<p><font face="arial, helvetica, sans-serif"><span style="font-size: 14px;">When developing the snake advancement algorithm, it was necessary to move the head point to the next point on the board, in the direction pointed by the Direction enum value. This started out as some nasty code:</span></font></p>
+
+<p><span style="font-family:courier new,courier,monospace;"><span style="font-size: 14px;"><strong>if</strong> <strong>(</strong>dir ==&nbsp;</span></span><span class="nc" style="font-size: 14px; color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-size: 14px; font-weight: bold;">.</span><span class="nc" style="font-size: 14px; color: rgb(68, 85, 136); font-weight: bold;">UP</span><span style="font-family:courier new,courier,monospace;"><span style="font-size: 14px;"><strong>)</strong> nextPoint = <strong>new&nbsp;</strong></span></span><span style="color: rgb(68, 85, 136); font-family: 'courier new', courier, monospace; font-size: 14px; font-weight: bold;">Point</span><span style="font-family:courier new,courier,monospace;"><span style="font-size: 14px;"><strong>(</strong>head.x, head.y - 1<strong>)</strong><br />
+    <strong>if</strong> <strong>(</strong>dir ==&nbsp;</span></span><span class="nc" style="font-size: 14px; color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-size: 14px; font-weight: bold;">.</span><span class="nc" style="font-size: 14px; color: rgb(68, 85, 136); font-weight: bold;">LEFT</span><span style="font-family:courier new,courier,monospace;"><span style="font-size: 14px;"><strong>)</strong> nextPoint = <strong>new</strong>&nbsp;</span></span><span style="color: rgb(68, 85, 136); font-family: 'courier new', courier, monospace; font-size: 14px; font-weight: bold;">Point</span><span style="font-family:courier new,courier,monospace;"><span style="font-size: 14px;"><strong>(</strong>head.x - 1, head.y<strong>)</strong><br />
+    ...</span></span></p>
+
+<p><font face="arial, helvetica, sans-serif"><span style="font-size: 14px;">This quickly changed to use <span style="font-family:courier new,courier,monospace;">match</span> instead:</span></font></p>
+
+<p><span class="n" style="font-size: 14px; font-family: 'courier new', courier, monospace;">dir</span><span style="font-size: 14px; font-family: 'courier new', courier, monospace;">&nbsp;</span><span class="k" style="font-size: 14px; font-family: 'courier new', courier, monospace; font-weight: bold;">match</span><span style="font-size: 14px; font-family: 'courier new', courier, monospace;">&nbsp;</span><span class="o" style="font-size: 14px; font-family: 'courier new', courier, monospace; font-weight: bold;">{</span></p>
+
+<div class="line" id="LC8" style="padding-left: 10px;">
+    <span style="font-family: 'courier new', courier, monospace;"><span style="font-size: 14px;">&nbsp; &nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">LEFT</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span>&nbsp;<span class="o" style="font-weight: bold;">-</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC9" style="padding-left: 10px;">
+    <span style="font-family: 'courier new', courier, monospace;"><span style="font-size: 14px;">&nbsp; &nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">RIGHT</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span>&nbsp;<span class="o" style="font-weight: bold;">+</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC10" style="padding-left: 10px;">
+    <span style="font-family: 'courier new', courier, monospace;"><span style="font-size: 14px;">&nbsp; &nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">UP</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span>&nbsp;<span class="o" style="font-weight: bold;">-</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC11" style="padding-left: 10px;">
+    <span style="font-family: 'courier new', courier, monospace;"><span style="font-size: 14px;">&nbsp; &nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">DOWN</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span>&nbsp;<span class="o" style="font-weight: bold;">+</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC12" style="padding-left: 10px;">
+    <span style="font-family: 'courier new', courier, monospace;"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="k" style="font-weight: bold;">_</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="n">point</span></span></span></div>
+
+<div class="line" id="LC13" style="padding-left: 10px;">
+    <span style="font-family: 'courier new', courier, monospace;"><span style="font-size: 14px;"><span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<p><font face="arial, helvetica, sans-serif"><span style="font-size: 14px;">But still I thought the code could be a lot better. I decided that what I wanted to get to is to be able to write:</span></font></p>
+
+<p><span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;"><span class="n" style="color: rgb(51, 51, 51); line-height: 18px; white-space: pre;">point</span><span style="color: rgb(51, 51, 51); line-height: 18px; white-space: pre;"> </span><span class="k" style="font-weight: bold; color: rgb(51, 51, 51); line-height: 18px; white-space: pre;">=</span><span style="color: rgb(51, 51, 51); line-height: 18px; white-space: pre;"> </span><span class="n" style="color: rgb(51, 51, 51); line-height: 18px; white-space: pre;">point</span><span style="color: rgb(51, 51, 51); line-height: 18px; white-space: pre;"> </span><span class="o" style="font-weight: bold; color: rgb(51, 51, 51); line-height: 18px; white-space: pre;">+</span><span style="color: rgb(51, 51, 51); line-height: 18px; white-space: pre;"> </span><span class="n" style="color: rgb(51, 51, 51); line-height: 18px; white-space: pre;">direction</span></span></span></p>
+
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 14px;">This lead to a few more interesting Scala features. First, to be able to write <span style="font-family:courier new,courier,monospace;">point + direction</span>, I would have to write a function named<span style="font-family:courier new,courier,monospace;"> +</span>. Scala provides a much more flexible function naming scheme than Java, to the point where method invocation looks like operator overloading. However, there is no operator overloading here, no special syntax, no special keywords like operator. Just plain old function definition. Defining the function + then, would look like this:</span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;<span class="k" style="font-weight: bold;">def</span>&nbsp;<span class="o" style="font-weight: bold;">+(</span><span class="n">dir</span><span class="k" style="font-weight: bold;">:</span>&nbsp;<span class="kt" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">)</span><span class="k" style="font-weight: bold;">:</span>&nbsp;<span class="kt" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span>&nbsp;<span class="o" style="font-weight: bold;">=</span>&nbsp;<span class="o" style="font-weight: bold;">{</span></span></span></p>
+
+<pre style="font-family: Consolas, 'Liberation Mono', Courier, monospace; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); line-height: 18px;">
+</pre>
+
+<div class="line" id="LC7" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">dir</span>&nbsp;<span class="k" style="font-weight: bold;">match</span>&nbsp;<span class="o" style="font-weight: bold;">{</span></span></span></div>
+
+<div class="line" id="LC8" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">LEFT</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span>&nbsp;<span class="o" style="font-weight: bold;">-</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC9" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">RIGHT</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span>&nbsp;<span class="o" style="font-weight: bold;">+</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC10" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">UP</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span>&nbsp;<span class="o" style="font-weight: bold;">-</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC11" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">DOWN</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="k" style="font-weight: bold;">new</span>&nbsp;<span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span><span class="o" style="font-weight: bold;">,</span>&nbsp;<span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span>&nbsp;<span class="o" style="font-weight: bold;">+</span>&nbsp;<span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC12" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span>&nbsp;<span class="k" style="font-weight: bold;">_</span>&nbsp;<span class="k" style="font-weight: bold;">=&gt;</span>&nbsp;<span class="n">point</span></span></span></div>
+
+<div class="line" id="LC13" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<div class="line" id="LC14" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;"><span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<p><span style="font-size: 14px;">Since Scala allows method invocations that have a single parameter to be formatted as <span style="font-family:courier new,courier,monospace;">a op b</span> instead of <span style="font-family:courier new,courier,monospace;">a.op(b)</span>, our code would now look like we wanted it to. There&#39;s just one little problem. We can&#39;t add the plus method to the Point class, since it was defined in the Java code!<br />
+    Scala comes to our rescue once again, with <em>Implicit Conversions</em>. This mechanism allows us to provide a conversion function from one object to another, if an operation is missing on the object on which the method is invoked. In other words, if <span style="font-family:courier new,courier,monospace;">a.b()</span> doesn&#39;t exist, Scala will look for a conversion to some class C, where <span style="font-family:courier new,courier,monospace;">c.b()</span> does exist, and will invoke it instead. We defined a class called PointOps (like Scala&#39;s StringOps) which now contains the plus function and the implicit conversion:</span></p>
+
+<p><span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;"><span class="k" style="font-weight: bold;">&nbsp;class</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">PointOps</span><span class="o" style="font-weight: bold;">(</span><span class="k" style="font-weight: bold;">val</span> <span class="n">point</span><span class="k" style="font-weight: bold;">:</span> <span class="kt" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">)</span> <span class="o" style="font-weight: bold;">{</span></span></span></p>
+
+<pre style="font-family: Consolas, 'Liberation Mono', Courier, monospace; margin-top: 0px; margin-bottom: 0px; color: rgb(51, 51, 51); line-height: 18px;">
+</pre>
+
+<div class="line" id="LC6" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;<span class="k" style="font-weight: bold;">def</span> <span class="o" style="font-weight: bold;">+(</span><span class="n">dir</span><span class="k" style="font-weight: bold;">:</span> <span class="kt" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">)</span><span class="k" style="font-weight: bold;">:</span> <span class="kt" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span> <span class="o" style="font-weight: bold;">=</span> <span class="o" style="font-weight: bold;">{</span></span></span></div>
+
+<div class="line" id="LC7" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">dir</span> <span class="k" style="font-weight: bold;">match</span> <span class="o" style="font-weight: bold;">{</span></span></span></div>
+
+<div class="line" id="LC8" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">LEFT</span> <span class="k" style="font-weight: bold;">=&gt;</span> <span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span> <span class="o" style="font-weight: bold;">-</span> <span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">,</span> <span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC9" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">RIGHT</span> <span class="k" style="font-weight: bold;">=&gt;</span> <span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span> <span class="o" style="font-weight: bold;">+</span> <span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">,</span> <span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC10" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">UP</span> <span class="k" style="font-weight: bold;">=&gt;</span> <span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span><span class="o" style="font-weight: bold;">,</span> <span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span> <span class="o" style="font-weight: bold;">-</span> <span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC11" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Direction</span><span class="o" style="font-weight: bold;">.</span><span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">DOWN</span> <span class="k" style="font-weight: bold;">=&gt;</span> <span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">(</span><span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getX</span><span class="o" style="font-weight: bold;">,</span> <span class="n">point</span><span class="o" style="font-weight: bold;">.</span><span class="n">getY</span> <span class="o" style="font-weight: bold;">+</span> <span class="mi" style="color: rgb(0, 153, 153);">1</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC12" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k" style="font-weight: bold;">case</span> <span class="k" style="font-weight: bold;">_</span> <span class="k" style="font-weight: bold;">=&gt;</span> <span class="n">point</span></span></span></div>
+
+<div class="line" id="LC13" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<div class="line" id="LC14" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;<span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<div class="line" id="LC15" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;"><span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<div class="line" id="LC16" style="padding-left: 10px;">
+    &nbsp;</div>
+
+<div class="line" id="LC17" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;"><span class="k" style="font-weight: bold;">object</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">PointOps</span><span class="o" style="font-weight: bold;">{</span></span></span></div>
+
+<div class="line" id="LC18" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;">&nbsp;&nbsp;<span class="k" style="font-weight: bold;">implicit</span> <span class="k" style="font-weight: bold;">def</span> <span class="n">pointToPointOps</span><span class="o" style="font-weight: bold;">(</span><span class="n">value</span><span class="k" style="font-weight: bold;">:</span> <span class="kt" style="color: rgb(68, 85, 136); font-weight: bold;">Point</span><span class="o" style="font-weight: bold;">)</span><span class="k" style="font-weight: bold;">:</span> <span class="kt" style="color: rgb(68, 85, 136); font-weight: bold;">PointOps</span> <span class="o" style="font-weight: bold;">=</span> <span class="k" style="font-weight: bold;">new</span> <span class="nc" style="color: rgb(68, 85, 136); font-weight: bold;">PointOps</span><span class="o" style="font-weight: bold;">(</span><span class="n">value</span><span class="o" style="font-weight: bold;">)</span></span></span></div>
+
+<div class="line" id="LC19" style="padding-left: 10px;">
+    <span style="font-size:14px;"><span style="font-family:courier new,courier,monospace;"><span class="o" style="font-weight: bold;">}</span></span></span></div>
+
+<p><span style="font-size:14px;">Towards the end of the Fuse Day, it was apparrent that the integration with the Akka sub-groups wouldn&#39;t happen, as we were running out of time. All in all, I believe that getting our hands dirty in some Scala code opened up some interesting prospects of its usage for most people. Personally, I&#39;m going to delve further on into Scala and try to find out just how powerful this language is.</span></p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/java/fuse-day-scala-battle-snake" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

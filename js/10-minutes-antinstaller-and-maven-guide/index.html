@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>The 10 minutes AntInstaller and maven guide</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-js page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">The 10 minutes AntInstaller and maven guide</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JS">JS</a>
+              </li>
+            
+              <li>
+                <a href="/tags/maven">maven</a>
+              </li>
+            
+              <li>
+                <a href="/tags/antinstaller">antinstaller</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Ant">Ant</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2010-10-26 00:00:00 +0200">
+        <div class="day">26</div>
+        Oct. 2010
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/js/10-minutes-antinstaller-and-maven-guide' st_title='The 10 minutes AntInstaller and maven guide' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/js/10-minutes-antinstaller-and-maven-guide' st_title='The 10 minutes AntInstaller and maven guide' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/js/10-minutes-antinstaller-and-maven-guide' st_title='The 10 minutes AntInstaller and maven guide' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/js/10-minutes-antinstaller-and-maven-guide' st_title='The 10 minutes AntInstaller and maven guide' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/js/10-minutes-antinstaller-and-maven-guide' st_title='The 10 minutes AntInstaller and maven guide' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>The information about the combination of these two goodies is to say the least scarce. I decided to create a minimal small POC project which</p>
+
+<p>Full credit to Ittai who helped me out with this post. </p>
+
+<p><br />
+1-Has a self contained Maven POM, which works out of the box without any major modifications.<br />
+2-Explicitly invokes AntInstaller via a configuration file while utilizing an antinstaller properties file<br />
+3-Is easy to understand and expand. <br />
+<br />
+Without further ado, I shall describe the files involved in the project which was fully build using the one and only Intellij IDEA. <br />
+<br />
+Folder structure is as follows:</p>
+
+<pre class="brush: xhtml;" title="code">
+|-tikalk-installer
+ |---src
+ |-----main
+ |-------antlib
+ |-------installer
+ |-------lib
+</pre>
+
+<p>The directory structure was generated using the folowing linux command:</p>
+
+<pre class="brush: php;" title="code">
+ls -R | grep &quot;:$&quot; | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' \
+-e 's/^/ /' -e 's/-/|/'</pre>
+<p><br />
+<br />
+The root directory contains the maven POM:</p>
+<pre title="code" class="brush: xhtml;">
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0
+                               http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;com.tikalk.tikalk.runtime.prod&lt;/groupId&gt;
+    &lt;artifactId&gt;tikalk-installer&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;Rt installer&lt;/name&gt;
+    &lt;packaging&gt;pom&lt;/packaging&gt;
+    &lt;inceptionYear&gt;2010&lt;/inceptionYear&gt;
+
+    &lt;developers&gt;
+        &lt;developer&gt;
+            &lt;name&gt;Shlomo&lt;/name&gt;
+            &lt;organization&gt;Tikalk&lt;/organization&gt;
+        &lt;/developer&gt;
+    &lt;/developers&gt;
+
+    &lt;pluginRepositories&gt;
+        &lt;pluginRepository&gt;
+            &lt;id&gt;nexus -public&lt;/id&gt;
+            &lt;url&gt;http://build/nexus/content/groups/public&lt;/url&gt;
+        &lt;/pluginRepository&gt;
+    &lt;/pluginRepositories&gt;
+
+    &lt;repositories&gt;
+        &lt;repository&gt;
+            &lt;id&gt;nexus -public&lt;/id&gt;
+            &lt;url&gt;http://build/nexus/content/groups/public&lt;/url&gt;
+        &lt;/repository&gt;
+
+    &lt;/repositories&gt;
+
+    &lt;properties&gt;       
+        &lt;jdk.product.version&gt;java-6-sun&lt;/jdk.product.version&gt;
+        &lt;jdk.product.name&gt;jdk&lt;/jdk.product.name&gt;       
+        &lt;rt.base.folder&gt;target&lt;/rt.base.folder&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- Ant-Contrib for Special Ant Tasks (IF) --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.maven&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-artifact-ant&lt;/artifactId&gt;
+            &lt;version&gt;2.0.4&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.ant&lt;/groupId&gt;
+            &lt;artifactId&gt;ant&lt;/artifactId&gt;
+            &lt;version&gt;1.7.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;ant-contrib&lt;/groupId&gt;
+            &lt;artifactId&gt;ant-contrib&lt;/artifactId&gt;
+            &lt;version&gt;1.0b2&lt;/version&gt;
+            &lt;exclusions&gt;
+                &lt;exclusion&gt;
+                    &lt;groupId&gt;ant&lt;/groupId&gt;
+                    &lt;artifactId&gt;ant&lt;/artifactId&gt;
+                &lt;/exclusion&gt;
+            &lt;/exclusions&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;ant&lt;/groupId&gt;
+            &lt;artifactId&gt;optional&lt;/artifactId&gt;
+            &lt;version&gt;1.5.4&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;ant&lt;/groupId&gt;
+            &lt;artifactId&gt;ant-antlr&lt;/artifactId&gt;
+            &lt;version&gt;1.6.5&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;antlr&lt;/groupId&gt;
+            &lt;artifactId&gt;antlrall&lt;/artifactId&gt;
+            &lt;version&gt;2.7.4&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;ant&lt;/groupId&gt;
+            &lt;artifactId&gt;ant-nodeps&lt;/artifactId&gt;
+            &lt;version&gt;1.6.5&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;ant-installer&lt;/groupId&gt;
+            &lt;artifactId&gt;ant-installer&lt;/artifactId&gt;
+            &lt;version&gt;1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;ant-installer-ext&lt;/groupId&gt;
+            &lt;artifactId&gt;ant-installer-ext&lt;/artifactId&gt;
+            &lt;version&gt;1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;profiles&gt;
+        &lt;profile&gt;
+            &lt;id&gt;new-installer&lt;/id&gt;
+            &lt;properties&gt;
+                &lt;platform&gt;linux&lt;/platform&gt;
+            &lt;/properties&gt;
+            &lt;activation&gt;
+                &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+                &lt;os&gt;
+                    &lt;family&gt;linux&lt;/family&gt;
+                &lt;/os&gt;
+            &lt;/activation&gt;
+
+            &lt;build&gt;
+                &lt;plugins&gt;
+                    &lt;plugin&gt;
+                        &lt;groupId&gt;org.jvnet.maven-antrun-extended-plugin&lt;/groupId&gt;
+                        &lt;artifactId&gt;maven-antrun-extended-plugin&lt;/artifactId&gt;
+                        &lt;version&gt;1.8&lt;/version&gt;
+                        &lt;dependencies&gt;
+                            &lt;dependency&gt;
+                                &lt;groupId&gt;ant-installer&lt;/groupId&gt;
+                                &lt;artifactId&gt;ant-installer&lt;/artifactId&gt;
+                                &lt;version&gt;1.0&lt;/version&gt;
+                            &lt;/dependency&gt;
+                            &lt;dependency&gt;
+                                &lt;groupId&gt;ant-installer-ext&lt;/groupId&gt;
+                                &lt;artifactId&gt;ant-installer-ext&lt;/artifactId&gt;
+                                &lt;version&gt;1.0&lt;/version&gt;
+                            &lt;/dependency&gt;
+                        &lt;/dependencies&gt;
+                        &lt;executions&gt;
+                            &lt;execution&gt;
+                                &lt;id&gt;initialize&lt;/id&gt;
+                                &lt;phase&gt;initialize&lt;/phase&gt;
+                                &lt;configuration&gt;
+                                  &lt;tasks&gt;
+                                     &lt;copy file=&quot;src/main/installer/ant.install.properties&quot;
+                                              tofile=&quot;src/main/target/ant.install.properties&quot;
+                                              overwrite=&quot;true&quot; verbose=&quot;true&quot;/&gt;
+
+                                      &lt;resolveArtifact artifactId=&quot;jdk&quot; property=&quot;jdk.archive&quot;/&gt;                                    
+
+                                      &lt;taskdef name=&quot;installer&quot;
+                                                 classname=&quot;org.tp23.antinstaller.taskdefs.Installer&quot;
+                                                 classpathref=&quot;maven.plugin.classpath&quot;/&gt;
+
+                                        &lt;!-- configure the installer task --&gt;
+                                        &lt;installer file=&quot;src/main/target/tikalk-installer.jar&quot;
+                                                   compress=&quot;true&quot;
+                                                   extractType=&quot;SelfExtractor&quot;
+                                                   installConfig=&quot;src/main/installer/antinstall-config.xml&quot;
+                                                   buildFile=&quot;src/main/installer/build.xml&quot;
+                                                   antInstallLib=&quot;src/main/lib&quot;
+                                                   antLib=&quot;src/main/antlib&quot;
+                                                   validateConfig=&quot;true&quot;
+                                                   failOnError=&quot;true&quot; &gt;
+
+                                            &lt;fileset file=&quot;${jdk.archive}&quot; /&gt;                                           
+
+                                        &lt;/installer&gt;
+
+                                  &lt;/tasks&gt;
+
+                                &lt;/configuration&gt;
+                                &lt;goals&gt;
+                                    &lt;goal&gt;run&lt;/goal&gt;
+                                &lt;/goals&gt;
+                            &lt;/execution&gt;
+                        &lt;/executions&gt;
+                    &lt;/plugin&gt;
+
+
+                &lt;/plugins&gt;
+            &lt;/build&gt;
+
+        &lt;/profile&gt;
+
+    &lt;/profiles&gt;
+&lt;/project&gt;
+</pre>
+
+<p>&nbsp;</p>
+
+<p>Let us try and understand the various sections of the maven POM. The installer is minimal and will pack a JDK inside it, it can be any other artifact(s) such as mysql or your own artifact placed under a private Nexus repository.</p>
+
+<p>&nbsp;</p>
+
+<p>The most cruical section is the one starting at line 114.&nbsp; It defines the plug-in taht allows maven to interact with Ant and Antinstaller. Additionally, it defines two dependencies, which MUST be placed under your local nexus repo so that they can be resolved.</p>
+
+<p>&nbsp;</p>
+
+<pre title="code" class="brush: xhtml;">
+ &lt;plugin&gt;
+                        &lt;groupId&gt;org.jvnet.maven-antrun-extended-plugin&lt;/groupId&gt;
+                        &lt;artifactId&gt;maven-antrun-extended-plugin&lt;/artifactId&gt;
+                        &lt;version&gt;1.8&lt;/version&gt;
+                        &lt;dependencies&gt;
+                            &lt;dependency&gt;
+                                &lt;groupId&gt;ant-installer&lt;/groupId&gt;
+                                &lt;artifactId&gt;ant-installer&lt;/artifactId&gt;
+                                &lt;version&gt;1.0&lt;/version&gt;
+                            &lt;/dependency&gt;
+                            &lt;dependency&gt;
+                                &lt;groupId&gt;ant-installer-ext&lt;/groupId&gt;
+                                &lt;artifactId&gt;ant-installer-ext&lt;/artifactId&gt;
+                                &lt;version&gt;1.0&lt;/version&gt;
+                            &lt;/dependency&gt;
+                        &lt;/dependencies&gt;
+</pre>
+
+<pre title="code" class="brush: xhtml;">
+
+</pre>
+
+<p>Next at line 135, we copy our own version of the property file used by the installer at runtime:</p>
+
+<pre title="code" class="brush: xhtml;">
+ &lt;copy file=&quot;src/main/installer/ant.install.properties&quot;
+                                              tofile=&quot;src/main/target/ant.install.properties&quot;
+                                              overwrite=&quot;true&quot; verbose=&quot;true&quot;/&gt;</pre>
+<p>&nbsp;</p>
+<p>Next at line 139 we define our only artifact that must be resolved (the jdk) at build time:</p>
+<pre class="brush: xhtml;" title="code">
+&lt;resolveArtifact artifactId=&quot;jdk&quot; property=&quot;jdk.archive&quot;/&gt; </pre>
+<p>&nbsp;</p>
+<p>Next at line 142 we define the actual antinatller task:</p>
+<pre title="code" class="brush: xhtml;">
+  &lt;taskdef name=&quot;installer&quot;
+                                                 classname=&quot;org.tp23.antinstaller.taskdefs.Installer&quot;
+                                                 classpathref=&quot;maven.plugin.classpath&quot;/&gt;</pre>
+<p>Note that the class loader will look under the&nbsp; &quot;maven.plugin.classpath&quot; to try and locat the installer task.</p>
+<p>&nbsp;</p>
+<p>Next at lines 146 to 156 the resulting installer is defined:</p>
+<p>&nbsp;</p>
+<pre title="code" class="brush: xhtml;">
+ &lt;!-- configure the installer task --&gt;
+                                        &lt;installer file=&quot;src/main/target/tikalk-installer.jar&quot;
+                                                   compress=&quot;true&quot;
+                                                   extractType=&quot;SelfExtractor&quot;
+                                                   installConfig=&quot;src/main/installer/antinstall-config.xml&quot;
+                                                   buildFile=&quot;src/main/installer/build.xml&quot;
+                                                   antInstallLib=&quot;src/main/lib&quot;
+                                                   antLib=&quot;src/main/antlib&quot;
+                                                   validateConfig=&quot;true&quot;
+                                                   failOnError=&quot;true&quot; &gt;
+                                            &lt;fileset file=&quot;${jdk.archive}&quot; /&gt;          </pre>
+<p>Line 146 names the installer, e.g</p>
+<pre title="code" class="brush: xhtml;">
+tikalk-installer.jar</pre>
+<p>Line 149 referes to our own antinstall-config.xml file:</p>
+<pre class="brush: xhtml;" title="code">
+ installConfig=&quot;src/main/installer/antinstall-config.xml&quot;</pre>
+<p>Line 150 referes to our own ant build.xml file:</p>
+<pre title="code" class="brush: xhtml;">
+ buildFile=&quot;src/main/installer/build.xml&quot;
+
+</pre>
+
+<p>Last but not least, we include out only artifact inside the installer:</p>
+
+<pre title="code" class="brush: xhtml;">
+&lt;fileset file=&quot;${jdk.archive}&quot; /&gt;       
+
+</pre>
+
+<p>Under /src/main<b>: </b><br />
+The installer directory contains: <br />
+A. The ant build.xml file used for invoking your actual installation tasks once the installer has been built and is run on a machine:</p>
+
+<pre class="brush: xhtml;" title="code">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;project name=&quot;Tikal installer build&quot; default=&quot;&quot; basedir=&quot;${basedir}&quot;&gt;
+    &lt;target name=&quot;default&quot; depends=&quot;&quot;&gt;
+        &lt;echo&gt;&quot;Default&quot;&lt;/echo&gt;
+    &lt;/target&gt;
+    &lt;target name=&quot;configureServer-linux&quot; depends=&quot;&quot;&gt;
+        &lt;echo&gt;server-linux&lt;/echo&gt;
+    &lt;/target&gt;
+&lt;/project&gt;</pre>
+<p><br />
+B. The antinstall-config.xml file used for defining the installation tasks and gathering input from the user via a GUI or the command line:</p>
+<p>(credit: http://wiki.eclipse.org/Migrate_the_ConfigureAperi_code_to_AntInstaller)</p>
+<pre class="brush: xhtml;" title="code">
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE installer PUBLIC &quot;-//tp23 //DTD Ant Installer Config//EN&quot; &quot;http://antinstaller.sf.net/dtd/antinstall-config-0.8.dtd&quot;&gt;
+
+&lt;installer
+        ui=&quot;swing,text,text-auto&quot;
+        verbose=&quot;true&quot;
+        debug=&quot;true&quot;
+        lookAndFeel=&quot;native&quot;
+        name=&quot;Tikalk  Installer&quot;
+        minJavaVersion=&quot;1.5&quot;
+        finishButtonText=&quot;Install&quot;
+        version=&quot;5.3&quot;
+        loadDefaults=&quot;true&quot;
+        wide=&quot;600:275&quot;&gt;    
+    &lt;page
+        type=&quot;input&quot;
+        name=&quot;intro&quot;
+        displayText=&quot;Welcome&quot;&gt;
+        &lt;comment
+            displayText=&quot;&quot;
+            explanatoryText=&quot;Tikalk Tikalk installer&quot;
+            /&gt;
+        &lt;comment displayText=&quot;&quot;/&gt;
+        &lt;comment displayText=&quot;Installer made with&quot;/&gt;
+        &lt;comment displayText=&quot;http://antinstaller.sourceforge.net&quot; bold=&quot;true&quot;/&gt;
+        &lt;hidden
+            property=&quot;env.HOSTNAME&quot;
+            value=&quot;${env.COMPUTERNAME}&quot;
+        /&gt;
+    &lt;/page&gt;    
+    &lt;page
+        type=&quot;input&quot;
+        name=&quot;componentSelection&quot;
+        displayText=&quot;Component Selection&quot;&gt;
+        &lt;comment
+            displayText=&quot;The Tikalk system consists of two major components:
+            Server,Client&quot;
+                title=&quot;false&quot; /&gt;
+        &lt;comment
+            displayText=&quot;You can configure any or all of these to run on this computer.&quot;
+                title=&quot;false&quot; /&gt;   
+        &lt;target
+            target=&quot;configureServer&quot;
+            displayText=&quot;Server&quot;
+            defaultValue=&quot;true&quot;
+            osSpecific=&quot;true&quot;
+            strict=&quot;false&quot; /&gt;
+    &lt;/page&gt;
+    &lt;page
+        type=&quot;input&quot;
+        name=&quot;installLocation&quot;
+        displayText=&quot;Installation location&quot; &gt;
+        &lt;directory
+            displayText=&quot;Installation location&quot;
+            checkExists=&quot;true&quot;
+            create=&quot;true&quot;
+            defaultValue=&quot;/opt/Tikalk&quot;
+            property=&quot;install.dir&quot; /&gt;
+    &lt;/page&gt;
+    &lt;page 
+        name=&quot;serverConfig&quot;
+        displayText=&quot;Server configuration&quot;
+        type=&quot;input&quot;
+        ifProperty=&quot;(${configureAgent}==true)OR(${configureServer}==true)&quot;&gt;
+        &lt;comment
+            displayText=&quot;Enter values to configure the server.&quot;
+            title=&quot;true&quot; /&gt;
+        &lt;validated
+            property=&quot;server.hostname&quot;
+            displayText=&quot;Server hostname&quot;
+            defaultValue=&quot;${env.HOSTNAME}&quot;
+            regex=&quot;[a-zA-Z0-9.]*&quot;
+        /&gt;
+    &lt;/page&gt;
+    &lt;page
+            type=&quot;progress&quot;
+            name=&quot;progress&quot;
+            showTargets=&quot;true&quot;
+            displayText=&quot;Installation progress&quot; &gt;
+    &lt;/page&gt;   
+&lt;/installer&gt;
+</pre>
+
+<p><br />
+C. The ant.install.properties used for defining default installation values:</p>
+
+<pre title="code" class="brush: php;"><a href="http://search.twitter.com/search?q=%23">#</a><a href="http://search.twitter.com/search?q=%23">#</a><a href="http://search.twitter.com/search?q=%23">#</a> Ant Installer - properties auto generated on Mon\ Oct\ 25\ 07\:55\:40\ GMT\ 2010
+
+basedir = /home/dambo/projects/tikalk-installer/src/main/target/.
+ant.install.config.version = 5.3
+
+
+<a href="http://search.twitter.com/search?q=%23">#</a><a href="http://search.twitter.com/search?q=%23">#</a> Properties from Page:intro
+<a href="http://search.twitter.com/search?q=%23">#</a> .HiddenPropertyInput
+env.HOSTNAME = 
+
+<a href="http://search.twitter.com/search?q=%23">#</a><a href="http://search.twitter.com/search?q=%23">#</a> Properties from Page:componentSelection
+<a href="http://search.twitter.com/search?q=%23">#</a> .TargetInput
+configureServer = true
+<a href="http://search.twitter.com/search?q=%23">#</a> Targets selected for page
+componentSelection-targets = configureServer-linux,
+
+<a href="http://search.twitter.com/search?q=%23">#</a><a href="http://search.twitter.com/search?q=%23">#</a> Properties from Page:installLocation
+<a href="http://search.twitter.com/search?q=%23">#</a> .DirectoryInput
+install.dir = /home/dambo/tikalk-installer
+
+<a href="http://search.twitter.com/search?q=%23">#</a><a href="http://search.twitter.com/search?q=%23">#</a> Properties from Page:serverConfig
+<a href="http://search.twitter.com/search?q=%23">#</a> .ValidatedTextInput
+server.hostname = localhost
+
+<a href="http://search.twitter.com/search?q=%23">#</a><a href="http://search.twitter.com/search?q=%23">#</a> Properties from Page:progress
+</pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>The lib directory contains ant lib libraries (ships with ant installer)</p>
+
+<p>&nbsp;</p>
+
+<p>The antlib directory contains additional &quot;antlib&quot; third party libraries (ships with antinstaller) <br />
+&nbsp; <br />
+Once the maven target &quot;install&quot; is invoked, a file named tikalk-installer.jar will be generated. In order to actuayly run teh installer use:</p>
+
+<p>&nbsp;</p>
+
+<pre class="brush: java;" title="code">
+ java -jar tikalk-installer.jar</pre>
+
+<p>&nbsp;</p>
+
+<p>Of course it can run in either GUI mode using swing or command line mode on the unix shell.</p>
+
+<p>&nbsp;</p>
+
+<p>Questions welcomed,</p>
+
+<p><br />
+&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/js/10-minutes-antinstaller-and-maven-guide" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>

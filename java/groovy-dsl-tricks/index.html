@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Groovy DSL Tricks</title>
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<!-- syntax highlighting CSS -->
+<!--link rel="stylesheet" href="/css/syntax.css"-->
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/application-1070e5396a9f348b2c31565a8ca2ade6.css">
+
+<!-- Custom JS -->
+<script src="/assets/vendor/jquery-2.1.1-fbf0c31ef61d80bbbc98a9cdfc7e6632.js"></script>
+<script src="/assets/vendor/jquery.validate-466ee815d7a2fb9b74b895b6a0f9551c.js"></script>
+<script src="/assets/vendor/scrollup/jquery.scrollUp-d730604bacd24a59da00d38b42cd77af.js"></script>
+<script src="/assets/vendor/drupal_legacy-d5580e3eaf6de5a1446255d180dc73d3.js"></script>
+<script src="/assets/vendor/angular.min-dfd2efe0eaac3581c5faf5cfed3b159e.js"></script>
+<script src="/assets/meetup_events-5782f731b79266fd93b159cb798cc3d5.js"></script>
+<script src="/assets/contact-897905f16738b8c5c1688eefae319441.js"></script>
+<script src="/assets/application-07f972327fcb4602f91f1e8ba4b78498.js"></script>
+
+<!-- ShareThis JS for posts section -->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "6ae64a50-63a5-4021-a8de-b0adce0ce99b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    </head>
+
+    <body class="one-sidebar sidebar-second section-java page-node node-type-article all-pages with-navigation with-subnav featured dir-ltr">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=519865898033052&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <div id="header-first">
+  <div class="region region-header-first">
+    <div id="block-search-form" class="block block-search block-odd">
+
+      <div class="content">
+        <form id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+              <h2 class="element-invisible">Search form</h2>
+              <div class="form-item form-type-textfield form-item-search-block-form">
+                <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+                <input title="Enter the terms you wish to search for." placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+              </div>
+              <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-hCEJ23kB0sHlr4dB3Yv5-2cDcH10yNwGSUn69WjCjF4">
+              <input type="hidden" name="form_id" value="search_block_form">
+            </div>
+      </div></form>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-top-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf login"><a href="/user" title="">login</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-language" class="block block-menu block-odd">
+      
+      <div class="content">
+        <ul class="menu clearfix"><li class="first last leaf עברית"><a href="/hebrew" title="">עברית</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</div>
+<div id="google-search-form" style="visibility:hidden; width: 1px; height: 1px; float:right;">
+  <script>
+
+    (function() {
+        var cx = '012617499894110201007:qu0yvmmzksu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = false;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+
+
+<script>
+    $(document).ready(function() {
+        $('#search-block-form').submit(function (e) {
+            e.preventDefault();
+
+            //find google search form
+            var form = $('.gsc-control-wrapper-cse').find('form');
+            var input = form.find("input[name='search']");
+            var btn = form.find("input[type='image']");
+            var tikalSearch = $('#edit-search-block-form--2');
+            tikalSearch.blur();
+            $("#bg").show();
+            input.val(tikalSearch.val());
+            //form.submit();
+            btn.click();
+
+        });
+        
+    });
+
+
+</script>
+
+</div>
+
+        <header id="header" role="banner">
+  <div class="logo-and-region-header">
+    <div class="background-logo"></div>
+    <a href="/" title="Home" rel="home" id="logo">
+      <img src="/assets/logo-ebc269c722e9e1e11b3252c442c75750.png" alt="Home">
+    </a>
+
+
+    <div class="region region-header">
+      <section id="block-menu-menu-header-menu" class="block block-menu block-even">
+        <h2 class="block-title element-invisible">Header menu</h2>
+
+        <div class="content">
+          <ul class="menu clearfix">
+            
+              
+              <li class="leaf"><a href="/about" class="">About</a></li>
+            
+              
+              <li class="leaf"><a href="/solutions" class="">Solutions</a></li>
+            
+              
+              <li class="leaf"><a href="/careers" class="">Careers</a></li>
+            
+              
+              <li class="leaf"><a href="/events" class="">Events</a></li>
+            
+              
+              <li class="leaf"><a href="/contact" class="">Contact</a></li>
+            
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+      <section id="block-menu-menu-domains" class="block block-menu block-odd">
+        <h2 class="block-title element-invisible">Domains</h2>
+
+        <div class="content">
+          <ul class="menu clearfix"><li class="first leaf devops"><a href="/devops" title="">DevOps</a></li>
+            <li class="leaf java"><a href="/java" title="">JAVA</a></li>
+            <li class="leaf js"><a href="/js" title="">JS</a></li>
+            <li class="leaf android"><a href="/android" title="">Android</a></li>
+            <li class="last leaf ruby"><a href="/ruby" title="">Ruby</a></li>
+        </ul>  </div><!-- /.content -->
+      </section><!-- /.block -->
+    </div>
+  </div><!-- /#logo-and-region-header -->
+</header>
+
+        <div class="featured-background">
+  <div id="featured">
+    <div class="region-title-and-featured">
+      <h1 class="title" id="page-title">Groovy DSL Tricks</h1>
+      <div class="region region-featured">
+        <div id="block-views-author-block" class="block block-views">
+          <div class="content">
+            <div class="view view-author view-id-author view-display-id-block">
+  <div class="view-content">
+    <div class="view-content-limit">
+      <div class="view-content-limit-content">
+        <div class="views-row">
+          <div class="views-field views-field-picture">
+            <div class="field-content">
+              
+                <img src="/assets/pictures/profile-default-ab65955ebe8cf05005dc2e1ae497d862.jpg" width="307" height="230" alt="">
+              
+            </div>  
+          </div>
+          <div class="views-field views-field-field-first-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-last-name">
+            <div class="field-content"></div>
+          </div>
+          <div class="views-field views-field-field-description">
+            <div class="field-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="shadow-page"></div>
+        <div id="page">
+          <div id="main">
+            <div class="region region-content">
+              <div id="block-system-main" class="block block-system">
+                <div class="content">
+                  <article class="node node-article published with-comments node-full">
+                    <header>
+  <div class="by-and-tags">
+    <div class="by">
+      <div class="label-by">by</div>
+      <div class="name">
+        
+      </div>
+    </div>
+    <div class="tags">
+      <div class="label-tags">tags:</div>
+      <div class="float-tags">
+        <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-hidden clearfix">
+          <ul class="links">
+            
+              <li>
+                <a href="/tags/JAVA">JAVA</a>
+              </li>
+            
+              <li>
+                <a href="/tags/Groovy">Groovy</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <time pubdate="" datetime="2010-06-18 00:00:00 +0300">
+        <div class="day">18</div>
+        Jun. 2010
+      </time>
+  
+  
+  
+
+
+<span class="share-buttons">
+  <span st_url='http://tikalk.com/java/groovy-dsl-tricks' st_title='Groovy DSL Tricks' class='st_facebook_hcount' displayText='Facebook'></span>
+  <span st_url='http://tikalk.com/java/groovy-dsl-tricks' st_title='Groovy DSL Tricks' class='st_linkedin_hcount' displayText='LinkedIn'></span>
+  <span st_url='http://tikalk.com/java/groovy-dsl-tricks' st_title='Groovy DSL Tricks' class='st_twitter_hcount' displayText='Tweet'></span>
+  <span st_url='http://tikalk.com/java/groovy-dsl-tricks' st_title='Groovy DSL Tricks' class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span st_url='http://tikalk.com/java/groovy-dsl-tricks' st_title='Groovy DSL Tricks' class='st_plusone_hcount' displayText='Google +1'></span>
+</span>
+</header>
+
+                    <p>I&rsquo;ve recently needed to support creating a Groovy DSL that can be called from Java, to allow scripting of some server activities.<span style="mso-spacerun:yes">&nbsp; </span>The aim was to load a file, script.groovy, and run it so that it uses the server&rsquo;s API.</p>
+
+<p>&nbsp;</p>
+
+<p class="MsoNormal">Researching the subject, most articles discuss how to create nicer looking syntax when working from within Groovy. Things like being able to write 5.euro. But in our scenario there were other goals:</p>
+
+<ul style="margin-top:0cm" type="disc">
+    <li>Efficiency: on the one      hand being able to change the script while the server is running. On the      other, not paying the parsing &amp; compilation overhead for each call</li>
+    <li>Cleanliness: because the      script provides lean customization for the server, we didn&rsquo;t want it to be      cluttered with &ldquo;mechanical issues&rdquo; like import statements, requiring to      use &lsquo;use&rsquo; or mixin statements etc.</li>
+    <li>Extensability: easily add      methods to the DSL as well as allow the script to be broken to small parts</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="MsoNormal">Here I will describe some of the techniques I&rsquo;ve used to achieve these goals</p>
+
+<h1>DSL Class</h1>
+
+<p class="MsoNormal">When creating a DSL, there are functions/methods that form the DSL. A question is where to define them. All the articles I could find suggested either</p>
+
+<ul style="margin-top:0cm" type="disc">
+    <li>Using the builder      mechanism - where a method just creates a node with that name in the      builder, and the structure created is post processed</li>
+    <li>Putting methods in the      meta class</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class="MsoNormal">The former approach requires post processing and limits what can be written in the script, the latter means <span style="mso-spacerun:yes">&nbsp;</span>one need to load the script through a wrapper that will put the methods in the meta class before running the script. It is also tricky to do this from Java/Scala.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">The approach I used is to use an undocumented feature of how Groovy loads scripts.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Before going into details, here is how Groovy loads scripts: it reads the script file and then compiles the code to create a JVM class that extends from class Script. It then creates an instance of the class and calls the #run method.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">The feature I used is that Groovy allows to create a class so that it extends a custom class. Then that class can contain all our DSL methods (and variables).</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">def</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">create<b>(</b>root<b>:</b></span><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">String<b>,</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">parentClass<b>:</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">Class<b>[</b>_<b>])</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">=</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">{</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">val</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">config</span><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">=</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">new</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">CompilerConfiguration<b>()</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">config<b>.</b>setScriptBaseClass<b>(</b>parentClass<b>.</b>getCanonicalName<b>)</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">val</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">pcl</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">=</span></b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:#00007F">new</span></b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:black">GroovyClassLoader<b>(</b>parentClass<b>.</b>getClassLoader<b>,</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">config<b>,</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:#00007F">false</span></b><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">)</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">new</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">GroovyScriptEngine<b>(</b>root<b>,</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">pcl<b>)</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">}</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">val</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">dsl</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">=</span></b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:black">create<b>(</b>root<b>,</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">classOf<b>[</b>DslClass<b>]).</b>createScript<b>(</b>name</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">+</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:#7F007F">&quot;.groovy&quot;</span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">,</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">binding<b>).</b>asInstanceOf<b>[</b>DslClass<b>]</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+9.0pt;font-family:&quot;Comic Sans MS&quot;;mso-bidi-font-family:&quot;Comic Sans MS&quot;;
+color:#007F00">// dsl.afterLoad // if there's some method to call before running <o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">dsl<b>.</b>run</span><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:9.0pt;line-height:115%;font-family:
+&quot;Comic Sans MS&quot;;mso-bidi-font-family:&quot;Comic Sans MS&quot;;color:#007F00">// dsl.afterRun // if there's some post processing</span></p>
+
+<p class="MsoNormal"><span style="font-size:9.0pt;line-height:115%;font-family:
+&quot;Comic Sans MS&quot;;mso-bidi-font-family:&quot;Comic Sans MS&quot;;color:#007F00"><o:p></o:p></span></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">(The methods #afterLoad and #afterRun seen above should be defined in DslClass)</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">There&rsquo;s another alternative: if the bindings of the script contain a Closure, that closure is treated as a method in the script. One can create a subclass of Closure, overriding the methods #call or #call(Object[]).</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h1>Performance</h1>
+
+<p class="MsoNormal">Unfortunately, GroovyScriptEngine takes some time to create, therefore it is best to cache instances based on the root path and parent class.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Another thing is that in the #create method above we can set a target folder for the compiled files so they are not just in-memory. This is done with:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">config<b>.</b>setTargetDirectory<b>(</b></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">new</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">File<b>(</b>root<b>,</b></span><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:#7F007F">&quot;target&quot;</span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">).</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:black">getPath<b>)</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<h1>Modularity</h1>
+
+<p class="MsoNormal">When using scripts for non-trivial code it is nice to allow to separate them. This can be done in Groovy, but only if the separated scripts are treated as full fledged classes. So in root.groovy one can call &lsquo;import another&rsquo;, and have class &lsquo;another&rsquo; created from another.groovy. Then create an instance with &lsquo;new another()&rsquo; <span style="mso-spacerun:yes">&nbsp;</span>and use its methods. This is fine of course, but not very DSLy.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">What I wanted is for loading of other scripts to behave as the loading of the &ldquo;root&rdquo; script: run some code. Another thing was to allow them to modify the original script, to call methods, set variables etc.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">The approach is simple. In the DSL, add a #load(name: String) method that creates a script using GroovyScriptEngine, passing it the root in the binding and runs it. In the loaded script, it can use &lsquo;root&rsquo; to call DSL methods, set variables and create new methods.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">def</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">load<b>(</b>path<b>:</b></span><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">String<b>)</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">=</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">{</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">val</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">binding</span><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">=</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">new</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">Binding<b>(</b>getBinding<b>.</b>getVariables<b>)</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">binding<b>.</b>setVariable<b>(</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#7F007F">&quot;root&quot;</span><b><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:black">,</span></b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:#B00040">this</span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">)</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">gse<b>.</b>run<b>(</b>path</span><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">+</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">&ldquo;.groovy&rdquo;<b>,</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">binding<b>)</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;line-height:115%;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><span style="mso-spacerun:yes">&nbsp;</span></span><b><span style="font-size:10.0pt;
+line-height:115%;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">}</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:10.0pt;
+line-height:115%;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black"><o:p></o:p></span></b></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">(where &lsquo;gse&rsquo; is a lazy val that creates a new GroovyScriptEngine, or better yet, gets one from a cache)</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Use as:</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+9.0pt;font-family:&quot;Comic Sans MS&quot;;mso-bidi-font-family:&quot;Comic Sans MS&quot;;
+color:#007F00">// in root.groovy<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">load<b>(</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:#7F007F">&quot;subdir/another&quot;</span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">)</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+9.0pt;font-family:&quot;Comic Sans MS&quot;;mso-bidi-font-family:&quot;Comic Sans MS&quot;;
+color:#007F00">// in subdir/another.groovy<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">root<b>.</b>someMethod<b>()</b></span><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">root<b>.</b>newVariable</span><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">=</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#007F7F">1</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">def</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:black">newMethod<b>()</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">{</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;font-family:&quot;Comic Sans MS&quot;;mso-bidi-font-family:&quot;Comic Sans MS&quot;;
+color:#007F00">// blah blah<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">}</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">root<b>.</b>newMethod</span><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">=</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">this</span></b><b><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:black">.&amp;</span></b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">newMethod</span><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<h1>Enhanced Objects</h1>
+
+<p class="MsoNormal">One of the issues I&rsquo;ve encountered was that I wanted to add some methods to existing classes to make it easy to use them in the script. The best way is using DefaultGroovyMethods to mixin a class that adds them. My specific use case, was using XML DOM objects as &lsquo;dom.someTag.text()&rsquo;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">The code:</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">Array<b>(</b>classOf<b>[</b>Node<b>],</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">classOf<b>[</b>NodeList<b>],</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">classOf<b>[</b>NamedNodeMap<b>]</b></span><span style="font-size:9.0pt;font-family:&quot;Comic Sans MS&quot;;mso-bidi-font-family:&quot;Comic Sans MS&quot;;
+color:#007F00">/*, classOf[DOMCategory.NodesHolder]*/</span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">).</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:black">foreach</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">{</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">cls</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">=&gt;</span></b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">DefaultGroovyMethods<b>.</b>mixin<b>(</b>cls<b>,</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">classOf<b>[</b>DOMCategory<b>])</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt;line-height:115%;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><span style="mso-spacerun:yes">&nbsp;</span></span><b><span style="font-size:10.0pt;
+line-height:115%;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black">}</span></b></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><b><span style="font-size:10.0pt;
+line-height:115%;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:black"><o:p></o:p></span></b></p>
+
+<p class="MsoNormal">This code needs to be run once.</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">You can see that I&rsquo;m using DOMCategory. Which begs the question of why not use the Groovy &lsquo;use&rsquo; mechanism. This can be done with:</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">val</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">closure</span><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">=</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">new</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">Closure<b>(</b>gse<b>)</b></span><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">{</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">override</span></b><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">def</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">call<b>()</b></span><span style="font-size:10.0pt;
+font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">=</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">{</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:#00007F">val</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">script</span><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">=</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">GroovyJobRunner<b>.</b>gse<b>(</b>root<b>).</b>createScript<b>(</b>params<b>.</b>jobName</span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">+</span></b><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:#7F007F">&quot;.groovy&quot;</span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">,</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">binding<b>).</b>asInstanc<b>-</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">returning<b>(</b>script<b>.</b>run<b>){</b>script<b>.</b>afterRun<b>}</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">}</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span><b><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">}</span></b><span style="font-size:10.0pt;font-family:
+&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-layout-grid-align:none;text-autospace:none"><span style="font-size:
+10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:Verdana;
+color:gray"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:black">GroovyCategorySupport<b>.</b>use<b>(</b>classOf<b>[</b>DOMCategory<b>],</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"> </span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;
+mso-bidi-font-family:Verdana;color:black">closure<b>)</b></span><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;mso-bidi-font-family:
+Verdana;color:gray"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">This is of course more cumbersome, and also requires calling GroovyCategorySupport#use before every closure invocation. So I&rsquo;m not sure how useful it is.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p>&nbsp;</p>
+
+                    <div class="fb-comments" data-href="http://tikalk.com/java/groovy-dsl-tricks" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+                    <footer></footer>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer id="footer" role="contentinfo">
+  <div class="region region-footer">
+    <section id="block-block-2" class="block block-block block-about-tikal block-even">
+      <h2 class="block-title">About Tikal</h2>
+
+      <div class="content">
+        <div>
+          <div>
+            For over 12 years, we have helped breakthrough companies achieve excellence and meet their goals.&nbsp;</div>
+          <div>
+            By doing so we've earned recognition for delivering extremely competitive and high-performance software services to clients worldwide.</div>
+        </div>
+        <div class="contact-title">
+          Contact Information</div>
+        <div class="contact-number">
+          (972) 3 6488618</div>
+        <div class="contact-mail">
+          <a href="">info@tikalk.com</a></div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-webform-client-block-22" class="block block-webform join-the-team block-odd">
+      <h2 class="block-title">Join the Team</h2>
+      <div class="content">
+        <div>
+          <div class="form-item webform-component webform-component-markup" id="webform-component-sub-header">
+              <p>Let us contact you with more information</p>
+          </div>
+          <script type="text/javascript" src="http://form.jotform.me/jsform/41884289305463"></script>
+        </div>
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-general-tikal-map-home-page" class="block block-general-tikal block-even">
+      <h2 class="block-title">Find us at:</h2>
+
+      <div class="content">
+
+        <div id="map_canvas_footer" style="width: 240px; height: 200px;"></div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            var latlng = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var settings = {
+            zoom: 15,
+                  center: latlng,
+                  mapTypeControl: false,
+                  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas_footer"), settings);      
+            var companyImage = new google.maps.MarkerImage("/assets/icons/logo-map-1a2609d2dd636172949b30cd33a1d8a0.png",
+                new google.maps.Size(100,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(50,50)
+            );
+            var companyShadow = new google.maps.MarkerImage("images/logo_shadow.png",
+                new google.maps.Size(130,50),
+                new google.maps.Point(0,0),
+                new google.maps.Point(65, 50)
+            );
+            var companyPos = new google.maps.LatLng(32.1065469,34.83523969999999);
+            var companyMarker = new google.maps.Marker({
+              position: companyPos,
+              map: map,
+              icon: companyImage,
+              shadow: companyShadow,
+              title:"",
+              zIndex: 3}
+            );
+        </script>  
+      </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-3" class="block block-block find-us-at block-odd">
+      <div class="content">
+        <div class="address">
+          Habarzel 4 st, 1st Floor&nbsp;<br>
+          Tel Aviv 69710<br>
+          Israel
+        </div>  
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+        <footer id="footer-second" role="contentinfo">
+  <div class="region region-footer-second">
+    <section id="block-views-popular-articles-block" class="block block-views block-even">
+      <h2 class="block-title">Popular Articles</h2>
+
+      <div class="content">
+        <div class="view view-popular-articles view-id-popular_articles view-display-id-block view-dom-id-796319b1b70c397287cdccd16eebbb82">
+
+          <div class="view-content">
+            <div class="view-content-limit">
+              <div class="view-content-limit-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/java/location-auto-complete-and-lookup">Location Auto complete and lookup</a></span>  </div>  </div>
+                <div class="views-row views-row-2 views-row-even">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/js/present-and-future-typescript">Present and future of TypeScript</a></span>  </div>  </div>
+                <div class="views-row views-row-3 views-row-odd views-row-last">
+
+                  <div class="views-field views-field-title">        <span class="field-content"><a href="/ror/building-gogobot-social-graph">building the gogobot social graph</a></span>  </div>  </div>
+              </div>
+            </div>
+          </div>
+
+      </div>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-fields" class="block block-menu block-odd">
+      <h2 class="block-title">Domains</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf application lifecycle management"><a href="/alm" title="">DevOps</a></li>
+          <li class="leaf java"><a href="/java" title="">Java</a></li>
+          <li class="leaf javascript"><a href="/js" title="">JavaScript</a></li>
+          <li class="leaf .net"><a href="/net" title="">Android</a></li>
+          <li class="last leaf ruby on rails"><a href="/ror" title="">Ruby</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <section id="block-menu-menu-site-map" class="block block-menu block-even">
+      <h2 class="block-title">Site Map</h2>
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf about us"><a href="/about" title="">About Us</a></li>
+          <li class="leaf active-trail solutions"><a href="/solutions" title="" class="active-trail active">Solutions</a></li>
+          <li class="leaf careers"><a href="/careers" title="">Careers</a></li>
+          <li class="leaf events"><a href="/events" title="">Events</a></li>
+          <li class="last leaf contact"><a href="/contact" title="">Contact</a></li>
+      </ul>  </div><!-- /.content -->
+    </section><!-- /.block -->
+    <div id="block-block-1" class="block block-block all-rights-reserved block-odd">
+
+      <div class="content">
+        <p>© 2013 All Rights Reserved. Tikal</p>
+      </div><!-- /.content -->
+    </div><!-- /.block -->
+    <div id="block-menu-menu-external-links" class="block block-menu block-even">
+
+      <div class="content">
+        <ul class="menu clearfix"><li class="first leaf facebook"><a href="http://www.facebook.com/TikalKnowledge" title="" target="_blank">Facebook</a></li>
+          <li class="leaf twitter"><a href="https://twitter.com/TikalK" title="" target="_blank">Twitter</a></li>
+          <li class="leaf in"><a href="http://www.linkedin.com/company/tikal-knowledge" title="" target="_blank">in</a></li>
+          <li class="last leaf rss"><a href="/rss-latest-articles" title="Latest Articles">RSS</a></li>
+      </ul>  </div><!-- /.content -->
+    </div><!-- /.block -->
+  </div>
+</footer>
+
+    </body>
+</html>
