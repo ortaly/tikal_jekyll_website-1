@@ -49,12 +49,13 @@
 
 
 				function onSuccess(data){
-					defer.resolve(data.results);
+                    defer.resolve(data.results);
 				}
 
-				function onError(data, status){
-					defer.reject('Faild to load meetups'+status.data);
-				}
+                function onError(data, status, headers, config){
+                    debugger;
+                    defer.reject('Faild to load meetups'+status.data);
+                }
 
 				$http.jsonp(
 					MeetupsApiParams.baseApiUrl+'/2/events',
@@ -81,12 +82,11 @@
 
 
           function onSuccess(data){
-              //debugger;
               defer.resolve(data.results);
           }
 
-          function onError(data, status){
-              defer.reject('Faild to load meetups'+status.data);
+          function onError(data, status, headers, config){
+              defer.reject('Faild to load meetups');
           }
 
           $http.jsonp(
@@ -115,12 +115,11 @@
 
 
 				function onSuccess(data){
-					//debugger;
 					defer.resolve(data.results);
 				}
 
-				function onError(data, status){
-					defer.reject('Faild to load meetups'+status.data);
+				function onError(data, status, headers, config){
+                    defer.reject('Faild to load meetups');
 				}
 
 				$http.jsonp(
