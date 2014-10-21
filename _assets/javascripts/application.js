@@ -5,6 +5,8 @@
 //= require vendor/angular.min.js
 //= require meetup_events.js
 //= require contact.js
+//= require vendor/jquery.jcarousel-core.js
+//= require vendor/jquery.jcarousel-autoscroll.js
 
 $('document').ready(function() {
   $("#core-values .double-field-first").click(function() {
@@ -33,4 +35,12 @@ $('document').ready(function() {
         carousel.find('ul').attr('style', 'left: '+leftPosition);
     }, 4000); // repeat forever, polling every 3 seconds
   }
+
+ 
+  if($('.cycle-slideshow').length > 0){
+      $('.cycle-slideshow').jcarousel().jcarouselAutoscroll({
+          
+          interval: 1000
+        });
+    }
 });
