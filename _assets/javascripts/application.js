@@ -38,9 +38,6 @@ $('document').ready(function() {
 
  
   if($('.cycle-slideshow').length > 0){
-      $('.cycle-slideshow').jcarousel().jcarouselAutoscroll({
-          
-          interval: 1000
-        });
+      $('.cycle-slideshow').jcarousel();
     }
 });
