@@ -4,6 +4,8 @@ title: RoR enrichment lectures
 created: 1361439644
 permalink: /solutions/offerings/workshop/ror-enrichment-lectures
 name: offerings
+keyword: ror
+icon: training-and-courses
 ---
 <p style="margin-bottom: 0in">Tikal&#39;s Ruby group enrichment lectures are&nbsp;Free.&nbsp;You can either join our local public lectures at&nbsp;<a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a>&nbsp;meetup group, or host a lecture at your offices to enrich your colleagues and team members.&nbsp;<br />
 ​This offering os available for Israeli local business only.</p>

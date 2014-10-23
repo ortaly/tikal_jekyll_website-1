@@ -4857,15 +4857,37 @@ background-color:#c42a44
 {
   height:307px
 }
-  #block-views-offering-domains .content
-{
+
+#block-views-offering-domains .content {
+  $padding: 10px;
+  position: relative;
   background:url(asset_path('backgrounds/quick-contact-bg.png'));
   margin-top:25px;
   width:293px;
-  padding:10px;
+  height: 309px;
+  padding: $padding;
+  overflow: hidden;
   -moz-box-shadow:0px 1px 3px 1px #c5c5c5;
   -webkit-box-shadow:0px 1px 3px 1px #c5c5c5;
-  box-shadow:0px 1px 3px 1px #c5c5c5
+  box-shadow:0px 1px 3px 1px #c5c5c5;
+  .offering {
+	  position: absolute;
+	  transition: all 600ms ease-in-out;
+	  display: none;
+	  &.prev, &.active, &.next {
+		  display: block;
+	  }
+	  &.prev {
+		  top: -100%;
+	  }
+	  &.active {
+		  top: $padding;
+	  }
+	  &.next[class] {
+		  top: 100%;
+		  transition: none;
+	  }
+  }
 }
   #block-views-offering-domains .views-field-field-image
 {
@@ -7260,4 +7282,8 @@ background-color:#c42a44
 
 .gsc-modal-background-image{
   background-color: #000 !important;
+}
+
+.hidden {
+	display: none;
 }
