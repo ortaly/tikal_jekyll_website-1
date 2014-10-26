@@ -238,7 +238,7 @@ console.log("meetups[i] = ", meetups[i]);
 				    rsvpClass = 'event-rsvp';
 
 				scope.isWaitlist = function (meetup) {
-					return meetup.yes_rsvp_count >= meetup.rsvp_limit;
+					return meetup.yes_rsvp_count >= meetup.rsvp_limit || meetup.waitlist_count;
 				};
 
 				scope.waitlistRsvpClass = function (meetup) {
