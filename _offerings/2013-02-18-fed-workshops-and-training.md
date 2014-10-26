@@ -4,6 +4,8 @@ title: FED workshops and training
 created: 1361187336
 permalink: /solutions/offerings/workshop/introduction-backbonejs-workshop
 name: offerings
+keyword: js
+icon: hands-on-training
 ---
 <div>
 <p><span style="font-size: 18px;"><a name="angular"></a></span><span style="text-align: justify;">Tikal&#39;s Javascript group workshops and courses&nbsp;are available for our&nbsp;local customers, custome made for there needs. Also you can join our&nbsp;public workshops&nbsp;at&nbsp;</span><a href="http://www.meetup.com/full-stack-developer-il/" style="text-align: justify;">&quot;Fullstack Developers Israel&quot;</a><span style="text-align: justify;">&nbsp;</span><span style="text-align: justify;">meetup group.&nbsp;</span><br style="text-align: justify;" />

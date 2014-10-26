@@ -4,6 +4,8 @@ title: DevOps workshops and training
 created: 1369074498
 permalink: /solutions/offerings/workshop/devops-workshops-and-training
 name: offerings
+keyword: devops
+icon: hands-on-training
 ---
 <div>
 <p>Tikal&#39;s DevOps group workshops and courses are available for our local customers, custome made for there needs. Also you can join our public workshops at <a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a> meetup group.&nbsp;</p>

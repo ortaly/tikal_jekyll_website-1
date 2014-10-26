@@ -4,6 +4,8 @@ title: Java workshops and training
 created: 1361392742
 permalink: /solutions/offerings/workshop/java-workshops-and-training
 name: offerings
+keyword: java
+icon: hands-on-training
 ---
 <div>
 <div align="JUSTIFY">

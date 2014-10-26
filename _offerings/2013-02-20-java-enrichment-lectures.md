@@ -4,6 +4,8 @@ title: Java enrichment lectures
 created: 1361393016
 permalink: /solutions/offerings/workshop/java-enrichment-lectures
 name: offerings
+keyword: java
+icon: training-and-courses
 ---
 <p>Tikal&#39;s Java group enrichment lectures are&nbsp;Free,&nbsp;at your reach, You can either join our local public lectures at <a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a>&nbsp;meetup group, or host a lecture at your offices to enrich your colleagues and team members.<br />
 This offering os available for Israeli local business only.</p>
