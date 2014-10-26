@@ -16,8 +16,8 @@
 
 				<div class="upcoming-event-info" ng-show="isUpcomingEvent">
 					<a class="event-rsvp-waitlist" ng-href="{% raw %}{{ meetup.event_url }}{% endraw %}" target="_blank">
-						<div class="event-waitlist">
-							<div class="event-label">Waiting List</div>
+						<div ng-class="waitlistRsvpClass(meetup)">
+							<div class="event-label" ng-bind="waitlistRsvpText(meetup)">RSVP</div>
 						</div>
 					</a>
 					<div class="event-waiting">
