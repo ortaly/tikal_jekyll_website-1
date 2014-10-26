@@ -4,6 +4,8 @@ title: 'FED enrichment lectures '
 created: 1361274594
 permalink: /solutions/offerings/workshop/fed-enrichment-lectures
 name: offerings
+keyword: js
+icon: training-and-courses
 ---
 <p align="LEFT"><span>Tikal&#39;s Javascript&nbsp;group enrichment lectures are</span><span>&nbsp;Free.&nbsp;</span><span>Y</span><span>ou can either join our local public lectures at&nbsp;</span><a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a><span>&nbsp;meetup group, or host a lecture at your offices to enrich your colleagues and team members.&nbsp;</span><br />
 <span>​</span><span>This offering os available for Israeli local business only.</span></p>

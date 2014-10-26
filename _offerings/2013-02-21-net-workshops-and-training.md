@@ -4,6 +4,8 @@ title: .NET workshops and training
 created: 1361439248
 permalink: /solutions/offerings/workshop/nhibernate-bootcamp
 name: offerings
+keyword: dotnet
+icon: boot-camps
 ---
 <div>
 <p>Tikal&#39;s .NET group workshops and courses&nbsp;are available for our&nbsp;local customers, custome made for there needs. Also you can join our&nbsp;public workshops&nbsp;at <span style="color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS'; font-size: 13px; line-height: 20.796875px; background-color: rgb(255, 255, 255);">&nbsp;</span><a href="http://www.meetup.com/full-stack-developer-il/" style="color: rgb(7, 130, 193); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS'; font-size: 13px; line-height: 20.796875px; background-color: rgb(255, 255, 255);">&quot;Fullstack Developers Israel&quot;</a><span style="color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS'; font-size: 13px; line-height: 20.796875px; background-color: rgb(255, 255, 255);">&nbsp;</span> meetup group.&nbsp;<br />

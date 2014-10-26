@@ -4,6 +4,8 @@ title: Software Architecture Course
 created: 1366796144
 permalink: /solutions/offerings/workshop/software-architecture-course
 name: offerings
+keyword: java
+icon: training-and-courses
 ---
 <h2>General Overview</h2><div class='offering-description'><p>Tikal&#39;s training courses are aimed at software professionals that need to boost their knowledge and performance capabilities in advanced AD&amp;D subjects. These courses are targeted at operational issues and give extensive yet down to earth methods and routines to achieve maximum performance.</p>
 </div><h2>Course Description</h2><div class='offering-description'><p>In this course, we will be introducing you to what Software Architecture is, what Software Architects do, and what kinds of things they produce. The course is intended to provide knowledge, frameworks and tools to &ldquo;senior developers&rdquo; striving to become architects over time.</p>

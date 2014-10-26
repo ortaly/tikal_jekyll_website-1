@@ -4,6 +4,8 @@ title: RoR workshops and training
 created: 1361440234
 permalink: /solutions/offerings/workshop/ror-workshops-and-training
 name: offerings
+keyword: ror
+icon: hands-on-training
 ---
 <div>
 <p>Tikal&#39;s RoR&nbsp;group workshops and courses are available for our local customers, custome made for there needs. Also you can join our public workshops at&nbsp;<a href="http://www.meetup.com/full-stack-developer-il/">&quot;Fullstack Developers Israel&quot;</a>&nbsp;meetup group.&nbsp;</p>
