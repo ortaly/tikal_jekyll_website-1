@@ -3,3 +3,4 @@ _site
 .sass-cache
 .ruby-version
 .idea/
+/nbproject/private/
