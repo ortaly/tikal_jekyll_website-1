@@ -5,7 +5,7 @@ created: 1245362943
 author: hagzag
 permalink: "/alm/tikal-community-inserting-code-snippets-posts"
 tags:
-- ALM
+- DevOps
 ---
 <p>Considering the fact we tend to submit code snippets as part of our posts, I have added a module which will provide code snippets highlighting.</p>
 <p>The method of submittal is quite simple and requires a &quot;custom&quot; html tag called &quot;&lt;snippet&gt;&quot;<br>

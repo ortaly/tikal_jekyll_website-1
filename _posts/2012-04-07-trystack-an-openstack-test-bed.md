@@ -5,7 +5,7 @@ created: 1333832668
 author: hagzag
 permalink: "/trystack-openstack-test-bed"
 tags:
-- ALM
+- DevOps
 - cloud computing
 - OpenStack
 - cloud

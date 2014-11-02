@@ -5,7 +5,7 @@ created: 1262129707
 author: shalom
 permalink: "/alm/deploying-tomcat-maven"
 tags:
-- ALM
+- DevOps
 - maven tomcat deploy
 ---
 <p>&nbsp;Hi<br />

@@ -5,7 +5,7 @@ created: 1313269524
 author: lior.kanfi
 permalink: "/8-principles-continuous-delivery"
 tags:
-- ALM
+- DevOps
 - Continuous Integration Continuous Deployment
 - CI
 ---

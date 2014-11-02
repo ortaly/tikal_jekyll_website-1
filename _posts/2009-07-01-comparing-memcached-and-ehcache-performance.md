@@ -4,7 +4,7 @@ title: Comparing Memcached and Ehcache Performance
 created: 1246482537
 permalink: comparing-memcached-and-ehcache-performance
 tags:
-- ALM
+- DevOps
 - Caching
 - memcahed
 - EhCache

@@ -7,7 +7,7 @@ permalink: jenkins-branches
 tags:
 - DevOps
 - jenkins
-- ALM
+- DevOps
 - scm
 - branches
 ---

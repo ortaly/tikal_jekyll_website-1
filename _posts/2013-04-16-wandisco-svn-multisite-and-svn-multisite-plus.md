@@ -5,7 +5,7 @@ created: 1366147473
 author: liya
 permalink: wandisco-svn-multisite-and-svn-multisite-plus
 tags:
-- ALM
+- DevOps
 - svn
 ---
 <p>We were asked several times regarding SVN multi site implementation - <a href="http://www.wandisco.com/subversion/multisite">WANdisco SVN MultiSite</a> or <a href="http://www.wandisco.com/subversion/multisiteplus">SVN MultiSite Plus</a> can be a commercial options for such a solution.</p>

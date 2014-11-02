@@ -5,7 +5,7 @@ created: 1360880280
 author: yorammi
 permalink: "/alm/svn-git-github-story-common-migration-path"
 tags:
-- ALM
+- DevOps
 - git
 - GitHub
 - scm

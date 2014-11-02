@@ -5,7 +5,7 @@ created: 1288566746
 author: hagzag
 permalink: "/alm/maven-ejb-plugin-ejb-client-generation-tip"
 tags:
-- ALM
+- DevOps
 - weblogic
 ---
 <p>One of the developers on my Team came up to me with the folloing scenario, whilst deploying module a webapps to weblogic, one of them would not deploy due to an error &quot;could not istantiate DataSource &lt;datasource name&gt;&quot; ... altough this DataSource isn't declared in that specific app.</p>

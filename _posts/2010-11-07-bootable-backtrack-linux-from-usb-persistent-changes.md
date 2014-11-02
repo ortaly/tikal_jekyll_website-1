@@ -4,7 +4,7 @@ title: Bootable BackTrack Linux from USB - Persistent Changes
 created: 1289167467
 permalink: bootable-backtrack-linux-from-usb-persistent-changes
 tags:
-- ALM
+- DevOps
 ---
 <p>Excellent article</p>
 <p>(in Hebrew):</p>

@@ -5,7 +5,7 @@ created: 1336864447
 author: ori.tzoran
 permalink: experimenting-with-openstack-essex-on-ubuntu-12-04-lts-under-virtualbox
 tags:
-- ALM
+- DevOps
 - OpenStack Essex
 - cloud
 ---

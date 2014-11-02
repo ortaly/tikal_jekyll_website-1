@@ -5,7 +5,7 @@ created: 1222983210
 author: miron
 permalink: "/alm/subversion-152-ubuntu"
 tags:
-- ALM
+- DevOps
 - subversion
 - svn
 - ubuntu

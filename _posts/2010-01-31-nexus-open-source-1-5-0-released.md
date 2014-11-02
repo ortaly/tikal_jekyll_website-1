@@ -5,7 +5,7 @@ created: 1264977528
 author: hagzag
 permalink: "/alm/nexus-open-source-150-released"
 tags:
-- ALM
+- DevOps
 - Nexus Open Source
 ---
 <p><u><img hspace="5" border="0" align="left" vspace="5" src="/files/upload/29/nexus-small.png" style="width: 138px; height: 34px;" alt="" /></u>Nexus Open Source 1.5.0 released.</p>
