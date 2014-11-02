@@ -5,9 +5,8 @@ created: 1335824630
 author: avit
 permalink: "/showing-git-commit-sha-currently-deployed"
 tags:
-- RoR
+- Ruby
 - web
-- ruby
 ---
 <p>I cannot count how many times I (or others) have asked the following question:</p>
 <blockquote><p>What is the difference between master and the production version?</p></blockquote>
