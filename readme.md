@@ -3,4 +3,4 @@
 A static version of Tikal's website generated with Jekyll.
 
 For instructions 
-- talk to *Assaf G*
+- talk to *AssafG*
