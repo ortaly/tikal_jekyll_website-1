@@ -48,6 +48,8 @@ experience:
 - title: Full stack Expert @ YouAppi
   years: '2012'
   description: 'Lead a process to improve the applications scalability and performance.
-    The process included: - Re-factoring a monolithic application into several service
-    oriented applications. - Better usage of Redis as an object cache and pub-sub
-    system. - Converting blocking tasks to asynchronous jobs. - Integra'
+    The process included: 
+      * Re-factoring a monolithic application into several service oriented applications.
+      * Better usage of Redis as an object cache and pub-sub system.
+      * Converting blocking tasks to asynchronous jobs.
+      * Integraation
