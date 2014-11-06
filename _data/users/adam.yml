@@ -9,6 +9,19 @@ follow_me_urls: ['https://www.linkedin.com/profile/view?id=14413689&authType=NAM
 permalink: /js/adam
 skills:
   expert_skills:
-    PYTHON: '3'
-  developer_skills:
     JavaScript: '3'
+    Python: '3'
+    Django: '2'
+  developer_skills:
+    AngularJS: '2'
+    SQL: '6'
+    Backbone.js: '2'
+    
+experience:
+- title: Fullstack Developer @ FTBpro
+  years: '2014'
+  description: 
+    "Analyzed and improved the load times of interstitial advertisements,
+    allowing them to be deployed for effective monitization on the mobile web site.
+    Played a large part in fixing last-minute bugs in order to prepare a major new version of the application for deployment."
+
