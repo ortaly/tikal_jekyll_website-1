@@ -8,6 +8,7 @@ about: Fullstack Developer experiences with both python/django & JS technologies
 follow_me_urls: ['https://www.linkedin.com/profile/view?id=14413689&authType=NAME_SEARCH&authToken=lNUU&locale=en_US&trk=tyah2&trkInfo=tarId%3A1415267459078%2Ctas%3Aadam%2Cidx%3A1-1-1']
 image_path: pictures/Adam_M.jpg
 permalink: /js/adam
+
 skills:
   expert_skills:
     JavaScript: '3'
