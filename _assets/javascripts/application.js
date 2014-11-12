@@ -7,6 +7,7 @@
 //= require contact.js
 //= require vendor/jquery.jcarousel-core.js
 //= require vendor/jquery.jcarousel-autoscroll.js
+//= require vendor/jquery.form.min.js
 
 !function () {
 

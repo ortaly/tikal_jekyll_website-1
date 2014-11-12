@@ -28,7 +28,16 @@ header_subtitle: We'd love to hear from you if you have questions or comments
             <div id="clientsidevalidation-contact-form-errors" class="messages error clientside-error" style="display: none;">
               <ul style=""></ul>
             </div>
-            <form class="webform-client-form" enctype="multipart/form-data" action="//forms.brace.io/info@tikalk.com" method="post" id="contact-form" accept-charset="UTF-8">
+            <script>
+              $(document).ready(function(){
+                var form = $('#contact-form');
+                form.ajaxForm(function() {
+                  alert("Thank you for your! We will be in touch with you soon.");
+
+                });
+              })
+            </script>
+            <form class="webform-client-form" enctype="multipart/form-data" action="/form/info" method="post" id="contact-form" accept-charset="UTF-8">
               <div>
                 <fieldset class="webform-component-fieldset form-wrapper" id="webform-component-form">
                   <div class="fieldset-wrapper">
@@ -79,10 +88,13 @@ header_subtitle: We'd love to hear from you if you have questions or comments
                          <input type="radio" id="edit-submitted-form-domain-3" name="domain" value="js" class="form-radio">  <label class="option" for="edit-submitted-form-domain-3">JS </label>
                         </div>
                         <div class="form-item form-type-radio form-item-submitted-form-domain">
-                          <input type="radio" id="edit-submitted-form-domain-4" name="domain" value="net" class="form-radio">  <label class="option" for="edit-submitted-form-domain-4">.NET </label>
+                          <input type="radio" id="edit-submitted-form-domain-4" name="domain" value="android" class="form-radio">  <label class="option" for="edit-submitted-form-domain-4">Android </label>
                         </div>
                         <div class="form-item form-type-radio form-item-submitted-form-domain">
-                          <input type="radio" id="edit-submitted-form-domain-5" name="domain" value="ror" class="form-radio">  <label class="option" for="edit-submitted-form-domain-5">RoR </label>
+                          <input type="radio" id="edit-submitted-form-domain-5" name="domain" value="ruby" class="form-radio">  <label class="option" for="edit-submitted-form-domain-5">Ruby </label>
+                        </div>
+                        <div class="form-item form-type-radio form-item-submitted-form-domain">
+                          <input type="radio" id="edit-submitted-form-domain-6" name="domain" value="devops" class="form-radio">  <label class="option" for="edit-submitted-form-domain-6">DevOps </label>
                         </div>
                       </div>
                     </div>

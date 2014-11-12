@@ -1,7 +1,16 @@
 <section class="block block-webform request-more-info block-odd">
   <h2 class="block-title">Request more Info</h2>
   <div class="content">
-    <form class="webform-client-form" enctype="multipart/form-data" action="/solutions" method="post" id="webform-client-form-60" accept-charset="UTF-8">
+    <script>
+      $(document).ready(function(){
+        var form = $('#webform-client-form-60');
+        form.ajaxForm(function() {
+          alert("Thank you for your! We will be in touch with you soon.");
+
+        });
+      })
+    </script>
+    <form class="webform-client-form" enctype="multipart/form-data" action="/form/sales" method="post" id="webform-client-form-60" accept-charset="UTF-8">
       <div>
         <div class="form-item webform-component webform-component-markup" id="webform-component-sub-title">
           About Solutions
