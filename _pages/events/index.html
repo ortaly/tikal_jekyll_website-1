@@ -5,7 +5,8 @@ title: Events | Tikal
 header_title: Events
 header_subtitle: Stay tuned with Tikal's Fullstack community upcoming Meetup events
 ---
-<div id="main" ng-app="meetups-module">
+<div ng-app="events-module">
+  <div id="main" >
      <div class="region region-content" ng-controller="Sn.MainCtrl as mainCtrl" >
         <!--   <h1>{% raw %}{{mainCtrl.appTitle}}{% endraw %}</h1> -->
           <div id="meetups" ng-controller="Sn.MeetupsCtrl as meetupsCtrl">
@@ -58,5 +59,38 @@ header_subtitle: Stay tuned with Tikal's Fullstack community upcoming Meetup eve
           </div>
         </div>&lt;!&ndash; /.content &ndash;&gt;
       </section>-->
+
+      <div id="block-tikal-fbgroup-feed-fbgroup-feed" ng-controller="FeedCtrl">
+        <div class="content">
+          <div class="view-container fb-group-feed-wrapper">
+            <div class="fb-group-feed-header"> 
+              <a class="fbgroup-feed-image" href="https://www.facebook.com/groups/225585444263260" target="_blank" title="Fullstack Developers Israel"></a>
+              Join the discussion
+            </div>
+            <div class="fb-group-feed-title">
+              <img src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/y0/r/-HwODK0dBGZ.png">
+              <h2><a>Fullstack Developers Israel</a></h2>
+            </div>
+
+            <div class="fb-group-feed-body">
+              <div ng-repeat="feed in data" class="fb-group-feed-post">
+                 <a href={% raw %}{{feed.profilePage}}{% endraw %} title="View " + {% raw %}{{feed.authorName}}{% endraw %} + "\'s profile" target="_blank">
+                    <img border="0" title={% raw %}{{feed.authorName}}{% endraw %}  alt={% raw %}{{feed.authorName}}{% endraw %} src={% raw %}{{feed.image}}{% endraw %}>
+                </a>
+                <div class="fb-group-feed-post-author">
+                   <span>By <a href={% raw %}{{feed.profilePage}}{% endraw %} target="_blank">{% raw %}{{feed.authorName}}{% endraw %}</a>
+                   </span>
+                   <span>{% raw %}{{feed.created | dateSuffix}}{% endraw %}</span>
+                </div>
+                <div class="fb-group-feed-post-message">
+                  <a href={% raw %}{{feed.postMessage}}{% endraw %} target="_blank">{% raw %}{{feed.message | cut:true:100}}{% endraw %}</a>
+                </div> 
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+
     </div>
   </aside>
+</div>

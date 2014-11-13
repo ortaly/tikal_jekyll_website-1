@@ -3,11 +3,10 @@
 //= require vendor/scrollup/jquery.scrollUp
 //= require vendor/drupal_legacy.js
 //= require vendor/angular.min.js
-//= require meetup_events.js
+//= require events.js
 //= require contact.js
 //= require vendor/jquery.jcarousel-core.js
 //= require vendor/jquery.jcarousel-autoscroll.js
-//= require vendor/jquery.form.min.js
 
 !function () {
 
